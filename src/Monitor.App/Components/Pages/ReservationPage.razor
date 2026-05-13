@@ -1,0 +1,129 @@
+@page "/reservation"
+@namespace Monitor.App.Components.Pages
+@inject Services.ReservationService ReservationService
+@using Monitor.App.Models
+
+<PageTitle>预约 · Monitor</PageTitle>
+
+<div class="page">
+    <header class="page-header">
+        <div>
+            <h1 class="page-title">
+                <span class="page-title-icon"><Icon Name="calendar" Size="20" /></span>
+                预约管理
+            </h1>
+            <p class="page-subtitle">安排使用时段，避免时间冲突</p>
+        </div>
+    </header>
+
+    <section class="reservation-grid">
+        <div class="card">
+            <h2 class="section-title"><Icon Name="plus" Size="16" />新建预约</h2>
+            <div class="form-stack">
+                <input class="input" @bind="_newName" @bind:event="oninput" placeholder="姓名" />
+                <input class="input" type="date" @bind="_newDate" />
+                <div class="input-row">
+                    <select class="input" @bind="_newStart">
+                        @for (int h = 0; h < 24; h++)
+                        {
+                            <option value="@h">@($"{h:D2}:00")</option>
+                        }
+                    </select>
+                    <span class="row-subtitle">至</span>
+                    <select class="input" @bind="_newEnd">
+                        @for (int h = 1; h <= 24; h++)
+                        {
+                            <option value="@h">@($"{h:D2}:00")</option>
+                        }
+                    </select>
+                </div>
+                <button class="btn btn-primary" @onclick="CreateReservation">
+                    <Icon Name="plus" Size="15" />
+                    创建预约
+                </button>
+            </div>
+
+            @if (!string.IsNullOrEmpty(_msg))
+            {
+                <div class="message">@_msg</div>
+            }
+        </div>
+
+        <div class="card">
+            <div class="toolbar" style="margin-bottom:14px;">
+                <h2 class="section-title" style="margin:0;"><Icon Name="calendar" Size="16" />预约列表</h2>
+                <input class="input" type="date" @bind="_filterDate" @bind:after="LoadReservations" style="width:170px;" />
+            </div>
+
+            @if (!_reservations.Any())
+            {
+                <div class="empty-state">暂无预约</div>
+            }
+            else
+            {
+                <div class="data-list">
+                    @foreach (var r in _reservations)
+                    {
+                        <div class="reservation-row">
+                            <div class="row-main">
+                                <div class="avatar">@GetInitial(r.UserName)</div>
+                                <div>
+                                    <div class="row-title">@r.UserName</div>
+                                    <div class="row-subtitle">@r.Date</div>
+                                </div>
+                            </div>
+                            <div class="toolbar-right">
+                                <span class="badge badge-warning">@($"{r.StartHour:D2}:00 - {r.EndHour:D2}:00")</span>
+                                <button class="btn btn-ghost btn-sm" @onclick="() => CancelReservation(r.Id)">
+                                    <Icon Name="trash" Size="13" />
+                                    取消
+                                </button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </section>
+</div>
+
+@code {
+    private List<Models.Reservation> _reservations = new();
+    private string _newName = "";
+    private DateTime _newDate = DateTime.Today;
+    private int _newStart = 9;
+    private int _newEnd = 10;
+    private DateTime? _filterDate;
+    private string _msg = "";
+
+    protected override void OnInitialized() => LoadReservations();
+
+    private void LoadReservations()
+    {
+        var dateStr = _filterDate?.ToString("yyyy-MM-dd");
+        _reservations = ReservationService.GetReservations(dateStr);
+    }
+
+    private void CreateReservation()
+    {
+        var dateStr = _newDate.ToString("yyyy-MM-dd");
+        var (success, message, id) = ReservationService.CreateReservation(_newName, dateStr, _newStart, _newEnd);
+        _msg = message;
+        if (success)
+        {
+            _newName = "";
+            _newStart = 9;
+            _newEnd = 10;
+            LoadReservations();
+        }
+    }
+
+    private void CancelReservation(int id)
+    {
+        ReservationService.CancelReservation(id);
+        LoadReservations();
+    }
+
+    private static string GetInitial(string value)
+        => string.IsNullOrWhiteSpace(value) ? "?" : value.Trim()[0].ToString();
+}

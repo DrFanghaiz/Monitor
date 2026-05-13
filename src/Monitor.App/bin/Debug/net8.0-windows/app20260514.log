@@ -1,0 +1,26 @@
+2026-05-14 00:39:57 | WARNING | Auto backup skipped
+System.IO.IOException: The process cannot access the file 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\bin\Debug\net8.0-windows\monitor.db' because it is being used by another process.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync)
+   at System.IO.Compression.ZipFileExtensions.DoCreateEntryFromFile(ZipArchive destination, String sourceFileName, String entryName, Nullable`1 compressionLevel)
+   at System.IO.Compression.ZipFileExtensions.CreateEntryFromFile(ZipArchive destination, String sourceFileName, String entryName)
+   at Monitor.App.Services.BackupService.CreateBackup(Boolean manual) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\BackupService.cs:line 33
+   at Monitor.App.Services.BackupService.AutoBackupIfNeeded() in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\BackupService.cs:line 71
+   at Monitor.App.App.Application_Startup(Object sender, StartupEventArgs e) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\App.xaml.cs:line 83
+2026-05-14 00:39:57 | INFORMATION | RemoteMonitorService started
+2026-05-14 00:39:57 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-14 00:39:57 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83
+2026-05-14 00:42:38 | INFORMATION | RemoteMonitorService started
+2026-05-14 00:42:38 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-14 00:42:38 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\bin\Debug\net8.0-windows'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83

@@ -1,0 +1,101 @@
+@namespace Monitor.App.Components.Layout
+@inject StatusService StatusService
+@implements IDisposable
+
+<aside class="sidebar">
+    <div class="sidebar-brand">
+        <div class="brand-mark"><Icon Name="monitor" Size="20" /></div>
+        <div>
+            <div class="brand-title">Monitor</div>
+            <div class="brand-subtitle">公用机管理</div>
+        </div>
+    </div>
+
+    <div class="sidebar-status">
+        <div class="sidebar-status-label">系统状态</div>
+        <div class="status-line">
+            <span class="status-dot @_statusClass"></span>
+            <span class="row-title">@_statusText</span>
+        </div>
+        @if (_isRemote)
+        {
+            <div style="margin-top:10px;">
+                <span class="badge badge-danger">远程: @_remoteType</span>
+            </div>
+        }
+    </div>
+
+    <nav class="sidebar-nav">
+        @foreach (var item in _navItems)
+        {
+            <NavLink href="@item.Href" class="sidebar-item" ActiveClass="active" Match="@item.Match">
+                <span class="sidebar-icon"><Icon Name="@item.Icon" Size="18" /></span>
+                <span>@item.Label</span>
+            </NavLink>
+        }
+    </nav>
+
+    <div class="sidebar-footer">
+        <span>v3.0.0</span>
+        <span>@_timeDisplay</span>
+    </div>
+</aside>
+
+@code {
+    private string _statusClass = "idle";
+    private string _statusText = "空闲";
+    private bool _isRemote;
+    private string? _remoteType;
+    private string _timeDisplay = "";
+    private Timer? _timer;
+
+    private readonly (string Href, string Label, string Icon, NavLinkMatch Match)[] _navItems =
+    {
+        ("/", "控制台", "dashboard", NavLinkMatch.All),
+        ("/timer", "计时", "timer", NavLinkMatch.Prefix),
+        ("/history", "历史", "history", NavLinkMatch.Prefix),
+        ("/statistics", "统计", "chart", NavLinkMatch.Prefix),
+        ("/reservation", "预约", "calendar", NavLinkMatch.Prefix),
+        ("/settings", "设置", "settings", NavLinkMatch.Prefix),
+    };
+
+    protected override void OnInitialized()
+    {
+        RefreshStatus();
+        _timer = new Timer(_ =>
+        {
+            InvokeAsync(() =>
+            {
+                RefreshStatus();
+                StateHasChanged();
+            });
+        }, null, 3000, 3000);
+    }
+
+    private void RefreshStatus()
+    {
+        var status = StatusService.GetSidebarStatus();
+        _isRemote = status.IsRemote;
+        _remoteType = status.RemoteType;
+
+        if (_isRemote)
+        {
+            _statusClass = "remote_controlled";
+            _statusText = "远程控制中";
+        }
+        else if (status.IsTiming)
+        {
+            _statusClass = "in_use";
+            _statusText = $"使用中 · {status.CurrentUser}";
+        }
+        else
+        {
+            _statusClass = "idle";
+            _statusText = "空闲";
+        }
+
+        _timeDisplay = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+    }
+
+    public void Dispose() => _timer?.Dispose();
+}

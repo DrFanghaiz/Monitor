@@ -1,16 +1,21 @@
-name: monitor-app
+name: monitor
 channels:
-  - conda-forge
   - defaults
+  - conda-forge
 dependencies:
-  - python=3.11
+  - python>=3.10
   - pip
-  - tk
-  - numpy
-  - matplotlib
-  - pillow
+  # ---- Backend API ----
+  - fastapi>=0.110
+  - uvicorn>=0.29
+  - pydantic>=2.0
+  # ---- Desktop shell ----
+  - pywin32>=306
+  # ---- Legacy compat path (customtkinter + tray) ----
+  - customtkinter>=5.2
+  - pystray>=0.19
+  - matplotlib>=3.8
+  - pillow>=10.0
+  - bcrypt>=4.1
   - pip:
-      - customtkinter
-      - pystray
-      - bcrypt
-      - pyinstaller
+      - webview2>=0.0.4

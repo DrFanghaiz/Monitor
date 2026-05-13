@@ -11,10 +11,6 @@ except Exception:
     except Exception:
         pass
 
-import customtkinter as ctk
-ctk.set_appearance_mode("Light")
-ctk.set_default_color_theme("blue")
-
 from app.presentation.desktop.app_window import App
 from instance_lock import check_single_instance, release_instance
 
@@ -26,7 +22,13 @@ def main():
         return
 
     try:
-        app = App()
+        from app_bootstrap import _init_customtkinter
+        from app.domain.services import create_legacy_services
+        from backend.api.deps import set_service_container
+        _init_customtkinter()
+        services = create_legacy_services()
+        set_service_container(services)
+        app = App(services=services)
         app.mainloop()
     finally:
         release_instance()

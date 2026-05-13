@@ -1,0 +1,149 @@
+@page "/statistics"
+@namespace Monitor.App.Components.Pages
+@inject StatisticsService StatisticsService
+@inject IJSRuntime JS
+
+<PageTitle>统计 · Monitor</PageTitle>
+
+<div class="page">
+    <header class="page-header">
+        <div>
+            <h1 class="page-title">
+                <span class="page-title-icon"><Icon Name="chart" Size="20" /></span>
+                数据统计
+            </h1>
+            <p class="page-subtitle">使用人数、时长和最近 30 天趋势</p>
+        </div>
+    </header>
+
+    <section class="metric-grid">
+        <div class="card">
+            <div class="metric-head">
+                <div class="metric-label">总使用人数</div>
+                <span class="metric-icon"><Icon Name="user" Size="16" /></span>
+            </div>
+            <div class="metric-value">@_userCount</div>
+            <div class="metric-note">位用户</div>
+        </div>
+        <div class="card">
+            <div class="metric-head">
+                <div class="metric-label">总使用时长</div>
+                <span class="metric-icon"><Icon Name="timer" Size="16" /></span>
+            </div>
+            <div class="metric-value">@_totalHours<span style="font-size:14px;color:var(--text-muted);margin-left:4px;">h</span></div>
+            <div class="metric-note">累计小时</div>
+        </div>
+        <div class="card">
+            <div class="metric-head">
+                <div class="metric-label">今日活跃用户</div>
+                <span class="metric-icon"><Icon Name="history" Size="16" /></span>
+            </div>
+            <div class="metric-value">@_todayCount</div>
+            <div class="metric-note">今日有记录的人数</div>
+        </div>
+    </section>
+
+    <section class="chart-stack">
+        <div class="card">
+            <h2 class="section-title"><Icon Name="chart" Size="16" />用户使用分布</h2>
+            <div id="user-chart" class="chart-box"></div>
+        </div>
+
+        <div class="card">
+            <h2 class="section-title"><Icon Name="history" Size="16" />每日使用趋势</h2>
+            <div id="daily-chart" class="chart-box"></div>
+        </div>
+    </section>
+</div>
+
+@code {
+    private int _userCount;
+    private double _totalHours;
+    private int _todayCount;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender) return;
+
+        var users = StatisticsService.GetUserStats("all") as List<UserStat>;
+        var daily = StatisticsService.GetDailyStats(30) as List<DailyStat>;
+        var today = StatisticsService.GetUserStats("today") as List<UserStat>;
+
+        if (users != null)
+        {
+            _userCount = users.Count;
+            _totalHours = Math.Round(users.Sum(u => u.TotalSeconds) / 3600.0, 1);
+        }
+
+        _todayCount = (today ?? new()).Count;
+        StateHasChanged();
+
+        if (users != null && users.Any())
+        {
+            var topUsers = users
+                .OrderByDescending(u => u.TotalSeconds)
+                .Take(10)
+                .Select(u => new
+                {
+                    name = u.UserName,
+                    value = Math.Round(u.TotalSeconds / 3600.0, 1)
+                });
+
+            var userOption = new
+            {
+                tooltip = new { trigger = "item" },
+                legend = new { bottom = 0, textStyle = new { color = "#506176" } },
+                series = new[] {
+                    new {
+                        type = "pie",
+                        radius = new[] { "48%", "72%" },
+                        center = new[] { "50%", "46%" },
+                        label = new { color = "#506176" },
+                        data = topUsers
+                    }
+                }
+            };
+
+            await JS.InvokeVoidAsync("renderChart", "user-chart",
+                System.Text.Json.JsonSerializer.Serialize(userOption));
+        }
+
+        if (daily != null && daily.Any())
+        {
+            var dailyOption = new
+            {
+                tooltip = new { trigger = "axis" },
+                grid = new { left = 42, right = 22, top = 24, bottom = 36 },
+                xAxis = new
+                {
+                    type = "category",
+                    data = daily.Select(d => d.Date.Length >= 10 ? d.Date.Substring(5) : d.Date),
+                    axisLine = new { lineStyle = new { color = "#CCD7E6" } },
+                    axisLabel = new { color = "#506176" }
+                },
+                yAxis = new
+                {
+                    type = "value",
+                    name = "小时",
+                    splitLine = new { lineStyle = new { color = "#E1E7F0" } },
+                    axisLabel = new { color = "#506176" }
+                },
+                series = new[] {
+                    new {
+                        name = "使用时长",
+                        type = "line",
+                        data = daily.Select(d => d.Hours),
+                        smooth = true,
+                        symbolSize = 6,
+                        lineStyle = new { color = "#0A84FF", width = 3 },
+                        itemStyle = new { color = "#0A84FF" },
+                        areaStyle = new { color = "rgba(10,132,255,0.12)" }
+                    }
+                }
+            };
+
+            await JS.InvokeVoidAsync("renderChart", "daily-chart",
+                System.Text.Json.JsonSerializer.Serialize(dailyOption));
+        }
+    }
+}

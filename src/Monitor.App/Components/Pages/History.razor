@@ -1,0 +1,129 @@
+@page "/history"
+@namespace Monitor.App.Components.Pages
+@inject TimerService TimerService
+
+<PageTitle>历史记录 · Monitor</PageTitle>
+
+<div class="page">
+    <header class="page-header">
+        <div>
+            <h1 class="page-title">
+                <span class="page-title-icon"><Icon Name="history" Size="20" /></span>
+                历史记录
+            </h1>
+            <p class="page-subtitle">查看、搜索和清理使用记录</p>
+        </div>
+    </header>
+
+    <section class="card toolbar">
+        <div class="toolbar-left">
+            <select class="input" style="width:130px;" @bind="_filterMode" @bind:after="LoadRecords">
+                <option value="all">全部</option>
+                <option value="today">今日</option>
+                <option value="this month">本月</option>
+            </select>
+            <input class="input" style="width:220px;" @bind="_search" @bind:event="oninput" @bind:after="LoadRecords" placeholder="搜索用户名" />
+        </div>
+
+        <div class="toolbar-right">
+            <span class="badge badge-neutral">@_records.Count 条记录</span>
+            @if (_selectedIds.Count > 0)
+            {
+                <button class="btn btn-danger" @onclick="DeleteSelected">
+                    <Icon Name="trash" Size="15" />
+                    删除选中 @_selectedIds.Count 条
+                </button>
+            }
+        </div>
+    </section>
+
+    <section class="card">
+        @if (!_records.Any())
+        {
+            <div class="empty-state">暂无记录</div>
+        }
+        else
+        {
+            <div class="history-list">
+                <div class="history-row header">
+                    <span></span>
+                    <span>用户</span>
+                    <span>时间</span>
+                    <span>时长</span>
+                    <span>操作</span>
+                </div>
+
+                @foreach (var r in _records)
+                {
+                    <div class="history-row">
+                        <input type="checkbox" checked="@_selectedIds.Contains(r.Id)" @onchange="() => ToggleSelect(r.Id)" />
+                        <div class="row-main">
+                            <div class="avatar">@GetInitial(r.UserName)</div>
+                            <div class="history-user">@r.UserName</div>
+                        </div>
+                        <div>
+                            <div class="history-time">@GetTimeRange(r.StartTime, r.EndTime)</div>
+                            <div class="duration-track" style="margin-top:7px;">
+                                <div class="duration-fill" style="width:@GetDurationPercent(r.DurationSeconds)"></div>
+                            </div>
+                        </div>
+                        <span class="row-meta">@TimerService.FormatDuration(r.DurationSeconds)</span>
+                        <button class="btn btn-ghost btn-sm" @onclick="() => DeleteRecord(r.Id)">
+                            <Icon Name="trash" Size="13" />
+                            删除
+                        </button>
+                    </div>
+                }
+            </div>
+        }
+    </section>
+</div>
+
+@code {
+    private List<UseHistoryItem> _records = new();
+    private string _filterMode = "all";
+    private string _search = "";
+    private HashSet<int> _selectedIds = new();
+
+    protected override void OnInitialized() => LoadRecords();
+
+    private void LoadRecords()
+    {
+        _records = TimerService.GetHistory(_filterMode, _search);
+        _selectedIds.RemoveWhere(id => !_records.Any(r => r.Id == id));
+    }
+
+    private void ToggleSelect(int id)
+    {
+        if (!_selectedIds.Remove(id)) _selectedIds.Add(id);
+    }
+
+    private void DeleteRecord(int id)
+    {
+        TimerService.DeleteRecord(id);
+        LoadRecords();
+    }
+
+    private void DeleteSelected()
+    {
+        TimerService.DeleteRecords(_selectedIds.ToList());
+        _selectedIds.Clear();
+        LoadRecords();
+    }
+
+    private string GetDurationPercent(int seconds)
+    {
+        var max = Math.Max(_records.Select(r => r.DurationSeconds).DefaultIfEmpty(1).Max(), 1);
+        var pct = Math.Clamp(seconds / (double)max * 100, 6, 100);
+        return pct.ToString("F0") + "%";
+    }
+
+    private static string GetInitial(string value)
+        => string.IsNullOrWhiteSpace(value) ? "?" : value.Trim()[0].ToString();
+
+    private static string GetTimeRange(string start, string end)
+        => $"{FormatTime(start)} - {FormatTime(end)}";
+
+    private static string FormatTime(string value)
+        => value.Length >= 16 ? value.Substring(5, 11) : value;
+}

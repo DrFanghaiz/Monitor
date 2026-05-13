@@ -1,194 +1,199 @@
 """
-Timer frame: login view and fullscreen running view.
-Timer state is read from TimerService (single source of truth).
+Timer frame — login view and running timer view.
+Uses grid layout for smooth resize. No fixed dimensions.
 """
 import customtkinter as ctk
 from PIL import ImageTk
 from app.presentation.desktop.theme import (
-    COLOR_APPLE_BG, COLOR_CARD_WHITE, COLOR_TEXT_PRIMARY, COLOR_TEXT_MUTED,
-    COLOR_ACCENT_BLUE, COLOR_ACCENT_CYAN, COLOR_ACCENT_RED, COLOR_ACCENT_GREEN,
-    COLOR_RUNNING_BG, COLOR_CARD_ALT, COLOR_BORDER_SOFT,
-    FONT_NORMAL, FONT_TIMER, FONT_TIMER_LABEL
+    COLOR_BG, COLOR_CARD, COLOR_TEXT, COLOR_TEXT_SECONDARY, COLOR_TEXT_MUTED,
+    COLOR_BLUE, COLOR_BLUE_HOVER, COLOR_CYAN, COLOR_RED, COLOR_RED_HOVER,
+    COLOR_GREEN, COLOR_RUNNING_BG, COLOR_BORDER,
+    FONT_TITLE, FONT_HEADING, FONT_BODY, FONT_SMALL, FONT_TIMER
 )
 from avatar import create_avatar
 from logger import app_logger
 
 
 class TimerFrame(ctk.CTkFrame):
-    """Check-in UI driven by TimerService."""
+    """Check-in UI — responsive, no fixed sizes."""
 
     def __init__(self, master, **kwargs):
-        super().__init__(master, fg_color=COLOR_APPLE_BG, corner_radius=0, **kwargs)
+        super().__init__(master, fg_color=COLOR_BG, corner_radius=0, **kwargs)
         self.master = master
         self._after_id = None
         self.avatar_image = None
         self.current_user_name = ""
 
-        self.card = ctk.CTkFrame(
-            self, fg_color=COLOR_CARD_WHITE, corner_radius=28, width=540, height=460,
-            border_width=1, border_color=COLOR_BORDER_SOFT
-        )
-        self.card.place(relx=0.5, rely=0.5, anchor="center")
-        self.card.grid_propagate(False)
+        # Full-frame container — grid-based, fully responsive
+        self.grid_rowconfigure(0, weight=1)
+        self.grid_columnconfigure(0, weight=1)
 
-        self.view_login = ctk.CTkFrame(self.card, fg_color="transparent")
-        self.view_running = ctk.CTkFrame(self.card, fg_color=COLOR_RUNNING_BG)
+        # Login view and running view share the same grid cell
+        self.view_login = ctk.CTkFrame(self, fg_color="transparent")
+        self.view_running = ctk.CTkFrame(self, fg_color=COLOR_RUNNING_BG)
 
-        self.setup_login_ui()
-        self.setup_running_ui()
-        self.view_login.place(relx=0.5, rely=0.5, anchor="center", relwidth=1, relheight=1)
+        self._build_login()
+        self._build_running()
+        self.view_login.grid(row=0, column=0, sticky="nsew")
 
-    def setup_login_ui(self):
-        box = ctk.CTkFrame(self.view_login, fg_color="transparent")
-        box.place(relx=0.5, rely=0.5, anchor="center")
+    def _build_login(self):
+        self.view_login.grid_rowconfigure(0, weight=1)
+        self.view_login.grid_rowconfigure(2, weight=1)
+        self.view_login.grid_columnconfigure(0, weight=1)
+        self.view_login.grid_columnconfigure(2, weight=1)
 
-        self.toast = ctk.CTkFrame(box, fg_color="#0D9488", corner_radius=22, height=42)
-        self.lbl_toast = ctk.CTkLabel(
-            self.toast, text="", font=("Segoe UI", 13, "bold"), text_color="#FFFFFF"
-        )
-        self.lbl_toast.pack(padx=24, pady=8)
+        # Centered content column
+        content = ctk.CTkFrame(self.view_login, fg_color="transparent")
+        content.grid(row=1, column=1)
 
-        badge = ctk.CTkFrame(box, fg_color=COLOR_CARD_ALT, corner_radius=18)
-        badge.pack(pady=(0, 18))
-        ctk.CTkLabel(
-            badge, text="  LIVE SESSION  ", font=("Segoe UI", 11, "bold"),
-            text_color=COLOR_ACCENT_CYAN
-        ).pack(padx=10, pady=6)
+        # Toast
+        self.toast = ctk.CTkFrame(content, fg_color=COLOR_GREEN, corner_radius=8, height=36)
+        self.lbl_toast = ctk.CTkLabel(self.toast, text="", font=FONT_SMALL,
+                                       text_color="#FFFFFF")
+        self.lbl_toast.pack(padx=20, pady=6)
 
-        ctk.CTkLabel(box, text="✦", font=("Georgia", 42), text_color=COLOR_ACCENT_BLUE).pack(pady=(0, 6))
-        ctk.CTkLabel(
-            box, text="开始当前使用会话", font=("Segoe UI", 30, "bold"),
-            text_color=COLOR_TEXT_PRIMARY
-        ).pack(pady=(4, 6))
-        ctk.CTkLabel(
-            box, text="输入姓名后进入专注计时，记录会自动同步到历史与统计。",
-            font=("Segoe UI", 13), text_color=COLOR_TEXT_MUTED
-        ).pack(pady=(0, 26))
+        # Card
+        card = ctk.CTkFrame(content, fg_color=COLOR_CARD, corner_radius=16,
+                            border_width=1, border_color=COLOR_BORDER)
+        card.pack(pady=(0, 0))
+
+        inner = ctk.CTkFrame(card, fg_color="transparent")
+        inner.pack(padx=56, pady=40)
+
+        ctk.CTkLabel(inner, text="开始当前使用会话",
+                     font=FONT_TITLE, text_color=COLOR_TEXT).pack(pady=(0, 8))
+        ctk.CTkLabel(inner, text="输入姓名后进入计时，记录自动同步到历史与统计",
+                     font=FONT_BODY, text_color=COLOR_TEXT_SECONDARY).pack(pady=(0, 24))
 
         self.entry_user = ctk.CTkEntry(
-            box, placeholder_text="输入当前使用者姓名", width=336, height=56,
-            font=("Segoe UI", 16), fg_color=COLOR_CARD_ALT,
-            border_width=1, border_color=COLOR_BORDER_SOFT,
-            corner_radius=18, text_color=COLOR_TEXT_PRIMARY,
+            inner, placeholder_text="输入当前使用者姓名", width=320, height=48,
+            font=("Microsoft YaHei UI", 15), fg_color="#F8F9FB",
+            border_width=1, border_color=COLOR_BORDER,
+            corner_radius=12, text_color=COLOR_TEXT,
             placeholder_text_color=COLOR_TEXT_MUTED
         )
-        self.entry_user.pack(pady=12)
+        self.entry_user.pack(pady=(0, 20))
 
         self.btn_start = ctk.CTkButton(
-            box, text="开始计时", width=220, height=54,
-            font=("Segoe UI", 15, "bold"), corner_radius=27,
-            fg_color=COLOR_ACCENT_BLUE, hover_color="#245BC3",
+            inner, text="开始计时", width=200, height=48,
+            font=("Microsoft YaHei UI", 14, "bold"), corner_radius=24,
+            fg_color=COLOR_BLUE, hover_color=COLOR_BLUE_HOVER,
             command=self.start_sequence
         )
-        self.btn_start.pack(pady=20)
+        self.btn_start.pack()
 
         self.progress = ctk.CTkProgressBar(
-            box, width=280, height=4, corner_radius=2,
-            progress_color=COLOR_ACCENT_CYAN, fg_color="#E2E8F0"
+            inner, width=200, height=3, corner_radius=2,
+            progress_color=COLOR_CYAN, fg_color=COLOR_BORDER
         )
 
-    def setup_running_ui(self):
-        self.view_running.configure(fg_color=COLOR_RUNNING_BG)
+    def _build_running(self):
+        self.view_running.grid_rowconfigure(0, weight=1)
+        self.view_running.grid_columnconfigure(0, weight=1)
+        self.view_running.grid_columnconfigure(2, weight=1)
 
-        center_box = ctk.CTkFrame(self.view_running, fg_color="transparent")
-        center_box.place(relx=0.5, rely=0.5, anchor="center")
+        center = ctk.CTkFrame(self.view_running, fg_color="transparent")
+        center.grid(row=1, column=1)
 
-        status_row = ctk.CTkFrame(center_box, fg_color="transparent")
-        status_row.pack(pady=(0, 28))
-
-        self.status_dot = ctk.CTkLabel(status_row, text="●", font=("Arial", 12),
-                                       text_color=COLOR_ACCENT_GREEN)
-        self.status_dot.pack(side="left", padx=(0, 8))
-
-        self.status_label = ctk.CTkLabel(
-            status_row, text="当前会话进行中", font=FONT_NORMAL, text_color="#8EA0B4"
-        )
+        # Status row
+        status_row = ctk.CTkFrame(center, fg_color="transparent")
+        status_row.pack(pady=(0, 20))
+        self.status_dot = ctk.CTkLabel(status_row, text="●", font=("Arial", 10),
+                                       text_color=COLOR_GREEN)
+        self.status_dot.pack(side="left", padx=(0, 6))
+        self.status_label = ctk.CTkLabel(status_row, text="会话进行中",
+                                         font=FONT_BODY, text_color="#94A3B8")
         self.status_label.pack(side="left")
 
-        self.avatar_label = ctk.CTkLabel(center_box, text="", width=100, height=100)
-        self.avatar_label.pack(pady=(0, 16))
+        # Avatar
+        self.avatar_label = ctk.CTkLabel(center, text="", width=80, height=80)
+        self.avatar_label.pack(pady=(0, 12))
 
-        self.lbl_user = ctk.CTkLabel(
-            center_box, text="User", font=("Segoe UI", 20, "bold"), text_color=COLOR_ACCENT_CYAN
-        )
-        self.lbl_user.pack(pady=(0, 10))
+        # User name
+        self.lbl_user = ctk.CTkLabel(center, text="User", font=FONT_HEADING,
+                                     text_color=COLOR_CYAN)
+        self.lbl_user.pack(pady=(0, 8))
 
-        self.lbl_timer = ctk.CTkLabel(center_box, text="00:00:00", font=FONT_TIMER, text_color="#F8FAFC")
-        self.lbl_timer.pack(pady=30)
+        # Timer
+        self.lbl_timer = ctk.CTkLabel(center, text="00:00:00", font=FONT_TIMER,
+                                      text_color="#F8FAFC")
+        self.lbl_timer.pack(pady=20)
 
-        self.lbl_time_hint = ctk.CTkLabel(
-            center_box, text="已持续使用时长", font=FONT_TIMER_LABEL, text_color="#8EA0B4"
-        )
-        self.lbl_time_hint.pack(pady=(0, 40))
+        self.lbl_time_hint = ctk.CTkLabel(center, text="已持续使用时长",
+                                          font=FONT_BODY, text_color="#94A3B8")
+        self.lbl_time_hint.pack(pady=(0, 32))
 
-        btn_box = ctk.CTkFrame(center_box, fg_color="transparent")
-        btn_box.pack()
+        # Buttons
+        btn_row = ctk.CTkFrame(center, fg_color="transparent")
+        btn_row.pack()
 
         self.btn_stop = ctk.CTkButton(
-            btn_box, text="停止计时", width=160, height=50, corner_radius=25,
-            fg_color=COLOR_ACCENT_RED, hover_color="#D65554",
-            font=("Segoe UI", 14, "bold"), command=self.stop_timer
+            btn_row, text="停止计时", width=150, height=42, corner_radius=21,
+            fg_color=COLOR_RED, hover_color=COLOR_RED_HOVER,
+            font=("Microsoft YaHei UI", 13, "bold"), command=self.stop_timer
         )
-        self.btn_stop.pack(side="left", padx=12)
+        self.btn_stop.pack(side="left", padx=8)
 
         self.btn_compact = ctk.CTkButton(
-            btn_box, text="悬浮窗", width=140, height=50, corner_radius=25,
-            fg_color="#243246", hover_color="#32445E", text_color="#E2E8F0",
-            font=("Segoe UI", 14, "bold"), command=self.master.switch_to_compact_mode
+            btn_row, text="悬浮窗", width=120, height=42, corner_radius=21,
+            fg_color="#334155", hover_color="#475569", text_color="#E2E8F0",
+            font=("Microsoft YaHei UI", 13), command=self.master.switch_to_compact_mode
         )
-        self.btn_compact.pack(side="left", padx=12)
+        self.btn_compact.pack(side="left", padx=8)
+
+    # ── State transitions ────────────────────────────────────────────
 
     def start_sequence(self):
         user = self.entry_user.get().strip()
         if not user:
-            self.show_toast("请先输入姓名", "#FFEBEE", "#C62828")
+            self.show_toast("请先输入姓名", COLOR_RED, "#FFFFFF")
             return
         self.current_user_name = user
         self.entry_user.configure(state="disabled")
-        self.btn_start.configure(state="disabled", text="正在启动...")
-        self.progress.pack(pady=10)
-        self.loading_val = 0
-        self.animate()
+        self.btn_start.configure(state="disabled", text="启动中...")
+        self.progress.pack(pady=(12, 0))
+        self._animate_progress(0)
 
-    def animate(self):
-        if self.loading_val < 1.05:
-            self.loading_val += 0.05
-            self.progress.set(self.loading_val)
-            self.after(20, self.animate)
+    def _animate_progress(self, val):
+        if val < 1.0:
+            self.progress.set(val)
+            self.after(15, lambda: self._animate_progress(val + 0.06))
         else:
-            self.view_login.place_forget()
-            self.lbl_user.configure(text=self.current_user_name)
+            self._enter_running()
 
-            try:
-                pil_image = create_avatar(self.current_user_name, 100)
-                self.avatar_image = ImageTk.PhotoImage(pil_image)
-                self.avatar_label.configure(image=self.avatar_image)
-            except Exception:
-                pass
+    def _enter_running(self):
+        self.view_login.grid_remove()
+        self.lbl_user.configure(text=self.current_user_name)
+        try:
+            pil_image = create_avatar(self.current_user_name, 80)
+            self.avatar_image = ImageTk.PhotoImage(pil_image)
+            self.avatar_label.configure(image=self.avatar_image)
+        except Exception:
+            pass
 
-            self.master.svc.timer.start_timer(self.current_user_name)
-            app_logger.user_login(self.current_user_name)
+        self.master.svc.timer.start_timer(self.current_user_name)
+        app_logger.user_login(self.current_user_name)
 
-            self.update_timer()
-            self.view_running.place(relx=0.5, rely=0.5, anchor="center", relwidth=1, relheight=1)
-            self.transition_to_fullscreen()
+        self.update_timer()
+        self.view_running.grid(row=0, column=0, sticky="nsew")
+        self._apply_fullscreen_style()
 
-    def transition_to_fullscreen(self):
-        self.master.sidebar_frame.grid_forget()
+    def _apply_fullscreen_style(self):
+        self.master.sidebar_frame.grid_remove()
         self.configure(fg_color=COLOR_RUNNING_BG)
-        self.card.configure(fg_color=COLOR_RUNNING_BG, border_width=0, border_color=COLOR_RUNNING_BG)
-        self.card.place_forget()
-        self.card.place(relx=0, rely=0, anchor="nw", relwidth=1, relheight=1)
-        self.card.configure(corner_radius=0)
+
+    def _restore_normal_style(self):
+        self.configure(fg_color=COLOR_BG)
+        self.master.sidebar_frame.grid()
 
     def update_timer(self):
         if self.master.svc.timer.is_running:
             state = self.master.svc.timer.get_state()
             time_str = state["elapsed_formatted"]
             self.lbl_timer.configure(text=time_str)
-            if hasattr(self.master, "compact_frame"):
+            if hasattr(self.master, "compact_frame") and self.master._compact_frame:
                 self.master.compact_frame.lbl_mini_timer.configure(text=time_str)
-            if hasattr(self.master, "tray_manager") and self.master.tray_manager:
+            if self.master.tray_manager:
                 self.master.tray_manager.update_tooltip(f"计时中 {time_str}")
             self._after_id = self.after(1000, self.update_timer)
 
@@ -198,25 +203,15 @@ class TimerFrame(ctk.CTkFrame):
                 self.after_cancel(self._after_id)
                 self._after_id = None
             result = self.master.svc.timer.stop_timer()
-            self.view_running.place_forget()
-            self.reset_login()
-            self.view_login.place(relx=0.5, rely=0.5, anchor="center", relwidth=1, relheight=1)
-            self.transition_from_fullscreen()
+            self.view_running.grid_remove()
+            self._restore_normal_style()
+            self._reset_login()
+            self.view_login.grid(row=0, column=0, sticky="nsew")
             if show_toast and result:
-                self.show_toast("记录已保存", "#E8F5E9", "#2E7D32")
+                self.show_toast("记录已保存", COLOR_GREEN, "#FFFFFF")
                 app_logger.user_logout(result["user_name"], result["duration_formatted"])
 
-    def transition_from_fullscreen(self):
-        self.card.place_forget()
-        self.card.configure(
-            width=540, height=460, corner_radius=28, fg_color=COLOR_CARD_WHITE,
-            border_width=1, border_color=COLOR_BORDER_SOFT
-        )
-        self.card.place(relx=0.5, rely=0.5, anchor="center")
-        self.configure(fg_color=COLOR_APPLE_BG)
-        self.master.sidebar_frame.grid(row=0, column=0, sticky="nsew")
-
-    def reset_login(self):
+    def _reset_login(self):
         self.entry_user.configure(state="normal")
         self.entry_user.delete(0, "end")
         self.btn_start.configure(state="normal", text="开始计时")
@@ -226,5 +221,5 @@ class TimerFrame(ctk.CTkFrame):
     def show_toast(self, msg, bg, fg):
         self.lbl_toast.configure(text=msg, text_color=fg)
         self.toast.configure(fg_color=bg)
-        self.toast.pack(side="top", pady=(10, 0), before=self.entry_user)
+        self.toast.pack(side="top", pady=(0, 12), before=self.entry_user)
         self.after(3000, lambda: self.toast.pack_forget())

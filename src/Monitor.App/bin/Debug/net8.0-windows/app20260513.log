@@ -1,0 +1,42 @@
+2026-05-13 21:21:53 | INFORMATION | RemoteMonitorService started
+2026-05-13 21:21:53 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-13 21:21:53 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83
+2026-05-13 21:24:22 | INFORMATION | RemoteMonitorService started
+2026-05-13 21:24:22 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-13 21:24:22 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\bin\Debug\net8.0-windows'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83
+2026-05-13 21:35:23 | INFORMATION | RemoteMonitorService started
+2026-05-13 21:35:23 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-13 21:35:23 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83
+2026-05-13 21:38:52 | INFORMATION | RemoteMonitorService started
+2026-05-13 21:38:52 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-13 21:38:52 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\bin\Debug\net8.0-windows'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83
+2026-05-13 21:49:27 | INFORMATION | RemoteMonitorService started
+2026-05-13 21:49:27 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-13 21:49:27 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\bin\Debug\net8.0-windows'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83
+2026-05-13 22:02:49 | INFORMATION | RemoteMonitorService started
+2026-05-13 22:02:49 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-13 22:02:49 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\bin\Debug\net8.0-windows'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83

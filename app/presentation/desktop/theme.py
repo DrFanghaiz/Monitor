@@ -1,82 +1,82 @@
 """
-Unified theme constants — colors, fonts, dimensions.
-Single source of truth for all desktop UI styling.
+Unified theme — clean modern palette, single font stack.
 """
 import customtkinter as ctk
 
-# ===== Mist dashboard palette =====
-# Main backgrounds
-COLOR_APPLE_BG = "#E8EEF5"
-COLOR_CARD_WHITE = "#F9FBFD"
-COLOR_GLASS_BG = "#F1F5F9"
-COLOR_PANEL_SOFT = "#EDF3F8"
-COLOR_CARD_ALT = "#F3F7FB"
+# ===== Backgrounds =====
+COLOR_BG = "#F5F6F8"
+COLOR_CARD = "#FFFFFF"
+COLOR_CARD_ALT = "#F8F9FB"
+COLOR_RUNNING_BG = "#0F172A"
 
-# Text colors
-COLOR_TEXT_PRIMARY = "#17212B"
-COLOR_TEXT_SECONDARY = "#617182"
-COLOR_TEXT_MUTED = "#8B9AAF"
+# ===== Text =====
+COLOR_TEXT = "#1E293B"
+COLOR_TEXT_SECONDARY = "#64748B"
+COLOR_TEXT_MUTED = "#94A3B8"
 
-# Accent colors
-COLOR_ACCENT_BLUE = "#2D6CDF"
-COLOR_ACCENT_PURPLE = "#7266F0"
-COLOR_ACCENT_CYAN = "#4BB7D8"
-COLOR_ACCENT_RED = "#E66867"
-COLOR_ACCENT_GREEN = "#2FB686"
-COLOR_ACCENT_ORANGE = "#F0A44B"
+# ===== Accent =====
+COLOR_BLUE = "#3B82F6"
+COLOR_BLUE_HOVER = "#2563EB"
+COLOR_RED = "#EF4444"
+COLOR_RED_HOVER = "#DC2626"
+COLOR_GREEN = "#22C55E"
+COLOR_CYAN = "#06B6D4"
+COLOR_PURPLE = "#8B5CF6"
+COLOR_ORANGE = "#F59E0B"
 
-# UI elements
-COLOR_SEPARATOR = "#D9E2EC"
-COLOR_BORDER_SOFT = "#CFD9E4"
+# ===== Borders =====
+COLOR_BORDER = "#E2E8F0"
+
+# ===== Sidebar (dark) =====
+COLOR_SIDEBAR_BG = "#111827"
+COLOR_SIDEBAR_NAV = "#9CA3AF"
+COLOR_SIDEBAR_NAV_HOVER = "#1F2937"
+COLOR_SIDEBAR_NAV_ACTIVE = "#1E3A5F"
+COLOR_SIDEBAR_ACCENT = "#60A5FA"
+
+# ===== Compact window =====
 COLOR_TRANSPARENT_KEY = "#000001"
-COLOR_RUNNING_BG = "#0E1726"
-COLOR_RUNNING_CARD = "#172335"
+COLOR_COMPACT_BG = "#1E293B"
 
-# Sidebar
-COLOR_SIDEBAR_BG = "#101A29"
-COLOR_SIDEBAR_CARD = "#162234"
-COLOR_SIDEBAR_NAV_TEXT = "#8EA0B4"
-COLOR_SIDEBAR_NAV_HOVER = "#1A2940"
-COLOR_SIDEBAR_NAV_ACTIVE = "#20314A"
+# ===== Fonts (single consistent stack) =====
+FONT_TITLE = ("Microsoft YaHei UI", 24, "bold")
+FONT_HEADING = ("Microsoft YaHei UI", 16, "bold")
+FONT_BODY = ("Microsoft YaHei UI", 13)
+FONT_SMALL = ("Microsoft YaHei UI", 11)
+FONT_TIMER = ("Consolas", 72, "bold")
+FONT_NANO_TIMER = ("Consolas", 18, "bold")
 
-# Buttons / states
-COLOR_BUTTON_NEUTRAL = "#E7EDF4"
-COLOR_BUTTON_NEUTRAL_HOVER = "#DCE6F0"
-COLOR_SUCCESS_BG = "#E7F7F1"
-COLOR_DANGER_BG = "#FCEBEA"
-COLOR_WARNING_BG = "#FFF3E4"
-
-# ===== Fonts =====
-FONT_TITLE = ("SF Pro Display", 30, "bold")
-FONT_BOLD = ("SF Pro Text", 16, "bold")
-FONT_NORMAL = ("SF Pro Text", 14)
-FONT_TIMER = ("SF Mono", 96, "bold")
-FONT_TIMER_LABEL = ("SF Pro Text", 14)
-FONT_NANO_TIMER = ("SF Mono", 18)
-FONT_NANO_USER = ("SF Pro Text", 12, "bold")
-
-# Fallback fonts
-try:
-    import tkinter.font as tkfont
-    if "SF Pro Display" not in tkfont.families():
-        FONT_TITLE = ("Segoe UI", 30, "bold")
-        FONT_BOLD = ("Segoe UI", 16, "bold")
-        FONT_NORMAL = ("Segoe UI", 14)
-        FONT_TIMER = ("Consolas", 96, "bold")
-        FONT_TIMER_LABEL = ("Segoe UI", 14)
-        FONT_NANO_TIMER = ("Consolas", 18)
-        FONT_NANO_USER = ("Segoe UI", 12, "bold")
-except Exception:
-    FONT_TITLE = ("Segoe UI", 30, "bold")
-    FONT_BOLD = ("Segoe UI", 16, "bold")
-    FONT_NORMAL = ("Segoe UI", 14)
-    FONT_TIMER = ("Consolas", 96, "bold")
-    FONT_TIMER_LABEL = ("Segoe UI", 14)
-    FONT_NANO_TIMER = ("Consolas", 18)
-    FONT_NANO_USER = ("Segoe UI", 12, "bold")
-
-# Chinese fallback fonts
-FONT_CN_TITLE = ("Microsoft YaHei UI", 22, "bold")
-FONT_CN_HEADING = ("Microsoft YaHei UI", 14, "bold")
-FONT_CN_BODY = ("Microsoft YaHei UI", 12)
-FONT_CN_SMALL = ("Microsoft YaHei UI", 11)
+# Legacy aliases for minimal diff
+COLOR_APPLE_BG = COLOR_BG
+COLOR_CARD_WHITE = COLOR_CARD
+COLOR_CARD_ALT = COLOR_CARD_ALT
+COLOR_TEXT_PRIMARY = COLOR_TEXT
+COLOR_TEXT_MUTED = COLOR_TEXT_MUTED
+COLOR_ACCENT_BLUE = COLOR_BLUE
+COLOR_ACCENT_RED = COLOR_RED
+COLOR_ACCENT_GREEN = COLOR_GREEN
+COLOR_ACCENT_CYAN = COLOR_CYAN
+COLOR_SEPARATOR = COLOR_BORDER
+COLOR_BORDER_SOFT = COLOR_BORDER
+COLOR_BUTTON_NEUTRAL = "#F1F5F9"
+COLOR_BUTTON_NEUTRAL_HOVER = "#E2E8F0"
+COLOR_SUCCESS_BG = "#ECFDF5"
+COLOR_DANGER_BG = "#FEF2F2"
+COLOR_WARNING_BG = "#FFFBEB"
+COLOR_SIDEBAR_CARD = "#1F2937"
+COLOR_SIDEBAR_NAV_TEXT = COLOR_SIDEBAR_NAV
+COLOR_SIDEBAR_NAV_HOVER = COLOR_SIDEBAR_NAV_HOVER
+COLOR_SIDEBAR_NAV_ACTIVE = COLOR_SIDEBAR_NAV_ACTIVE
+COLOR_RUNNING_CARD = "#1E293B"
+COLOR_ACCENT_PURPLE = COLOR_PURPLE
+COLOR_ACCENT_ORANGE = COLOR_ORANGE
+COLOR_GLASS_BG = COLOR_BG
+COLOR_PANEL_SOFT = "#F0F2F5"
+FONT_NORMAL = ("Microsoft YaHei UI", 13)
+FONT_TIMER_LABEL = ("Microsoft YaHei UI", 13)
+FONT_NANO_USER = ("Microsoft YaHei UI", 11, "bold")
+FONT_CN_TITLE = FONT_TITLE
+FONT_CN_HEADING = FONT_HEADING
+FONT_CN_BODY = FONT_BODY
+FONT_CN_SMALL = FONT_SMALL
+FONT_BOLD = FONT_HEADING

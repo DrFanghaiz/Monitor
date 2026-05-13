@@ -1,6 +1,10 @@
 """
-远程控制检测模块
+远程控制检测模块 — Legacy implementation.
 通过检测目标进程判断电脑是否正在被远程控制（向日葵、RDP、TeamViewer等）
+
+LEGACY: 此模块保留作为 remote_monitor_service 的底层实现。
+新代码应通过 app.domain.services.remote_monitor_service 访问。
+TODO: 将进程检测逻辑内联到 remote_monitor_service，然后删除此文件。
 """
 import subprocess
 import threading

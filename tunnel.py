@@ -1,7 +1,10 @@
 """
-公网隧道管理模块
-支持 Cloudflare Tunnel (cloudflared) 和 ngrok
-将本地 Web 服务暴露到公网
+公网隧道管理模块 — Legacy implementation.
+支持 Cloudflare Tunnel (cloudflared) 和 ngrok，将本地 Web 服务暴露到公网。
+
+LEGACY: 此模块保留作为 tunnel_service 的底层实现。
+新代码应通过 app.domain.services.tunnel_service 访问。
+TODO: 将隧道逻辑内联到 tunnel_service，然后删除此文件。
 """
 import subprocess
 import threading

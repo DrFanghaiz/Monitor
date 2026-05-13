@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>公用机实时状态监控</title>
+<style>
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --card-hover: #273549;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --accent: #38bdf8;
+    --green: #22c55e;
+    --red: #ef4444;
+    --yellow: #eab308;
+    --border: #334155;
+    --radius: 16px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+    font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 20px;
+}
+.container { max-width: 900px; margin:0 auto; }
+
+/* header */
+.header {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 24px 30px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.header h1 { font-size: 22px; font-weight: 700; }
+.header .time { color: var(--muted); font-size: 14px; }
+
+/* status badge */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 15px;
+}
+.status-badge.idle { background: #064e3b; color: var(--green); }
+.status-badge.in_use { background: #422006; color: var(--yellow); }
+.status-badge.remote { background: #450a0a; color: var(--red); }
+.status-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.status-badge.idle .status-dot { background: var(--green); box-shadow: 0 0 8px var(--green); }
+.status-badge.in_use .status-dot { background: var(--yellow); box-shadow: 0 0 8px var(--yellow); }
+.status-badge.remote .status-dot { background: var(--red); box-shadow: 0 0 8px var(--red); animation: pulse 1.5s infinite; }
+@keyframes pulse { 0%,100% { opacity:1 } 50% { opacity:0.4 } }
+
+/* cards */
+.card {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 24px 30px;
+    margin-bottom: 16px;
+}
+.card h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--muted);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.info-row:last-child { border-bottom: none; }
+.info-row .label { color: var(--muted); font-size: 14px; }
+.info-row .value { font-weight: 600; font-size: 15px; font-variant-numeric: tabular-nums; }
+
+/* timeline */
+.timeline-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+}
+.timeline-item:last-child { border-bottom: none; }
+.timeline-bar {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    min-width: 60px;
+}
+.timeline-bar.normal { background: linear-gradient(90deg, var(--accent), #6366f1); }
+.timeline-bar.remote { background: linear-gradient(90deg, var(--red), #f97316); }
+.timeline-time { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.timeline-user { font-size: 14px; font-weight: 600; white-space: nowrap; }
+
+/* reservation */
+.res-item {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.res-item:last-child { border-bottom: none; }
+.res-user { font-weight: 600; font-size: 14px; }
+.res-time { color: var(--accent); font-size: 13px; }
+.res-status {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+.res-status.upcoming { background: #1e293b; color: var(--muted); }
+.res-status.active { background: #064e3b; color: var(--green); }
+
+/* refresh bar */
+.refresh-bar {
+    text-align: center;
+    padding: 12px;
+    color: var(--muted);
+    font-size: 12px;
+}
+.empty { text-align: center; padding: 20px; color: var(--muted); font-size: 14px; }
+
+/* login overlay */
+.login-overlay {
+    position: fixed;
+    top:0; left:0; right:0; bottom:0;
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.login-box {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 40px;
+    text-align: center;
+    width: 320px;
+}
+.login-box h2 { margin-bottom: 24px; font-size: 20px; }
+.login-box input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 12px;
+}
+.login-box input:focus { border-color: var(--accent); }
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: var(--accent);
+    color: #000;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.login-box button:hover { opacity: 0.9; }
+.login-error { color: var(--red); font-size: 13px; margin-top: 8px; display: none; }
+</style>
+</head>
+<body>
+
+<div id="app">
+    <div id="login" class="login-overlay">
+        <div class="login-box">
+            <h2>🔐 身份验证</h2>
+            <p style="color:var(--muted);font-size:13px;margin-bottom:16px;">请输入访问密码查看状态</p>
+            <input type="password" id="pwdInput" placeholder="输入密码..." autofocus>
+            <button onclick="doLogin()">确认</button>
+            <div class="login-error" id="loginError">密码错误</div>
+        </div>
+    </div>
+
+    <div class="container" id="dashboard" style="display:none">
+        <div class="header">
+            <h1>🖥 公用机实时状态</h1>
+            <div>
+                <span class="status-badge" id="statusBadge"></span>
+            </div>
+            <span class="time" id="updateTime"></span>
+        </div>
+
+        <div class="card">
+            <h2>📊 当前详情</h2>
+            <div id="detailsContent"></div>
+        </div>
+
+        <div class="card">
+            <h2>📋 今日使用记录</h2>
+            <div id="recordsContent"></div>
+        </div>
+
+        <div class="card">
+            <h2>📅 今日预约</h2>
+            <div id="reservationsContent"></div>
+        </div>
+
+        <div class="refresh-bar">
+            自动刷新间隔: 5秒 | 数据时间: <span id="dataTime">--</span>
+        </div>
+    </div>
+</div>
+
+<script>
+let authToken = '';
+const STATUS_MAP = { idle: '🟢 空闲', in_use: '🟡 使用中', remote_controlled: '🔴 远程控制中' };
+const STATUS_CLASS = { idle: 'idle', in_use: 'in_use', remote_controlled: 'remote' };
+
+function doLogin() {
+    const pwd = document.getElementById('pwdInput').value;
+    if (!pwd) return;
+    fetch('/api/auth', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: pwd })
+    })
+    .then(r => r.json())
+    .then(data => {
+        if (data.success) {
+            authToken = data.token;
+            document.getElementById('login').style.display = 'none';
+            document.getElementById('dashboard').style.display = 'block';
+            document.getElementById('loginError').style.display = 'none';
+            fetchStatus();
+            setInterval(fetchStatus, 5000);
+        } else {
+            document.getElementById('loginError').style.display = 'block';
+        }
+    });
+}
+
+document.getElementById('pwdInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') doLogin();
+});
+
+function fetchStatus() {
+    fetch('/api/status?token=' + encodeURIComponent(authToken))
+        .then(r => {
+            if (r.status === 401 || r.status === 403) {
+                location.reload();
+                return;
+            }
+            return r.json();
+        })
+        .then(data => {
+            if (!data) return;
+            renderStatus(data);
+        })
+        .catch(() => {});
+}
+
+function renderStatus(data) {
+    const badge = document.getElementById('statusBadge');
+    const st = data.computer_status || 'idle';
+    badge.className = 'status-badge ' + (STATUS_CLASS[st] || 'idle');
+    badge.innerHTML = '<span class="status-dot"></span>' + (STATUS_MAP[st] || '未知');
+
+    document.getElementById('updateTime').textContent = '刷新: ' + (data.timestamp || '');
+    document.getElementById('dataTime').textContent = data.timestamp || '--';
+
+    // details
+    let detailHTML = '';
+    if (data.local_use && data.local_use.current_user) {
+        detailHTML += '<div class="info-row"><span class="label">当前使用者</span><span class="value">' + data.local_use.current_user + '</span></div>';
+        detailHTML += '<div class="info-row"><span class="label">开始使用时间</span><span class="value">' + data.local_use.start_time + '</span></div>';
+        detailHTML += '<div class="info-row"><span class="label">已使用时长</span><span class="value">' + data.local_use.elapsed_formatted + '</span></div>';
+    }
+    if (data.remote_control && data.remote_control.is_active) {
+        detailHTML += '<div class="info-row"><span class="label">远程控制方式</span><span class="value" style="color:var(--red)">' + data.remote_control.remote_type + '</span></div>';
+        detailHTML += '<div class="info-row"><span class="label">远程控制开始</span><span class="value">' + data.remote_control.start_time + '</span></div>';
+        detailHTML += '<div class="info-row"><span class="label">已控制时长</span><span class="value" style="color:var(--red)">' + data.remote_control.elapsed_formatted + '</span></div>';
+    }
+    if (!data.local_use || !data.local_use.current_user) {
+        if (!data.remote_control || !data.remote_control.is_active) {
+            detailHTML += '<div class="empty">当前电脑空闲，无人使用</div>';
+        }
+    }
+    document.getElementById('detailsContent').innerHTML = detailHTML;
+
+    // records
+    let recHTML = '';
+    if (data.today_records && data.today_records.length > 0) {
+        data.today_records.forEach(r => {
+            recHTML += '<div class="timeline-item">';
+            recHTML += '<span class="timeline-user">' + r.user_name + '</span>';
+            recHTML += '<span class="timeline-time">' + (r.start_time || '').slice(11,16) + ' - ' + (r.end_time || '').slice(11,16) + '</span>';
+            let durMin = Math.floor((r.duration_seconds||0) / 60);
+            recHTML += '<span class="timeline-time">' + durMin + '分钟</span>';
+            recHTML += '</div>';
+        });
+    } else {
+        recHTML += '<div class="empty">今日暂无使用记录</div>';
+    }
+    document.getElementById('recordsContent').innerHTML = recHTML;
+
+    // reservations
+    let resHTML = '';
+    if (data.today_reservations && data.today_reservations.length > 0) {
+        data.today_reservations.forEach(r => {
+            let statusClass = 'upcoming';
+            let statusText = '等待中';
+            resHTML += '<div class="res-item">';
+            resHTML += '<span class="res-user">' + r.user_name + '</span>';
+            resHTML += '<span class="res-time">' + String(r.start_hour).padStart(2,'0') + ':00 - ' + String(r.end_hour).padStart(2,'0') + ':00</span>';
+            resHTML += '<span class="res-status ' + statusClass + '">' + statusText + '</span>';
+            resHTML += '</div>';
+        });
+    } else {
+        resHTML += '<div class="empty">今日暂无预约</div>';
+    }
+    document.getElementById('reservationsContent').innerHTML = resHTML;
+}
+</script>
+</body>
+</html>

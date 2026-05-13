@@ -1,0 +1,70 @@
+/*
+ * Design Tokens — Monitor UI
+ * Deep console + mist data panels + cyan-blue signal highlights
+ */
+
+:root {
+  /* ===== Font stack ===== */
+  --font-display: 'Space Grotesk', 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', sans-serif;
+  --font-body: 'Inter', 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Consolas', 'Menlo', monospace;
+
+  /* ===== Backgrounds ===== */
+  --bg-root: #080C14;
+  --bg-surface: #0D1320;
+  --bg-card: #131C2E;
+  --bg-card-hover: #192438;
+  --bg-card-alt: #0F1827;
+  --bg-input: #0D1320;
+  --bg-overlay: rgba(4, 8, 16, 0.72);
+  --bg-timer: #060B14;
+
+  /* ===== Text ===== */
+  --text-primary: #EDF2F9;
+  --text-secondary: #8FA0B8;
+  --text-muted: #556278;
+  --text-inverse: #0B111E;
+
+  /* ===== Accent — Cyan/Blue signal system ===== */
+  --accent-cyan: #38BDF8;
+  --accent-cyan-soft: rgba(56, 189, 248, 0.12);
+  --accent-cyan-glow: rgba(56, 189, 248, 0.28);
+  --accent-blue: #4F8CF7;
+  --accent-blue-soft: rgba(79, 140, 247, 0.12);
+  --accent-green: #22C55E;
+  --accent-green-soft: rgba(34, 197, 94, 0.12);
+  --accent-green-glow: rgba(34, 197, 94, 0.28);
+  --accent-red: #EF4444;
+  --accent-red-soft: rgba(239, 68, 68, 0.12);
+  --accent-red-glow: rgba(239, 68, 68, 0.28);
+  --accent-amber: #F59E0B;
+  --accent-amber-soft: rgba(245, 158, 11, 0.12);
+
+  /* ===== Borders ===== */
+  --border-subtle: #192438;
+  --border-default: #233048;
+  --border-strong: #314160;
+
+  /* ===== Radius ===== */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-card: 16px;
+  --radius-button: 9999px;
+  --radius-input: 12px;
+  --radius-badge: 9999px;
+  --radius-lg: 24px;
+
+  /* ===== Shadows ===== */
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.32), 0 0 0 1px var(--border-subtle);
+  --shadow-elevated: 0 4px 16px rgba(0, 0, 0, 0.48), 0 0 0 1px var(--border-default);
+  --shadow-glow: 0 0 20px var(--accent-cyan-glow);
+  --shadow-glow-green: 0 0 20px var(--accent-green-glow);
+  --shadow-glow-red: 0 0 20px var(--accent-red-glow);
+
+  /* ===== Transitions ===== */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}

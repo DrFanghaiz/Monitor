@@ -1,57 +1,70 @@
 """
-使用 PyInstaller 打包公用机管理系统为 EXE
-运行: python build_exe.py
+Build the current desktop app with PyInstaller.
+
+This packages the new `main.py` shell path while keeping the legacy
+customtkinter path available via `--legacy`.
 """
+from pathlib import Path
+import shutil
+import tempfile
+import os
 import subprocess
 import sys
-import os
+
 
 def main():
-    # 确保 pyinstaller 已安装
     try:
-        import PyInstaller
-        print(f"✓ PyInstaller 版本: {PyInstaller.__version__}")
-    except ImportError:
-        print("正在安装 PyInstaller...")
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "pyinstaller"])
-    
-    # 获取当前目录
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    os.chdir(script_dir)
-    
-    # PyInstaller 参数
+        import PyInstaller  # noqa: F401
+    except ImportError as exc:
+        raise SystemExit(
+            "PyInstaller is not installed in the current Python environment."
+        ) from exc
+
+    project_root = Path(__file__).resolve().parent
+    spec_file = project_root / "MonitorApp.spec"
+    frontend_dist = project_root / "frontend" / "dist" / "index.html"
+
+    if not frontend_dist.exists():
+        raise SystemExit(
+            "frontend/dist is missing. Run `cd frontend && npm run build` first."
+        )
+
+    temp_root = Path(tempfile.gettempdir()) / "monitor_pyinstaller"
+    work_dir = temp_root / "build"
+    dist_dir = temp_root / "dist"
+    final_dist_dir = project_root / "dist" / "MonitorApp"
+
+    if work_dir.exists():
+        shutil.rmtree(work_dir, ignore_errors=True)
+    if dist_dir.exists():
+        shutil.rmtree(dist_dir, ignore_errors=True)
+    if final_dist_dir.exists():
+        shutil.rmtree(final_dist_dir, ignore_errors=True)
+
+    os.chdir(project_root)
     args = [
-        "pyinstaller",
-        "--name=公用机管理系统",           # EXE 名称
-        "--onefile",                       # 打包为单个文件
-        "--windowed",                      # 无控制台窗口 (GUI 应用)
-        "--noconfirm",                     # 覆盖现有输出
-        # 添加隐藏导入（customtkinter 和其他库需要）
-        "--hidden-import=customtkinter",
-        "--hidden-import=PIL._tkinter_finder",
-        "--hidden-import=pystray._win32",
-        "--hidden-import=matplotlib.backends.backend_tkagg",
-        # 新增模块
-        "--hidden-import=remote_monitor",
-        "--hidden-import=web_server",
-        "--hidden-import=tunnel",
-        # 收集 customtkinter 的所有数据文件
-        "--collect-all=customtkinter",
-        # 包含 Web 模板目录
-        "--add-data=web;web",
-        # 入口点
-        "timer.py"
+        sys.executable,
+        "-m",
+        "PyInstaller",
+        "--noconfirm",
+        "--clean",
+        "--workpath",
+        str(work_dir),
+        "--distpath",
+        str(dist_dir),
+        str(spec_file),
     ]
-    
-    print("\n开始打包...")
-    print(f"命令: {' '.join(args)}\n")
-    
-    subprocess.run(args)
-    
-    print("\n" + "="*50)
-    print("打包完成！")
-    print(f"EXE 位置: {os.path.join(script_dir, 'dist', '公用机管理系统.exe')}")
-    print("="*50)
+
+    print("Building desktop app...")
+    print("Command:", " ".join(args))
+    subprocess.check_call(args)
+
+    built_dist_dir = dist_dir / "MonitorApp"
+    shutil.copytree(built_dist_dir, final_dist_dir)
+
+    print("\nBuild completed.")
+    print(f"Output: {final_dist_dir}")
+
 
 if __name__ == "__main__":
     main()

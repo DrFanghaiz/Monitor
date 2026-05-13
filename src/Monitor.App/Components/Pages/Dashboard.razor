@@ -1,0 +1,229 @@
+@page "/"
+@namespace Monitor.App.Components.Pages
+@inject StatusService StatusService
+@inject Services.TimerService TimerService
+@inject ReservationService ReservationService
+@implements IDisposable
+
+<PageTitle>控制台 · Monitor</PageTitle>
+
+<div class="page">
+    <header class="page-header">
+        <div>
+            <h1 class="page-title">
+                <span class="page-title-icon"><Icon Name="dashboard" Size="20" /></span>
+                控制台
+            </h1>
+            <p class="page-subtitle">@(_status?.Timestamp ?? DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))</p>
+        </div>
+        @if (_status != null)
+        {
+            <span class="status-badge @GetStatusClass(_status.ComputerStatus)">
+                <span class="status-dot @GetStatusClass(_status.ComputerStatus)"></span>
+                @GetStatusText(_status.ComputerStatus)
+            </span>
+        }
+    </header>
+
+    @if (_status != null)
+    {
+        <section class="card-elevated hero-card">
+            <div>
+                <div class="machine-row">
+                    <div class="machine-icon"><Icon Name="monitor" Size="22" /></div>
+                    <div>
+                        <div class="machine-title">公用计算机</div>
+                        <div class="machine-subtitle">
+                            @(TimerService.IsRunning ? $"当前使用者: {TimerService.CurrentUserName}" : "设备空闲，可以开始计时")
+                        </div>
+                    </div>
+                </div>
+
+                @if (!TimerService.IsRunning)
+                {
+                    <div class="quick-start">
+                        <input class="input" @bind="_startName" @bind:event="oninput" placeholder="输入姓名快速开始" />
+                        <button class="btn btn-primary" @onclick="StartTimer" disabled="@string.IsNullOrWhiteSpace(_startName)">
+                            <Icon Name="play" Size="15" />
+                            开始
+                        </button>
+                    </div>
+                }
+                else
+                {
+                    <div class="quick-start">
+                        <button class="btn btn-danger" @onclick="StopTimer">
+                            <Icon Name="stop" Size="15" />
+                            停止计时
+                        </button>
+                        <span class="message" style="margin-top:0;">正在记录 @TimerService.CurrentUserName 的使用时长</span>
+                    </div>
+                }
+
+                @if (_startMsg != null)
+                {
+                    <div class="message">@_startMsg</div>
+                }
+            </div>
+
+            <div class="current-session">
+                <div class="session-label">当前会话</div>
+                <div class="session-value">@_status.LocalUse.ElapsedFormatted</div>
+                <div class="row-subtitle">@(_status.LocalUse.CurrentUser ?? "未开始")</div>
+            </div>
+        </section>
+
+        <section class="metric-grid">
+            <div class="card">
+                <div class="metric-head">
+                    <div class="metric-label">今日使用记录</div>
+                    <span class="metric-icon"><Icon Name="history" Size="16" /></span>
+                </div>
+                <div class="metric-value">@_status.TodayRecords.Count</div>
+                <div class="metric-note">条会话</div>
+            </div>
+            <div class="card">
+                <div class="metric-head">
+                    <div class="metric-label">今日预约</div>
+                    <span class="metric-icon"><Icon Name="calendar" Size="16" /></span>
+                </div>
+                <div class="metric-value">@_status.TodayReservations.Count</div>
+                <div class="metric-note">项预约</div>
+            </div>
+            <div class="card">
+                <div class="metric-head">
+                    <div class="metric-label">远程控制</div>
+                    <span class="metric-icon"><Icon Name="shield" Size="16" /></span>
+                </div>
+                <div class="metric-value" style="font-size:24px;color:@GetRemoteColor();">
+                    @(_status.RemoteControl.IsRemote ? _status.RemoteControl.RemoteType : "安全")
+                </div>
+                <div class="metric-note">
+                    @(_status.RemoteControl.IsRemote ? $"已持续 {_status.RemoteControl.ElapsedFormatted}" : "未检测到远程会话")
+                </div>
+            </div>
+        </section>
+
+        <section class="split-grid">
+            <div class="card">
+                <h2 class="section-title"><Icon Name="history" Size="16" />今日活动</h2>
+                @if (!_status.TodayRecords.Any())
+                {
+                    <div class="empty-state">今日暂无使用记录</div>
+                }
+                else
+                {
+                    <div class="data-list">
+                        @foreach (var r in _status.TodayRecords.Take(10))
+                        {
+                            <div class="data-row">
+                                <div class="row-main">
+                                    <div class="avatar">@GetInitial(r.UserName)</div>
+                                    <div>
+                                        <div class="row-title">@r.UserName</div>
+                                        <div class="row-subtitle">@GetTimeRange(r.StartTime, r.EndTime)</div>
+                                    </div>
+                                </div>
+                                <div class="row-meta">@Services.TimerService.FormatDuration(r.DurationSeconds)</div>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+
+            <div class="card">
+                <h2 class="section-title"><Icon Name="calendar" Size="16" />今日预约</h2>
+                @if (!_status.TodayReservations.Any())
+                {
+                    <div class="empty-state">今日暂无预约</div>
+                }
+                else
+                {
+                    <div class="data-list">
+                        @foreach (var r in _status.TodayReservations.Take(10))
+                        {
+                            <div class="data-row">
+                                <div class="row-main">
+                                    <div class="avatar">@GetInitial(r.UserName)</div>
+                                    <div>
+                                        <div class="row-title">@r.UserName</div>
+                                        <div class="row-subtitle">@r.Date</div>
+                                    </div>
+                                </div>
+                                <span class="badge badge-warning">@($"{r.StartHour:D2}:00 - {r.EndHour:D2}:00")</span>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+        </section>
+    }
+</div>
+
+@code {
+    private AppStatus? _status;
+    private string _startName = "";
+    private string? _startMsg;
+    private System.Threading.Timer? _timer;
+
+    protected override void OnInitialized()
+    {
+        _status = StatusService.GetFullStatus();
+        _timer = new System.Threading.Timer(_ =>
+        {
+            InvokeAsync(() =>
+            {
+                _status = StatusService.GetFullStatus();
+                StateHasChanged();
+            });
+        }, null, 1000, 1000);
+    }
+
+    private void StartTimer()
+    {
+        if (TimerService.StartTimer(_startName))
+        {
+            _startMsg = "计时已开始";
+            _startName = "";
+            _status = StatusService.GetFullStatus();
+        }
+        else
+        {
+            _startMsg = "请输入姓名";
+        }
+    }
+
+    private void StopTimer()
+    {
+        TimerService.StopTimer();
+        _startMsg = "计时已停止";
+        _status = StatusService.GetFullStatus();
+    }
+
+    private string GetStatusClass(string status) => status switch
+    {
+        "remote_controlled" => "remote_controlled",
+        "in_use" => "in_use",
+        _ => "idle"
+    };
+
+    private string GetStatusText(string status) => status switch
+    {
+        "remote_controlled" => "远程控制中",
+        "in_use" => "使用中",
+        _ => "空闲"
+    };
+
+    private string GetRemoteColor() => _status?.RemoteControl.IsRemote == true ? "var(--danger)" : "var(--success)";
+
+    private static string GetInitial(string value)
+        => string.IsNullOrWhiteSpace(value) ? "?" : value.Trim()[0].ToString();
+
+    private static string GetTimeRange(string start, string end)
+        => $"{FormatTime(start)} - {FormatTime(end)}";
+
+    private static string FormatTime(string value)
+        => value.Length >= 16 ? value.Substring(11, 5) : value;
+
+    public void Dispose() => _timer?.Dispose();
+}

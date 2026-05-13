@@ -1,0 +1,146 @@
+@page "/settings"
+@namespace Monitor.App.Components.Pages
+@inject Infrastructure.Config.AppSettings AppSettings
+@inject Services.BackupService BackupService
+@using Monitor.App.Infrastructure.Security
+
+<PageTitle>设置 · Monitor</PageTitle>
+
+<div class="page">
+    <header class="page-header">
+        <div>
+            <h1 class="page-title">
+                <span class="page-title-icon"><Icon Name="settings" Size="20" /></span>
+                系统设置
+            </h1>
+            <p class="page-subtitle">密码、备份和本机配置</p>
+        </div>
+    </header>
+
+    <section class="settings-grid">
+        <div class="card">
+            <h2 class="section-title"><Icon Name="key" Size="16" />管理员密码</h2>
+            <div class="form-stack" style="max-width:380px;">
+                <input class="input" type="password" @bind="_adminOldPwd" @bind:event="oninput" placeholder="当前密码" />
+                <input class="input" type="password" @bind="_adminNewPwd" @bind:event="oninput" placeholder="新密码" />
+                <button class="btn btn-primary" @onclick="ChangeAdminPassword" disabled="@string.IsNullOrWhiteSpace(_adminNewPwd)">
+                    <Icon Name="key" Size="15" />
+                    确认修改
+                </button>
+            </div>
+            @if (!string.IsNullOrEmpty(_adminMsg))
+            {
+                <div class="message">@_adminMsg</div>
+            }
+        </div>
+
+        <div class="card">
+            <h2 class="section-title"><Icon Name="key" Size="16" />Web 访问密码</h2>
+            <div class="form-stack" style="max-width:380px;">
+                <input class="input" type="password" @bind="_webPwd" @bind:event="oninput" placeholder="新密码" />
+                <button class="btn btn-primary" @onclick="ChangeWebPassword" disabled="@string.IsNullOrWhiteSpace(_webPwd)">
+                    <Icon Name="key" Size="15" />
+                    确认修改
+                </button>
+            </div>
+            @if (!string.IsNullOrEmpty(_webMsg))
+            {
+                <div class="message">@_webMsg</div>
+            }
+        </div>
+
+        <div class="card">
+            <div class="toolbar" style="margin-bottom:14px;">
+                <h2 class="section-title" style="margin:0;"><Icon Name="database" Size="16" />数据备份</h2>
+                <button class="btn btn-ghost" @onclick="CreateBackup">
+                    <Icon Name="database" Size="15" />
+                    立即备份
+                </button>
+            </div>
+
+            @if (!_backups.Any())
+            {
+                <div class="empty-state">暂无备份</div>
+            }
+            else
+            {
+                <div class="data-list">
+                    @foreach (var b in _backups.Take(6))
+                    {
+                        <div class="data-row">
+                            <div>
+                                <div class="row-title">@b.Name</div>
+                                <div class="row-subtitle">@(b.IsManual ? "手动备份" : "自动备份")</div>
+                            </div>
+                            <div class="row-meta">@FormatFileSize(b.Size) · @b.Created</div>
+                        </div>
+                    }
+                </div>
+            }
+
+            @if (!string.IsNullOrEmpty(_backupMsg))
+            {
+                <div class="message">@_backupMsg</div>
+            }
+        </div>
+
+        <div class="card">
+            <h2 class="section-title"><Icon Name="info" Size="16" />系统信息</h2>
+            <div class="info-grid">
+                <span class="info-label">数据库</span><span>monitor.db</span>
+                <span class="info-label">备份目录</span><span>@AppSettings.BackupPath</span>
+                <span class="info-label">自动备份</span><span>@(AppSettings.AutoBackup ? "启用" : "禁用")</span>
+                <span class="info-label">备份保留</span><span>@AppSettings.BackupRetentionDays 天</span>
+                <span class="info-label">Tunnel</span><span>@AppSettings.TunnelMode</span>
+                <span class="info-label">远程检测</span><span>@(AppSettings.RemoteMonitorEnabled ? "启用" : "禁用")</span>
+                <span class="info-label">Web 端口</span><span>@AppSettings.WebServerPort</span>
+                <span class="info-label">主题</span><span>@AppSettings.Theme</span>
+            </div>
+        </div>
+    </section>
+</div>
+
+@code {
+    private string _adminOldPwd = "";
+    private string _adminNewPwd = "";
+    private string _webPwd = "";
+    private string _adminMsg = "";
+    private string _webMsg = "";
+    private string _backupMsg = "";
+    private List<BackupEntry> _backups = new();
+
+    protected override void OnInitialized() => LoadBackups();
+
+    private void ChangeAdminPassword()
+    {
+        _adminMsg = PasswordManager.ChangeAdminPassword(AppSettings, _adminOldPwd, _adminNewPwd)
+            ? "密码修改成功"
+            : "当前密码不正确";
+        _adminOldPwd = "";
+        _adminNewPwd = "";
+    }
+
+    private void ChangeWebPassword()
+    {
+        AppSettings.WebServerPassword = _webPwd;
+        AppSettings.Save();
+        _webMsg = "Web 密码已更新";
+        _webPwd = "";
+    }
+
+    private void CreateBackup()
+    {
+        var path = BackupService.CreateBackup(manual: true);
+        _backupMsg = "备份完成: " + Path.GetFileName(path);
+        LoadBackups();
+    }
+
+    private void LoadBackups() => _backups = BackupService.GetBackupList();
+
+    private string FormatFileSize(long bytes)
+    {
+        if (bytes < 1024) return bytes + " B";
+        if (bytes < 1024 * 1024) return (bytes / 1024.0).ToString("F1") + " KB";
+        return (bytes / (1024.0 * 1024.0)).ToString("F1") + " MB";
+    }
+}

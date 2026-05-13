@@ -1,0 +1,13 @@
+@namespace Monitor.App.Components
+
+<Router AppAssembly="typeof(App).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="routeData" DefaultLayout="typeof(AppShell)"/>
+    </Found>
+    <NotFound>
+        <PageTitle>Not Found</PageTitle>
+        <LayoutView Layout="typeof(AppShell)">
+            <p>Page not found.</p>
+        </LayoutView>
+    </NotFound>
+</Router>

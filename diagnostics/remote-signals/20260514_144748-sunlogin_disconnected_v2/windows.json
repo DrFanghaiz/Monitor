@@ -1,0 +1,194 @@
+﻿[
+    {
+        "handle":  264972,
+        "process_id":  14880,
+        "process_name":  "ApplicationFrameHost",
+        "process_path":  "C:\\WINDOWS\\system32\\ApplicationFrameHost.exe",
+        "title":  "设置",
+        "is_remote_candidate":  false
+    },
+    {
+        "handle":  1969464,
+        "process_id":  32948,
+        "process_name":  "cc-switch",
+        "process_path":  "C:\\Users\\happx\\AppData\\Local\\Programs\\CC Switch\\cc-switch.exe",
+        "title":  "com.ccswitch.desktop-siw",
+        "is_remote_candidate":  false
+    },
+    {
+        "handle":  132612,
+        "process_id":  2052,
+        "process_name":  "clash-verge",
+        "process_path":  "D:\\Software\\Clash\\Clash Verge\\clash-verge.exe",
+        "title":  "Clash Verge",
+        "is_remote_candidate":  false
+    },
+    {
+        "handle":  38343310,
+        "process_id":  38432,
+        "process_name":  "Code",
+        "process_path":  "D:\\Software\\Microsoft VS Code\\Code.exe",
+        "title":  "timer.py - Monitor - Visual Studio Code [管理员]",
+        "is_remote_candidate":  false
+    },
+    {
+        "handle":  5049052,
+        "process_id":  31420,
+        "process_name":  "Codex",
+        "process_path":  "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.506.3741.0_x64__2p2nqsd0c76g0\\app\\Codex.exe",
+        "title":  "Codex",
+        "is_remote_candidate":  false
+    },
+    {
+        "handle":  66890,
+        "process_id":  18812,
+        "process_name":  "DDPM-NKVM",
+        "process_path":  "C:\\Program Files\\Dell\\Dell Display and Peripheral Manager\\Plugins\\NKVM\\DDPM-NKVM.exe",
+        "title":  "ClipboardHandle",
+        "is_remote_candidate":  false
+    },
+    {
+        "handle":  66882,
+        "process_id":  18812,
+        "process_name":  "DDPM-NKVM",
+        "process_path":  "C:\\Program Files\\Dell\\Dell Display and Peripheral Manager\\Plugins\\NKVM\\DDPM-NKVM.exe",
+        "title":  "DDPM Network KVM",
+        "is_remote_candidate":  false
+    },
+    {
+        "handle":  526374,
+        "process_id":  13460,
+        "process_name":  "explorer",
+        "process_path":  "C:\\WINDOWS\\Explorer.EXE",
+        "title":  "Image_new-v",
+        "is_remote_candidate":  false
+    },
+    {
+        "handle":  464196,
+        "process_id":  13460,
+        "process_name":  "explorer",
+        "process_path":  "C:\\WINDOWS\\Explorer.EXE",
+        "title":  "Image_new-v",
+        "is_remote_candidate":  false
+    },
+    {
+        "handle":  85135478,
+        "process_id":  13460,
+        "process_name":  "explorer",
+        "process_path":  "C:\\WINDOWS\\Explorer.EXE",
+        "title":  "Monitor",
+        "is_remote_candidate":  false
+    },
+    {
+        "handle":  66026,
+        "process_id":  13460,
+        "process_name":  "explorer",
+        "process_path":  "C:\\WINDOWS\\Explorer.EXE",
+        "title":  "Program Manager",
+        "is_remote_candidate":  false
+    },
+    {
+        "handle":  65992,
+        "process_id":  13460,
+        "process_name":  "explorer",
+        "process_path":  "C:\\WINDOWS\\Explorer.EXE",
+        "title":  "开始",
+        "is_remote_candidate":  false
+    },
+    {
+        "handle":  65954,
+        "process_id":  13460,
+        "process_name":  "explorer",
+        "process_path":  "C:\\WINDOWS\\Explorer.EXE",
+        "title":  "开始",
+        "is_remote_candidate":  false
+    },
+    {
+        "handle":  985672,
+        "process_id":  13396,
+        "process_name":  "GitHubDesktop",
+        "process_path":  "C:\\Users\\happx\\AppData\\Local\\GitHubDesktop\\app-3.5.8\\GitHubDesktop.exe",
+        "title":  "GitHub Desktop",
+        "is_remote_candidate":  false
+    },
+    {
+        "handle":  1510610,
+        "process_id":  19480,
+        "process_name":  "msedge",
+        "process_path":  "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+        "title":  "XZL-TRB - 算法流程图生成问题 - 个人 - Microsoft​ Edge",
+        "is_remote_candidate":  false
+    },
+    {
+        "handle":  66692,
+        "process_id":  15920,
+        "process_name":  "PixPin",
+        "process_path":  "C:\\Users\\happx\\AppData\\Local\\Programs\\PixPin\\PixPin.exe",
+        "title":  "PixPin",
+        "is_remote_candidate":  false
+    },
+    {
+        "handle":  7541326,
+        "process_id":  15300,
+        "process_name":  "QQMusic",
+        "process_path":  "D:\\Software\\qq音乐\\QQMusic\\QQMusic.exe",
+        "title":  "Heartbreak Anniversary - GIVĒON   ",
+        "is_remote_candidate":  false
+    },
+    {
+        "handle":  133824,
+        "process_id":  2072,
+        "process_name":  "SystemSettings",
+        "process_path":  "C:\\Windows\\ImmersiveControlPanel\\SystemSettings.exe",
+        "title":  "设置",
+        "is_remote_candidate":  false
+    },
+    {
+        "handle":  41751332,
+        "process_id":  22972,
+        "process_name":  "texstudio",
+        "process_path":  "D:\\Software\\texstudio\\texstudio.exe",
+        "title":  "E:\\OneDrive\\CTD\\4 Working now\\1 论文\\1 换乘链末班车\\论文版本\\Latex\\elsarticle-template-harv.tex - TeXstudio",
+        "is_remote_candidate":  false
+    },
+    {
+        "handle":  66502,
+        "process_id":  18772,
+        "process_name":  "TextInputHost",
+        "process_path":  "C:\\WINDOWS\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\TextInputHost.exe",
+        "title":  "Windows 输入体验",
+        "is_remote_candidate":  false
+    },
+    {
+        "handle":  463946,
+        "process_id":  22300,
+        "process_name":  "VISIO",
+        "process_path":  "C:\\Program Files\\Microsoft Office\\Root\\Office16\\VISIO.EXE",
+        "title":  "BC framework.vsdx - Visio Professional",
+        "is_remote_candidate":  false
+    },
+    {
+        "handle":  267356,
+        "process_id":  17580,
+        "process_name":  "Weixin",
+        "process_path":  "D:\\Software\\Weixin\\Weixin.exe",
+        "title":  "微信",
+        "is_remote_candidate":  false
+    },
+    {
+        "handle":  7540748,
+        "process_id":  37524,
+        "process_name":  "WindowsTerminal",
+        "process_path":  "C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.24.10921.0_x64__8wekyb3d8bbwe\\WindowsTerminal.exe",
+        "title":  "✳ Claude Code",
+        "is_remote_candidate":  false
+    },
+    {
+        "handle":  2492550,
+        "process_id":  37524,
+        "process_name":  "WindowsTerminal",
+        "process_path":  "C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.24.10921.0_x64__8wekyb3d8bbwe\\WindowsTerminal.exe",
+        "title":  "管理员: Windows PowerShell",
+        "is_remote_candidate":  false
+    }
+]

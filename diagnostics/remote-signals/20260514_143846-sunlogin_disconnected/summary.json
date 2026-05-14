@@ -1,0 +1,37 @@
+﻿{
+    "label":  "sunlogin_disconnected",
+    "captured_at":  "2026-05-14 14:38:46",
+    "recent_minutes":  30,
+    "machine_name":  "ATOM-QIN-LU",
+    "user_name":  "happx",
+    "is_admin":  true,
+    "output_dir":  "E:\\OneDrive\\CTD\\4 Working now\\4 杂项\\Monitor\\diagnostics\\remote-signals\\20260514_143846-sunlogin_disconnected",
+    "remote_process_count":  4,
+    "remote_window_count":  0,
+    "remote_service_count":  6,
+    "remote_tcp_connection_count":  4,
+    "rdp_event_count":  1,
+    "log_candidate_count":  4,
+    "errors":  [
+                   {
+                       "section":  "windows",
+                       "message":  "使用“2”个参数调用“GetWindowThreadProcessId”时发生异常:“无法覆盖变量 PID，因为该变量为只读变量或常量。”",
+                       "detail":  "使用“2”个参数调用“GetWindowThreadProcessId”时发生异常:“无法覆盖变量 PID，因为该变量为只读变量或常量。”"
+                   },
+                   {
+                       "section":  "event_log:Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational",
+                       "message":  "找不到任何与指定的选择条件匹配的事件。",
+                       "detail":  "找不到任何与指定的选择条件匹配的事件。"
+                   },
+                   {
+                       "section":  "event_log:Microsoft-Windows-RemoteDesktopServices-RdpCoreTS/Operational",
+                       "message":  "找不到任何与指定的选择条件匹配的事件。",
+                       "detail":  "找不到任何与指定的选择条件匹配的事件。"
+                   },
+                   {
+                       "section":  "event_log:Microsoft-Windows-TerminalServices-RDPClient/Operational",
+                       "message":  "找不到任何与指定的选择条件匹配的事件。",
+                       "detail":  "找不到任何与指定的选择条件匹配的事件。"
+                   }
+               ]
+}

@@ -1,0 +1,37 @@
+﻿{
+    "label":  "sunlogin_window_v2",
+    "captured_at":  "2026-05-14 14:46:17",
+    "recent_minutes":  5,
+    "machine_name":  "ATOM-QIN-LU",
+    "user_name":  "happx",
+    "is_admin":  true,
+    "output_dir":  "E:\\OneDrive\\CTD\\4 Working now\\4 杂项\\Monitor\\diagnostics\\remote-signals\\20260514_144617-sunlogin_window_v2",
+    "remote_process_count":  4,
+    "remote_window_count":  0,
+    "remote_service_count":  6,
+    "remote_tcp_connection_count":  4,
+    "rdp_event_count":  0,
+    "log_candidate_count":  0,
+    "errors":  [
+                   {
+                       "section":  "event_log:Microsoft-Windows-TerminalServices-LocalSessionManager/Operational",
+                       "message":  "找不到任何与指定的选择条件匹配的事件。",
+                       "detail":  "找不到任何与指定的选择条件匹配的事件。"
+                   },
+                   {
+                       "section":  "event_log:Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational",
+                       "message":  "找不到任何与指定的选择条件匹配的事件。",
+                       "detail":  "找不到任何与指定的选择条件匹配的事件。"
+                   },
+                   {
+                       "section":  "event_log:Microsoft-Windows-RemoteDesktopServices-RdpCoreTS/Operational",
+                       "message":  "找不到任何与指定的选择条件匹配的事件。",
+                       "detail":  "找不到任何与指定的选择条件匹配的事件。"
+                   },
+                   {
+                       "section":  "event_log:Microsoft-Windows-TerminalServices-RDPClient/Operational",
+                       "message":  "找不到任何与指定的选择条件匹配的事件。",
+                       "detail":  "找不到任何与指定的选择条件匹配的事件。"
+                   }
+               ]
+}

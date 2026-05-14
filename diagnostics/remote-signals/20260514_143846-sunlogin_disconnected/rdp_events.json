@@ -1,0 +1,8 @@
+﻿{
+    "log_name":  "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational",
+    "time_created":  "2026-05-14 14:37:12",
+    "id":  59,
+    "provider_name":  "Microsoft-Windows-TerminalServices-LocalSessionManager",
+    "level":  "信息",
+    "message":  "RpcGetCurrentSessionCapabilities 来自 \"LogonUI.exe\" /flags:0x0 /state0:0xfe911855 /state1:0x41c64e6d( #0x1/0x37872 )"
+}

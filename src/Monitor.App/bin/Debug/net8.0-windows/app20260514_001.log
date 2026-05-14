@@ -1,0 +1,238 @@
+2026-05-14 10:31:21 | INFORMATION | Added column "operator_name" to "remote_sessions"
+2026-05-14 10:31:21 | INFORMATION | Added column "source" to "remote_sessions"
+2026-05-14 10:31:21 | INFORMATION | Added column "end_reason" to "remote_sessions"
+2026-05-14 10:31:21 | INFORMATION | Added column "last_seen_at" to "remote_sessions"
+2026-05-14 10:31:21 | INFORMATION | RemoteMonitorService started
+2026-05-14 10:31:21 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-14 10:31:21 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83
+2026-05-14 10:31:21 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-14 10:51:14 | INFORMATION | Added column "operator_name" to "remote_sessions"
+2026-05-14 10:51:14 | INFORMATION | Added column "source" to "remote_sessions"
+2026-05-14 10:51:14 | INFORMATION | Added column "end_reason" to "remote_sessions"
+2026-05-14 10:51:14 | INFORMATION | Added column "last_seen_at" to "remote_sessions"
+2026-05-14 10:51:14 | INFORMATION | RemoteMonitorService started
+2026-05-14 10:51:14 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-14 10:51:14 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83
+2026-05-14 10:51:14 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-14 15:27:46 | INFORMATION | Added column "operator_name" to "remote_sessions"
+2026-05-14 15:27:46 | INFORMATION | Added column "source" to "remote_sessions"
+2026-05-14 15:27:46 | INFORMATION | Added column "end_reason" to "remote_sessions"
+2026-05-14 15:27:46 | INFORMATION | Added column "last_seen_at" to "remote_sessions"
+2026-05-14 15:27:46 | INFORMATION | RemoteMonitorService started
+2026-05-14 15:27:46 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-14 15:27:46 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83
+2026-05-14 15:27:47 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-14 15:52:02 | INFORMATION | Added column "operator_name" to "remote_sessions"
+2026-05-14 15:52:02 | INFORMATION | Added column "source" to "remote_sessions"
+2026-05-14 15:52:02 | INFORMATION | Added column "end_reason" to "remote_sessions"
+2026-05-14 15:52:02 | INFORMATION | Added column "last_seen_at" to "remote_sessions"
+2026-05-14 15:52:02 | INFORMATION | RemoteMonitorService started
+2026-05-14 15:52:02 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-14 15:52:02 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83
+2026-05-14 15:52:02 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-14 15:54:08 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-14 15:54:08 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-14 15:54:08 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-14 15:54:08 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-14 15:54:08 | INFORMATION | RemoteMonitorService started
+2026-05-14 15:54:08 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-14 15:54:08 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83
+2026-05-14 15:54:08 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-14 16:10:23 | INFORMATION | Added column "operator_name" to "remote_sessions"
+2026-05-14 16:10:23 | INFORMATION | Added column "source" to "remote_sessions"
+2026-05-14 16:10:23 | INFORMATION | Added column "end_reason" to "remote_sessions"
+2026-05-14 16:10:23 | INFORMATION | Added column "last_seen_at" to "remote_sessions"
+2026-05-14 16:10:23 | INFORMATION | RemoteMonitorService started
+2026-05-14 16:10:23 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-14 16:10:23 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83
+2026-05-14 16:10:23 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-14 16:29:06 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-14 16:29:06 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-14 16:29:06 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-14 16:29:06 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-14 16:29:06 | INFORMATION | RemoteMonitorService started
+2026-05-14 16:29:06 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-14 16:29:06 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83
+2026-05-14 16:29:06 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-14 16:30:15 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process,session_window,loopback_connection"]
+2026-05-14 16:30:57 | DEBUG | Remote signal missed (1/2)
+2026-05-14 16:31:00 | DEBUG | Remote signal missed (2/2)
+2026-05-14 16:31:00 | INFORMATION | Remote session ended: "sunlogin" (after 2 misses)
+2026-05-14 17:33:54 | INFORMATION | Added column "operator_name" to "remote_sessions"
+2026-05-14 17:33:54 | INFORMATION | Added column "source" to "remote_sessions"
+2026-05-14 17:33:54 | INFORMATION | Added column "end_reason" to "remote_sessions"
+2026-05-14 17:33:54 | INFORMATION | Added column "last_seen_at" to "remote_sessions"
+2026-05-14 17:33:54 | INFORMATION | RemoteMonitorService started
+2026-05-14 17:33:54 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-14 17:33:54 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83
+2026-05-14 17:33:54 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-14 17:39:45 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-14 17:39:45 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-14 17:39:45 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-14 17:39:45 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-14 17:39:45 | INFORMATION | RemoteMonitorService started
+2026-05-14 17:39:45 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-14 17:39:45 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83
+2026-05-14 17:39:45 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-14 17:51:55 | INFORMATION | Added column "operator_name" to "remote_sessions"
+2026-05-14 17:51:55 | INFORMATION | Added column "source" to "remote_sessions"
+2026-05-14 17:51:55 | INFORMATION | Added column "end_reason" to "remote_sessions"
+2026-05-14 17:51:55 | INFORMATION | Added column "last_seen_at" to "remote_sessions"
+2026-05-14 17:51:55 | INFORMATION | RemoteMonitorService started
+2026-05-14 17:51:55 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-14 17:51:55 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83
+2026-05-14 17:51:55 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-14 18:06:05 | INFORMATION | Added column "operator_name" to "remote_sessions"
+2026-05-14 18:06:05 | INFORMATION | Added column "source" to "remote_sessions"
+2026-05-14 18:06:05 | INFORMATION | Added column "end_reason" to "remote_sessions"
+2026-05-14 18:06:05 | INFORMATION | Added column "last_seen_at" to "remote_sessions"
+2026-05-14 18:06:05 | INFORMATION | Cleaning up 5 stale active remote session(s) from previous run
+2026-05-14 18:06:05 | INFORMATION | RemoteMonitorService started
+2026-05-14 18:06:05 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-14 18:06:05 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83
+2026-05-14 18:06:05 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-14 18:08:06 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-14 18:08:06 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-14 18:08:06 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-14 18:08:06 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-14 18:08:06 | INFORMATION | RemoteMonitorService started
+2026-05-14 18:08:06 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-14 18:08:06 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83
+2026-05-14 18:08:06 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-14 18:14:56 | INFORMATION | Added column "operator_name" to "remote_sessions"
+2026-05-14 18:14:56 | INFORMATION | Added column "source" to "remote_sessions"
+2026-05-14 18:14:56 | INFORMATION | Added column "end_reason" to "remote_sessions"
+2026-05-14 18:14:56 | INFORMATION | Added column "last_seen_at" to "remote_sessions"
+2026-05-14 18:14:56 | INFORMATION | Cleaning up 5 stale active remote session(s) from previous run
+2026-05-14 18:14:56 | INFORMATION | RemoteMonitorService started
+2026-05-14 18:14:56 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-14 18:14:56 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83
+2026-05-14 18:14:56 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-14 18:20:15 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-14 18:20:15 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-14 18:20:15 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-14 18:20:15 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-14 18:20:15 | INFORMATION | RemoteMonitorService started
+2026-05-14 18:20:15 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-14 18:20:15 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\bin\Debug\net8.0-windows'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83
+2026-05-14 18:20:15 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-14 18:20:59 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-14 18:20:59 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-14 18:20:59 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-14 18:20:59 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-14 18:20:59 | INFORMATION | RemoteMonitorService started
+2026-05-14 18:20:59 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-14 18:20:59 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\bin\Debug\net8.0-windows'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83
+2026-05-14 18:20:59 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-14 18:21:33 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-14 18:21:33 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-14 18:21:33 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-14 18:21:33 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-14 18:21:33 | INFORMATION | RemoteMonitorService started
+2026-05-14 18:21:33 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-14 18:21:33 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\bin\Debug\net8.0-windows'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83
+2026-05-14 18:21:33 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-14 18:22:30 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-14 18:22:30 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-14 18:22:30 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-14 18:22:30 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-14 18:22:30 | INFORMATION | RemoteMonitorService started
+2026-05-14 18:22:30 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-14 18:22:30 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\bin\Debug\net8.0-windows'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83
+2026-05-14 18:22:30 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-14 18:23:58 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-14 18:23:58 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-14 18:23:58 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-14 18:23:58 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-14 18:23:58 | INFORMATION | RemoteMonitorService started
+2026-05-14 18:23:58 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-14 18:23:58 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\bin\Debug\net8.0-windows'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83
+2026-05-14 18:23:58 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-14 18:27:14 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-14 18:27:14 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-14 18:27:14 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-14 18:27:14 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-14 18:27:14 | INFORMATION | RemoteMonitorService started
+2026-05-14 18:27:14 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-14 18:27:14 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\bin\Debug\net8.0-windows'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83
+2026-05-14 18:27:14 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-14 18:29:14 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["background_process,session_window,loopback_connection"]
+2026-05-14 18:29:53 | DEBUG | Remote signal missed (1/2)
+2026-05-14 18:29:56 | DEBUG | Remote signal missed (2/2)
+2026-05-14 18:29:56 | INFORMATION | Remote session ended: "sunlogin" (after 2 misses)

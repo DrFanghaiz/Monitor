@@ -15,13 +15,13 @@ window.renderChart = (elementId, optionJson) => {
     option.animationEasing ??= 'cubicOut';
     option.animationEasingUpdate ??= 'cubicOut';
     option.color ??= [
-        '#0A84FF',
-        '#15996B',
-        '#B7791F',
-        '#D95050',
-        '#3B9FB8',
-        '#7C6BD6',
-        '#C05B9C',
+        '#4C8DFF',
+        '#2E9D77',
+        '#C2932E',
+        '#C95F5F',
+        '#4EA4B8',
+        '#7F75C8',
+        '#B9689C',
         '#8EA0B8'
     ];
     option.tooltip = {

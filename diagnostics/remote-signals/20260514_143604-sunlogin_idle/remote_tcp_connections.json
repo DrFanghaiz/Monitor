@@ -1,0 +1,123 @@
+﻿[
+    {
+        "local_address":  "192.168.31.17",
+        "local_port":  7661,
+        "remote_address":  "101.72.227.133",
+        "remote_port":  443,
+        "state":  "Established",
+        "owning_process":  32440,
+        "process_name":  "AweSun",
+        "process_path":  "D:\\Software\\xiangrikui\\SunloginClient\\AweSun.exe",
+        "is_remote_candidate":  true
+    },
+    {
+        "local_address":  "192.168.31.17",
+        "local_port":  7658,
+        "remote_address":  "116.62.147.155",
+        "remote_port":  443,
+        "state":  "Established",
+        "owning_process":  32440,
+        "process_name":  "AweSun",
+        "process_path":  "D:\\Software\\xiangrikui\\SunloginClient\\AweSun.exe",
+        "is_remote_candidate":  true
+    },
+    {
+        "local_address":  "192.168.31.17",
+        "local_port":  7656,
+        "remote_address":  "120.27.239.1",
+        "remote_port":  443,
+        "state":  "Established",
+        "owning_process":  32440,
+        "process_name":  "AweSun",
+        "process_path":  "D:\\Software\\xiangrikui\\SunloginClient\\AweSun.exe",
+        "is_remote_candidate":  true
+    },
+    {
+        "local_address":  "192.168.31.17",
+        "local_port":  7673,
+        "remote_address":  "121.40.184.4",
+        "remote_port":  443,
+        "state":  "Established",
+        "owning_process":  32440,
+        "process_name":  "AweSun",
+        "process_path":  "D:\\Software\\xiangrikui\\SunloginClient\\AweSun.exe",
+        "is_remote_candidate":  true
+    },
+    {
+        "local_address":  "192.168.31.17",
+        "local_port":  7662,
+        "remote_address":  "121.40.212.74",
+        "remote_port":  443,
+        "state":  "Established",
+        "owning_process":  32440,
+        "process_name":  "AweSun",
+        "process_path":  "D:\\Software\\xiangrikui\\SunloginClient\\AweSun.exe",
+        "is_remote_candidate":  true
+    },
+    {
+        "local_address":  "192.168.31.17",
+        "local_port":  7672,
+        "remote_address":  "34.160.111.145",
+        "remote_port":  80,
+        "state":  "Established",
+        "owning_process":  32440,
+        "process_name":  "AweSun",
+        "process_path":  "D:\\Software\\xiangrikui\\SunloginClient\\AweSun.exe",
+        "is_remote_candidate":  true
+    },
+    {
+        "local_address":  "192.168.31.17",
+        "local_port":  7659,
+        "remote_address":  "47.111.65.196",
+        "remote_port":  443,
+        "state":  "Established",
+        "owning_process":  32440,
+        "process_name":  "AweSun",
+        "process_path":  "D:\\Software\\xiangrikui\\SunloginClient\\AweSun.exe",
+        "is_remote_candidate":  true
+    },
+    {
+        "local_address":  "192.168.31.17",
+        "local_port":  7655,
+        "remote_address":  "47.98.232.26",
+        "remote_port":  443,
+        "state":  "Established",
+        "owning_process":  32440,
+        "process_name":  "AweSun",
+        "process_path":  "D:\\Software\\xiangrikui\\SunloginClient\\AweSun.exe",
+        "is_remote_candidate":  true
+    },
+    {
+        "local_address":  "127.0.0.1",
+        "local_port":  7634,
+        "remote_address":  "0.0.0.0",
+        "remote_port":  0,
+        "state":  "Listen",
+        "owning_process":  33612,
+        "process_name":  "AweSun",
+        "process_path":  "D:\\Software\\xiangrikui\\SunloginClient\\AweSun.exe",
+        "is_remote_candidate":  true
+    },
+    {
+        "local_address":  "127.0.0.1",
+        "local_port":  7635,
+        "remote_address":  "0.0.0.0",
+        "remote_port":  0,
+        "state":  "Listen",
+        "owning_process":  33612,
+        "process_name":  "AweSun",
+        "process_path":  "D:\\Software\\xiangrikui\\SunloginClient\\AweSun.exe",
+        "is_remote_candidate":  true
+    },
+    {
+        "local_address":  "192.168.31.17",
+        "local_port":  7649,
+        "remote_address":  "124.221.97.203",
+        "remote_port":  443,
+        "state":  "Established",
+        "owning_process":  33612,
+        "process_name":  "AweSun",
+        "process_path":  "D:\\Software\\xiangrikui\\SunloginClient\\AweSun.exe",
+        "is_remote_candidate":  true
+    }
+]

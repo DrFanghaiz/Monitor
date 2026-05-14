@@ -1,0 +1,56 @@
+﻿[
+    {
+        "name":  "AweSunService",
+        "display_name":  "AweSunService",
+        "state":  "Stopped",
+        "start_mode":  "Auto",
+        "process_id":  0,
+        "path_name":  "\"D:\\Software\\xiangrikui\\SunloginClient\\AweSun.exe\" --mod=service",
+        "is_remote_candidate":  true
+    },
+    {
+        "name":  "SessionEnv",
+        "display_name":  "Remote Desktop Configuration",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  true
+    },
+    {
+        "name":  "SunloginService",
+        "display_name":  "SunloginService",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "D:\\Software\\xiangrikui\\SunloginClient\\AweSun.exe",
+        "is_remote_candidate":  true
+    },
+    {
+        "name":  "TermService",
+        "display_name":  "Remote Desktop Services",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k NetworkService",
+        "is_remote_candidate":  true
+    },
+    {
+        "name":  "UmRdpService",
+        "display_name":  "Remote Desktop Services UserMode Port Redirector",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  true
+    },
+    {
+        "name":  "vmicrdv",
+        "display_name":  "Hyper-V 远程桌面虚拟化服务",
+        "state":  "Stopped",
+        "start_mode":  "Disabled",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k ICService -p",
+        "is_remote_candidate":  true
+    }
+]

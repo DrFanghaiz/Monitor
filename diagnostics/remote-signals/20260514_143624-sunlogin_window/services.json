@@ -1,0 +1,2900 @@
+﻿[
+    {
+        "name":  "AarSvc_e562d",
+        "display_name":  "AarSvc_e562d",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k AarSvcGroup -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "ADPSvc",
+        "display_name":  "聚合数据平台服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceAndNoImpersonation -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "AGMService",
+        "display_name":  "Adobe Genuine Software Monitor Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  5864,
+        "path_name":  "\"C:\\Program Files (x86)\\Common Files\\Adobe\\AdobeGCClient\\AGMService.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "ALG",
+        "display_name":  "Application Layer Gateway Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\alg.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "AMD Crash Defender Service",
+        "display_name":  "AMD Crash Defender Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  2104,
+        "path_name":  "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\amdfendr.inf_amd64_987f8cede005f427\\amdfendrsr.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "AMD External Events Utility",
+        "display_name":  "AMD External Events Utility",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  2456,
+        "path_name":  "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\u0407985.inf_amd64_8b91d89faa42522c\\B406780\\atiesrxx.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "AntiCheatExpert Protection",
+        "display_name":  "AntiCheatExpert Protection",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "\"C:\\Program Files\\AntiCheatExpert\\ACE-Service64.exe\"  -autorun",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "AntiCheatExpert Service",
+        "display_name":  "AntiCheatExpert Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "\"C:\\Program Files\\AntiCheatExpert\\SGuard\\x64\\SGuardSvc64.exe\" -autorun",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "AppIDSvc",
+        "display_name":  "Application Identity",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "Appinfo",
+        "display_name":  "Application Information",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  14328,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "AppMgmt",
+        "display_name":  "Application Management",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "AppReadiness",
+        "display_name":  "App Readiness",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k AppReadiness -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "AppVClient",
+        "display_name":  "Microsoft App-V Client",
+        "state":  "Stopped",
+        "start_mode":  "Disabled",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\AppVClient.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "AppXSvc",
+        "display_name":  "AppX Deployment Service (AppXSVC)",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  12032,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k wsappx -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "ApxSvc",
+        "display_name":  "Windows 虚拟音频设备代理服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "ArmouryCrateService",
+        "display_name":  "Armoury Crate Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  5004,
+        "path_name":  "\"C:\\Program Files\\ASUS\\Armoury Crate Service\\ArmouryCrate.Service.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "asComSvc",
+        "display_name":  "ASUS Com Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  4876,
+        "path_name":  "\"C:\\Program Files (x86)\\ASUS\\AXSP\\5.00.05\\atkexComSvc.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "AssignedAccessManagerSvc",
+        "display_name":  "AssignedAccessManager 服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k AssignedAccessManagerSvc",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "asus",
+        "display_name":  "ASUS 更新服务 (asus)",
+        "state":  "Stopped",
+        "start_mode":  "Auto",
+        "process_id":  0,
+        "path_name":  "\"C:\\Program Files (x86)\\ASUS\\Update\\AsusUpdate.exe\" /svc",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "AsusCertService",
+        "display_name":  "Asus Certificate Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  2544,
+        "path_name":  "\"C:\\Program Files (x86)\\ASUS\\AsusCertService\\1.2.41\\AsusCertService.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "AsusFanControlService",
+        "display_name":  "AsusFanControlService",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  5128,
+        "path_name":  "\"C:\\Program Files (x86)\\ASUS\\AsusFanControlService\\2.05.05\\AsusFanControlService.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "asusm",
+        "display_name":  "ASUS 更新服务 (asusm)",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "\"C:\\Program Files (x86)\\ASUS\\Update\\AsusUpdate.exe\" /medsvc",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "AsusROGLSLService",
+        "display_name":  "AsusROGLSLService Download ROGLSLoader",
+        "state":  "Stopped",
+        "start_mode":  "Auto",
+        "process_id":  0,
+        "path_name":  "\"C:\\Program Files (x86)\\ASUS\\AsusROGLSLService\\AsusROGLSLService.exe\" -runservice",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "AsusUpdateCheck",
+        "display_name":  "AsusUpdateCheck",
+        "state":  "Stopped",
+        "start_mode":  "Auto",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\AsusUpdateCheck.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "AudioEndpointBuilder",
+        "display_name":  "Windows Audio Endpoint Builder",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  3716,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "Audiosrv",
+        "display_name":  "Windows Audio",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  3796,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "autotimesvc",
+        "display_name":  "手机网络时间",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k autoTimeSvc",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "AweSunService",
+        "display_name":  "AweSunService",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  33612,
+        "path_name":  "\"D:\\Software\\xiangrikui\\SunloginClient\\AweSun.exe\" --mod=service",
+        "is_remote_candidate":  true
+    },
+    {
+        "name":  "AxInstSV",
+        "display_name":  "ActiveX Installer (AxInstSV)",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k AxInstSVGroup",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "BaiduNetdiskUtility",
+        "display_name":  "BaiduNetdiskUtility",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "\"D:\\Software\\BaiduNetdisk\\YunUtilityService.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "BcastDVRUserService_e562d",
+        "display_name":  "BcastDVRUserService_e562d",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k BcastDVRUserService",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "BDESVC",
+        "display_name":  "BitLocker Drive Encryption Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "BFE",
+        "display_name":  "Base Filtering Engine",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  844,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceNoNetworkFirewall -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "BITS",
+        "display_name":  "Background Intelligent Transfer Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "BluetoothUserService_e562d",
+        "display_name":  "BluetoothUserService_e562d",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  12552,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k BthAppGroup -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "BrokerInfrastructure",
+        "display_name":  "Background Tasks Infrastructure Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  1576,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k DcomLaunch -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "BTAGService",
+        "display_name":  "蓝牙音频网关服务",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  720,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceNetworkRestricted",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "BthAvctpSvc",
+        "display_name":  "AVCTP 服务",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  732,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceRedirectionGuard -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "bthserv",
+        "display_name":  "蓝牙支持服务",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  1452,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "camsvc",
+        "display_name":  "功能访问管理器服务",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  12024,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k osprivacy -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "CaptureService_e562d",
+        "display_name":  "CaptureService_e562d",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  36996,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "cbdhsvc_e562d",
+        "display_name":  "cbdhsvc_e562d",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  15580,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k ClipboardSvcGroup -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "CDPSvc",
+        "display_name":  "连接设备平台服务",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  13560,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "CDPUserSvc_e562d",
+        "display_name":  "CDPUserSvc_e562d",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  12560,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k UnistackSvcGroup",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "CertPropSvc",
+        "display_name":  "Certificate Propagation",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "ClickToRunSvc",
+        "display_name":  "Microsoft Office Click-to-Run Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  5436,
+        "path_name":  "\"C:\\Program Files\\Common Files\\Microsoft Shared\\ClickToRun\\OfficeClickToRun.exe\" /service",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "ClipSVC",
+        "display_name":  "Client License Service (ClipSVC)",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  30420,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k wsappx -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "CloudBackupRestoreSvc_e562d",
+        "display_name":  "CloudBackupRestoreSvc_e562d",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k UnistackSvcGroup",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "cloudidsvc",
+        "display_name":  "Microsoft 云标识服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k CloudIdServiceGroup -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "COMSysApp",
+        "display_name":  "COM+ System Application",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\dllhost.exe /Processid:{02D4B3F1-FD88-11D1-960D-00805FC79235}",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "ConsentUxUserSvc_e562d",
+        "display_name":  "ConsentUxUserSvc_e562d",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k DevicesFlow",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "CoreMessagingRegistrar",
+        "display_name":  "CoreMessaging",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  1236,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceNoNetwork -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "CredentialEnrollmentManagerUserSvc_e562d",
+        "display_name":  "CredentialEnrollmentManagerUserSvc_e562d",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\CredentialEnrollmentManager.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "CryptSvc",
+        "display_name":  "Cryptographic Services",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  4776,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k NetworkService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "CscService",
+        "display_name":  "Offline Files",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "DcomLaunch",
+        "display_name":  "DCOM Server Process Launcher",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  1576,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k DcomLaunch -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "dcsvc",
+        "display_name":  "已声明的配置(DC)服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "DDPMNetworkKVMService",
+        "display_name":  "DDPMNetworkKVMService",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  4904,
+        "path_name":  "\"C:\\Program Files\\Dell\\Dell Display and Peripheral Manager\\Plugins\\NKVM\\DellDisplayManagerNetworkKVMService\\DDPMNetworkKVMService.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "defragsvc",
+        "display_name":  "Optimize drives",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k defragsvc",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "DellClientManagementService",
+        "display_name":  "Dell Client Management Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  24912,
+        "path_name":  "\"C:\\Program Files (x86)\\Dell\\UpdateService\\ServiceShell.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "DellTechHub",
+        "display_name":  "Dell TechHub",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  4932,
+        "path_name":  "\"C:\\Program Files\\Dell\\TechHub\\Dell.TechHub.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "DeviceAssociationBrokerSvc_e562d",
+        "display_name":  "DeviceAssociationBrokerSvc_e562d",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k DevicesFlow -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "DeviceAssociationService",
+        "display_name":  "Device Association Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  2796,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "DeviceInstall",
+        "display_name":  "Device Install Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k DcomLaunch -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "DevicePickerUserSvc_e562d",
+        "display_name":  "DevicePickerUserSvc_e562d",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k DevicesFlow",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "DevicesFlowUserSvc_e562d",
+        "display_name":  "DevicesFlowUserSvc_e562d",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  23260,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k DevicesFlow",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "DevQueryBroker",
+        "display_name":  "DevQuery Background Discovery Broker",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "Dhcp",
+        "display_name":  "DHCP Client",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  3884,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "diagsvc",
+        "display_name":  "Diagnostic Execution Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k diagnostics",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "DiagTrack",
+        "display_name":  "Connected User Experiences and Telemetry",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  4848,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k utcsvc -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "DialogBlockingService",
+        "display_name":  "DialogBlockingService",
+        "state":  "Stopped",
+        "start_mode":  "Disabled",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k DialogBlockingService",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "DispBrokerDesktopSvc",
+        "display_name":  "显示策略服务",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  3892,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "DisplayEnhancementService",
+        "display_name":  "显示增强服务",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  16036,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "DmEnrollmentSvc",
+        "display_name":  "设备管理注册服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "dmwappushservice",
+        "display_name":  "设备管理无线应用程序协议 (WAP) 推送消息路由服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "Dnscache",
+        "display_name":  "DNS Client",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  2936,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k NetworkService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "DoSvc",
+        "display_name":  "Delivery Optimization",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  18732,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k NetworkService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "dot3svc",
+        "display_name":  "Wired AutoConfig",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "DPMService",
+        "display_name":  "Dell Peripheral Manager Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  4512,
+        "path_name":  "\"C:\\Program Files\\Dell\\Dell Peripheral Manager\\DPMService.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "DPS",
+        "display_name":  "Diagnostic Policy Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  4804,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalServiceNoNetwork -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "DsmSvc",
+        "display_name":  "Device Setup Manager",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "DsSvc",
+        "display_name":  "Data Sharing Service",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  7272,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "DusmSvc",
+        "display_name":  "数据使用量",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  3876,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalServiceNetworkRestricted -p -s DusmSvc",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "EapHost",
+        "display_name":  "Extensible Authentication Protocol",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "edgeupdate",
+        "display_name":  "Microsoft Edge Update Service (edgeupdate)",
+        "state":  "Stopped",
+        "start_mode":  "Auto",
+        "process_id":  0,
+        "path_name":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeUpdate\\MicrosoftEdgeUpdate.exe\" /svc",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "edgeupdatem",
+        "display_name":  "Microsoft Edge Update Service (edgeupdatem)",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "\"C:\\Program Files (x86)\\Microsoft\\EdgeUpdate\\MicrosoftEdgeUpdate.exe\" /medsvc",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "EFS",
+        "display_name":  "Encrypting File System (EFS)",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\lsass.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "embeddedmode",
+        "display_name":  "嵌入模式",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "EntAppSvc",
+        "display_name":  "Enterprise App Management Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k appmodelRedirectionGuard -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "ESRV_SVC_QUEENCREEK",
+        "display_name":  "Energy Server Service queencreek",
+        "state":  "Stopped",
+        "start_mode":  "Auto",
+        "process_id":  0,
+        "path_name":  "\"C:\\Program Files\\Intel\\SUR\\QUEENCREEK\\x64\\esrv_svc.exe\" \"--AUTO_START\" \"--start\" \"--start_options_registry_key\" \"HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\services\\ESRV_SVC_QUEENCREEK\\_start\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "EventLog",
+        "display_name":  "Windows Event Log",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  2096,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "EventSystem",
+        "display_name":  "COM+ Event System",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  3464,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceRedirectionGuard -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "Everything",
+        "display_name":  "Everything",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  4868,
+        "path_name":  "\"C:\\Program Files\\Everything\\Everything.exe\" -svc",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "fdPHost",
+        "display_name":  "Function Discovery Provider Host",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  17268,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "FDResPub",
+        "display_name":  "Function Discovery Resource Publication",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  16532,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceAndNoImpersonation -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "fhsvc",
+        "display_name":  "File History Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "FileSyncHelper",
+        "display_name":  "FileSyncHelper",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  23660,
+        "path_name":  "\"C:\\Program Files\\Microsoft OneDrive\\26.070.0414.0001\\FileSyncHelper.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "FontCache",
+        "display_name":  "Windows Font Cache Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  3724,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "FrameServer",
+        "display_name":  "Windows Camera Frame Server",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  25560,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k Camera",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "FrameServerMonitor",
+        "display_name":  "Windows Camera Frame Server Monitor",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k CameraMonitor",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "Futuremark SystemInfo Service",
+        "display_name":  "Futuremark SystemInfo Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "\"C:\\Program Files (x86)\\Futuremark\\SystemInfo\\FMSISvc.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "GameInputSvc",
+        "display_name":  "GameInput Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\GameInputSvc.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "GameSDK Service",
+        "display_name":  "GameSDK Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  4972,
+        "path_name":  "\"C:\\Program Files (x86)\\ASUS\\GameSDK Service\\GameSDK.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "GoogleChromeElevationService",
+        "display_name":  "Google Chrome Elevation Service (GoogleChromeElevationService)",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "\"C:\\Program Files\\Google\\Chrome\\Application\\148.0.7778.98\\elevation_service.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "GoogleUpdaterInternalService149.0.7814.0",
+        "display_name":  "Google 更新程序内部服务 (GoogleUpdaterInternalService149.0.7814.0)",
+        "state":  "Stopped",
+        "start_mode":  "Auto",
+        "process_id":  0,
+        "path_name":  "\"C:\\Program Files (x86)\\Google\\GoogleUpdater\\149.0.7814.0\\updater.exe\" --system --windows-service --service=update-internal",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "GoogleUpdaterService149.0.7814.0",
+        "display_name":  "Google 更新程序服务 (GoogleUpdaterService149.0.7814.0)",
+        "state":  "Stopped",
+        "start_mode":  "Auto",
+        "process_id":  0,
+        "path_name":  "\"C:\\Program Files (x86)\\Google\\GoogleUpdater\\149.0.7814.0\\updater.exe\" --system --windows-service --service=update",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "gpsvc",
+        "display_name":  "Group Policy Client",
+        "state":  "Stopped",
+        "start_mode":  "Auto",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k GPSvcGroup",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "GraphicsPerfSvc",
+        "display_name":  "GraphicsPerfSvc",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k GraphicsPerfSvcGroup",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "hidserv",
+        "display_name":  "Human Interface Device Service",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  2396,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "HipsDaemon",
+        "display_name":  "Huorong Internet Security Daemon",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  30892,
+        "path_name":  "\"D:\\Software\\huorong\\Sysdiag\\bin\\HipsDaemon.exe\" -sHipsDaemon",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "HP LaserJet Service",
+        "display_name":  "HP LaserJet Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  5168,
+        "path_name":  "\"C:\\Program Files (x86)\\HP\\HPLaserJetService\\HPLaserJetService.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "hpatchmon",
+        "display_name":  "Hotpatch Monitoring Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "HPPrintScanDoctorService",
+        "display_name":  "HP Print Scan Doctor Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  5196,
+        "path_name":  "\"C:\\Program Files\\HPPrintScanDoctor\\HPPrintScanDoctorService.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "HRWSCCtrl",
+        "display_name":  "Huorong Windows Security Center",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  26032,
+        "path_name":  "\"D:\\Software\\huorong\\Sysdiag\\bin\\wsctrlsvc.exe\" /svc_run",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "HvHost",
+        "display_name":  "HV 主机服务",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  1288,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "icssvc",
+        "display_name":  "Windows 移动热点服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "IKEEXT",
+        "display_name":  "IKE and AuthIP IPsec Keying Modules",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "InstallService",
+        "display_name":  "Microsoft Store 安装服务",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  9108,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "Intel(R) Platform License Manager Service",
+        "display_name":  "Intel(R) Platform License Manager Service",
+        "state":  "Stopped",
+        "start_mode":  "Auto",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\iclsclient.inf_amd64_fc84dfa25a6a7727\\lib\\PlatformLicenseManagerService.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "Intel(R) SUR QC SAM",
+        "display_name":  "Intel(R) SUR QC Software Asset Manager",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "\"C:\\Program Files\\Intel\\SUR\\QUEENCREEK\\Updater\\bin\\IntelSoftwareAssetManagerService.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "IntelCollectorService",
+        "display_name":  "Intel(R) Collector Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  5292,
+        "path_name":  "\"C:\\Program Files\\Intel\\CollectorService\\collector_service.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "IntelTelemetryAgent",
+        "display_name":  "Intel(R) Telemetry Agent Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  9440,
+        "path_name":  "\"C:\\Program Files\\Intel\\TelemetryAgent\\telemetry_agent.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "InventorySvc",
+        "display_name":  "清单和兼容性评估服务",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  24872,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k InvSvcGroup -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "iphlpsvc",
+        "display_name":  "IP Helper",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  4480,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k NetSvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "IpxlatCfgSvc",
+        "display_name":  "IP 转换配置服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "jhi_service",
+        "display_name":  "Intel(R) Dynamic Application Loader Host Interface Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  5272,
+        "path_name":  "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\dal.inf_amd64_af50fdb80983f7bc\\jhi_service.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "KeyIso",
+        "display_name":  "CNG Key Isolation",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  1420,
+        "path_name":  "C:\\WINDOWS\\system32\\lsass.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "KtmRm",
+        "display_name":  "KtmRm for Distributed Transaction Coordinator",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k NetworkServiceAndNoImpersonation -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "LanmanServer",
+        "display_name":  "Server",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  5980,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "LanmanWorkstation",
+        "display_name":  "Workstation",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  4560,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k NetworkService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "lfsvc",
+        "display_name":  "Geolocation Service",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  18128,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcsRedirectionGuard -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "LicenseManager",
+        "display_name":  "Windows 许可证管理器服务",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  15120,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "LightingService",
+        "display_name":  "ASUS AURA SYNC lighting service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  12092,
+        "path_name":  "\"C:\\Program Files (x86)\\LightingService\\LightingService.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "lltdsvc",
+        "display_name":  "Link-Layer Topology Discovery Mapper",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "lmhosts",
+        "display_name":  "TCP/IP NetBIOS Helper",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  17172,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "LocalKdc",
+        "display_name":  "Kerberos 本地密钥发行中心",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\lsass.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "logi_lamparray_service",
+        "display_name":  "Logitech LampArray Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  5568,
+        "path_name":  "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\logi_lamparray_usb.inf_amd64_9bb7be35ea261c7b\\logi_lamparray_service.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "LSM",
+        "display_name":  "Local Session Manager",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  1788,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k DcomLaunch -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "LxpSvc",
+        "display_name":  "语言体验服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "MapsBroker",
+        "display_name":  "Downloaded Maps Manager",
+        "state":  "Stopped",
+        "start_mode":  "Auto",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k NetworkService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "McmSvc",
+        "display_name":  "移动连接管理服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k McmSvc -p -s McmSvc",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "McpManagementService",
+        "display_name":  "McpManagementService",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k McpManagementServiceGroup",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "MDCoreSvc",
+        "display_name":  "Microsoft Defender Core 服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "\"C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.26030.3011-0\\MpDefenderCoreService.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "MessagingService_e562d",
+        "display_name":  "MessagingService_e562d",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k UnistackSvcGroup",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "micont_service",
+        "display_name":  "XiaoMi Continuity Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  5236,
+        "path_name":  "\"C:\\Program Files\\MI\\PcContinuity\\1.1.2.11\\micont_service.exe\" --model=0",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "MicrosoftEdgeElevationService",
+        "display_name":  "Microsoft Edge Elevation Service (MicrosoftEdgeElevationService)",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\148.0.3967.54\\elevation_service.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "midisrv",
+        "display_name":  "Windows MIDI 服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\midisrv.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "MiPcContinuityService",
+        "display_name":  "MiPcContinuityService",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  5400,
+        "path_name":  "\"C:\\Program Files\\MI\\PcContinuity\\1.1.2.11\\x86\\MiPcContinuityService.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "MiService",
+        "display_name":  "MiService",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  5384,
+        "path_name":  "\"C:\\Program Files (x86)\\Timi Personal Computing\\MiService\\3.4.1.1132\\MiService.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "mpssvc",
+        "display_name":  "Windows Defender Firewall",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  844,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceNoNetworkFirewall -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "MSDTC",
+        "display_name":  "Distributed Transaction Coordinator",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\msdtc.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "MSiSCSI",
+        "display_name":  "Microsoft iSCSI Initiator Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "msiserver",
+        "display_name":  "Windows Installer",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\msiexec.exe /V",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "MsKeyboardFilter",
+        "display_name":  "Microsoft 键盘筛选器",
+        "state":  "Stopped",
+        "start_mode":  "Disabled",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "NaturalAuthentication",
+        "display_name":  "自然身份验证",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "NcaSvc",
+        "display_name":  "Network Connectivity Assistant",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k NetSvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "NcbService",
+        "display_name":  "Network Connection Broker",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  2200,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "NcdAutoSetup",
+        "display_name":  "Network Connected Devices Auto-Setup",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  17272,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalServiceNoNetwork -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "Netlogon",
+        "display_name":  "Netlogon",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\lsass.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "Netman",
+        "display_name":  "Network Connections",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "netprofm",
+        "display_name":  "Network List Service",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  2608,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k netprofm -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "NetSetupSvc",
+        "display_name":  "Network Setup Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "NetTcpPortSharing",
+        "display_name":  "Net.Tcp Port Sharing Service",
+        "state":  "Stopped",
+        "start_mode":  "Disabled",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\Microsoft.NET\\Framework64\\v4.0.30319\\SMSvcHost.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "NgcCtnrSvc",
+        "display_name":  "Microsoft Passport Container",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  5988,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "NgcSvc",
+        "display_name":  "Microsoft Passport",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  5092,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "NlaSvc",
+        "display_name":  "网络位置感知",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k netprofm -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "NPSMSvc_e562d",
+        "display_name":  "NPSMSvc_e562d",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "nsi",
+        "display_name":  "Network Store Interface Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  2492,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "OneDrive Updater Service",
+        "display_name":  "OneDrive Updater Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "\"C:\\Program Files\\Microsoft OneDrive\\26.070.0414.0001\\OneDriveUpdaterService.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "OneSyncSvc_e562d",
+        "display_name":  "OneSyncSvc_e562d",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  19416,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k UnistackSvcGroup",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "P9RdrService_e562d",
+        "display_name":  "P9RdrService_e562d",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k P9RdrService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "PcaSvc",
+        "display_name":  "Program Compatibility Assistant Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  13364,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "PeerDistSvc",
+        "display_name":  "BranchCache",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k PeerDist",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "PenService_e562d",
+        "display_name":  "PenService_e562d",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k PenService",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "perceptionsimulation",
+        "display_name":  "Windows 感知模拟服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\PerceptionSimulation\\PerceptionSimulationService.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "PerfHost",
+        "display_name":  "Performance Counter DLL Host",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\SysWow64\\perfhost.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "PhoneSvc",
+        "display_name":  "Phone Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "PimIndexMaintenanceSvc_e562d",
+        "display_name":  "PimIndexMaintenanceSvc_e562d",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  19416,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k UnistackSvcGroup",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "pla",
+        "display_name":  "Performance Logs \u0026 Alerts",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalServiceNoNetwork -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "PlugPlay",
+        "display_name":  "Plug and Play",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  1576,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k DcomLaunch -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "PolicyAgent",
+        "display_name":  "IPsec Policy Agent",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k NetworkServiceNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "Power",
+        "display_name":  "Power",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  1576,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k DcomLaunch -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "PresentMonSharedService",
+        "display_name":  "PresentMon Shared Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  5256,
+        "path_name":  "\"C:\\Program Files\\Intel\\PresentMonSharedService\\PresentMonService.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "PrintDeviceConfigurationService",
+        "display_name":  "打印设备配置服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "PrintNotify",
+        "display_name":  "Printer Extensions and Notifications",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k print",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "PrintScanBrokerService",
+        "display_name":  "PrintScanBrokerService",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k PrintScanBrokerService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "PrintWorkflowUserSvc_e562d",
+        "display_name":  "PrintWorkflowUserSvc_e562d",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k PrintWorkflow",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "ProfSvc",
+        "display_name":  "User Profile Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  2220,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k UserProfileService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "PushToInstall",
+        "display_name":  "Windows PushToInstall 服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "QWAVE",
+        "display_name":  "Quality Windows Audio Video Experience",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  28780,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceAndNoImpersonation -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "RasAuto",
+        "display_name":  "Remote Access Auto Connection Manager",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "RasMan",
+        "display_name":  "Remote Access Connection Manager",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  24656,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k netsvcs",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "refsdedupsvc",
+        "display_name":  "ReFS 重复数据删除服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\ReFsDedupSvc.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "RemoteAccess",
+        "display_name":  "Routing and Remote Access",
+        "state":  "Stopped",
+        "start_mode":  "Disabled",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k netsvcs",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "RemoteRegistry",
+        "display_name":  "Remote Registry",
+        "state":  "Stopped",
+        "start_mode":  "Disabled",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k localService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "RetailDemo",
+        "display_name":  "零售演示服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k rdxgroup",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "RmSvc",
+        "display_name":  "无线电管理服务",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  14228,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalServiceNetworkRestricted",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "ROG Live Service",
+        "display_name":  "ROG Live Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  5248,
+        "path_name":  "\"C:\\Program Files\\ASUS\\ROG Live Service\\ROGLiveService.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "RpcEptMapper",
+        "display_name":  "RPC Endpoint Mapper",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  1744,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k RPCSS -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "RpcLocator",
+        "display_name":  "Remote Procedure Call (RPC) Locator",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\locator.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "RpcSs",
+        "display_name":  "Remote Procedure Call (RPC)",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  1744,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k rpcss -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "RstMwService",
+        "display_name":  "Intel(R) Storage Middleware Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  5392,
+        "path_name":  "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\iastorvd.inf_amd64_22858d1857384824\\RstMwService.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "SamSs",
+        "display_name":  "Security Accounts Manager",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  1420,
+        "path_name":  "C:\\WINDOWS\\system32\\lsass.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "SCardSvr",
+        "display_name":  "Smart Card",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceAndNoImpersonation",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "ScDeviceEnum",
+        "display_name":  "Smart Card Device Enumeration Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "Schedule",
+        "display_name":  "Task Scheduler",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  2168,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "SCPolicySvc",
+        "display_name":  "Smart Card Removal Policy",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "SDRSVC",
+        "display_name":  "Windows 备份",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k SDRSVC",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "seclogon",
+        "display_name":  "Secondary Logon",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  18008,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "SecurityHealthService",
+        "display_name":  "Windows 安全中心服务",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  21152,
+        "path_name":  "C:\\WINDOWS\\system32\\SecurityHealthService.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "SEMgrSvc",
+        "display_name":  "付款和 NFC/SE 管理器",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "SENS",
+        "display_name":  "System Event Notification Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  3684,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcsRedirectionGuard -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "Sense",
+        "display_name":  "Sense",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "\"C:\\Program Files\\Windows Defender Advanced Threat Protection\\MsSense.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "SensorDataService",
+        "display_name":  "Sensor Data Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\SensorDataService.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "SensorService",
+        "display_name":  "Sensor Service",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  8632,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "SensrSvc",
+        "display_name":  "Sensor Monitoring Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceAndNoImpersonation -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "SessionEnv",
+        "display_name":  "Remote Desktop Configuration",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  true
+    },
+    {
+        "name":  "SharedAccess",
+        "display_name":  "Internet Connection Sharing (ICS)",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "ShellHWDetection",
+        "display_name":  "Shell Hardware Detection",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  4304,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "shpamsvc",
+        "display_name":  "Shared PC Account Manager",
+        "state":  "Stopped",
+        "start_mode":  "Disabled",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k netsvcsRedirectionGuard -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "smphost",
+        "display_name":  "Microsoft Storage Spaces SMP",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  33372,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k smphost",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "SmsRouter",
+        "display_name":  "Microsoft Windows SMS 路由器服务。",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "SNMPTrap",
+        "display_name":  "SNMP 陷阱",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\snmptrap.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "Spooler",
+        "display_name":  "Print Spooler",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  4392,
+        "path_name":  "C:\\WINDOWS\\System32\\spoolsv.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "sppsvc",
+        "display_name":  "Software Protection",
+        "state":  "Stopped",
+        "start_mode":  "Auto",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\sppsvc.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "SSDPSRV",
+        "display_name":  "SSDP Discovery",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  15940,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceAndNoImpersonation -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "ssh-agent",
+        "display_name":  "OpenSSH Authentication Agent",
+        "state":  "Stopped",
+        "start_mode":  "Disabled",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\OpenSSH\\ssh-agent.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "SstpSvc",
+        "display_name":  "Secure Socket Tunneling Protocol Service",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  6088,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "StateRepository",
+        "display_name":  "State Repository Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  4092,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k appmodel -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "Steam Client Service",
+        "display_name":  "Steam Client Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "\"C:\\Program Files (x86)\\Common Files\\Steam\\steamservice.exe\" /RunAsService",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "StiSvc",
+        "display_name":  "Windows Image Acquisition (WIA)",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  4532,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k imgsvc",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "StorSvc",
+        "display_name":  "Storage Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  9500,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "SunloginService",
+        "display_name":  "SunloginService",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "D:\\Software\\xiangrikui\\SunloginClient\\AweSun.exe",
+        "is_remote_candidate":  true
+    },
+    {
+        "name":  "svsvc",
+        "display_name":  "Spot Verifier",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "swprv",
+        "display_name":  "Microsoft Software Shadow Copy Provider",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k swprv",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "SysMain",
+        "display_name":  "SysMain",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  3472,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "SystemEventsBroker",
+        "display_name":  "System Events Broker",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  1576,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k DcomLaunch -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "SystemUsageReportSvc_QUEENCREEK",
+        "display_name":  "Intel(R) System Usage Report Service SystemUsageReportSvc_QUEENCREEK",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  5224,
+        "path_name":  "\"C:\\Program Files\\Intel\\SUR\\QUEENCREEK\\SurSvc.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "TapiSrv",
+        "display_name":  "Telephony",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k NetworkService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "TermService",
+        "display_name":  "Remote Desktop Services",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k NetworkService",
+        "is_remote_candidate":  true
+    },
+    {
+        "name":  "TextInputManagementService",
+        "display_name":  "Text Input Management Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  3828,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "Themes",
+        "display_name":  "Themes",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  3480,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "TieringEngineService",
+        "display_name":  "Storage Tiers Management",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\TieringEngineService.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "TimeBrokerSvc",
+        "display_name":  "Time Broker",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  2212,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "TokenBroker",
+        "display_name":  "Web 帐户管理器",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  13140,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "TrkWks",
+        "display_name":  "Distributed Link Tracking Client",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  5064,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "TroubleshootingSvc",
+        "display_name":  "建议疑难解答服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "TrustedInstaller",
+        "display_name":  "Windows Modules Installer",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\servicing\\TrustedInstaller.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "tzautoupdate",
+        "display_name":  "自动时区更新程序",
+        "state":  "Stopped",
+        "start_mode":  "Disabled",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "UdkUserSvc_e562d",
+        "display_name":  "UdkUserSvc_e562d",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  22308,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k UdkSvcGroup",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "UevAgentService",
+        "display_name":  "User Experience Virtualization Service",
+        "state":  "Stopped",
+        "start_mode":  "Disabled",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\AgentService.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "UmRdpService",
+        "display_name":  "Remote Desktop Services UserMode Port Redirector",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  true
+    },
+    {
+        "name":  "UnistoreSvc_e562d",
+        "display_name":  "UnistoreSvc_e562d",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  19416,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k UnistackSvcGroup",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "upnphost",
+        "display_name":  "UPnP Device Host",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceAndNoImpersonation -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "USER_ESRV_SVC_QUEENCREEK",
+        "display_name":  "User Energy Server Service queencreek",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "\"C:\\Program Files\\Intel\\SUR\\QUEENCREEK\\x64\\esrv_svc.exe\" \"--run_as_user_process\" ",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "UserDataSvc_e562d",
+        "display_name":  "UserDataSvc_e562d",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  19416,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k UnistackSvcGroup",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "UserManager",
+        "display_name":  "User Manager",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  2404,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "UsoSvc",
+        "display_name":  "更新 Orchestrator 服务",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  21716,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "VaultSvc",
+        "display_name":  "Credential Manager",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  1420,
+        "path_name":  "C:\\WINDOWS\\system32\\lsass.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "vds",
+        "display_name":  "Virtual Disk",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\vds.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "vmicguestinterface",
+        "display_name":  "Hyper-V Guest Service Interface",
+        "state":  "Stopped",
+        "start_mode":  "Disabled",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "vmicheartbeat",
+        "display_name":  "Hyper-V Heartbeat Service",
+        "state":  "Stopped",
+        "start_mode":  "Disabled",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k ICService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "vmickvpexchange",
+        "display_name":  "Hyper-V Data Exchange Service",
+        "state":  "Stopped",
+        "start_mode":  "Disabled",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "vmicrdv",
+        "display_name":  "Hyper-V 远程桌面虚拟化服务",
+        "state":  "Stopped",
+        "start_mode":  "Disabled",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k ICService -p",
+        "is_remote_candidate":  true
+    },
+    {
+        "name":  "vmicshutdown",
+        "display_name":  "Hyper-V Guest Shutdown Service",
+        "state":  "Stopped",
+        "start_mode":  "Disabled",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "vmictimesync",
+        "display_name":  "Hyper-V Time Synchronization Service",
+        "state":  "Stopped",
+        "start_mode":  "Disabled",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "vmicvmsession",
+        "display_name":  "Hyper-V PowerShell Direct Service",
+        "state":  "Stopped",
+        "start_mode":  "Disabled",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "vmicvss",
+        "display_name":  "Hyper-V 卷影复制请求程序",
+        "state":  "Stopped",
+        "start_mode":  "Disabled",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "VSInstallerElevationService",
+        "display_name":  "Visual Studio Installer Elevation Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\Installer\\VSInstallerElevationService.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "VSS",
+        "display_name":  "Volume Shadow Copy",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\vssvc.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "W32Time",
+        "display_name":  "Windows Time",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  20936,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalService",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WaaSMedicSvc",
+        "display_name":  "WaaSMedicSvc",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k wusvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WalletService",
+        "display_name":  "WalletService",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k appmodel -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "Wallpaper Engine Service",
+        "display_name":  "Wallpaper Engine Service",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  4120,
+        "path_name":  "\"C:\\WINDOWS\\SysWOW64\\wallpaperservice32.exe\" -p \"D:\\Play\\steam\\steamapps\\common\\wallpaper_engine\\wallpaper32.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WarpJITSvc",
+        "display_name":  "Warp JIT Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalServiceNetworkRestricted",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "wbengine",
+        "display_name":  "Block Level Backup Engine Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "\"C:\\WINDOWS\\system32\\wbengine.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WbioSrvc",
+        "display_name":  "Windows Biometric Service",
+        "state":  "Stopped",
+        "start_mode":  "Auto",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k WbioSvcGroup",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "Wcmsvc",
+        "display_name":  "Windows Connection Manager",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  3436,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceNetworkRestricted -p -s Wcmsvc",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "wcncsvc",
+        "display_name":  "Windows Connect Now - Config Registrar",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalServiceAndNoImpersonation -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WdiServiceHost",
+        "display_name":  "Diagnostic Service Host",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  7084,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WdiSystemHost",
+        "display_name":  "Diagnostic System Host",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WdNisSvc",
+        "display_name":  "Microsoft Defender 防病毒网络检查服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "\"C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.26030.3011-0\\NisSrv.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WebClient",
+        "display_name":  "WebClient",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  14180,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "webthreatdefsvc",
+        "display_name":  "Web 威胁防御服务",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  20796,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k WebThreatDefense -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "webthreatdefusersvc_e562d",
+        "display_name":  "webthreatdefusersvc_e562d",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  12768,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "Wecsvc",
+        "display_name":  "Windows Event Collector",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k NetworkService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WemeetUpdateSvc",
+        "display_name":  "WemeetUpdateSvc",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "\"C:\\Program Files (x86)\\Tencent\\UpdateSvr\\WemeetUpdateSvc.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WEPHOSTSVC",
+        "display_name":  "Windows Encryption Provider Host Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k WepHostSvcGroup",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "wercplsupport",
+        "display_name":  "Problem Reports Control Panel Support",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WerSvc",
+        "display_name":  "Windows Error Reporting Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k WerSvcGroup",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WFDSConMgrSvc",
+        "display_name":  "WLAN Direct 服务连接管理器服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "whesvc",
+        "display_name":  "Windows 健康状况和优化体验",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  22244,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k whesvc -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WiaRpc",
+        "display_name":  "Still Image Acquisition Events",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WinDefend",
+        "display_name":  "Microsoft Defender 防病毒服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "\"C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.26030.3011-0\\MsMpEng.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WinHttpAutoProxySvc",
+        "display_name":  "WinHTTP Web Proxy Auto-Discovery Service",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  4048,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceHttp -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "Winmgmt",
+        "display_name":  "Windows Management Instrumentation",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  5036,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WinRM",
+        "display_name":  "Windows Remote Management (WS-Management)",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k NetworkService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "wisvc",
+        "display_name":  "Windows 预览体验成员服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WlanSvc",
+        "display_name":  "WLAN AutoConfig",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  4276,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "wlidsvc",
+        "display_name":  "Microsoft Account Sign-in Assistant",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  8524,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "wlpasvc",
+        "display_name":  "本地配置文件助手服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WManSvc",
+        "display_name":  "Windows 管理服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "wmiApSrv",
+        "display_name":  "WMI Performance Adapter",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  19648,
+        "path_name":  "C:\\WINDOWS\\system32\\wbem\\WmiApSrv.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WMIRegistrationService",
+        "display_name":  "Intel(R) Management Engine WMI Provider Registration",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  5420,
+        "path_name":  "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\mewmiprov.inf_amd64_d51901c26227fb29\\WMIRegistrationService.exe",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WMPNetworkSvc",
+        "display_name":  "Windows Media Player Network Sharing Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "\"C:\\Program Files\\Windows Media Player\\wmpnetwk.exe\"",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "workfolderssvc",
+        "display_name":  "Work Folders",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalService -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WpcMonSvc",
+        "display_name":  "家长控制",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  21104,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalService",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WPDBusEnum",
+        "display_name":  "Portable Device Enumerator Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WpnService",
+        "display_name":  "Windows 推送通知系统服务",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  5076,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WpnUserService_e562d",
+        "display_name":  "WpnUserService_e562d",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  12904,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k UnistackSvcGroup",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "wpscloudsvr",
+        "display_name":  "WPS Office Cloud Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "\"C:\\Program Files\\Kingsoft\\office6\\wpscloudsvr.exe\" LocalService",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WSAIFabricSvc",
+        "display_name":  "WSAIFabricSvc",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  12224,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k WSAIFabricSvcGroup -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "wscsvc",
+        "display_name":  "安全中心",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  17344,
+        "path_name":  "C:\\WINDOWS\\System32\\svchost.exe -k LocalServiceNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WSearch",
+        "display_name":  "Windows Search",
+        "state":  "Running",
+        "start_mode":  "Auto",
+        "process_id":  12760,
+        "path_name":  "C:\\WINDOWS\\system32\\SearchIndexer.exe /Embedding",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "wuauserv",
+        "display_name":  "Windows 更新",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "wuqisvc",
+        "display_name":  "Microsoft 使用情况和质量见解",
+        "state":  "Running",
+        "start_mode":  "Manual",
+        "process_id":  24264,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k WuqiSvcGroup -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "WwanSvc",
+        "display_name":  "WWAN AutoConfig",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "XblAuthManager",
+        "display_name":  "Xbox Live 身份验证管理器",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcsRedirectionGuard -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "XblGameSave",
+        "display_name":  "Xbox Live 游戏保存",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "XboxGipSvc",
+        "display_name":  "Xbox Accessory Management Service",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "XboxNetApiSvc",
+        "display_name":  "Xbox Live 网络服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p",
+        "is_remote_candidate":  false
+    },
+    {
+        "name":  "ZTHELPER",
+        "display_name":  "ZTDNS 帮助程序服务",
+        "state":  "Stopped",
+        "start_mode":  "Manual",
+        "process_id":  0,
+        "path_name":  "C:\\WINDOWS\\system32\\svchost.exe -k zthelper -p",
+        "is_remote_candidate":  false
+    }
+]

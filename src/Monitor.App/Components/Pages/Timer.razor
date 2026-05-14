@@ -31,7 +31,7 @@
             <div class="timer-display" style="color:var(--text-muted);">00:00:00</div>
             <div class="row-subtitle">输入使用者姓名后开始记录</div>
             <div class="timer-controls">
-                <input class="input timer-input" @bind="_userName" @bind:event="oninput" @onkeydown="HandleKeyDown" placeholder="使用者姓名" />
+                <input class="input timer-input" @bind="_userName" @bind:event="oninput" @onkeydown="HandleKeyDown" placeholder="使用者姓名" aria-label="使用者姓名" />
                 <button class="btn btn-primary" @onclick="StartTimer" disabled="@string.IsNullOrWhiteSpace(_userName)">
                     <Icon Name="play" Size="15" />
                     开始计时

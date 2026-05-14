@@ -1,0 +1,62 @@
+﻿[
+    {
+        "id":  25636,
+        "name":  "AweSun",
+        "path":  "D:\\Software\\xiangrikui\\SunloginClient\\AweSun.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:35:49",
+        "working_set_mb":  120.96,
+        "is_remote_candidate":  true
+    },
+    {
+        "id":  31384,
+        "name":  "AweSun",
+        "path":  "D:\\Software\\xiangrikui\\SunloginClient\\agent\\AweSun.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:38:12",
+        "working_set_mb":  182.91,
+        "is_remote_candidate":  true
+    },
+    {
+        "id":  32440,
+        "name":  "AweSun",
+        "path":  "D:\\Software\\xiangrikui\\SunloginClient\\AweSun.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:35:47",
+        "working_set_mb":  283.39,
+        "is_remote_candidate":  true
+    },
+    {
+        "id":  33104,
+        "name":  "AweSun",
+        "path":  "D:\\Software\\xiangrikui\\SunloginClient\\agent\\AweSun.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:38:13",
+        "working_set_mb":  18.67,
+        "is_remote_candidate":  true
+    },
+    {
+        "id":  33612,
+        "name":  "AweSun",
+        "path":  "D:\\Software\\xiangrikui\\SunloginClient\\AweSun.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:35:49",
+        "working_set_mb":  138.79,
+        "is_remote_candidate":  true
+    },
+    {
+        "id":  14556,
+        "name":  "awesun_guard",
+        "path":  "D:\\Software\\xiangrikui\\SunloginClient\\awesun_guard\\64\\awesun_guard.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:35:50",
+        "working_set_mb":  40.04,
+        "is_remote_candidate":  true
+    }
+]

@@ -3,11 +3,6 @@ using Monitor.App.Repositories;
 
 namespace Monitor.App.Services;
 
-/// <summary>
-/// Unified state aggregator -- single source of truth consumed by both
-/// the Blazor UI and the external web API.
-/// Port of Python status_service.py.
-/// </summary>
 public class StatusService
 {
     private readonly TimerService _timer;
@@ -30,7 +25,9 @@ public class StatusService
         var remoteStatus = _remoteMonitor.GetStatus();
 
         string computerStatus;
-        if (remoteStatus.IsRemote) computerStatus = "remote_controlled";
+        if (remoteStatus.Status == "error") computerStatus = "error";
+        else if (remoteStatus.Status == "unknown") computerStatus = "unknown";
+        else if (remoteStatus.IsRemote) computerStatus = "remote_controlled";
         else if (timerState.IsRunning) computerStatus = "in_use";
         else computerStatus = "idle";
 
@@ -53,7 +50,15 @@ public class StatusService
                 RemoteType = remoteStatus.RemoteType,
                 StartTime = remoteStatus.StartTime,
                 ElapsedSeconds = remoteStatus.ElapsedSeconds,
-                ElapsedFormatted = remoteStatus.ElapsedFormatted
+                ElapsedFormatted = remoteStatus.ElapsedFormatted,
+                Status = remoteStatus.Status,
+                Source = remoteStatus.Source,
+                Confidence = remoteStatus.Confidence,
+                OperatorName = remoteStatus.OperatorName,
+                LastSeenAt = remoteStatus.LastSeenAt,
+                ErrorMessage = remoteStatus.ErrorMessage,
+                MatchedSignals = remoteStatus.MatchedSignals,
+                Message = remoteStatus.Message
             },
             TodayRecords = _usageRepo.GetTodayRecords(),
             TodayReservations = _reservationRepo.GetTodayReservations(todayStr)
@@ -68,7 +73,9 @@ public class StatusService
             IsTiming = _timer.IsRunning,
             CurrentUser = _timer.IsRunning ? _timer.CurrentUserName : null,
             IsRemote = remoteStatus.IsRemote,
-            RemoteType = remoteStatus.RemoteType
+            RemoteType = remoteStatus.RemoteType,
+            Status = remoteStatus.Status,
+            ErrorMessage = remoteStatus.ErrorMessage
         };
     }
 }

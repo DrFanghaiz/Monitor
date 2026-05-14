@@ -1,0 +1,3572 @@
+﻿[
+    {
+        "id":  11796,
+        "name":  "Aac3572DramHal_x86",
+        "path":  "C:\\Program Files\\ASUS\\ASUS_Aac_DRAM\\Aac3572DramHal_x86.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:14",
+        "working_set_mb":  11.41,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  11072,
+        "name":  "Aac3572MbHal_x86",
+        "path":  "C:\\Program Files\\ASUS\\AacMB\\Aac3572MbHal_x86.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:13",
+        "working_set_mb":  13.24,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  19880,
+        "name":  "Aac3572MbHal_x86",
+        "path":  "C:\\Program Files\\ASUS\\AacMB\\Aac3572MbHal_x86.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:43",
+        "working_set_mb":  11.95,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  8264,
+        "name":  "AacKingstonDramHal_x64",
+        "path":  "C:\\Program Files\\ASUS\\KINGSTON_Aac_DRAM\\AacKingstonDramHal_x64.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:23",
+        "working_set_mb":  11.59,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  13024,
+        "name":  "AacKingstonDramHal_x86",
+        "path":  "C:\\Program Files\\ASUS\\KINGSTON_Aac_DRAM\\AacKingstonDramHal_x86.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:15",
+        "working_set_mb":  11.41,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  13044,
+        "name":  "AcPowerNotification",
+        "path":  "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\dll\\AcPowerNotification\\AcPowerNotification.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:15",
+        "working_set_mb":  24.21,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  30860,
+        "name":  "acrotray",
+        "path":  "C:\\Program Files (x86)\\Adobe\\Acrobat DC\\Acrobat\\AcroTray.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 14:57:36",
+        "working_set_mb":  12.95,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  13728,
+        "name":  "AggregatorHost",
+        "path":  "C:\\WINDOWS\\System32\\AggregatorHost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:15",
+        "working_set_mb":  16.26,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5864,
+        "name":  "AGMService",
+        "path":  "C:\\Program Files (x86)\\Common Files\\Adobe\\AdobeGCClient\\AGMService.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  19.2,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  2104,
+        "name":  "amdfendrsr",
+        "path":  "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\amdfendr.inf_amd64_987f8cede005f427\\amdfendrsr.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  9.35,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  1072,
+        "name":  "amdow",
+        "path":  "C:\\Program Files\\AMD\\CNext\\CNext\\amdow.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:45:31",
+        "working_set_mb":  3.09,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  8504,
+        "name":  "AMDRSServ",
+        "path":  "C:\\Program Files\\AMD\\CNext\\CNext\\AMDRSServ.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:45:25",
+        "working_set_mb":  25.17,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  21904,
+        "name":  "AMDRSSrcExt",
+        "path":  "C:\\Program Files\\AMD\\CNext\\CNext\\AMDRSSrcExt.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:45:31",
+        "working_set_mb":  58.35,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  14880,
+        "name":  "ApplicationFrameHost",
+        "path":  "C:\\WINDOWS\\system32\\ApplicationFrameHost.exe",
+        "main_window_title":  "设置",
+        "responding":  true,
+        "start_time":  "2026-05-12 17:29:31",
+        "working_set_mb":  46.4,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5004,
+        "name":  "ArmouryCrate.Service",
+        "path":  "C:\\Program Files\\ASUS\\Armoury Crate Service\\ArmouryCrate.Service.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  72.49,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  9200,
+        "name":  "ArmouryCrate.UserSessionHelper",
+        "path":  "C:\\Program Files\\ASUS\\Armoury Crate Service\\ArmouryCrate.UserSessionHelper.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:13",
+        "working_set_mb":  83.99,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  14684,
+        "name":  "ArmouryHtmlDebugServer",
+        "path":  "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\dll\\ArmourySocketServer\\ArmouryHtmlDebugServer.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:22",
+        "working_set_mb":  1.45,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  15832,
+        "name":  "ArmourySocketServer",
+        "path":  "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\dll\\ArmourySocketServer\\ArmourySocketServer.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:18",
+        "working_set_mb":  6.21,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  1592,
+        "name":  "ArmourySwAgent",
+        "path":  "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\dll\\SwAgent\\ArmourySwAgent.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:41",
+        "working_set_mb":  4.76,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  2536,
+        "name":  "asus_framework",
+        "path":  "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\asus_framework.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:41",
+        "working_set_mb":  9.79,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  3100,
+        "name":  "asus_framework",
+        "path":  "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\asus_framework.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:41",
+        "working_set_mb":  10.85,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  18220,
+        "name":  "asus_framework",
+        "path":  "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\asus_framework.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:41",
+        "working_set_mb":  10.77,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  18764,
+        "name":  "asus_framework",
+        "path":  "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\asus_framework.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:28",
+        "working_set_mb":  24.59,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  20296,
+        "name":  "asus_framework",
+        "path":  "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\asus_framework.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:35",
+        "working_set_mb":  6.05,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  20348,
+        "name":  "asus_framework",
+        "path":  "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\asus_framework.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:35",
+        "working_set_mb":  10.81,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  20368,
+        "name":  "asus_framework",
+        "path":  "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\asus_framework.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:35",
+        "working_set_mb":  6.72,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  2544,
+        "name":  "AsusCertService",
+        "path":  "C:\\Program Files (x86)\\ASUS\\AsusCertService\\1.2.41\\AsusCertService.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  10.24,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5128,
+        "name":  "AsusFanControlService",
+        "path":  "C:\\Program Files (x86)\\ASUS\\AsusFanControlService\\2.05.05\\AsusFanControlService.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  26.55,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  3456,
+        "name":  "atieclxx",
+        "path":  "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\u0407985.inf_amd64_8b91d89faa42522c\\B406780\\atieclxx.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  20.78,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  2456,
+        "name":  "atiesrxx",
+        "path":  "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\u0407985.inf_amd64_8b91d89faa42522c\\B406780\\atiesrxx.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  9.23,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  4876,
+        "name":  "atkexComSvc",
+        "path":  "C:\\Program Files (x86)\\ASUS\\AXSP\\5.00.05\\atkexComSvc.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  13.96,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  4188,
+        "name":  "audiodg",
+        "path":  "C:\\WINDOWS\\system32\\AUDIODG.EXE",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  16.72,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  25636,
+        "name":  "AweSun",
+        "path":  "D:\\Software\\xiangrikui\\SunloginClient\\AweSun.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:35:49",
+        "working_set_mb":  120.96,
+        "is_remote_candidate":  true
+    },
+    {
+        "id":  32440,
+        "name":  "AweSun",
+        "path":  "D:\\Software\\xiangrikui\\SunloginClient\\AweSun.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:35:47",
+        "working_set_mb":  281.4,
+        "is_remote_candidate":  true
+    },
+    {
+        "id":  33612,
+        "name":  "AweSun",
+        "path":  "D:\\Software\\xiangrikui\\SunloginClient\\AweSun.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:35:49",
+        "working_set_mb":  134.58,
+        "is_remote_candidate":  true
+    },
+    {
+        "id":  14556,
+        "name":  "awesun_guard",
+        "path":  "D:\\Software\\xiangrikui\\SunloginClient\\awesun_guard\\64\\awesun_guard.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:35:50",
+        "working_set_mb":  40.4,
+        "is_remote_candidate":  true
+    },
+    {
+        "id":  6468,
+        "name":  "backgroundTaskHost",
+        "path":  "C:\\WINDOWS\\system32\\backgroundTaskHost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 14:53:15",
+        "working_set_mb":  45.23,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  32948,
+        "name":  "cc-switch",
+        "path":  "C:\\Users\\happx\\AppData\\Local\\Programs\\CC Switch\\cc-switch.exe",
+        "main_window_title":  "com.ccswitch.desktop-siw",
+        "responding":  true,
+        "start_time":  "2026-05-13 15:13:24",
+        "working_set_mb":  47.09,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  10912,
+        "name":  "ChsIME",
+        "path":  "C:\\Windows\\System32\\InputMethod\\CHS\\ChsIME.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:37:14",
+        "working_set_mb":  11.87,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  17548,
+        "name":  "ChsIME",
+        "path":  "C:\\Windows\\System32\\InputMethod\\CHS\\ChsIME.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:20",
+        "working_set_mb":  9.79,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  2052,
+        "name":  "clash-verge",
+        "path":  "D:\\Software\\Clash\\Clash Verge\\clash-verge.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:45:23",
+        "working_set_mb":  56.05,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  30732,
+        "name":  "claude",
+        "path":  "C:\\Users\\happx\\.local\\bin\\claude.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 20:09:32",
+        "working_set_mb":  387.65,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  2592,
+        "name":  "cmd",
+        "path":  "C:\\WINDOWS\\system32\\cmd.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:45:25",
+        "working_set_mb":  5.77,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  21720,
+        "name":  "cncmd",
+        "path":  "C:\\Program Files\\AMD\\CNext\\CNext\\cncmd.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:45:25",
+        "working_set_mb":  7.79,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  14824,
+        "name":  "Code",
+        "path":  "D:\\Software\\Microsoft VS Code\\Code.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 17:26:14",
+        "working_set_mb":  91.02,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  23588,
+        "name":  "Code",
+        "path":  "D:\\Software\\Microsoft VS Code\\Code.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 17:26:12",
+        "working_set_mb":  239.44,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  25412,
+        "name":  "Code",
+        "path":  "D:\\Software\\Microsoft VS Code\\Code.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 17:26:19",
+        "working_set_mb":  110.08,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  28908,
+        "name":  "Code",
+        "path":  "D:\\Software\\Microsoft VS Code\\Code.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 17:26:13",
+        "working_set_mb":  301.02,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  29688,
+        "name":  "Code",
+        "path":  "D:\\Software\\Microsoft VS Code\\Code.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 17:26:12",
+        "working_set_mb":  67.27,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  31948,
+        "name":  "Code",
+        "path":  "D:\\Software\\Microsoft VS Code\\Code.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 17:26:12",
+        "working_set_mb":  48.09,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  32564,
+        "name":  "Code",
+        "path":  "D:\\Software\\Microsoft VS Code\\Code.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 17:26:19",
+        "working_set_mb":  89.13,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  32996,
+        "name":  "Code",
+        "path":  "D:\\Software\\Microsoft VS Code\\Code.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 17:26:13",
+        "working_set_mb":  90.37,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  34824,
+        "name":  "Code",
+        "path":  "D:\\Software\\Microsoft VS Code\\Code.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 17:26:18",
+        "working_set_mb":  200.6,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  34944,
+        "name":  "Code",
+        "path":  "D:\\Software\\Microsoft VS Code\\Code.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 17:26:13",
+        "working_set_mb":  139.23,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  35812,
+        "name":  "Code",
+        "path":  "D:\\Software\\Microsoft VS Code\\Code.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 17:26:20",
+        "working_set_mb":  92.07,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  36776,
+        "name":  "Code",
+        "path":  "D:\\Software\\Microsoft VS Code\\Code.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 17:26:12",
+        "working_set_mb":  30.38,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  38432,
+        "name":  "Code",
+        "path":  "D:\\Software\\Microsoft VS Code\\Code.exe",
+        "main_window_title":  "timer.py - Monitor - Visual Studio Code [管理员]",
+        "responding":  true,
+        "start_time":  "2026-05-13 17:26:11",
+        "working_set_mb":  121.29,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  1616,
+        "name":  "Codex",
+        "path":  "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.506.3741.0_x64__2p2nqsd0c76g0\\app\\Codex.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 10:38:26",
+        "working_set_mb":  32.29,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  22440,
+        "name":  "Codex",
+        "path":  "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.506.3741.0_x64__2p2nqsd0c76g0\\app\\Codex.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 10:38:26",
+        "working_set_mb":  56.2,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  24008,
+        "name":  "Codex",
+        "path":  "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.506.3741.0_x64__2p2nqsd0c76g0\\app\\Codex.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 10:38:26",
+        "working_set_mb":  135.82,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  27740,
+        "name":  "codex",
+        "path":  "c:\\Users\\happx\\.vscode\\extensions\\openai.chatgpt-26.5506.31421-win32-x64\\bin\\windows-x86_64\\codex.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 17:26:18",
+        "working_set_mb":  42.7,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  31344,
+        "name":  "codex",
+        "path":  "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.506.3741.0_x64__2p2nqsd0c76g0\\app\\resources\\codex.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 10:38:28",
+        "working_set_mb":  119.09,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  31420,
+        "name":  "Codex",
+        "path":  "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.506.3741.0_x64__2p2nqsd0c76g0\\app\\Codex.exe",
+        "main_window_title":  "Codex",
+        "responding":  true,
+        "start_time":  "2026-05-14 10:38:25",
+        "working_set_mb":  243.05,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  32032,
+        "name":  "Codex",
+        "path":  "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.506.3741.0_x64__2p2nqsd0c76g0\\app\\Codex.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 10:38:28",
+        "working_set_mb":  414.93,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  38796,
+        "name":  "codex",
+        "path":  "C:\\Users\\happx\\AppData\\Local\\OpenAI\\Codex\\bin\\codex.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 10:39:32",
+        "working_set_mb":  17.48,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  38180,
+        "name":  "codex-command-runner-0.130.0-alpha.5",
+        "path":  "C:\\Users\\happx\\.codex\\.sandbox-bin\\codex-command-runner-0.130.0-alpha.5.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 10:39:32",
+        "working_set_mb":  10.3,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5292,
+        "name":  "collector_service",
+        "path":  "C:\\Program Files\\Intel\\CollectorService\\collector_service.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  21.27,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  3692,
+        "name":  "conhost",
+        "path":  "C:\\WINDOWS\\system32\\conhost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:32:43",
+        "working_set_mb":  11.42,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  9320,
+        "name":  "conhost",
+        "path":  "C:\\WINDOWS\\system32\\conhost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:13",
+        "working_set_mb":  6.49,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  9728,
+        "name":  "conhost",
+        "path":  "C:\\WINDOWS\\system32\\conhost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:12",
+        "working_set_mb":  9.89,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  9772,
+        "name":  "conhost",
+        "path":  "C:\\WINDOWS\\system32\\conhost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:12",
+        "working_set_mb":  9.92,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  9824,
+        "name":  "conhost",
+        "path":  "C:\\WINDOWS\\system32\\conhost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:12",
+        "working_set_mb":  9.94,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  9840,
+        "name":  "conhost",
+        "path":  "C:\\WINDOWS\\system32\\conhost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:12",
+        "working_set_mb":  9.98,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  9916,
+        "name":  "conhost",
+        "path":  "C:\\WINDOWS\\system32\\conhost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:12",
+        "working_set_mb":  9.96,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  9960,
+        "name":  "conhost",
+        "path":  "C:\\WINDOWS\\system32\\conhost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:12",
+        "working_set_mb":  9.89,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  10020,
+        "name":  "conhost",
+        "path":  "C:\\WINDOWS\\system32\\conhost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:45:25",
+        "working_set_mb":  6.48,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  10108,
+        "name":  "conhost",
+        "path":  "C:\\WINDOWS\\system32\\conhost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 17:26:17",
+        "working_set_mb":  8.5,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  12116,
+        "name":  "conhost",
+        "path":  "C:\\WINDOWS\\system32\\conhost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 17:26:27",
+        "working_set_mb":  8.6,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  14052,
+        "name":  "conhost",
+        "path":  "C:\\WINDOWS\\system32\\conhost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 17:41:17",
+        "working_set_mb":  8.63,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  14492,
+        "name":  "conhost",
+        "path":  "C:\\WINDOWS\\system32\\conhost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:45:25",
+        "working_set_mb":  6.64,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  23468,
+        "name":  "conhost",
+        "path":  "C:\\WINDOWS\\system32\\conhost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:37:10",
+        "working_set_mb":  7.82,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  24460,
+        "name":  "conhost",
+        "path":  "C:\\WINDOWS\\system32\\conhost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 17:26:15",
+        "working_set_mb":  7.2,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  25392,
+        "name":  "conhost",
+        "path":  "C:\\WINDOWS\\system32\\conhost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:46:17",
+        "working_set_mb":  12.33,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  27748,
+        "name":  "conhost",
+        "path":  "C:\\WINDOWS\\system32\\conhost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 17:26:19",
+        "working_set_mb":  7.27,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  35520,
+        "name":  "conhost",
+        "path":  "C:\\WINDOWS\\system32\\conhost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:35:51",
+        "working_set_mb":  9.37,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  36584,
+        "name":  "conhost",
+        "path":  null,
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  null,
+        "working_set_mb":  8.15,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  38100,
+        "name":  "conhost",
+        "path":  "C:\\WINDOWS\\system32\\conhost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 10:38:28",
+        "working_set_mb":  7.94,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  38252,
+        "name":  "conhost",
+        "path":  "C:\\WINDOWS\\system32\\conhost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 10:39:32",
+        "working_set_mb":  7.98,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  23932,
+        "name":  "crashpad_handler",
+        "path":  "D:\\Software\\Foxmail\\7.2.25.528\\crashpad_handler.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:46:01",
+        "working_set_mb":  16.75,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  14360,
+        "name":  "CrossDeviceResume",
+        "path":  "C:\\WINDOWS\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\CrossDeviceResume.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:16",
+        "working_set_mb":  57.61,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  7580,
+        "name":  "CrossDeviceService",
+        "path":  "C:\\Program Files\\WindowsApps\\MicrosoftWindows.CrossDevice_1.26022.46.0_x64__cw5n1h2txyewy\\CrossDeviceService.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:25",
+        "working_set_mb":  96.64,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  1052,
+        "name":  "csrss",
+        "path":  null,
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:07",
+        "working_set_mb":  6.24,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  1248,
+        "name":  "csrss",
+        "path":  null,
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:08",
+        "working_set_mb":  7.35,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  16756,
+        "name":  "ctfmon",
+        "path":  "C:\\WINDOWS\\system32\\ctfmon.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:19",
+        "working_set_mb":  75.08,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  2840,
+        "name":  "dasHost",
+        "path":  "C:\\WINDOWS\\system32\\dashost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  17.57,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  4340,
+        "name":  "dasHost",
+        "path":  "C:\\WINDOWS\\system32\\dashost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  11.03,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  9788,
+        "name":  "DDPM.Subagent",
+        "path":  "C:\\Program Files\\Dell\\Dell Display and Peripheral Manager\\Plugins\\DDPM.Subagent\\DDPM.Subagent.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:12",
+        "working_set_mb":  112.71,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  9780,
+        "name":  "DDPM.Subagent.User",
+        "path":  "C:\\Program Files\\Dell\\Dell Display and Peripheral Manager\\Plugins\\DDPM.Subagent.User\\DDPM.Subagent.User.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:12",
+        "working_set_mb":  286.46,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  4904,
+        "name":  "DDPMNetworkKVMService",
+        "path":  "C:\\Program Files\\Dell\\Dell Display and Peripheral Manager\\Plugins\\NKVM\\DellDisplayManagerNetworkKVMService\\DDPMNetworkKVMService.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  30.48,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  18812,
+        "name":  "DDPM-NKVM",
+        "path":  "C:\\Program Files\\Dell\\Dell Display and Peripheral Manager\\Plugins\\NKVM\\DDPM-NKVM.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:29",
+        "working_set_mb":  92.05,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  20612,
+        "name":  "Dell Display Manager Network Service",
+        "path":  "C:\\Program Files\\Dell\\Dell Display and Peripheral Manager\\Plugins\\NKVM\\DellDisplayManagerNetworkKVMService\\ReceiveKMEventWinLogon\\Dell Display Manager Network Service.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:53",
+        "working_set_mb":  83.07,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  9700,
+        "name":  "Dell.CoreServices.Client",
+        "path":  "C:\\Program Files\\Dell\\TechHub\\Dell.CoreServices.Client.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:12",
+        "working_set_mb":  133.36,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  4932,
+        "name":  "Dell.TechHub",
+        "path":  "C:\\Program Files\\Dell\\TechHub\\Dell.TechHub.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  77.59,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  9756,
+        "name":  "Dell.TechHub.Analytics.SubAgent",
+        "path":  "C:\\Program Files\\Dell\\DTP\\AnalyticsSubAgent\\Dell.TechHub.Analytics.SubAgent.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:12",
+        "working_set_mb":  115.04,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  9676,
+        "name":  "Dell.TechHub.DataManager.SubAgent",
+        "path":  "C:\\Program Files\\Dell\\DTP\\DataManagerSubAgent\\Dell.TechHub.DataManager.SubAgent.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:12",
+        "working_set_mb":  131.82,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  9856,
+        "name":  "Dell.TechHub.Instrumentation.SubAgent",
+        "path":  "C:\\Program Files\\Dell\\DTP\\InstrumentationSubAgent\\Dell.TechHub.Instrumentation.SubAgent.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:12",
+        "working_set_mb":  264.07,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  13296,
+        "name":  "Dell.TechHub.Instrumentation.UserProcess",
+        "path":  "C:\\Program Files\\Dell\\DTP\\InstrumentationSubAgent\\Dell.TechHub.Instrumentation.UserProcess.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:17",
+        "working_set_mb":  126.16,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  9800,
+        "name":  "Dell.UCA.Manager",
+        "path":  "C:\\Program Files\\Dell\\MyDell\\Manager\\Dell.UCA.Manager.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:12",
+        "working_set_mb":  89.37,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  9740,
+        "name":  "Dell.Update.SubAgent",
+        "path":  "C:\\Program Files (x86)\\Dell\\UpdateService\\DCF\\Dell.Update.SubAgent.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:12",
+        "working_set_mb":  64.88,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  18564,
+        "name":  "dllhost",
+        "path":  "C:\\WINDOWS\\system32\\DllHost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:28",
+        "working_set_mb":  12.53,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  8896,
+        "name":  "DPM",
+        "path":  "C:\\Program Files\\Dell\\Dell Peripheral Manager\\DPM.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:11",
+        "working_set_mb":  44.51,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  6792,
+        "name":  "DPMCrashHandler",
+        "path":  "C:\\Program Files\\Dell\\Dell Peripheral Manager\\DPMCrashHandler.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  5.7,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  9040,
+        "name":  "DPMCrashHandler",
+        "path":  "C:\\Program Files\\Dell\\Dell Peripheral Manager\\DPMCrashHandler.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:11",
+        "working_set_mb":  7.52,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  4512,
+        "name":  "DPMService",
+        "path":  "C:\\Program Files\\Dell\\Dell Peripheral Manager\\DPMService.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  33.86,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  1956,
+        "name":  "dwm",
+        "path":  "C:\\WINDOWS\\system32\\dwm.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  163.81,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  7108,
+        "name":  "EarTrumpet",
+        "path":  "C:\\Program Files\\WindowsApps\\40459File-New-Project.EarTrumpet_2.3.0.0_x86__1sdd7yawvg6ne\\EarTrumpet\\EarTrumpet.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:46:02",
+        "working_set_mb":  67.27,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  4868,
+        "name":  "Everything",
+        "path":  "C:\\Program Files\\Everything\\Everything.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  8.67,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  21712,
+        "name":  "Everything",
+        "path":  "C:\\Program Files\\Everything\\Everything.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:45:14",
+        "working_set_mb":  366.88,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  13460,
+        "name":  "explorer",
+        "path":  "C:\\WINDOWS\\Explorer.EXE",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:15",
+        "working_set_mb":  310.47,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  11016,
+        "name":  "extensionCardHal_x86",
+        "path":  "C:\\Program Files\\ASUS\\AacExtCard\\extensionCardHal_x86.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:13",
+        "working_set_mb":  11.49,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  17872,
+        "name":  "FanControl",
+        "path":  "D:\\Software\\FanControl\\FanControl.EXE",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:45",
+        "working_set_mb":  86.74,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5728,
+        "name":  "FileCoAuth",
+        "path":  "C:\\Program Files\\Microsoft OneDrive\\26.070.0414.0001\\FileCoAuth.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:46:27",
+        "working_set_mb":  41.68,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  23660,
+        "name":  "FileSyncHelper",
+        "path":  "C:\\Program Files\\Microsoft OneDrive\\26.070.0414.0001\\FileSyncHelper.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:45:45",
+        "working_set_mb":  28.25,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  1628,
+        "name":  "fontdrvhost",
+        "path":  "C:\\WINDOWS\\system32\\fontdrvhost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  4.23,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  1636,
+        "name":  "fontdrvhost",
+        "path":  "C:\\WINDOWS\\system32\\fontdrvhost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  40.89,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  860,
+        "name":  "Foxmail",
+        "path":  "D:\\Software\\Foxmail\\Foxmail.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:46:04",
+        "working_set_mb":  53.92,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  15956,
+        "name":  "Foxmail",
+        "path":  "D:\\Software\\Foxmail\\Foxmail.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:46:04",
+        "working_set_mb":  28.62,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  19208,
+        "name":  "Foxmail",
+        "path":  "D:\\Software\\Foxmail\\Foxmail.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:46:01",
+        "working_set_mb":  38.45,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  21424,
+        "name":  "Foxmail",
+        "path":  "D:\\Software\\Foxmail\\Foxmail.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:46:02",
+        "working_set_mb":  33.97,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  23596,
+        "name":  "Foxmail",
+        "path":  "D:\\Software\\Foxmail\\Foxmail.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:46:04",
+        "working_set_mb":  41.5,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  24088,
+        "name":  "Foxmail",
+        "path":  "D:\\Software\\Foxmail\\Foxmail.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:46:01",
+        "working_set_mb":  34.17,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  24672,
+        "name":  "Foxmail",
+        "path":  "D:\\Software\\Foxmail\\Foxmail.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:46:43",
+        "working_set_mb":  33.8,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  10956,
+        "name":  "FxSound",
+        "path":  "C:\\Program Files\\FxSound LLC\\FxSound\\FxSound.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:46:37",
+        "working_set_mb":  24.46,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  4972,
+        "name":  "GameSDK",
+        "path":  "C:\\Program Files (x86)\\ASUS\\GameSDK Service\\GameSDK.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  8.99,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  11616,
+        "name":  "git",
+        "path":  null,
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  null,
+        "working_set_mb":  8.45,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  29528,
+        "name":  "git",
+        "path":  null,
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  null,
+        "working_set_mb":  6.73,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  13396,
+        "name":  "GitHubDesktop",
+        "path":  "C:\\Users\\happx\\AppData\\Local\\GitHubDesktop\\app-3.5.8\\GitHubDesktop.exe",
+        "main_window_title":  "GitHub Desktop",
+        "responding":  true,
+        "start_time":  "2026-05-14 09:51:12",
+        "working_set_mb":  99.43,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  34624,
+        "name":  "GitHubDesktop",
+        "path":  "C:\\Users\\happx\\AppData\\Local\\GitHubDesktop\\app-3.5.8\\GitHubDesktop.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 09:51:12",
+        "working_set_mb":  68.99,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  36808,
+        "name":  "GitHubDesktop",
+        "path":  "C:\\Users\\happx\\AppData\\Local\\GitHubDesktop\\app-3.5.8\\GitHubDesktop.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 09:51:12",
+        "working_set_mb":  48.43,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  39048,
+        "name":  "GitHubDesktop",
+        "path":  "C:\\Users\\happx\\AppData\\Local\\GitHubDesktop\\app-3.5.8\\GitHubDesktop.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 09:51:12",
+        "working_set_mb":  111.82,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  25272,
+        "name":  "Glance",
+        "path":  "C:\\Program Files\\WindowsApps\\MirametrixInc.GlancebyMirametrix_11.43.256.0_x64__17mer8kcn3j54\\Glance\\bin\\Glance.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:46:16",
+        "working_set_mb":  291.23,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  25380,
+        "name":  "handler",
+        "path":  "C:\\Program Files\\WindowsApps\\MirametrixInc.GlancebyMirametrix_11.43.256.0_x64__17mer8kcn3j54\\Glance\\bin\\handler.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:46:17",
+        "working_set_mb":  8.39,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  30892,
+        "name":  "HipsDaemon",
+        "path":  "D:\\Software\\huorong\\Sysdiag\\bin\\HipsDaemon.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 13:05:19",
+        "working_set_mb":  14.56,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  16508,
+        "name":  "HipsTray",
+        "path":  "D:\\Software\\huorong\\Sysdiag\\bin\\HipsTray.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:45:13",
+        "working_set_mb":  14.13,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5168,
+        "name":  "HPLaserJetService",
+        "path":  "C:\\Program Files (x86)\\HP\\HPLaserJetService\\HPLaserJetService.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  6.21,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5196,
+        "name":  "HPPrintScanDoctorService",
+        "path":  "C:\\Program Files\\HPPrintScanDoctor\\HPPrintScanDoctorService.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  18.32,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  0,
+        "name":  "Idle",
+        "path":  null,
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  null,
+        "working_set_mb":  0.01,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5272,
+        "name":  "jhi_service",
+        "path":  "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\dal.inf_amd64_af50fdb80983f7bc\\jhi_service.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  8.09,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  12092,
+        "name":  "LightingService",
+        "path":  "C:\\Program Files (x86)\\LightingService\\LightingService.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:54:18",
+        "working_set_mb":  26.25,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  17500,
+        "name":  "LiteMonitor",
+        "path":  "D:\\Software\\LiteMonitor_v1.3.4-win-x64\\LiteMonitor.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:20",
+        "working_set_mb":  35.45,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  33740,
+        "name":  "LiteMonitorFPS",
+        "path":  "D:\\Software\\LiteMonitor_v1.3.4-win-x64\\resources\\LiteMonitorFPS.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:37:10",
+        "working_set_mb":  13.89,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5568,
+        "name":  "logi_lamparray_service",
+        "path":  "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\logi_lamparray_usb.inf_amd64_9bb7be35ea261c7b\\logi_lamparray_service.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  11.55,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  1412,
+        "name":  "LsaIso",
+        "path":  null,
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:08",
+        "working_set_mb":  4.05,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  1420,
+        "name":  "lsass",
+        "path":  null,
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:08",
+        "working_set_mb":  37.56,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  3576,
+        "name":  "Memory Compression",
+        "path":  null,
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  1239.03,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5236,
+        "name":  "micont_service",
+        "path":  "C:\\Program Files\\MI\\PcContinuity\\1.1.2.11\\micont_service.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  37.61,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5400,
+        "name":  "MiPcContinuityService",
+        "path":  "C:\\Program Files\\MI\\PcContinuity\\1.1.2.11\\x86\\MiPcContinuityService.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  39.49,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5384,
+        "name":  "MiService",
+        "path":  "C:\\Program Files (x86)\\Timi Personal Computing\\MiService\\3.4.1.1132\\MiService.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  37.24,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  20608,
+        "name":  "MouseAndKeyeventOnSystem",
+        "path":  "C:\\Program Files\\Dell\\Dell Display and Peripheral Manager\\Plugins\\NKVM\\DellDisplayManagerNetworkKVMService\\MouseAndKeyeventOnSystem\\MouseAndKeyeventOnSystem.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:53",
+        "working_set_mb":  45.66,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  4284,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\147.0.3912.98\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:45:23",
+        "working_set_mb":  113.21,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  4856,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:35:49",
+        "working_set_mb":  50.62,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5316,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\147.0.3912.98\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:45:24",
+        "working_set_mb":  84.72,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5348,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\147.0.3912.98\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:45:24",
+        "working_set_mb":  34.7,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5492,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\147.0.3912.98\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:45:24",
+        "working_set_mb":  18.49,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  6060,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\147.0.3912.98\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:45:24",
+        "working_set_mb":  246.89,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  13408,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:35:48",
+        "working_set_mb":  47.88,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  16548,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:35:48",
+        "working_set_mb":  20.21,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  18204,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 15:13:25",
+        "working_set_mb":  83.4,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  19652,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:35:48",
+        "working_set_mb":  140.18,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  22084,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\147.0.3912.98\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:45:23",
+        "working_set_mb":  8.79,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  23816,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 16:26:30",
+        "working_set_mb":  63.75,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  24116,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:35:48",
+        "working_set_mb":  67.91,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  24560,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:35:48",
+        "working_set_mb":  13.96,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  26296,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 14:53:09",
+        "working_set_mb":  113.43,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  27384,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 14:53:09",
+        "working_set_mb":  12.97,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  28204,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 14:53:09",
+        "working_set_mb":  19.63,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  28356,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 14:53:09",
+        "working_set_mb":  55.07,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  28884,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 14:53:09",
+        "working_set_mb":  48.98,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  29180,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 14:53:09",
+        "working_set_mb":  38.83,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  29276,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 15:13:25",
+        "working_set_mb":  113.4,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  31752,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 15:13:25",
+        "working_set_mb":  36.22,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  32456,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 15:13:25",
+        "working_set_mb":  114.76,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  32900,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 15:13:25",
+        "working_set_mb":  19.07,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  33024,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 15:13:25",
+        "working_set_mb":  12.52,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  34764,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:35:48",
+        "working_set_mb":  38.1,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  35208,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:35:50",
+        "working_set_mb":  47.96,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  37632,
+        "name":  "msedgewebview2",
+        "path":  "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\148.0.3967.54\\msedgewebview2.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:35:50",
+        "working_set_mb":  47.94,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  6604,
+        "name":  "NgcIso",
+        "path":  null,
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  4.64,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  39220,
+        "name":  "node",
+        "path":  "C:\\Users\\happx\\AppData\\Local\\OpenAI\\Codex\\bin\\node.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 10:39:32",
+        "working_set_mb":  40.27,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  36132,
+        "name":  "node_repl",
+        "path":  "C:\\Users\\happx\\AppData\\Local\\OpenAI\\Codex\\bin\\node_repl.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 10:38:46",
+        "working_set_mb":  9.84,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  2044,
+        "name":  "NoiseCancelingEngine",
+        "path":  "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\dll\\MBLedSDK\\NoiseCancelingEngine.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:15",
+        "working_set_mb":  5.45,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5436,
+        "name":  "OfficeClickToRun",
+        "path":  "C:\\Program Files\\Common Files\\Microsoft Shared\\ClickToRun\\OfficeClickToRun.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  59.78,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  12868,
+        "name":  "OneDrive.Sync.Service",
+        "path":  "C:\\Program Files\\Microsoft OneDrive\\26.070.0414.0001\\OneDrive.Sync.Service.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 03:46:54",
+        "working_set_mb":  159.72,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  21980,
+        "name":  "OpenConsole",
+        "path":  "C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.24.10921.0_x64__8wekyb3d8bbwe\\OpenConsole.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 20:09:24",
+        "working_set_mb":  11.45,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  34604,
+        "name":  "OpenConsole",
+        "path":  "C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.24.10921.0_x64__8wekyb3d8bbwe\\OpenConsole.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:32:43",
+        "working_set_mb":  16.33,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  36160,
+        "name":  "pet",
+        "path":  "c:\\Users\\happx\\.vscode\\extensions\\ms-python.python-2026.4.0-win32-x64\\python-env-tools\\bin\\pet.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 17:26:14",
+        "working_set_mb":  8.02,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  15920,
+        "name":  "PixPin",
+        "path":  "C:\\Users\\happx\\AppData\\Local\\Programs\\PixPin\\PixPin.exe",
+        "main_window_title":  "PixPin",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:18",
+        "working_set_mb":  66.78,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  6444,
+        "name":  "powershell",
+        "path":  "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 10:39:09",
+        "working_set_mb":  74.5,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  18408,
+        "name":  "powershell",
+        "path":  "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 20:09:24",
+        "working_set_mb":  54.9,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  19500,
+        "name":  "powershell",
+        "path":  "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:38:46",
+        "working_set_mb":  77.23,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  25768,
+        "name":  "powershell",
+        "path":  "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 17:26:27",
+        "working_set_mb":  64.41,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  26264,
+        "name":  "powershell",
+        "path":  "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 17:26:17",
+        "working_set_mb":  60.9,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  31664,
+        "name":  "powershell",
+        "path":  "C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\PowerShell.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:32:43",
+        "working_set_mb":  86.88,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  38636,
+        "name":  "powershell",
+        "path":  "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 17:41:17",
+        "working_set_mb":  66.94,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5256,
+        "name":  "PresentMonService",
+        "path":  "C:\\Program Files\\Intel\\PresentMonSharedService\\PresentMonService.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  20.74,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  16552,
+        "name":  "promecefpluginhost",
+        "path":  "D:\\Software\\WPS Office\\12.1.0.23539\\office6\\promecefpluginhost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 02:38:07",
+        "working_set_mb":  28.59,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  36340,
+        "name":  "promecefpluginhost",
+        "path":  "D:\\Software\\WPS Office\\12.1.0.23539\\office6\\promecefpluginhost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 02:38:07",
+        "working_set_mb":  42.89,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  13008,
+        "name":  "RadeonSoftware",
+        "path":  "C:\\Program Files\\AMD\\CNext\\CNext\\Radeonsoftware.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:45:19",
+        "working_set_mb":  23.68,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  232,
+        "name":  "Registry",
+        "path":  null,
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:03",
+        "working_set_mb":  57.89,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5248,
+        "name":  "ROGLiveService",
+        "path":  "C:\\Program Files\\ASUS\\ROG Live Service\\ROGLiveService.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  32.79,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5392,
+        "name":  "RstMwService",
+        "path":  "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\iastorvd.inf_amd64_22858d1857384824\\RstMwService.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  9.32,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  12332,
+        "name":  "rundll32",
+        "path":  "C:\\WINDOWS\\System32\\rundll32.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:14",
+        "working_set_mb":  17.18,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  19264,
+        "name":  "RuntimeBroker",
+        "path":  "C:\\Windows\\System32\\RuntimeBroker.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:27",
+        "working_set_mb":  13.55,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  21624,
+        "name":  "RuntimeBroker",
+        "path":  "C:\\Windows\\System32\\RuntimeBroker.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:45:01",
+        "working_set_mb":  71.09,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  23420,
+        "name":  "RuntimeBroker",
+        "path":  "C:\\Windows\\System32\\RuntimeBroker.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:45:42",
+        "working_set_mb":  15.84,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  24284,
+        "name":  "RuntimeBroker",
+        "path":  "C:\\Windows\\System32\\RuntimeBroker.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:46:19",
+        "working_set_mb":  14.11,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  29636,
+        "name":  "RuntimeBroker",
+        "path":  "C:\\Windows\\System32\\RuntimeBroker.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 14:53:16",
+        "working_set_mb":  26.04,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  21952,
+        "name":  "SearchHost",
+        "path":  "C:\\WINDOWS\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\SearchHost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:57",
+        "working_set_mb":  116.09,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  12760,
+        "name":  "SearchIndexer",
+        "path":  "C:\\WINDOWS\\system32\\SearchIndexer.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:14",
+        "working_set_mb":  54.83,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  188,
+        "name":  "Secure System",
+        "path":  null,
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:03",
+        "working_set_mb":  99.64,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  21152,
+        "name":  "SecurityHealthService",
+        "path":  null,
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:49",
+        "working_set_mb":  30.48,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  21132,
+        "name":  "SecurityHealthSystray",
+        "path":  "C:\\Windows\\System32\\SecurityHealthSystray.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:49",
+        "working_set_mb":  13.39,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  1356,
+        "name":  "services",
+        "path":  null,
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:08",
+        "working_set_mb":  12.82,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  24912,
+        "name":  "ServiceShell",
+        "path":  "C:\\Program Files (x86)\\Dell\\UpdateService\\ServiceShell.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:46:15",
+        "working_set_mb":  91.2,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  15108,
+        "name":  "ShellExperienceHost",
+        "path":  "C:\\WINDOWS\\SystemApps\\ShellExperienceHost_cw5n1h2txyewy\\ShellExperienceHost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:45:37",
+        "working_set_mb":  72.13,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  13548,
+        "name":  "ShellHost",
+        "path":  "C:\\Windows\\System32\\ShellHost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:15",
+        "working_set_mb":  48.48,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  12448,
+        "name":  "sihost",
+        "path":  "C:\\WINDOWS\\system32\\sihost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:14",
+        "working_set_mb":  53.29,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  32180,
+        "name":  "smartscreen",
+        "path":  "C:\\Windows\\System32\\smartscreen.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:31:02",
+        "working_set_mb":  14.25,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  748,
+        "name":  "smss",
+        "path":  null,
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:05",
+        "working_set_mb":  1.46,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  4392,
+        "name":  "spoolsv",
+        "path":  "C:\\WINDOWS\\System32\\spoolsv.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  28.12,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5224,
+        "name":  "SurSvc",
+        "path":  "C:\\Program Files\\Intel\\SUR\\QUEENCREEK\\SurSvc.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  124.14,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  720,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  9.48,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  732,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  12.58,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  844,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  30.11,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  1236,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  7.82,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  1288,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  6.47,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  1452,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  16.44,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  1576,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  39.02,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  1744,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  22,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  1788,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  13.66,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  2096,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\System32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  21.33,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  2168,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  16.59,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  2200,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\System32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  12.93,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  2212,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  14.79,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  2220,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  13.32,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  2396,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  6.89,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  2404,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  21.49,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  2492,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  16.64,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  2608,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\System32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  22.03,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  2796,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  15.51,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  2936,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  12.58,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  3436,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  12.46,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  3464,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  10.24,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  3472,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  18.63,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  3480,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\System32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  7.23,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  3684,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  13.37,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  3716,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\System32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  11.21,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  3724,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  13.96,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  3796,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\System32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  18.75,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  3828,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\System32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  10.52,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  3876,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\System32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  12.4,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  3884,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  10.21,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  3892,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  8.34,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  4048,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  10.23,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  4092,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  32.52,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  4276,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  25.88,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  4304,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\System32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  16.14,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  4480,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\System32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  14.4,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  4532,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  16.9,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  4560,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\System32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  9.67,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  4776,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  26.07,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  4804,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\System32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  71.63,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  4848,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\System32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  65.75,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5036,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  40.46,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5064,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\System32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  6.91,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5076,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  25.88,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5092,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  12.59,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5980,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  11.59,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5988,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  14.59,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  6088,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 17:29:32",
+        "working_set_mb":  10.04,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  7084,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\System32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:56",
+        "working_set_mb":  7.84,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  7272,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\System32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 18:44:10",
+        "working_set_mb":  13.84,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  8524,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:35:49",
+        "working_set_mb":  36.12,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  8632,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 18:44:10",
+        "working_set_mb":  10.79,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  9108,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\System32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:17",
+        "working_set_mb":  40.12,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  9500,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\System32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:12",
+        "working_set_mb":  19.62,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  12024,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:14",
+        "working_set_mb":  32.72,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  12032,
+        "name":  "svchost",
+        "path":  null,
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:14",
+        "working_set_mb":  38.7,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  12224,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:14",
+        "working_set_mb":  9.84,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  12552,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:14",
+        "working_set_mb":  11.05,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  12560,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:14",
+        "working_set_mb":  32.44,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  12768,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:14",
+        "working_set_mb":  10.91,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  12904,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:14",
+        "working_set_mb":  38.56,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  13140,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:15",
+        "working_set_mb":  27.38,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  13220,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:38:10",
+        "working_set_mb":  10.68,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  13364,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:15",
+        "working_set_mb":  36.21,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  13560,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:15",
+        "working_set_mb":  26.34,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  14180,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 14:54:24",
+        "working_set_mb":  11.01,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  14228,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\System32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:15",
+        "working_set_mb":  11.63,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  14328,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:15",
+        "working_set_mb":  16.74,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  15120,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\System32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:19",
+        "working_set_mb":  21.11,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  15580,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:18",
+        "working_set_mb":  35.23,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  15940,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:18",
+        "working_set_mb":  10.32,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  16036,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:18",
+        "working_set_mb":  11.32,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  16532,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:19",
+        "working_set_mb":  12.54,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  17172,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\System32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:19",
+        "working_set_mb":  7.44,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  17268,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:19",
+        "working_set_mb":  9.33,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  17272,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\System32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:19",
+        "working_set_mb":  11.69,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  17344,
+        "name":  "svchost",
+        "path":  null,
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:46:20",
+        "working_set_mb":  16.61,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  18008,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:45:35",
+        "working_set_mb":  8.52,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  18128,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:21",
+        "working_set_mb":  21.9,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  18732,
+        "name":  "svchost",
+        "path":  null,
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 17:00:17",
+        "working_set_mb":  25.11,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  19416,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\System32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:28",
+        "working_set_mb":  22.43,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  20796,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:53",
+        "working_set_mb":  27.62,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  20936,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:46:20",
+        "working_set_mb":  11.45,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  21104,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:45:31",
+        "working_set_mb":  22.48,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  21716,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:46:19",
+        "working_set_mb":  16.3,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  22244,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:46:20",
+        "working_set_mb":  35.43,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  22308,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:45:01",
+        "working_set_mb":  23.91,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  23260,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 17:29:32",
+        "working_set_mb":  14.46,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  24264,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 12:57:22",
+        "working_set_mb":  9.21,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  24656,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\System32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 17:29:33",
+        "working_set_mb":  16.47,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  24872,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:46:19",
+        "working_set_mb":  10.54,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  25560,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\System32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:46:18",
+        "working_set_mb":  48.41,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  28780,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-13 15:27:16",
+        "working_set_mb":  9.82,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  30420,
+        "name":  "svchost",
+        "path":  null,
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:34:01",
+        "working_set_mb":  11.79,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  33372,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\System32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:29:56",
+        "working_set_mb":  19.09,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  35752,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:37:12",
+        "working_set_mb":  145.67,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  36176,
+        "name":  "svchost",
+        "path":  "C:\\WINDOWS\\system32\\svchost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:37:23",
+        "working_set_mb":  18.41,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  4,
+        "name":  "System",
+        "path":  null,
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:05",
+        "working_set_mb":  8.34,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  2072,
+        "name":  "SystemSettings",
+        "path":  "C:\\Windows\\ImmersiveControlPanel\\SystemSettings.exe",
+        "main_window_title":  "设置",
+        "responding":  false,
+        "start_time":  "2026-05-12 17:29:31",
+        "working_set_mb":  4.49,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  13036,
+        "name":  "taskhostw",
+        "path":  "C:\\WINDOWS\\system32\\taskhostw.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:14",
+        "working_set_mb":  21.58,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  17468,
+        "name":  "taskhostw",
+        "path":  "C:\\WINDOWS\\system32\\taskhostw.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 00:14:33",
+        "working_set_mb":  31.34,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  9440,
+        "name":  "telemetry_agent",
+        "path":  "C:\\Program Files\\Intel\\TelemetryAgent\\telemetry_agent.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:12",
+        "working_set_mb":  27.95,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  18772,
+        "name":  "TextInputHost",
+        "path":  "C:\\WINDOWS\\SystemApps\\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\\TextInputHost.exe",
+        "main_window_title":  "Windows 输入体验",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:28",
+        "working_set_mb":  98.48,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  15912,
+        "name":  "TrafficMonitor",
+        "path":  "D:\\Software\\TrafficMonitor\\TrafficMonitor.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:18",
+        "working_set_mb":  8.65,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  7316,
+        "name":  "unsecapp",
+        "path":  "C:\\WINDOWS\\system32\\wbem\\unsecapp.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  10.79,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  26988,
+        "name":  "UserOOBEBroker",
+        "path":  "C:\\Windows\\System32\\oobe\\UserOOBEBroker.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 17:29:33",
+        "working_set_mb":  11.14,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  10040,
+        "name":  "verge-mihomo",
+        "path":  "D:\\Software\\Clash\\Clash Verge\\verge-mihomo.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:45:25",
+        "working_set_mb":  63.71,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  6936,
+        "name":  "wallpaper32",
+        "path":  "D:\\Play\\steam\\steamapps\\common\\wallpaper_engine\\wallpaper32.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  38.09,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  4120,
+        "name":  "wallpaperservice32",
+        "path":  "C:\\WINDOWS\\SysWOW64\\wallpaperservice32.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  8.14,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  15460,
+        "name":  "Widgets",
+        "path":  "C:\\Program Files\\WindowsApps\\MicrosoftWindows.Client.WebExperience_526.1202.40.0_x64__cw5n1h2txyewy\\Dashboard\\Widgets.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:19",
+        "working_set_mb":  60.96,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  16636,
+        "name":  "WidgetService",
+        "path":  "C:\\Program Files\\WindowsApps\\Microsoft.WidgetsPlatformRuntime_1.6.14.0_x64__8wekyb3d8bbwe\\WidgetService\\WidgetService.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:19",
+        "working_set_mb":  23.43,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  37524,
+        "name":  "WindowsTerminal",
+        "path":  "C:\\Program Files\\WindowsApps\\Microsoft.WindowsTerminal_1.24.10921.0_x64__8wekyb3d8bbwe\\WindowsTerminal.exe",
+        "main_window_title":  "管理员: Windows PowerShell",
+        "responding":  true,
+        "start_time":  "2026-05-13 20:09:24",
+        "working_set_mb":  109.74,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  1240,
+        "name":  "wininit",
+        "path":  null,
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:08",
+        "working_set_mb":  8.04,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  1348,
+        "name":  "winlogon",
+        "path":  "C:\\WINDOWS\\system32\\winlogon.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:08",
+        "working_set_mb":  16.4,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  14032,
+        "name":  "wlanext",
+        "path":  "C:\\WINDOWS\\system32\\WLANExt.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:15",
+        "working_set_mb":  8.55,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  19648,
+        "name":  "WmiApSrv",
+        "path":  "C:\\WINDOWS\\system32\\wbem\\WmiApSrv.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:51",
+        "working_set_mb":  10.61,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  7588,
+        "name":  "WmiPrvSE",
+        "path":  "C:\\WINDOWS\\system32\\wbem\\wmiprvse.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  65.04,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  7596,
+        "name":  "WmiPrvSE",
+        "path":  "C:\\WINDOWS\\system32\\wbem\\wmiprvse.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  62.54,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  22420,
+        "name":  "WmiPrvSE",
+        "path":  "C:\\WINDOWS\\system32\\wbem\\wmiprvse.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 14:37:32",
+        "working_set_mb":  18.32,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  5420,
+        "name":  "WMIRegistrationService",
+        "path":  "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\mewmiprov.inf_amd64_d51901c26227fb29\\WMIRegistrationService.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:10",
+        "working_set_mb":  15.34,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  34308,
+        "name":  "wps",
+        "path":  "D:\\Software\\WPS Office\\12.1.0.23539\\office6\\wps.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 02:38:07",
+        "working_set_mb":  48.23,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  23312,
+        "name":  "wpscloudsvr",
+        "path":  "D:\\Software\\WPS Office\\12.1.0.23539\\office6\\wpscloudsvr.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-14 02:38:06",
+        "working_set_mb":  20.8,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  26032,
+        "name":  "wsctrlsvc",
+        "path":  null,
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:46:23",
+        "working_set_mb":  11.27,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  1604,
+        "name":  "WUDFHost",
+        "path":  "C:\\Windows\\System32\\WUDFHost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  9.14,
+        "is_remote_candidate":  false
+    },
+    {
+        "id":  1892,
+        "name":  "WUDFHost",
+        "path":  "C:\\Windows\\System32\\WUDFHost.exe",
+        "main_window_title":  "",
+        "responding":  true,
+        "start_time":  "2026-05-12 16:44:09",
+        "working_set_mb":  6.85,
+        "is_remote_candidate":  false
+    }
+]

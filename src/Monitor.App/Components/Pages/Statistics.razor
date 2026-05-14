@@ -93,12 +93,17 @@
             {
                 tooltip = new { trigger = "item" },
                 legend = new { bottom = 0, textStyle = new { color = "#506176" } },
+                color = new[] { "#4C8DFF", "#2E9D77", "#C2932E", "#C95F5F", "#4EA4B8", "#7F75C8", "#B9689C", "#8EA0B8" },
                 series = new[] {
                     new {
                         type = "pie",
-                        radius = new[] { "48%", "72%" },
+                        radius = new[] { "50%", "72%" },
                         center = new[] { "50%", "46%" },
-                        label = new { color = "#506176" },
+                        minAngle = 8,
+                        avoidLabelOverlap = true,
+                        itemStyle = new { borderColor = "#FBFCFF", borderWidth = 2 },
+                        label = new { color = "#506176", fontSize = 12 },
+                        labelLine = new { lineStyle = new { color = "#9DAEC4" } },
                         data = topUsers
                     }
                 }

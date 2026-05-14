@@ -1,0 +1,11 @@
+﻿Take snapshots with consistent labels, then compare files across states.
+
+Recommended labels per tool:
+  <tool>_off
+  <tool>_idle
+  <tool>_window
+  <tool>_connected
+  <tool>_disconnected
+
+Trust only signals that appear in the connected state and disappear after disconnect.
+Process-only signals are weak because many remote tools keep background services running.

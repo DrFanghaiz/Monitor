@@ -11,7 +11,20 @@
       "Bash(where dotnet *)",
       "Read(//c/Program Files/dotnet/**)",
       "Bash(dotnet add *)",
-      "Bash(dotnet build *)"
+      "Bash(dotnet build *)",
+      "Bash(./Monitor.App.exe)",
+      "Bash(curl -s http://127.0.0.1:8080/api/status)",
+      "Bash(kill %1)",
+      "Bash(wait)",
+      "Bash(taskkill /F /IM Monitor.App.exe)",
+      "Bash(powershell -Command \"Get-Process Monitor -ErrorAction SilentlyContinue | Stop-Process -Force\")",
+      "Bash('E:/OneDrive/CTD/4 Working now/4 杂项/Monitor/src/Monitor.App/bin/Debug/net8.0-windows/Monitor.App.exe')",
+      "Bash(powershell -NoProfile -ExecutionPolicy Bypass -File \".\\\\tools\\\\Capture-RemoteSignals.ps1\" -Label sunlogin_operator_before -IncludeLogContent)",
+      "Bash(powershell -NoProfile -Command ' *)",
+      "Bash(powershell *)",
+      "Bash(curl -s -X POST http://127.0.0.1:8080/api/remote/operator -H \"Content-Type: application/json\" -d \"{\\\\\"operator_name\\\\\":\\\\\"Alice\\\\\"}\")",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -s -X POST http://127.0.0.1:8080/api/auth -H \"Content-Type: application/json\" -d \"{\\\\\"password\\\\\":\\\\\"123456\\\\\"}\")"
     ],
     "deny": [],
     "ask": []

@@ -399,6 +399,17 @@ button {
     animation: pulse 1s ease-in-out infinite;
 }
 
+.status-dot.unknown {
+    background: var(--warning);
+    box-shadow: 0 0 0 3px rgba(242, 153, 74, 0.12);
+}
+
+.status-dot.error {
+    background: var(--danger);
+    box-shadow: 0 0 0 3px rgba(217, 80, 80, 0.15);
+    animation: pulse 2.4s ease-in-out infinite;
+}
+
 .status-badge, .badge {
     display: inline-flex;
     align-items: center;
@@ -437,6 +448,18 @@ button {
     border-color: rgba(217, 80, 80, 0.16);
 }
 
+.status-badge.unknown {
+    color: var(--warning);
+    background: var(--warning-soft);
+    border-color: rgba(183, 121, 31, 0.16);
+}
+
+.status-badge.error {
+    color: var(--danger);
+    background: var(--danger-soft);
+    border-color: rgba(217, 80, 80, 0.18);
+}
+
 .badge-warning {
     color: var(--warning);
     background: var(--warning-soft);
@@ -455,13 +478,11 @@ button {
     border-radius: var(--radius);
     padding: 18px;
     box-shadow: var(--shadow-card);
-    transition: border-color 180ms var(--ease-out-quart), background-color 180ms var(--ease-out-quart), box-shadow 180ms var(--ease-out-quart), transform 180ms var(--ease-out-quart);
+    transition: border-color 180ms var(--ease-out-quart), background-color 180ms var(--ease-out-quart), box-shadow 180ms var(--ease-out-quart);
 }
 
 .card:hover {
     border-color: var(--border-default);
-    box-shadow: var(--shadow-lifted);
-    transform: translateY(-2px);
 }
 
 .card-elevated {
@@ -476,7 +497,6 @@ button {
 
 .card-elevated:hover {
     border-color: var(--border-strong);
-    transform: translateY(-1px);
 }
 
 .section-title {
@@ -1040,6 +1060,24 @@ input[type="checkbox"]:focus-visible {
     gap: 12px;
 }
 
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.field-label {
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.field-hint {
+    color: var(--text-muted);
+    font-size: 12px;
+    line-height: 1.4;
+}
+
 .input-row {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -1087,6 +1125,18 @@ input[type="checkbox"]:focus-visible {
     color: var(--text-secondary);
     font-size: 13px;
     animation: message-in 180ms var(--ease-out-quart) both;
+}
+
+.message.success {
+    color: var(--success);
+}
+
+.message.danger {
+    color: var(--danger);
+}
+
+.critical-action {
+    color: var(--danger);
 }
 
 @media (max-width: 980px) {
@@ -1185,7 +1235,6 @@ input[type="checkbox"]:focus-visible {
         transition-duration: 1ms !important;
     }
 
-    .card:hover,
     .card-elevated:hover,
     .data-row:hover,
     .history-row:hover,

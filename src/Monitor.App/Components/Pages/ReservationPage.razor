@@ -1,6 +1,7 @@
 @page "/reservation"
 @namespace Monitor.App.Components.Pages
 @inject Services.ReservationService ReservationService
+@inject IJSRuntime JS
 @using Monitor.App.Models
 
 <PageTitle>预约 · Monitor</PageTitle>
@@ -20,24 +21,37 @@
         <div class="card">
             <h2 class="section-title"><Icon Name="plus" Size="16" />新建预约</h2>
             <div class="form-stack">
-                <input class="input" @bind="_newName" @bind:event="oninput" placeholder="姓名" />
-                <input class="input" type="date" @bind="_newDate" />
-                <div class="input-row">
-                    <select class="input" @bind="_newStart">
-                        @for (int h = 0; h < 24; h++)
-                        {
-                            <option value="@h">@($"{h:D2}:00")</option>
-                        }
-                    </select>
-                    <span class="row-subtitle">至</span>
-                    <select class="input" @bind="_newEnd">
-                        @for (int h = 1; h <= 24; h++)
-                        {
-                            <option value="@h">@($"{h:D2}:00")</option>
-                        }
-                    </select>
+                <label class="field">
+                    <span class="field-label">使用者</span>
+                    <input class="input" @bind="_newName" @bind:event="oninput" placeholder="姓名" />
+                </label>
+                <label class="field">
+                    <span class="field-label">日期</span>
+                    <input class="input" type="date" @bind="_newDate" />
+                </label>
+                <div class="field">
+                    <span class="field-label">时段</span>
+                    <div class="input-row">
+                        <select class="input" @bind="_newStart" aria-label="开始时间">
+                            @for (int h = 0; h < 24; h++)
+                            {
+                                <option value="@h">@($"{h:D2}:00")</option>
+                            }
+                        </select>
+                        <span class="row-subtitle">至</span>
+                        <select class="input" @bind="_newEnd" aria-label="结束时间">
+                            @for (int h = 1; h <= 24; h++)
+                            {
+                                <option value="@h">@($"{h:D2}:00")</option>
+                            }
+                        </select>
+                    </div>
+                    @if (_newEnd <= _newStart)
+                    {
+                        <span class="field-hint critical-action">结束时间必须晚于开始时间</span>
+                    }
                 </div>
-                <button class="btn btn-primary" @onclick="CreateReservation">
+                <button class="btn btn-primary" @onclick="CreateReservation" disabled="@(!CanCreate)">
                     <Icon Name="plus" Size="15" />
                     创建预约
                 </button>
@@ -52,12 +66,12 @@
         <div class="card">
             <div class="toolbar" style="margin-bottom:14px;">
                 <h2 class="section-title" style="margin:0;"><Icon Name="calendar" Size="16" />预约列表</h2>
-                <input class="input" type="date" @bind="_filterDate" @bind:after="LoadReservations" style="width:170px;" />
+                <input class="input" type="date" @bind="_filterDate" @bind:after="LoadReservations" style="width:170px;" aria-label="筛选日期" />
             </div>
 
             @if (!_reservations.Any())
             {
-                <div class="empty-state">暂无预约</div>
+                <div class="empty-state">当前日期没有预约</div>
             }
             else
             {
@@ -74,7 +88,7 @@
                             </div>
                             <div class="toolbar-right">
                                 <span class="badge badge-warning">@($"{r.StartHour:D2}:00 - {r.EndHour:D2}:00")</span>
-                                <button class="btn btn-ghost btn-sm" @onclick="() => CancelReservation(r.Id)">
+                                <button class="btn btn-ghost btn-sm critical-action" @onclick="() => CancelReservationAsync(r.Id, r.UserName)">
                                     <Icon Name="trash" Size="13" />
                                     取消
                                 </button>
@@ -95,6 +109,7 @@
     private int _newEnd = 10;
     private DateTime? _filterDate;
     private string _msg = "";
+    private bool CanCreate => !string.IsNullOrWhiteSpace(_newName) && _newEnd > _newStart;
 
     protected override void OnInitialized() => LoadReservations();
 
@@ -106,6 +121,12 @@
 
     private void CreateReservation()
     {
+        if (!CanCreate)
+        {
+            _msg = "请填写姓名，并确认结束时间晚于开始时间";
+            return;
+        }
+
         var dateStr = _newDate.ToString("yyyy-MM-dd");
         var (success, message, id) = ReservationService.CreateReservation(_newName, dateStr, _newStart, _newEnd);
         _msg = message;
@@ -118,8 +139,11 @@
         }
     }
 
-    private void CancelReservation(int id)
+    private async Task CancelReservationAsync(int id, string userName)
     {
+        var confirmed = await JS.InvokeAsync<bool>("confirm", $"确定取消 {userName} 的预约吗？");
+        if (!confirmed) return;
+
         ReservationService.CancelReservation(id);
         LoadReservations();
     }

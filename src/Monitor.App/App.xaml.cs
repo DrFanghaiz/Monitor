@@ -1,5 +1,9 @@
 using System.Windows;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Monitor.App.Api;
 using Monitor.App.Infrastructure.Config;
 using Monitor.App.Infrastructure.Database;
 using Monitor.App.Repositories;
@@ -11,6 +15,7 @@ namespace Monitor.App;
 public partial class App : Application
 {
     private ServiceProvider? _services;
+    private CancellationTokenSource? _webCts;
 
     private void Application_Startup(object sender, StartupEventArgs e)
     {
@@ -51,6 +56,7 @@ public partial class App : Application
         var statusService = new StatusService(timerService, remoteMonitorService, usageRepo, reservationRepo);
         var webAccessService = new WebAccessService(settings);
         var backupService = new BackupService(settings, dbPath, configPath);
+        var webServerInfo = new WebServerInfo();
 
         // ---- DI Container ----
         var sc = new ServiceCollection();
@@ -75,6 +81,7 @@ public partial class App : Application
         sc.AddSingleton(backupService);
         sc.AddSingleton(remoteMonitorService);
         sc.AddSingleton(tunnelService);
+        sc.AddSingleton(webServerInfo);
 
         _services = sc.BuildServiceProvider();
         Resources.Add("services", _services);
@@ -85,10 +92,23 @@ public partial class App : Application
         _ = remoteMonitorService.StartAsync(CancellationToken.None);
         _ = tunnelService.StartAsync(CancellationToken.None);
 
+        // ---- Web API ----
+        if (settings.WebServerEnabled)
+        {
+            StartWebHost(settings, sc, webServerInfo);
+        }
+        else
+        {
+            webServerInfo.Enabled = false;
+            webServerInfo.Error = "Web 发布未开启";
+            Log.Information("Web server not started (disabled in config)");
+        }
+
         // ---- Show window ----
         var window = new MainWindow();
         window.Closed += (_, _) =>
         {
+            _webCts?.Cancel();
             remoteMonitorService.Dispose();
             tunnelService.Dispose();
             _services?.Dispose();
@@ -96,5 +116,56 @@ public partial class App : Application
             Shutdown();
         };
         window.Show();
+    }
+
+    private void StartWebHost(AppSettings settings, ServiceCollection sc, WebServerInfo webServerInfo)
+    {
+        _webCts = new CancellationTokenSource();
+
+        Task.Run(() =>
+        {
+            try
+            {
+                var builder = WebApplication.CreateBuilder();
+                builder.WebHost.UseUrls($"http://127.0.0.1:{settings.WebServerPort}");
+                builder.Host.UseSerilog();
+
+                foreach (var sd in sc)
+                    builder.Services.Add(sd);
+
+                builder.Services.AddCors();
+                builder.Services.ConfigureHttpJsonOptions(opts =>
+                {
+                    opts.SerializerOptions.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.SnakeCaseLower;
+                });
+
+                var app = builder.Build();
+                app.UseCors(c => c.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+                app.MapAuthEndpoints();
+                app.MapStatusEndpoints();
+                app.MapTimerEndpoints();
+                app.MapStatisticsEndpoints();
+                app.MapReservationEndpoints();
+                app.MapSettingsEndpoints();
+                app.MapRemoteEndpoints();
+                app.MapWindowEndpoints();
+
+                webServerInfo.Enabled = true;
+                webServerInfo.Port = settings.WebServerPort;
+                webServerInfo.Error = null;
+                Log.Information("Web API listening on http://127.0.0.1:{Port}", settings.WebServerPort);
+
+                app.RunAsync(_webCts.Token).GetAwaiter().GetResult();
+            }
+            catch (OperationCanceledException) { }
+            catch (Exception ex)
+            {
+                webServerInfo.Enabled = true;
+                webServerInfo.Port = settings.WebServerPort;
+                webServerInfo.Error = $"Web 服务启动失败: {ex.Message}";
+                Log.Error(ex, "Web API failed to start on port {Port}", settings.WebServerPort);
+            }
+        }, _webCts.Token);
     }
 }

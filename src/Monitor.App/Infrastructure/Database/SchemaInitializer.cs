@@ -1,4 +1,5 @@
 using Microsoft.Data.Sqlite;
+using Serilog;
 
 namespace Monitor.App.Infrastructure.Database;
 
@@ -47,5 +48,54 @@ public class SchemaInitializer
             );
         ";
         cmd.ExecuteNonQuery();
+
+        // Phase 2: add new columns to remote_sessions (safe migration)
+        MigrateRemoteSessions(conn);
+    }
+
+    private static void MigrateRemoteSessions(SqliteConnection conn)
+    {
+        var existing = GetExistingColumns(conn, "remote_sessions");
+
+        AddColumnIfMissing(conn, "remote_sessions", "operator_name", "TEXT DEFAULT ''", existing);
+        AddColumnIfMissing(conn, "remote_sessions", "source", "TEXT DEFAULT 'process'", existing);
+        AddColumnIfMissing(conn, "remote_sessions", "end_reason", "TEXT DEFAULT ''", existing);
+        AddColumnIfMissing(conn, "remote_sessions", "last_seen_at", "TEXT DEFAULT ''", existing);
+    }
+
+    private static HashSet<string> GetExistingColumns(SqliteConnection conn, string table)
+    {
+        var columns = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        using var cmd = conn.CreateCommand();
+        cmd.CommandText = $"PRAGMA table_info({table})";
+        using var reader = cmd.ExecuteReader();
+        while (reader.Read())
+        {
+            columns.Add(reader.GetString(reader.GetOrdinal("name")));
+        }
+        return columns;
+    }
+
+    private static void AddColumnIfMissing(SqliteConnection conn, string table,
+        string column, string type, HashSet<string> existing)
+    {
+        if (existing.Contains(column))
+        {
+            Log.Debug("Column {Column} already exists in {Table}, skipping", column, table);
+            return;
+        }
+
+        try
+        {
+            using var cmd = conn.CreateCommand();
+            cmd.CommandText = $"ALTER TABLE {table} ADD COLUMN {column} {type}";
+            cmd.ExecuteNonQuery();
+            Log.Information("Added column {Column} to {Table}", column, table);
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "Failed to add column {Column} to {Table}", column, table);
+            throw;
+        }
     }
 }

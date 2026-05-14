@@ -1,6 +1,7 @@
 @page "/history"
 @namespace Monitor.App.Components.Pages
 @inject TimerService TimerService
+@inject IJSRuntime JS
 
 <PageTitle>历史记录 · Monitor</PageTitle>
 
@@ -17,19 +18,25 @@
 
     <section class="card toolbar">
         <div class="toolbar-left">
-            <select class="input" style="width:130px;" @bind="_filterMode" @bind:after="LoadRecords">
-                <option value="all">全部</option>
-                <option value="today">今日</option>
-                <option value="this month">本月</option>
-            </select>
-            <input class="input" style="width:220px;" @bind="_search" @bind:event="oninput" @bind:after="LoadRecords" placeholder="搜索用户名" />
+            <label class="field" style="width:130px;">
+                <span class="field-label">范围</span>
+                <select class="input" @bind="_filterMode" @bind:after="LoadRecords">
+                    <option value="all">全部</option>
+                    <option value="today">今日</option>
+                    <option value="this month">本月</option>
+                </select>
+            </label>
+            <label class="field" style="width:220px;">
+                <span class="field-label">搜索</span>
+                <input class="input" @bind="_search" @bind:event="oninput" @bind:after="LoadRecords" placeholder="用户名" />
+            </label>
         </div>
 
         <div class="toolbar-right">
             <span class="badge badge-neutral">@_records.Count 条记录</span>
             @if (_selectedIds.Count > 0)
             {
-                <button class="btn btn-danger" @onclick="DeleteSelected">
+                <button class="btn btn-danger" @onclick="DeleteSelectedAsync">
                     <Icon Name="trash" Size="15" />
                     删除选中 @_selectedIds.Count 条
                 </button>
@@ -40,7 +47,7 @@
     <section class="card">
         @if (!_records.Any())
         {
-            <div class="empty-state">暂无记录</div>
+            <div class="empty-state">没有匹配的使用记录</div>
         }
         else
         {
@@ -56,7 +63,7 @@
                 @foreach (var r in _records)
                 {
                     <div class="history-row">
-                        <input type="checkbox" checked="@_selectedIds.Contains(r.Id)" @onchange="() => ToggleSelect(r.Id)" />
+                        <input type="checkbox" checked="@_selectedIds.Contains(r.Id)" @onchange="() => ToggleSelect(r.Id)" aria-label="选择记录" />
                         <div class="row-main">
                             <div class="avatar">@GetInitial(r.UserName)</div>
                             <div class="history-user">@r.UserName</div>
@@ -68,7 +75,7 @@
                             </div>
                         </div>
                         <span class="row-meta">@TimerService.FormatDuration(r.DurationSeconds)</span>
-                        <button class="btn btn-ghost btn-sm" @onclick="() => DeleteRecord(r.Id)">
+                        <button class="btn btn-ghost btn-sm critical-action" @onclick="() => DeleteRecordAsync(r.Id, r.UserName)">
                             <Icon Name="trash" Size="13" />
                             删除
                         </button>
@@ -98,14 +105,20 @@
         if (!_selectedIds.Remove(id)) _selectedIds.Add(id);
     }
 
-    private void DeleteRecord(int id)
+    private async Task DeleteRecordAsync(int id, string userName)
     {
+        var confirmed = await JS.InvokeAsync<bool>("confirm", $"确定删除 {userName} 的这条使用记录吗？");
+        if (!confirmed) return;
+
         TimerService.DeleteRecord(id);
         LoadRecords();
     }
 
-    private void DeleteSelected()
+    private async Task DeleteSelectedAsync()
     {
+        var confirmed = await JS.InvokeAsync<bool>("confirm", $"确定删除选中的 {_selectedIds.Count} 条使用记录吗？");
+        if (!confirmed) return;
+
         TimerService.DeleteRecords(_selectedIds.ToList());
         _selectedIds.Clear();
         LoadRecords();

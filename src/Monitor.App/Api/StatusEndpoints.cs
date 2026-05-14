@@ -8,7 +8,7 @@ public static class StatusEndpoints
 {
     public static void MapStatusEndpoints(this WebApplication app)
     {
-        app.MapGet("/api/status", (StatusService status) =>
+        app.MapGet("/api/status", (StatusService status, WebServerInfo webInfo) =>
         {
             var s = status.GetFullStatus();
             return Results.Ok(new
@@ -28,10 +28,25 @@ public static class StatusEndpoints
                     s.RemoteControl.RemoteType,
                     s.RemoteControl.StartTime,
                     s.RemoteControl.ElapsedSeconds,
-                    s.RemoteControl.ElapsedFormatted
+                    s.RemoteControl.ElapsedFormatted,
+                    s.RemoteControl.Status,
+                    s.RemoteControl.Source,
+                    s.RemoteControl.Confidence,
+                    s.RemoteControl.OperatorName,
+                    s.RemoteControl.LastSeenAt,
+                    s.RemoteControl.ErrorMessage,
+                    s.RemoteControl.MatchedSignals,
+                    s.RemoteControl.Message
                 },
                 today_records = s.TodayRecords,
-                today_reservations = s.TodayReservations
+                today_reservations = s.TodayReservations,
+                web_server = new
+                {
+                    enabled = webInfo.Enabled,
+                    port = webInfo.Port,
+                    error = webInfo.Error,
+                    public_url = webInfo.PublicUrl
+                }
             });
         });
     }

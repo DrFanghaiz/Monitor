@@ -148,8 +148,8 @@ public partial class App : Application
                 app.MapStatisticsEndpoints();
                 app.MapReservationEndpoints();
                 app.MapSettingsEndpoints();
+                app.MapWebStatusPages();
                 app.MapRemoteEndpoints();
-                app.MapWindowEndpoints();
 
                 webServerInfo.Enabled = true;
                 webServerInfo.Port = settings.WebServerPort;

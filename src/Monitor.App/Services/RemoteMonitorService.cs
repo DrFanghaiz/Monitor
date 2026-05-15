@@ -19,6 +19,7 @@ public class RemoteMonitorService : IDisposable
 
     private DetectionResult? _lastDetection;
     private bool _detectorHealthy = true;
+    private bool _detectionDisabled = false;
     private bool _hasSuccessfulDetection = false;
     private string? _lastError;
 
@@ -48,8 +49,7 @@ public class RemoteMonitorService : IDisposable
         if (!_settings.RemoteMonitorEnabled)
         {
             Log.Information("RemoteMonitorService not started (disabled in config)");
-            _detectorHealthy = false;
-            _lastError = "Remote monitoring is disabled in settings";
+            _detectionDisabled = true;
             return Task.CompletedTask;
         }
 
@@ -189,21 +189,21 @@ public class RemoteMonitorService : IDisposable
 
     public RemoteControlStatus GetStatus()
     {
-        if (!_settings.RemoteMonitorEnabled)
-        {
-            return new RemoteControlStatus
-            {
-                IsRemote = false, Status = "unknown",
-                ErrorMessage = "远程检测已关闭"
-            };
-        }
-
         if (!_detectorHealthy)
         {
             return new RemoteControlStatus
             {
                 IsRemote = false, Status = "error",
                 ErrorMessage = _lastError ?? "检测服务异常"
+            };
+        }
+
+        if (_detectionDisabled)
+        {
+            return new RemoteControlStatus
+            {
+                IsRemote = false, Status = "unknown",
+                ErrorMessage = "远程检测已关闭"
             };
         }
 

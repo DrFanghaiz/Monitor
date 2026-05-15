@@ -29,6 +29,7 @@ public class AppSettings
     public string TunnelNgrokAuthToken { get; set; } = "";
     public string TunnelNgrokPath { get; set; } = "ngrok.exe";
     public string TunnelCloudflaredPath { get; set; } = "cloudflared.exe";
+    public string OperatorRegistrationKey { get; set; } = "";
 
     private static readonly string _configPath = Path.Combine(
         AppDomain.CurrentDomain.BaseDirectory, "config.json");
@@ -39,6 +40,15 @@ public class AppSettings
         {
             var json = File.ReadAllText(_configPath);
             var settings = JsonSerializer.Deserialize<AppSettings>(json) ?? new AppSettings();
+
+            // Phase 6: snake_case fallback for operator_registration_key
+            if (string.IsNullOrEmpty(settings.OperatorRegistrationKey))
+            {
+                using var doc = JsonDocument.Parse(json);
+                if (doc.RootElement.TryGetProperty("operator_registration_key", out var el))
+                    settings.OperatorRegistrationKey = el.GetString() ?? "";
+            }
+
             settings.MergeDefaults();
             return settings;
         }

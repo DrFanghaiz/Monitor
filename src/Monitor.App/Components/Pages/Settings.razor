@@ -2,6 +2,8 @@
 @namespace Monitor.App.Components.Pages
 @inject Infrastructure.Config.AppSettings AppSettings
 @inject Services.BackupService BackupService
+@inject Services.TunnelService TunnelService
+@inject Services.WebServerInfo WebServerInfo
 @using Monitor.App.Infrastructure.Security
 
 <PageTitle>设置 · Monitor</PageTitle>
@@ -17,7 +19,17 @@
         </div>
     </header>
 
-    <section class="settings-grid">
+    <div class="settings-columns">
+        <div class="settings-column">
+        @if (_hasDefaultPassword)
+        {
+            <div class="card" style="border-color:var(--warning);background:var(--warning-soft);">
+                <div style="font-size:14px;font-weight:500;color:var(--warning);margin-bottom:4px;">安全提醒</div>
+                <div style="font-size:13px;color:var(--text-secondary);">
+                    @(_defaultPasswordReasons)
+                </div>
+            </div>
+        }
         <div class="card">
             <h2 class="section-title"><Icon Name="key" Size="16" />管理员密码</h2>
             <div class="form-stack" style="max-width:380px;">
@@ -57,6 +69,9 @@
                 <div class="message">@_webMsg</div>
             }
         </div>
+        </div>
+
+        <div class="settings-column">
 
         <div class="card">
             <div class="toolbar" style="margin-bottom:14px;">
@@ -94,6 +109,29 @@
         </div>
 
         <div class="card">
+            <h2 class="section-title"><Icon Name="key" Size="16" />操作人登记码</h2>
+            <div class="form-stack" style="max-width:380px;">
+                <label class="field">
+                    <span class="field-label">
+                        当前状态: @(string.IsNullOrEmpty(AppSettings.OperatorRegistrationKey) ? "未配置" : "已配置")
+                    </span>
+                </label>
+                <label class="field">
+                    <span class="field-label">新登记码（4 字符以上）</span>
+                    <input class="input" @bind="_regKey" @bind:event="oninput" placeholder="设置新登记码" autocomplete="off" />
+                </label>
+                <button class="btn btn-primary" @onclick="SetRegistrationKey" disabled="@(string.IsNullOrWhiteSpace(_regKey) || _regKey.Trim().Length < 4)">
+                    <Icon Name="key" Size="15" />
+                    保存
+                </button>
+            </div>
+            @if (!string.IsNullOrEmpty(_regMsg))
+            {
+                <div class="message">@_regMsg</div>
+            }
+        </div>
+
+        <div class="card">
             <h2 class="section-title"><Icon Name="info" Size="16" />系统信息</h2>
             <div class="info-grid">
                 <span class="info-label">数据库</span><span>monitor.db</span>
@@ -103,10 +141,16 @@
                 <span class="info-label">Tunnel</span><span>@AppSettings.TunnelMode</span>
                 <span class="info-label">远程检测</span><span>@(AppSettings.RemoteMonitorEnabled ? "启用" : "禁用")</span>
                 <span class="info-label">Web 端口</span><span>@AppSettings.WebServerPort</span>
+                <span class="info-label">公网隧道</span><span>@GetTunnelStatus()</span>
+                @if (!string.IsNullOrEmpty(GetTunnelError()))
+                {
+                    <span class="info-label"></span><span style="color:var(--danger);font-size:12px;">@GetTunnelError()</span>
+                }
                 <span class="info-label">主题</span><span>@AppSettings.Theme</span>
             </div>
         </div>
-    </section>
+        </div>
+    </div>
 </div>
 
 @code {
@@ -116,10 +160,32 @@
     private string _adminMsg = "";
     private string _webMsg = "";
     private string _backupMsg = "";
+    private string _regKey = "";
+    private string _regMsg = "";
+    private bool _hasDefaultPassword;
+    private string _defaultPasswordReasons = "";
     private List<BackupEntry> _backups = new();
     private bool CanChangeAdminPassword => !string.IsNullOrWhiteSpace(_adminOldPwd) && !string.IsNullOrWhiteSpace(_adminNewPwd);
 
-    protected override void OnInitialized() => LoadBackups();
+    protected override void OnInitialized()
+    {
+        CheckDefaultPasswords();
+        LoadBackups();
+    }
+
+    private void CheckDefaultPasswords()
+    {
+        var reasons = new List<string>();
+        if (!PasswordManager.IsPasswordSet(AppSettings))
+            reasons.Add("管理员密码未设置，正在使用默认密码");
+        if (AppSettings.WebServerPassword == "123456")
+            reasons.Add("Web 访问密码仍是默认值");
+        if (reasons.Count > 0)
+        {
+            _hasDefaultPassword = true;
+            _defaultPasswordReasons = string.Join("；", reasons) + "。建议尽快修改。";
+        }
+    }
 
     private void ChangeAdminPassword()
     {
@@ -144,6 +210,27 @@
         _backupMsg = "备份完成: " + Path.GetFileName(path);
         LoadBackups();
     }
+
+    private void SetRegistrationKey()
+    {
+        var key = _regKey.Trim();
+        if (key.Length < 4) { _regMsg = "登记码长度至少 4 个字符"; return; }
+        AppSettings.OperatorRegistrationKey = key;
+        AppSettings.Save();
+        _regMsg = "登记码已保存";
+        _regKey = "";
+    }
+
+    private string GetTunnelStatus()
+    {
+        var ts = TunnelService.GetStatus();
+        if (!ts.Running && string.IsNullOrEmpty(ts.Error)) return "未开启";
+        if (ts.Running && ts.PublicUrl != null) return "已连接 · " + ts.PublicUrl;
+        if (ts.Running) return "启动中...";
+        return "异常";
+    }
+
+    private string GetTunnelError() => TunnelService.GetStatus().Error ?? "";
 
     private void LoadBackups() => _backups = BackupService.GetBackupList();
 

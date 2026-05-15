@@ -1,5 +1,7 @@
 using System.IO.Compression;
+using Microsoft.Data.Sqlite;
 using Monitor.App.Infrastructure.Config;
+using Serilog;
 
 namespace Monitor.App.Services;
 
@@ -27,17 +29,74 @@ public class BackupService
         var timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
         var fileName = $"{prefix}_{timestamp}.zip";
         var filePath = Path.Combine(_backupDir, fileName);
+        var tempDir = Path.Combine(Path.GetTempPath(), $"monitor_backup_{Guid.NewGuid():N}");
 
-        using var zip = ZipFile.Open(filePath, ZipArchiveMode.Create);
-        if (File.Exists(_dbPath))
-            zip.CreateEntryFromFile(_dbPath, Path.GetFileName(_dbPath));
-        if (File.Exists(_configPath))
-            zip.CreateEntryFromFile(_configPath, Path.GetFileName(_configPath));
+        try
+        {
+            Directory.CreateDirectory(tempDir);
 
-        if (!manual)
-            CleanupOldBackups();
+            // Use SQLite online backup API — safe while DB is in use
+            if (File.Exists(_dbPath))
+            {
+                var tempDb = Path.Combine(tempDir, Path.GetFileName(_dbPath));
+                BackupDatabase(_dbPath, tempDb);
+            }
 
-        return filePath;
+            // Copy config alongside
+            if (File.Exists(_configPath))
+            {
+                var tempConfig = Path.Combine(tempDir, Path.GetFileName(_configPath));
+                File.Copy(_configPath, tempConfig, overwrite: true);
+            }
+
+            // Verify we have files to back up
+            var files = Directory.GetFiles(tempDir);
+            if (files.Length == 0)
+            {
+                Directory.Delete(tempDir, recursive: true);
+                throw new InvalidOperationException("no files to backup");
+            }
+
+            // Create zip from temp files
+            if (File.Exists(filePath)) File.Delete(filePath);
+            ZipFile.CreateFromDirectory(tempDir, filePath, CompressionLevel.Optimal, includeBaseDirectory: false);
+
+            if (!manual)
+                CleanupOldBackups();
+
+            Log.Information("Backup created: {Path} ({Size} bytes)", filePath, new FileInfo(filePath).Length);
+            return filePath;
+        }
+        catch (Exception ex)
+        {
+            // Clean up on failure — no empty zip
+            if (File.Exists(filePath))
+            {
+                try { File.Delete(filePath); } catch { }
+            }
+            Log.Error(ex, "Backup failed");
+            throw;
+        }
+        finally
+        {
+            if (Directory.Exists(tempDir))
+            {
+                try { Directory.Delete(tempDir, recursive: true); } catch { }
+            }
+        }
+    }
+
+    private static void BackupDatabase(string sourcePath, string destPath)
+    {
+        using var source = new SqliteConnection($"Data Source={sourcePath}");
+        source.Open();
+        using (var dest = new SqliteConnection($"Data Source={destPath}"))
+        {
+            dest.Open();
+            source.BackupDatabase(dest);
+            dest.Close();
+        }
+        SqliteConnection.ClearAllPools();
     }
 
     public List<BackupEntry> GetBackupList()

@@ -6,7 +6,7 @@
 
 <PageTitle>计时 · Monitor</PageTitle>
 
-<div class="timer-page">
+<div class="page timer-page">
     <header class="page-header">
         <div>
             <h1 class="page-title">计时</h1>
@@ -39,8 +39,8 @@
             }
         </section>
 
-        <aside class="timer-side-panel">
-            <section class="card timer-info-card">
+        <aside class="card timer-side-panel">
+            <section class="timer-info-block">
                 <h2 class="section-title">最近一次计时</h2>
                 @if (_lastResult != null)
                 {
@@ -56,7 +56,7 @@
                 }
             </section>
 
-            <section class="card timer-info-card">
+            <section class="timer-info-block">
                 <h2 class="section-title">今日状态</h2>
                 <div style="font-size:13px;color:var(--text-secondary)">
                     <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border-light)">

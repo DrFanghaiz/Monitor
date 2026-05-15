@@ -76,8 +76,7 @@ src/Monitor.App/
 │   ├── TimerEndpoints.cs           ← /api/timer/start|stop|state|history
 │   ├── StatisticsEndpoints.cs      ← /api/statistics/users|hourly|daily|distribution
 │   ├── ReservationEndpoints.cs     ← /api/reservations
-│   ├── SettingsEndpoints.cs        ← /api/settings
-│   └── WindowEndpoints.cs          ← /api/window/*（窗口控制）
+│   └── SettingsEndpoints.cs        ← /api/settings
 │
 ├── Components/                     ← Blazor UI
 │   ├── App.razor                   ← 路由

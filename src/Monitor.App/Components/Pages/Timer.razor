@@ -6,48 +6,75 @@
 
 <PageTitle>计时 · Monitor</PageTitle>
 
-<div class="page timer-stage">
-    <section class="card-elevated timer-card @(_isRunning ? "timer-card-running" : "")">
-        <div class="status-line" style="justify-content:center;">
-            <Icon Name="timer" Size="18" />
-            <span class="status-dot @TimerStatusClass"></span>
-            <span class="row-title">@(_isRunning ? "会话进行中" : "等待开始")</span>
+<div class="timer-page">
+    <header class="page-header">
+        <div>
+            <h1 class="page-title">计时</h1>
+            <p class="page-subtitle">@(_isRunning ? "会话进行中" : "等待开始")</p>
         </div>
+        <span class="status-dot @TimerStatusClass"></span>
+    </header>
 
-        @if (_isRunning)
-        {
-            <div class="timer-user">@_currentUser</div>
-            <div class="timer-display">@_elapsed</div>
-            <div class="row-subtitle">开始于 @_startTime</div>
-            <div class="timer-controls">
-                <button class="btn btn-danger" @onclick="StopTimer">
-                    <Icon Name="stop" Size="15" />
-                    停止计时
-                </button>
-            </div>
-        }
-        else
-        {
-            <div class="timer-display" style="color:var(--text-muted);">00:00:00</div>
-            <div class="row-subtitle">输入使用者姓名后开始记录</div>
-            <div class="timer-controls">
-                <input class="input timer-input" @bind="_userName" @bind:event="oninput" @onkeydown="HandleKeyDown" placeholder="使用者姓名" aria-label="使用者姓名" />
-                <button class="btn btn-primary" @onclick="StartTimer" disabled="@string.IsNullOrWhiteSpace(_userName)">
-                    <Icon Name="play" Size="15" />
-                    开始计时
-                </button>
-            </div>
-
-            @if (_lastResult != null)
+    <div class="timer-workspace">
+        <section class="card card-elevated timer-card-full @(_isRunning ? "timer-card-running" : "")">
+            @if (_isRunning)
             {
-                <div class="last-result">
-                    <div class="metric-label">上一次计时</div>
-                    <div class="row-title" style="margin-top:8px;">@_lastResult.UserName</div>
-                    <div class="session-value" style="font-size:24px;text-align:center;">@_lastResult.DurationFormatted</div>
+                <div class="timer-user">@_currentUser</div>
+                <div class="timer-display">@_elapsed</div>
+                <div class="row-subtitle" style="text-align:center;margin-top:4px">开始于 @_startTime</div>
+                <div class="timer-controls" style="margin-top:16px">
+                    <button class="btn btn-danger" @onclick="StopTimer">停止计时</button>
                 </div>
             }
-        }
-    </section>
+            else
+            {
+                <div class="timer-display" style="color:var(--text-muted)">00:00:00</div>
+                <div class="row-subtitle" style="text-align:center;margin-top:4px">输入使用者姓名后开始记录</div>
+                <div class="timer-entry-row" style="margin-top:16px">
+                    <input class="input" @bind="_userName" @bind:event="oninput"
+                           @onkeydown="HandleKeyDown" placeholder="使用者姓名" aria-label="使用者姓名" />
+                    <button class="btn btn-primary" @onclick="StartTimer"
+                            disabled="@string.IsNullOrWhiteSpace(_userName)">开始计时</button>
+                </div>
+            }
+        </section>
+
+        <aside class="timer-side-panel">
+            <section class="card timer-info-card">
+                <h2 class="section-title">最近一次计时</h2>
+                @if (_lastResult != null)
+                {
+                    <div class="row-title">@_lastResult.UserName</div>
+                    <div class="session-value" style="font-size:22px;margin-top:4px">@_lastResult.DurationFormatted</div>
+                    <div class="row-subtitle" style="margin-top:2px">上一条记录</div>
+                }
+                else
+                {
+                    <div class="empty-state" style="min-height:80px;display:flex;align-items:center;justify-content:center">
+                        暂无最近计时，完成一次计时后会显示
+                    </div>
+                }
+            </section>
+
+            <section class="card timer-info-card">
+                <h2 class="section-title">今日状态</h2>
+                <div style="font-size:13px;color:var(--text-secondary)">
+                    <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border-light)">
+                        <span>当前状态</span>
+                        <span>@(_isRunning ? "正在计时" : "空闲")</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border-light)">
+                        <span>当前使用者</span>
+                        <span>@(_isRunning ? _currentUser : "—")</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;padding:6px 0;">
+                        <span>记录查看</span>
+                        <span>历史记录页面</span>
+                    </div>
+                </div>
+            </section>
+        </aside>
+    </div>
 </div>
 
 @code {
@@ -60,10 +87,7 @@
     private System.Threading.Timer? _timer;
     private string TimerStatusClass => _isRunning ? "in_use" : "idle";
 
-    protected override void OnInitialized()
-    {
-        RefreshState();
-    }
+    protected override void OnInitialized() => RefreshState();
 
     private void RefreshState()
     {
@@ -80,37 +104,15 @@
         {
             _timer = new System.Threading.Timer(_ =>
             {
-                InvokeAsync(() =>
-                {
-                    RefreshState();
-                    StateHasChanged();
-                });
+                InvokeAsync(() => { RefreshState(); StateHasChanged(); });
             }, null, 200, 200);
         }
     }
 
-    private void HandleKeyDown(KeyboardEventArgs args)
-    {
-        if (args.Key == "Enter")
-        {
-            StartTimer();
-        }
-    }
-
+    private void HandleKeyDown(KeyboardEventArgs args) { if (args.Key == "Enter") StartTimer(); }
     private void StartTimer()
-    {
-        if (TimerService.StartTimer(_userName))
-        {
-            _userName = "";
-            RefreshState();
-        }
-    }
-
+    { if (TimerService.StartTimer(_userName)) { _userName = ""; RefreshState(); } }
     private void StopTimer()
-    {
-        _lastResult = TimerService.StopTimer();
-        RefreshState();
-    }
-
+    { _lastResult = TimerService.StopTimer(); RefreshState(); }
     public void Dispose() => _timer?.Dispose();
 }

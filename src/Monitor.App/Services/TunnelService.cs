@@ -12,6 +12,7 @@ public class TunnelService : IDisposable
     private Process? _process;
     private string? _publicUrl;
     private bool _running;
+    private string? _error;
     private CancellationTokenSource? _cts;
 
     public string? PublicUrl => _publicUrl;
@@ -35,7 +36,7 @@ public class TunnelService : IDisposable
         Running = _running,
         PublicUrl = _publicUrl,
         Mode = _settings.TunnelMode,
-        Error = null
+        Error = _error
     };
 
     public Task StartAsync(CancellationToken ct)
@@ -66,6 +67,13 @@ public class TunnelService : IDisposable
         var path = _settings.TunnelCloudflaredPath;
         if (!File.Exists(path) && OperatingSystem.IsWindows())
             path = FindExecutable("cloudflared.exe") ?? path;
+
+        if (!File.Exists(path))
+        {
+            _error = $"cloudflared 未找到: {path}";
+            Log.Warning("cloudflared not found at {Path}", path);
+            return;
+        }
 
         var port = _settings.WebServerPort;
         var psi = new ProcessStartInfo
@@ -107,6 +115,7 @@ public class TunnelService : IDisposable
         catch (Exception ex)
         {
             Log.Error(ex, "Failed to start cloudflared");
+            _error = $"cloudflared 启动失败: {ex.Message}";
         }
         _running = false;
     }
@@ -116,6 +125,13 @@ public class TunnelService : IDisposable
         var path = _settings.TunnelNgrokPath;
         if (!File.Exists(path) && OperatingSystem.IsWindows())
             path = FindExecutable("ngrok.exe") ?? path;
+
+        if (!File.Exists(path))
+        {
+            _error = $"ngrok 未找到: {path}";
+            Log.Warning("ngrok not found at {Path}", path);
+            return;
+        }
 
         var args = $"http {_settings.WebServerPort} --log=stdout --log-format=json";
         if (!string.IsNullOrEmpty(_settings.TunnelNgrokAuthToken))
@@ -163,6 +179,7 @@ public class TunnelService : IDisposable
         catch (Exception ex)
         {
             Log.Error(ex, "Failed to start ngrok");
+            _error = $"ngrok 启动失败: {ex.Message}";
         }
         _running = false;
     }

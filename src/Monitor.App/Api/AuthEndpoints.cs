@@ -23,10 +23,16 @@ public static class AuthEndpoints
             if (body == null || !body.TryGetValue("password", out var password))
                 return Results.BadRequest(new { detail = "password is required" });
 
-            var token = auth.Authenticate(password);
-            return token != null
-                ? Results.Ok(new { success = true, token })
-                : Results.Json(new { detail = "invalid password" }, statusCode: 401);
+            var remoteIp = request.HttpContext.Connection.RemoteIpAddress?.ToString();
+
+            if (auth.IsLoginLocked(remoteIp))
+                return Results.Json(new { detail = "too many attempts, try later" }, statusCode: 429);
+
+            var token = auth.Authenticate(password, remoteIp);
+            if (token != null)
+                return Results.Ok(new { success = true, token });
+
+            return Results.Json(new { detail = "invalid password" }, statusCode: 401);
         });
     }
 }

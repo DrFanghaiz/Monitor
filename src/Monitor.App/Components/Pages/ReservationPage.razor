@@ -71,7 +71,11 @@
 
             @if (!_reservations.Any())
             {
-                <div class="empty-state">当前日期没有预约</div>
+                <div class="empty-state" style="min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px">
+                    <span style="font-size:28px;opacity:.3">◫</span>
+                    <span>当前日期没有预约</span>
+                    <span style="font-size:11px;color:var(--text-muted)">可以在左侧创建新的使用时段</span>
+                </div>
             }
             else
             {
@@ -99,6 +103,33 @@
             }
         </div>
     </section>
+
+    <div class="reservation-helper-grid">
+        <section class="card">
+            <h2 class="section-title">常用时段</h2>
+            <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;color:var(--text-secondary)">
+                <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border-light)">
+                    <span>上午</span><span>09:00 — 12:00</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border-light)">
+                    <span>下午</span><span>14:00 — 18:00</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;padding:6px 0;">
+                    <span>晚间</span><span>19:00 — 22:00</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2 class="section-title">使用规则</h2>
+            <div style="font-size:13px;color:var(--text-secondary);line-height:1.8">
+                <div>预约前请确认当前机器未被占用</div>
+                <div>避免与他人预约时间重叠</div>
+                <div>如需取消，请在预约列表中操作</div>
+                <div style="margin-top:4px;color:var(--text-muted)">创建预约后会显示在右侧列表中</div>
+            </div>
+        </section>
+    </div>
 </div>
 
 @code {

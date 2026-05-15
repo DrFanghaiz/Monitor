@@ -8,9 +8,10 @@ public static class StatusEndpoints
 {
     public static void MapStatusEndpoints(this WebApplication app)
     {
-        app.MapGet("/api/status", (StatusService status, WebServerInfo webInfo) =>
+        app.MapGet("/api/status", (StatusService status, WebServerInfo webInfo, TunnelService tunnel) =>
         {
             var s = status.GetFullStatus();
+            var ts = tunnel.GetStatus();
             return Results.Ok(new
             {
                 s.Timestamp,
@@ -46,6 +47,13 @@ public static class StatusEndpoints
                     port = webInfo.Port,
                     error = webInfo.Error,
                     public_url = webInfo.PublicUrl
+                },
+                tunnel = new
+                {
+                    running = ts.Running,
+                    public_url = ts.PublicUrl,
+                    mode = ts.Mode,
+                    error = ts.Error
                 }
             });
         });

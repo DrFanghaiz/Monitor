@@ -1,0 +1,180 @@
+2026-05-15 11:07:37 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-15 11:07:37 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-15 11:07:37 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-15 11:07:37 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-15 11:07:37 | INFORMATION | Cleaning up 1 stale active remote session(s) from previous run
+2026-05-15 11:07:37 | INFORMATION | RemoteMonitorService started
+2026-05-15 11:07:37 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-15 11:07:37 | WARNING | cloudflared not found at "cloudflared.exe"
+2026-05-15 11:07:37 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process"]
+2026-05-15 11:07:37 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-15 11:07:37 | ERROR | Web API failed to start on port 8080
+System.IO.IOException: Failed to bind to address http://127.0.0.1:8080: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+ ---> System.Net.Sockets.SocketException (10048): 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.ListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Monitor.App.App.<>c__DisplayClass3_0.<StartWebHost>b__0() in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\App.xaml.cs:line 160
+2026-05-15 11:14:29 | INFORMATION | Added column "operator_name" to "remote_sessions"
+2026-05-15 11:14:29 | INFORMATION | Added column "source" to "remote_sessions"
+2026-05-15 11:14:29 | INFORMATION | Added column "end_reason" to "remote_sessions"
+2026-05-15 11:14:29 | INFORMATION | Added column "last_seen_at" to "remote_sessions"
+2026-05-15 11:14:29 | INFORMATION | Cleaning up 5 stale active remote session(s) from previous run
+2026-05-15 11:14:29 | INFORMATION | RemoteMonitorService started
+2026-05-15 11:14:29 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-15 11:14:29 | WARNING | cloudflared not found at "cloudflared.exe"
+2026-05-15 11:14:29 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process"]
+2026-05-15 11:14:29 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-15 11:14:29 | ERROR | Web API failed to start on port 8080
+System.IO.IOException: Failed to bind to address http://127.0.0.1:8080: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+ ---> System.Net.Sockets.SocketException (10048): 通常每个套接字地址(协议/网络地址/端口)只允许使用一次。
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.ListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Monitor.App.App.<>c__DisplayClass3_0.<StartWebHost>b__0() in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\App.xaml.cs:line 160
+2026-05-15 11:15:37 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-15 11:15:37 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-15 11:15:37 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-15 11:15:37 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-15 11:15:37 | INFORMATION | Cleaning up 1 stale active remote session(s) from previous run
+2026-05-15 11:15:37 | INFORMATION | RemoteMonitorService started
+2026-05-15 11:15:37 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-15 11:15:37 | WARNING | cloudflared not found at "cloudflared.exe"
+2026-05-15 11:15:37 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process"]
+2026-05-15 11:15:37 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-15 11:21:49 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-15 11:21:49 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-15 11:21:49 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-15 11:21:49 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-15 11:21:49 | INFORMATION | Cleaning up 1 stale active remote session(s) from previous run
+2026-05-15 11:21:49 | INFORMATION | RemoteMonitorService started
+2026-05-15 11:21:49 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-15 11:21:49 | WARNING | cloudflared not found at "cloudflared.exe"
+2026-05-15 11:21:49 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process"]
+2026-05-15 11:21:49 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-15 11:23:42 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-15 11:23:42 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-15 11:23:42 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-15 11:23:42 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-15 11:23:42 | INFORMATION | Cleaning up 1 stale active remote session(s) from previous run
+2026-05-15 11:23:42 | INFORMATION | RemoteMonitorService started
+2026-05-15 11:23:42 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-15 11:23:42 | WARNING | cloudflared not found at "cloudflared.exe"
+2026-05-15 11:23:42 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process"]
+2026-05-15 11:23:42 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-15 11:31:51 | INFORMATION | Added column "operator_name" to "remote_sessions"
+2026-05-15 11:31:51 | INFORMATION | Added column "source" to "remote_sessions"
+2026-05-15 11:31:51 | INFORMATION | Added column "end_reason" to "remote_sessions"
+2026-05-15 11:31:51 | INFORMATION | Added column "last_seen_at" to "remote_sessions"
+2026-05-15 11:31:51 | INFORMATION | Cleaning up 5 stale active remote session(s) from previous run
+2026-05-15 11:31:51 | INFORMATION | RemoteMonitorService started
+2026-05-15 11:31:51 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-15 11:31:51 | WARNING | cloudflared not found at "cloudflared.exe"
+2026-05-15 11:31:51 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process"]
+2026-05-15 11:31:51 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-15 11:32:16 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-15 11:32:16 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-15 11:32:16 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-15 11:32:16 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-15 11:32:16 | INFORMATION | Cleaning up 1 stale active remote session(s) from previous run
+2026-05-15 11:32:16 | INFORMATION | RemoteMonitorService started
+2026-05-15 11:32:16 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-15 11:32:16 | WARNING | cloudflared not found at "cloudflared.exe"
+2026-05-15 11:32:16 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process"]
+2026-05-15 11:32:16 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-15 11:33:08 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-15 11:33:08 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-15 11:33:08 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-15 11:33:08 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-15 11:33:08 | INFORMATION | Cleaning up 1 stale active remote session(s) from previous run
+2026-05-15 11:33:08 | INFORMATION | RemoteMonitorService started
+2026-05-15 11:33:08 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-15 11:33:08 | WARNING | cloudflared not found at "cloudflared.exe"
+2026-05-15 11:33:08 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process"]
+2026-05-15 11:33:08 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-15 11:35:12 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-15 11:35:12 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-15 11:35:12 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-15 11:35:12 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-15 11:35:12 | INFORMATION | Cleaning up 1 stale active remote session(s) from previous run
+2026-05-15 11:35:12 | INFORMATION | RemoteMonitorService started
+2026-05-15 11:35:12 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-15 11:35:12 | WARNING | cloudflared not found at "cloudflared.exe"
+2026-05-15 11:35:12 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process"]
+2026-05-15 11:35:12 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-15 11:36:10 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-15 11:36:10 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-15 11:36:10 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-15 11:36:10 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-15 11:36:10 | INFORMATION | Cleaning up 1 stale active remote session(s) from previous run
+2026-05-15 11:36:10 | INFORMATION | RemoteMonitorService started
+2026-05-15 11:36:10 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-15 11:36:10 | WARNING | cloudflared not found at "cloudflared.exe"
+2026-05-15 11:36:11 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process"]
+2026-05-15 11:36:11 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-15 11:50:39 | INFORMATION | Added column "operator_name" to "remote_sessions"
+2026-05-15 11:50:39 | INFORMATION | Added column "source" to "remote_sessions"
+2026-05-15 11:50:39 | INFORMATION | Added column "end_reason" to "remote_sessions"
+2026-05-15 11:50:39 | INFORMATION | Added column "last_seen_at" to "remote_sessions"
+2026-05-15 11:50:39 | INFORMATION | Cleaning up 5 stale active remote session(s) from previous run
+2026-05-15 11:50:39 | INFORMATION | RemoteMonitorService started
+2026-05-15 11:50:39 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-15 11:50:39 | WARNING | cloudflared not found at "cloudflared.exe"
+2026-05-15 11:50:39 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process"]
+2026-05-15 11:50:39 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-15 11:58:45 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-15 11:58:45 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-15 11:58:45 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-15 11:58:45 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-15 11:58:45 | INFORMATION | Cleaning up 1 stale active remote session(s) from previous run
+2026-05-15 11:58:45 | INFORMATION | RemoteMonitorService started
+2026-05-15 11:58:45 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-15 11:58:45 | WARNING | cloudflared not found at "cloudflared.exe"
+2026-05-15 11:58:45 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process"]
+2026-05-15 11:58:45 | INFORMATION | Web API listening on http://127.0.0.1:8080

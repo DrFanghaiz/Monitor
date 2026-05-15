@@ -32,9 +32,10 @@
     <nav class="sidebar-nav">
         @foreach (var item in _navItems)
         {
-            <NavLink href="@item.Href" class="sidebar-item" ActiveClass="active" Match="@item.Match">
+            <NavLink href="@item.Href" class="sidebar-item" ActiveClass="active"
+                     Match="@item.Match" title="@item.Label" aria-label="@item.Label">
                 <span class="sidebar-icon"><Icon Name="@item.Icon" Size="18" /></span>
-                <span>@item.Label</span>
+                <span class="nav-label">@item.Label</span>
             </NavLink>
         }
     </nav>

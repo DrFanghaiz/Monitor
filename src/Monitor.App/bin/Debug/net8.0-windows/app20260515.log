@@ -1,0 +1,70 @@
+2026-05-15 10:18:43 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-15 10:18:43 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-15 10:18:43 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-15 10:18:43 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-15 10:18:43 | WARNING | Auto backup skipped
+System.IO.IOException: The process cannot access the file 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\bin\Debug\net8.0-windows\monitor.db' because it is being used by another process.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync)
+   at System.IO.Compression.ZipFileExtensions.DoCreateEntryFromFile(ZipArchive destination, String sourceFileName, String entryName, Nullable`1 compressionLevel)
+   at System.IO.Compression.ZipFileExtensions.CreateEntryFromFile(ZipArchive destination, String sourceFileName, String entryName)
+   at Monitor.App.Services.BackupService.CreateBackup(Boolean manual) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\BackupService.cs:line 33
+   at Monitor.App.Services.BackupService.AutoBackupIfNeeded() in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\BackupService.cs:line 71
+   at Monitor.App.App.Application_Startup(Object sender, StartupEventArgs e) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\App.xaml.cs:line 90
+2026-05-15 10:18:43 | INFORMATION | Cleaning up 1 stale active remote session(s) from previous run
+2026-05-15 10:18:43 | INFORMATION | RemoteMonitorService started
+2026-05-15 10:18:43 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-15 10:18:43 | ERROR | Failed to start cloudflared
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process 'cloudflared.exe' with working directory 'E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\bin\Debug\net8.0-windows'. 系统找不到指定的文件。
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Monitor.App.Services.TunnelService.RunCloudflared(CancellationToken ct) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\TunnelService.cs:line 83
+2026-05-15 10:18:43 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process"]
+2026-05-15 10:18:43 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-15 10:55:27 | INFORMATION | Added column "operator_name" to "remote_sessions"
+2026-05-15 10:55:27 | INFORMATION | Added column "source" to "remote_sessions"
+2026-05-15 10:55:27 | INFORMATION | Added column "end_reason" to "remote_sessions"
+2026-05-15 10:55:27 | INFORMATION | Added column "last_seen_at" to "remote_sessions"
+2026-05-15 10:55:27 | INFORMATION | Cleaning up 5 stale active remote session(s) from previous run
+2026-05-15 10:55:27 | INFORMATION | RemoteMonitorService started
+2026-05-15 10:55:27 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-15 10:55:27 | WARNING | cloudflared not found at "cloudflared.exe"
+2026-05-15 10:55:27 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process"]
+2026-05-15 10:55:27 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-15 10:55:35 | ERROR | Backup failed
+System.IO.IOException: The process cannot access the file 'C:\Users\happx\AppData\Local\Temp\monitor_backup_e742c5c28b2f487099550927b0fc92e7\monitor.db' because it is being used by another process.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, Boolean useAsync)
+   at System.IO.Compression.ZipFileExtensions.DoCreateEntryFromFile(ZipArchive destination, String sourceFileName, String entryName, Nullable`1 compressionLevel)
+   at System.IO.Compression.ZipFile.CreateZipArchiveFromDirectory(String sourceDirectoryName, ZipArchive archive, Nullable`1 compressionLevel, Boolean includeBaseDirectory)
+   at System.IO.Compression.ZipFile.DoCreateFromDirectory(String sourceDirectoryName, String destinationArchiveFileName, Nullable`1 compressionLevel, Boolean includeBaseDirectory, Encoding entryNameEncoding)
+   at System.IO.Compression.ZipFile.CreateFromDirectory(String sourceDirectoryName, String destinationArchiveFileName, CompressionLevel compressionLevel, Boolean includeBaseDirectory)
+   at Monitor.App.Services.BackupService.CreateBackup(Boolean manual) in E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\Services\BackupService.cs:line 62
+2026-05-15 10:57:21 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-15 10:57:21 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-15 10:57:21 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-15 10:57:21 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-15 10:57:21 | INFORMATION | Cleaning up 1 stale active remote session(s) from previous run
+2026-05-15 10:57:22 | INFORMATION | RemoteMonitorService started
+2026-05-15 10:57:22 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-15 10:57:22 | WARNING | cloudflared not found at "cloudflared.exe"
+2026-05-15 10:57:22 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process"]
+2026-05-15 10:57:22 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-15 10:57:27 | INFORMATION | Backup created: "E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\bin\Debug\net8.0-windows\./backups\manual_backup_20260515_105727.zip" (2683 bytes)
+2026-05-15 11:00:23 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-15 11:00:23 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-15 11:00:23 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-15 11:00:23 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-15 11:00:23 | INFORMATION | Cleaning up 1 stale active remote session(s) from previous run
+2026-05-15 11:00:23 | INFORMATION | RemoteMonitorService started
+2026-05-15 11:00:23 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-15 11:00:23 | WARNING | cloudflared not found at "cloudflared.exe"
+2026-05-15 11:00:23 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process"]
+2026-05-15 11:00:23 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-15 11:01:42 | INFORMATION | Backup created: "E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\bin\Debug\net8.0-windows\./backups\manual_backup_20260515_110142.zip" (2718 bytes)

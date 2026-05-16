@@ -19,9 +19,9 @@ public partial class App : Application
 
     private void Application_Startup(object sender, StartupEventArgs e)
     {
-        var baseDir = AppDomain.CurrentDomain.BaseDirectory;
-        var dbPath = Path.Combine(baseDir, "monitor.db");
-        var configPath = Path.Combine(baseDir, "config.json");
+        AppPaths.EnsureDataDirectory();
+        var dbPath = AppPaths.DatabasePath;
+        var configPath = AppPaths.ConfigPath;
 
         // ---- Config ----
         var settings = AppSettings.Load();
@@ -30,7 +30,7 @@ public partial class App : Application
         Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Debug()
             .WriteTo.Console()
-            .WriteTo.File(Path.Combine(baseDir, "app.log"),
+            .WriteTo.File(AppPaths.LogPath,
                 rollingInterval: RollingInterval.Day,
                 fileSizeLimitBytes: 5 * 1024 * 1024,
                 retainedFileCountLimit: 3,

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Monitor.App.Infrastructure.Config;
+using Monitor.App.Infrastructure.Security;
 using Monitor.App.Repositories;
 using Monitor.App.Services;
 
@@ -42,22 +43,31 @@ public static class RemoteEndpoints
 
         app.MapGet("/api/remote/operator/register/available", (AppSettings cfg) =>
         {
-            return Results.Ok(new { available = !string.IsNullOrEmpty(cfg.OperatorRegistrationKey) });
+            return Results.Ok(new { available = PasswordManager.HasOperatorRegistrationKey(cfg) });
         });
 
-        // Public registration: requires registration_key, not admin token
         app.MapPost("/api/remote/operator/register", async (HttpRequest request,
-            RemoteMonitorService monitor, AppSettings cfg) =>
+            RemoteMonitorService monitor, AppSettings cfg, WebAccessService auth) =>
         {
-            if (string.IsNullOrEmpty(cfg.OperatorRegistrationKey))
+            var remoteIp = request.HttpContext.Connection.RemoteIpAddress?.ToString();
+
+            if (!PasswordManager.HasOperatorRegistrationKey(cfg))
                 return Results.Json(new { detail = "registration not available" }, statusCode: 401);
+
+            if (auth.IsRegistrationLocked(remoteIp))
+                return Results.Json(new { detail = "too many attempts, try later" }, statusCode: 429);
 
             RegistrationRequest? body;
             try { body = await request.ReadFromJsonAsync<RegistrationRequest>(); }
             catch { return Results.BadRequest(new { detail = "invalid request body" }); }
 
-            if (body == null || body.RegistrationKey != cfg.OperatorRegistrationKey)
+            if (body == null
+                || string.IsNullOrWhiteSpace(body.RegistrationKey)
+                || !PasswordManager.VerifyOperatorRegistrationKey(cfg, body.RegistrationKey))
+            {
+                auth.RecordRegistrationFailure(remoteIp);
                 return Results.Json(new { detail = "unauthorized" }, statusCode: 401);
+            }
 
             if (string.IsNullOrWhiteSpace(body.OperatorName))
                 return Results.BadRequest(new { detail = "operator_name 不能为空" });
@@ -67,7 +77,10 @@ public static class RemoteEndpoints
                 return Results.BadRequest(new { detail = "操作人姓名长度 2-30 个字符" });
 
             if (monitor.TrySetOperatorName(trimmed, out var error))
+            {
+                auth.ClearRegistrationFailures(remoteIp);
                 return Results.Ok(new { success = true, operator_name = trimmed });
+            }
 
             return Results.Json(new { detail = error }, statusCode: 409);
         });

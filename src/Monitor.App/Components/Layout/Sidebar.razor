@@ -2,6 +2,7 @@
 @inject StatusService StatusService
 @inject Services.TunnelService TunnelService
 @inject Infrastructure.Config.AppSettings AppSettings
+@using Monitor.App.Infrastructure.Security
 @implements IDisposable
 
 <aside class="sidebar">
@@ -118,7 +119,7 @@
             _statusNote = null;
         }
 
-        if (tunnel.Running && !string.IsNullOrWhiteSpace(tunnel.PublicUrl))
+        if (tunnel.PublicReady && !string.IsNullOrWhiteSpace(tunnel.PublicUrl))
         {
             _publicText = "\u5df2\u8fde\u63a5";
             _publicClass = "ok";
@@ -134,7 +135,7 @@
             _publicClass = "warning";
         }
 
-        if (string.IsNullOrWhiteSpace(AppSettings.OperatorRegistrationKey))
+        if (!PasswordManager.HasOperatorRegistrationKey(AppSettings))
         {
             _registerText = "\u7f3a\u5931";
             _registerClass = "warning";

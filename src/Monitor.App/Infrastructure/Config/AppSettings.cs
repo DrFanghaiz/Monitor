@@ -33,9 +33,9 @@ public class AppSettings
     public string CloudflareTunnelId { get; set; } = "";
     public string CloudflareHostname { get; set; } = "";
     public string OperatorRegistrationKey { get; set; } = "";
+    public string OperatorRegistrationKeyHash { get; set; } = "";
 
-    private static readonly string _configPath = Path.Combine(
-        AppDomain.CurrentDomain.BaseDirectory, "config.json");
+    private static readonly string _configPath = AppPaths.ConfigPath;
 
     public static AppSettings Load()
     {
@@ -50,16 +50,26 @@ public class AppSettings
                 using var doc = JsonDocument.Parse(json);
                 if (doc.RootElement.TryGetProperty("operator_registration_key", out var el))
                     settings.OperatorRegistrationKey = el.GetString() ?? "";
+                if (string.IsNullOrEmpty(settings.OperatorRegistrationKeyHash)
+                    && doc.RootElement.TryGetProperty("operator_registration_key_hash", out var hashEl))
+                    settings.OperatorRegistrationKeyHash = hashEl.GetString() ?? "";
             }
 
             settings.MergeDefaults();
+            settings.MigratePlainRegistrationKey();
             return settings;
         }
-        return new AppSettings();
+        var created = new AppSettings();
+        created.MergeDefaults();
+        return created;
     }
 
     public void Save()
     {
+        if (!string.IsNullOrEmpty(OperatorRegistrationKeyHash))
+            OperatorRegistrationKey = "";
+
+        Directory.CreateDirectory(Path.GetDirectoryName(_configPath)!);
         var json = JsonSerializer.Serialize(this, new JsonSerializerOptions { WriteIndented = true });
         File.WriteAllText(_configPath, json);
     }
@@ -73,6 +83,18 @@ public class AppSettings
         if (string.IsNullOrEmpty(TunnelCloudflaredPath)) TunnelCloudflaredPath = defaults.TunnelCloudflaredPath;
         if (string.IsNullOrEmpty(TunnelNgrokPath)) TunnelNgrokPath = defaults.TunnelNgrokPath;
         if (string.IsNullOrEmpty(CloudflareTunnelName)) CloudflareTunnelName = defaults.CloudflareTunnelName;
+        if (string.IsNullOrWhiteSpace(BackupPath) || !Path.IsPathRooted(BackupPath))
+            BackupPath = AppPaths.BackupDirectory;
+    }
+
+    private void MigratePlainRegistrationKey()
+    {
+        if (string.IsNullOrWhiteSpace(OperatorRegistrationKey) || !string.IsNullOrWhiteSpace(OperatorRegistrationKeyHash))
+            return;
+
+        OperatorRegistrationKeyHash = BCrypt.Net.BCrypt.HashPassword(OperatorRegistrationKey.Trim());
+        OperatorRegistrationKey = "";
+        Save();
     }
 
     public string Get(string key, string defaultValue = "")
@@ -87,6 +109,7 @@ public class AppSettings
             "cloudflare_hostname" => CloudflareHostname,
             "cloudflare_tunnel_name" => CloudflareTunnelName,
             "cloudflare_tunnel_id" => CloudflareTunnelId,
+            "operator_registration_key_hash" => OperatorRegistrationKeyHash,
             "auto_backup" => AutoBackup.ToString().ToLower(),
             "backup_retention_days" => BackupRetentionDays.ToString(),
             "remote_monitor_enabled" => RemoteMonitorEnabled.ToString().ToLower(),
@@ -110,6 +133,7 @@ public class AppSettings
             case "cloudflare_hostname": CloudflareHostname = value; break;
             case "cloudflare_tunnel_name": CloudflareTunnelName = value; break;
             case "cloudflare_tunnel_id": CloudflareTunnelId = value; break;
+            case "operator_registration_key_hash": OperatorRegistrationKeyHash = value; OperatorRegistrationKey = ""; break;
             case "auto_backup": AutoBackup = bool.Parse(value); break;
             case "backup_retention_days": BackupRetentionDays = int.Parse(value); break;
             case "remote_monitor_enabled": RemoteMonitorEnabled = bool.Parse(value); break;

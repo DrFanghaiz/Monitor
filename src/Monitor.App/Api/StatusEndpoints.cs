@@ -52,6 +52,8 @@ public static class StatusEndpoints
                 {
                     running = ts.Running,
                     public_url = ts.PublicUrl,
+                    configured_url = ts.ConfiguredUrl,
+                    public_ready = ts.PublicReady,
                     mode = ts.Mode,
                     error = ts.Error
                 }

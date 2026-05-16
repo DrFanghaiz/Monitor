@@ -19,7 +19,7 @@ public class BackupService
         _configPath = configPath;
         _backupDir = settings.BackupPath;
         if (!Path.IsPathRooted(_backupDir))
-            _backupDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, _backupDir);
+            _backupDir = Path.Combine(AppPaths.DataDirectory, _backupDir);
         Directory.CreateDirectory(_backupDir);
     }
 

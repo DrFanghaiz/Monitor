@@ -57,7 +57,10 @@ public class UsageRepository : IUsageRepository
     {
         if (ids.Count == 0) return;
         using var conn = _factory.CreateConnection();
-        conn.Execute($"DELETE FROM usage_records WHERE id IN ({string.Join(",", ids)})");
+        using var tx = conn.BeginTransaction();
+        foreach (var id in ids.Distinct())
+            conn.Execute("DELETE FROM usage_records WHERE id = @Id", new { Id = id }, tx);
+        tx.Commit();
     }
 
     public List<HourlyStat> GetHourlyStats()

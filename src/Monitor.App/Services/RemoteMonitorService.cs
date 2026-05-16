@@ -10,7 +10,8 @@ public class RemoteMonitorService : IDisposable
     private readonly ProcessDetector _detector;
     private readonly IRemoteSessionRepository _repo;
     private readonly AppSettings _settings;
-    private Timer? _timer;
+    private CancellationTokenSource? _monitorCts;
+    private Task? _monitorTask;
 
     private string? _remoteType;
     private DateTime _remoteStartTime;
@@ -54,19 +55,45 @@ public class RemoteMonitorService : IDisposable
         }
 
         Log.Information("RemoteMonitorService started");
-        var interval = TimeSpan.FromSeconds(_settings.RemoteMonitorInterval);
-        _timer = new Timer(_ =>
-        {
-            CheckAndUpdate();
-        }, null, TimeSpan.Zero, interval);
+        _detectionDisabled = false;
+        _monitorCts = CancellationTokenSource.CreateLinkedTokenSource(ct);
+        _monitorTask = Task.Run(() => MonitorLoopAsync(_monitorCts.Token), CancellationToken.None);
         return Task.CompletedTask;
     }
 
-    public Task StopAsync(CancellationToken ct)
+    public async Task StopAsync(CancellationToken ct)
     {
-        _timer?.Dispose();
-        _timer = null;
-        return Task.CompletedTask;
+        if (_monitorCts == null)
+            return;
+
+        await _monitorCts.CancelAsync();
+        if (_monitorTask != null)
+            await Task.WhenAny(_monitorTask, Task.Delay(TimeSpan.FromSeconds(3), ct));
+
+        _monitorCts.Dispose();
+        _monitorCts = null;
+        _monitorTask = null;
+    }
+
+    private async Task MonitorLoopAsync(CancellationToken ct)
+    {
+        try
+        {
+            CheckAndUpdate();
+            var seconds = Math.Max(1, _settings.RemoteMonitorInterval);
+            using var timer = new PeriodicTimer(TimeSpan.FromSeconds(seconds));
+            while (await timer.WaitForNextTickAsync(ct))
+                CheckAndUpdate();
+        }
+        catch (OperationCanceledException) when (ct.IsCancellationRequested)
+        {
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "RemoteMonitorService loop failed");
+            _detectorHealthy = false;
+            _lastError = ex.Message;
+        }
     }
 
     private bool CleanupStaleSessions()
@@ -289,7 +316,8 @@ public class RemoteMonitorService : IDisposable
 
     public void Dispose()
     {
-        _timer?.Dispose();
+        _monitorCts?.Cancel();
+        _monitorCts?.Dispose();
     }
 }
 

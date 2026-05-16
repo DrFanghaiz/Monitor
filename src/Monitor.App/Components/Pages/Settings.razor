@@ -5,197 +5,227 @@
 @inject Services.TunnelService TunnelService
 @inject Services.WebServerInfo WebServerInfo
 @using Monitor.App.Infrastructure.Security
+@using Monitor.App.Infrastructure.Config
 
 <PageTitle>设置 · Monitor</PageTitle>
 
-<div class="page">
+<div class="page settings-page">
     <header class="page-header">
         <div>
             <h1 class="page-title">
                 <span class="page-title-icon"><Icon Name="settings" Size="20" /></span>
                 系统设置
             </h1>
-            <p class="page-subtitle">密码、备份和本机配置</p>
+            <p class="page-subtitle">完成访问、发布和数据维护配置。</p>
         </div>
     </header>
 
-    @{
-        var setupAlerts = GetSetupAlerts().ToList();
-    }
-    @if (setupAlerts.Any())
-    {
-        <div class="setup-alert-stack">
-            @foreach (var alert in setupAlerts)
+    <section class="settings-readiness">
+        <div class="readiness-head">
+            <div>
+                <h2>准备情况</h2>
+                <p>@GetIssueSummary()</p>
+            </div>
+            <span class="readiness-count @GetIssueTone()">@GetIssueCountText()</span>
+        </div>
+        <div class="readiness-grid">
+            @foreach (var item in GetReadinessItems())
             {
-                <div class="setup-alert @alert.Tone">
-                    <div class="setup-alert-title">@alert.Title</div>
-                    <div class="setup-alert-body">@alert.Body</div>
+                <div class="readiness-item @item.Tone">
+                    <span class="readiness-dot"></span>
+                    <div>
+                        <strong>@item.Title</strong>
+                        <span>@item.Value</span>
+                    </div>
                 </div>
             }
         </div>
-    }
+    </section>
 
-    <div class="settings-columns">
-        <div class="settings-column">
-        @if (_hasDefaultPassword)
-        {
-            <div class="card" style="border-color:var(--warning);background:var(--warning-soft);">
-                <div style="font-size:14px;font-weight:500;color:var(--warning);margin-bottom:4px;">安全提醒</div>
-                <div style="font-size:13px;color:var(--text-secondary);">
-                    @(_defaultPasswordReasons)
+    <div class="settings-layout">
+        <section class="card settings-access-card">
+            <div class="settings-card-head">
+                <div>
+                    <h2><Icon Name="key" Size="16" />账号与访问</h2>
+                    <p>先设置密码和登记码。</p>
                 </div>
             </div>
-        }
-        <div class="card">
-            <h2 class="section-title"><Icon Name="key" Size="16" />管理员密码</h2>
-            <div class="form-stack" style="max-width:380px;">
-                <label class="field">
-                    <span class="field-label">当前密码</span>
-                    <input class="input" type="password" @bind="_adminOldPwd" @bind:event="oninput" placeholder="输入当前密码" autocomplete="current-password" />
-                </label>
-                <label class="field">
-                    <span class="field-label">新密码</span>
-                    <input class="input" type="password" @bind="_adminNewPwd" @bind:event="oninput" placeholder="输入新密码" autocomplete="new-password" />
-                </label>
-                <button class="btn btn-primary" @onclick="ChangeAdminPassword" disabled="@(!CanChangeAdminPassword)">
-                    <Icon Name="key" Size="15" />
-                    确认修改
-                </button>
-            </div>
-            @if (!string.IsNullOrEmpty(_adminMsg))
-            {
-                <div class="message">@_adminMsg</div>
-            }
-        </div>
 
-        <div class="card">
-            <h2 class="section-title"><Icon Name="key" Size="16" />Web 访问密码</h2>
-            <div class="form-stack" style="max-width:380px;">
-                <label class="field">
-                    <span class="field-label">新密码</span>
-                    <input class="input" type="password" @bind="_webPwd" @bind:event="oninput" placeholder="输入 Web 访问密码" autocomplete="new-password" />
-                </label>
-                <button class="btn btn-primary" @onclick="ChangeWebPassword" disabled="@string.IsNullOrWhiteSpace(_webPwd)">
-                    <Icon Name="key" Size="15" />
-                    确认修改
-                </button>
-            </div>
-            @if (!string.IsNullOrEmpty(_webMsg))
-            {
-                <div class="message">@_webMsg</div>
-            }
-        </div>
-
-        <div class="card">
-            <h2 class="section-title"><Icon Name="key" Size="16" />操作人登记码</h2>
-            <div class="form-stack" style="max-width:380px;">
-                <label class="field">
-                    <span class="field-label">
-                        当前状态: @(string.IsNullOrEmpty(AppSettings.OperatorRegistrationKey) ? "未配置" : "已配置")
+            <div class="settings-section">
+                <div class="settings-section-head">
+                    <div>
+                        <h3>管理员密码</h3>
+                        <p>用于本机管理操作。</p>
+                    </div>
+                    <span class="badge @(PasswordManager.IsPasswordSet(AppSettings) ? "badge-success" : "badge-danger")">
+                        @(PasswordManager.IsPasswordSet(AppSettings) ? "已设置" : "默认")
                     </span>
-                </label>
-                <label class="field">
-                    <span class="field-label">新登记码（4 字符以上）</span>
-                    <input class="input" @bind="_regKey" @bind:event="oninput" placeholder="设置新登记码" autocomplete="off" />
-                </label>
-                <button class="btn btn-primary" @onclick="SetRegistrationKey" disabled="@(string.IsNullOrWhiteSpace(_regKey) || _regKey.Trim().Length < 4)">
-                    <Icon Name="key" Size="15" />
-                    保存
-                </button>
-            </div>
-            @if (!string.IsNullOrEmpty(_regMsg))
-            {
-                <div class="message">@_regMsg</div>
-            }
-        </div>
-        </div>
-
-        <div class="settings-column">
-
-        <div class="card">
-            <div class="toolbar" style="margin-bottom:14px;">
-                <h2 class="section-title" style="margin:0;"><Icon Name="database" Size="16" />数据备份</h2>
-                <button class="btn btn-ghost" @onclick="CreateBackup">
-                    <Icon Name="database" Size="15" />
-                    立即备份
-                </button>
-            </div>
-
-            @if (!_backups.Any())
-            {
-                <div class="empty-state">暂无备份，建议先创建一次手动备份</div>
-            }
-            else
-            {
-                <div class="data-list">
-                    @foreach (var b in _backups.Take(6))
-                    {
-                        <div class="data-row">
-                            <div>
-                                <div class="row-title">@b.Name</div>
-                                <div class="row-subtitle">@(b.IsManual ? "手动备份" : "自动备份")</div>
-                            </div>
-                            <div class="row-meta">@FormatFileSize(b.Size) · @b.Created</div>
-                        </div>
-                    }
                 </div>
-            }
+                <div class="settings-action-row settings-action-row-three">
+                    <label class="field">
+                        <span class="field-label">当前密码</span>
+                        <input class="input" type="password" @bind="_adminOldPwd" @bind:event="oninput" placeholder="输入当前密码" autocomplete="current-password" />
+                    </label>
+                    <label class="field">
+                        <span class="field-label">新密码</span>
+                        <input class="input" type="password" @bind="_adminNewPwd" @bind:event="oninput" placeholder="输入新密码" autocomplete="new-password" />
+                    </label>
+                    <button class="btn btn-primary" @onclick="ChangeAdminPassword" disabled="@(!CanChangeAdminPassword)">
+                        <Icon Name="key" Size="15" />
+                        保存
+                    </button>
+                </div>
+                @if (!string.IsNullOrEmpty(_adminMsg))
+                {
+                    <div class="message">@_adminMsg</div>
+                }
+            </div>
 
-            @if (!string.IsNullOrEmpty(_backupMsg))
-            {
-                <div class="message">@_backupMsg</div>
-            }
-        </div>
+            <div class="settings-section">
+                <div class="settings-section-head">
+                    <div>
+                        <h3>Web 访问密码</h3>
+                        <p>用于访问受保护接口。</p>
+                    </div>
+                    <span class="badge @(AppSettings.WebServerPassword == "123456" ? "badge-warning" : "badge-success")">
+                        @(AppSettings.WebServerPassword == "123456" ? "默认" : "已设置")
+                    </span>
+                </div>
+                <div class="settings-action-row">
+                    <label class="field">
+                        <span class="field-label">新密码</span>
+                        <input class="input" type="password" @bind="_webPwd" @bind:event="oninput" placeholder="输入 Web 访问密码" autocomplete="new-password" />
+                    </label>
+                    <button class="btn btn-primary" @onclick="ChangeWebPassword" disabled="@string.IsNullOrWhiteSpace(_webPwd)">
+                        <Icon Name="key" Size="15" />
+                        保存
+                    </button>
+                </div>
+                @if (!string.IsNullOrEmpty(_webMsg))
+                {
+                    <div class="message">@_webMsg</div>
+                }
+            </div>
 
-        <div class="card">
-            <h2 class="section-title"><Icon Name="globe" Size="16" />公网发布向导</h2>
-            <div class="form-stack" style="max-width:420px;">
-                <label class="field">
+            <div class="settings-section">
+                <div class="settings-section-head">
+                    <div>
+                        <h3>操作人登记码</h3>
+                        <p>远程使用者在网页登记姓名时使用。</p>
+                    </div>
+                    <span class="badge @(PasswordManager.HasOperatorRegistrationKey(AppSettings) ? "badge-success" : "badge-warning")">
+                        @(PasswordManager.HasOperatorRegistrationKey(AppSettings) ? "已设置" : "未设置")
+                    </span>
+                </div>
+                <div class="settings-action-row">
+                    <label class="field">
+                        <span class="field-label">新登记码</span>
+                        <input class="input" @bind="_regKey" @bind:event="oninput" placeholder="至少 8 个字符" autocomplete="off" />
+                    </label>
+                    <button class="btn btn-primary" @onclick="SetRegistrationKey" disabled="@(string.IsNullOrWhiteSpace(_regKey) || _regKey.Trim().Length < 8)">
+                        <Icon Name="key" Size="15" />
+                        保存
+                    </button>
+                </div>
+                @if (!string.IsNullOrEmpty(_regMsg))
+                {
+                    <div class="message">@_regMsg</div>
+                }
+            </div>
+        </section>
+
+        <div class="settings-side-stack">
+            <section class="card settings-cloud-card">
+                <div class="settings-card-head">
+                    <div>
+                        <h2><Icon Name="globe" Size="16" />公网发布</h2>
+                        <p>让别人通过固定网址查看状态。</p>
+                    </div>
+                    <span class="badge @GetTunnelBadgeClass()">@GetTunnelShortStatus()</span>
+                </div>
+
+                <label class="field settings-domain-field">
                     <span class="field-label">固定访问域名</span>
                     <input class="input" @bind="_cloudflareHostname" @bind:event="oninput"
                            placeholder="monitor.fanghaiz.top" autocomplete="off" />
-                    <span class="field-hint">请填写已经接入 Cloudflare 的完整子域名。</span>
                 </label>
-                <div class="toolbar" style="justify-content:flex-start;gap:8px;">
+
+                <div class="settings-cloud-actions">
                     <button class="btn btn-ghost" @onclick="StartCloudflareLogin" disabled="@_cloudflareBusy">
                         <Icon Name="external-link" Size="15" />
-                        打开 Cloudflare 授权
+                        授权
                     </button>
                     <button class="btn btn-primary" @onclick="ConfigureCloudflare" disabled="@(!CanConfigureCloudflare || _cloudflareBusy)">
                         <Icon Name="globe" Size="15" />
-                        一键配置并启动
+                        @(_cloudflareBusy ? "处理中" : "配置并启动")
                     </button>
                 </div>
-            </div>
-            <div class="info-grid" style="margin-top:12px;">
-                <span class="info-label">当前域名</span><span>@(string.IsNullOrWhiteSpace(AppSettings.CloudflareHostname) ? "未配置" : AppSettings.CloudflareHostname)</span>
-                <span class="info-label">隧道名称</span><span>@AppSettings.CloudflareTunnelName</span>
-                <span class="info-label">访问地址</span><span>@(string.IsNullOrWhiteSpace(AppSettings.CloudflareHostname) ? "—" : "https://" + AppSettings.CloudflareHostname + "/status")</span>
-            </div>
-            @if (!string.IsNullOrEmpty(_cloudflareMsg))
-            {
-                <div class="message">@_cloudflareMsg</div>
-            }
-        </div>
 
-        <div class="card">
-            <h2 class="section-title"><Icon Name="info" Size="16" />系统信息</h2>
-            <div class="info-grid">
-                <span class="info-label">数据库</span><span>monitor.db</span>
-                <span class="info-label">备份目录</span><span>@AppSettings.BackupPath</span>
-                <span class="info-label">自动备份</span><span>@(AppSettings.AutoBackup ? "启用" : "禁用")</span>
-                <span class="info-label">备份保留</span><span>@AppSettings.BackupRetentionDays 天</span>
-                <span class="info-label">Tunnel</span><span>@AppSettings.TunnelMode</span>
-                <span class="info-label">远程检测</span><span>@(AppSettings.RemoteMonitorEnabled ? "启用" : "禁用")</span>
-                <span class="info-label">Web 端口</span><span>@AppSettings.WebServerPort</span>
-                <span class="info-label">公网隧道</span><span>@GetTunnelStatus()</span>
+                <div class="settings-detail-grid">
+                    <span>当前域名</span><strong>@(string.IsNullOrWhiteSpace(AppSettings.CloudflareHostname) ? "未配置" : AppSettings.CloudflareHostname)</strong>
+                    <span>隧道名称</span><strong>@AppSettings.CloudflareTunnelName</strong>
+                    <span>访问地址</span><strong>@GetPublicUrlText()</strong>
+                </div>
+
                 @if (!string.IsNullOrEmpty(GetTunnelError()))
                 {
-                    <span class="info-label"></span><span style="color:var(--danger);font-size:12px;">@GetTunnelError()</span>
+                    <div class="settings-inline-error">@GetTunnelError()</div>
                 }
-                <span class="info-label">主题</span><span>@AppSettings.Theme</span>
-            </div>
-        </div>
+                @if (!string.IsNullOrEmpty(_cloudflareMsg))
+                {
+                    <div class="message">@_cloudflareMsg</div>
+                }
+            </section>
+
+            <section class="card settings-data-card">
+                <div class="settings-card-head">
+                    <div>
+                        <h2><Icon Name="database" Size="16" />数据与系统</h2>
+                        <p>备份和本机路径。</p>
+                    </div>
+                    <button class="btn btn-ghost" @onclick="CreateBackup" disabled="@_backupBusy">
+                        <Icon Name="database" Size="15" />
+                        @(_backupBusy ? "备份中" : "立即备份")
+                    </button>
+                </div>
+
+                @if (!_backups.Any())
+                {
+                    <div class="empty-state">暂无备份。</div>
+                }
+                else
+                {
+                    var latestBackup = _backups[0];
+                    <div class="settings-backup-summary">
+                        <div>
+                            <span>最近备份</span>
+                            <strong>@latestBackup.Created</strong>
+                        </div>
+                        <div>
+                            <span>类型</span>
+                            <strong>@(latestBackup.IsManual ? "手动" : "自动") · @FormatFileSize(latestBackup.Size)</strong>
+                        </div>
+                        <div>
+                            <span>备份数量</span>
+                            <strong>@_backups.Count 个</strong>
+                        </div>
+                    </div>
+                }
+
+                @if (!string.IsNullOrEmpty(_backupMsg))
+                {
+                    <div class="message">@_backupMsg</div>
+                }
+
+                <div class="settings-system-grid">
+                    <span>数据目录</span><strong>@AppPaths.DataDirectory</strong>
+                    <span>备份目录</span><strong>@AppSettings.BackupPath</strong>
+                    <span>自动备份</span><strong>@(AppSettings.AutoBackup ? "启用" : "停用")</strong>
+                    <span>保留时间</span><strong>@AppSettings.BackupRetentionDays 天</strong>
+                    <span>远程检测</span><strong>@(AppSettings.RemoteMonitorEnabled ? "启用" : "停用")</strong>
+                    <span>Web 端口</span><strong>@AppSettings.WebServerPort</strong>
+                </div>
+            </section>
         </div>
     </div>
 </div>
@@ -212,8 +242,7 @@
     private string _cloudflareHostname = "";
     private string _cloudflareMsg = "";
     private bool _cloudflareBusy;
-    private bool _hasDefaultPassword;
-    private string _defaultPasswordReasons = "";
+    private bool _backupBusy;
     private List<BackupEntry> _backups = new();
     private bool CanChangeAdminPassword => !string.IsNullOrWhiteSpace(_adminOldPwd) && !string.IsNullOrWhiteSpace(_adminNewPwd);
     private bool CanConfigureCloudflare
@@ -223,29 +252,14 @@
     protected override void OnInitialized()
     {
         _cloudflareHostname = AppSettings.CloudflareHostname;
-        CheckDefaultPasswords();
         LoadBackups();
-    }
-
-    private void CheckDefaultPasswords()
-    {
-        var reasons = new List<string>();
-        if (!PasswordManager.IsPasswordSet(AppSettings))
-            reasons.Add("管理员密码未设置，正在使用默认密码");
-        if (AppSettings.WebServerPassword == "123456")
-            reasons.Add("Web 访问密码仍是默认值");
-        if (reasons.Count > 0)
-        {
-            _hasDefaultPassword = true;
-            _defaultPasswordReasons = string.Join("；", reasons) + "。建议尽快修改。";
-        }
     }
 
     private void ChangeAdminPassword()
     {
         _adminMsg = PasswordManager.ChangeAdminPassword(AppSettings, _adminOldPwd, _adminNewPwd)
-            ? "密码修改成功"
-            : "当前密码不正确";
+            ? "已保存。"
+            : "当前密码不正确。";
         _adminOldPwd = "";
         _adminNewPwd = "";
     }
@@ -254,56 +268,109 @@
     {
         AppSettings.WebServerPassword = _webPwd;
         AppSettings.Save();
-        _webMsg = "Web 密码已更新";
+        _webMsg = "已保存。";
         _webPwd = "";
     }
 
-    private void CreateBackup()
+    private async Task CreateBackup()
     {
-        var path = BackupService.CreateBackup(manual: true);
-        _backupMsg = "备份完成: " + Path.GetFileName(path);
-        LoadBackups();
+        _backupBusy = true;
+        _backupMsg = "";
+        try
+        {
+            var path = await Task.Run(() => BackupService.CreateBackup(manual: true));
+            _backupMsg = "备份完成: " + Path.GetFileName(path);
+            LoadBackups();
+        }
+        finally
+        {
+            _backupBusy = false;
+        }
     }
 
     private void SetRegistrationKey()
     {
         var key = _regKey.Trim();
-        if (key.Length < 4) { _regMsg = "登记码长度至少 4 个字符"; return; }
-        AppSettings.OperatorRegistrationKey = key;
-        AppSettings.Save();
-        _regMsg = "登记码已保存";
+        if (key.Length < 8)
+        {
+            _regMsg = "至少 8 个字符。";
+            return;
+        }
+
+        PasswordManager.SetOperatorRegistrationKey(AppSettings, key);
+        _regMsg = "已保存。";
         _regKey = "";
     }
 
-    private IEnumerable<(string Tone, string Title, string Body)> GetSetupAlerts()
+    private IReadOnlyList<ReadinessItem> GetReadinessItems()
     {
-        if (!PasswordManager.IsPasswordSet(AppSettings))
-            yield return ("danger", "修改管理员密码", "当前仍是默认密码。");
-
-        if (AppSettings.WebServerPassword == "123456")
-            yield return ("warning", "修改 Web 密码", "当前仍是默认密码。");
-
-        if (!AppSettings.RemoteMonitorEnabled)
-            yield return ("danger", "打开远程检测", "关闭后无法判断远程占用。");
-
-        if (string.IsNullOrWhiteSpace(AppSettings.OperatorRegistrationKey))
-            yield return ("warning", "设置登记码", "用于网页登记操作人。");
-
-        if (string.IsNullOrWhiteSpace(AppSettings.CloudflareHostname))
-            yield return ("warning", "配置固定网址", "在公网发布向导中填写域名。");
-
         var tunnel = TunnelService.GetStatus();
-        if (!string.IsNullOrWhiteSpace(AppSettings.CloudflareHostname) && !tunnel.Running)
-            yield return ("danger", "固定网址未连接", $"重新执行公网发布：{AppSettings.CloudflareHostname}");
+        var publicTone = "warning";
+        var publicValue = "未配置";
 
-        if (!string.IsNullOrWhiteSpace(tunnel.Error))
-            yield return ("danger", "公网发布出错", tunnel.Error);
+        if (!string.IsNullOrWhiteSpace(AppSettings.CloudflareHostname))
+        {
+            publicTone = tunnel.PublicReady ? "ok" : "danger";
+            publicValue = tunnel.PublicReady ? "已连接" : "未连接";
+        }
+
+        return new List<ReadinessItem>
+        {
+            new("admin", "管理员密码", PasswordManager.IsPasswordSet(AppSettings) ? "ok" : "danger", PasswordManager.IsPasswordSet(AppSettings) ? "已设置" : "默认"),
+            new("web", "Web 密码", AppSettings.WebServerPassword == "123456" ? "warning" : "ok", AppSettings.WebServerPassword == "123456" ? "默认" : "已设置"),
+            new("remote", "远程检测", AppSettings.RemoteMonitorEnabled ? "ok" : "danger", AppSettings.RemoteMonitorEnabled ? "启用" : "关闭"),
+            new("register", "登记码", PasswordManager.HasOperatorRegistrationKey(AppSettings) ? "ok" : "warning", PasswordManager.HasOperatorRegistrationKey(AppSettings) ? "已设置" : "未设置"),
+            new("public", "公网发布", publicTone, publicValue)
+        };
     }
+
+    private string GetIssueSummary()
+    {
+        var count = GetReadinessItems().Count(i => i.Tone != "ok");
+        return count == 0 ? "关键配置已完成。" : "先处理未完成项。";
+    }
+
+    private string GetIssueCountText()
+    {
+        var count = GetReadinessItems().Count(i => i.Tone != "ok");
+        return count == 0 ? "正常" : $"{count} 项待处理";
+    }
+
+    private string GetIssueTone()
+    {
+        var items = GetReadinessItems();
+        if (items.Any(i => i.Tone == "danger")) return "danger";
+        if (items.Any(i => i.Tone == "warning")) return "warning";
+        return "ok";
+    }
+
+    private string GetTunnelShortStatus()
+    {
+        var ts = TunnelService.GetStatus();
+        if (ts.PublicReady) return "已连接";
+        if (ts.Running) return "启动中";
+        if (!string.IsNullOrEmpty(ts.Error)) return "异常";
+        return "未开启";
+    }
+
+    private string GetTunnelBadgeClass()
+    {
+        var ts = TunnelService.GetStatus();
+        if (ts.PublicReady) return "badge-success";
+        if (ts.Running) return "badge-warning";
+        if (!string.IsNullOrEmpty(ts.Error)) return "badge-danger";
+        return "badge-neutral";
+    }
+
+    private string GetPublicUrlText()
+        => string.IsNullOrWhiteSpace(AppSettings.CloudflareHostname)
+            ? "未配置"
+            : "https://" + AppSettings.CloudflareHostname + "/status";
 
     private async Task StartCloudflareLogin()
     {
         _cloudflareBusy = true;
-        _cloudflareMsg = "正在打开 Cloudflare 授权页面，请在浏览器中完成授权。";
+        _cloudflareMsg = "请在浏览器完成授权。";
         try
         {
             var result = await TunnelService.StartCloudflareLoginAsync();
@@ -318,27 +385,18 @@
     private async Task ConfigureCloudflare()
     {
         _cloudflareBusy = true;
-        _cloudflareMsg = "正在配置固定域名，请不要关闭软件。";
+        _cloudflareMsg = "正在配置。";
         try
         {
             var result = await TunnelService.ConfigureCloudflareNamedTunnelAsync(_cloudflareHostname);
             _cloudflareMsg = result.Success && !string.IsNullOrEmpty(result.PublicUrl)
-                ? result.Message + " 访问地址：" + result.PublicUrl + "/status"
+                ? "已连接: " + result.PublicUrl + "/status"
                 : result.Message;
         }
         finally
         {
             _cloudflareBusy = false;
         }
-    }
-
-    private string GetTunnelStatus()
-    {
-        var ts = TunnelService.GetStatus();
-        if (!ts.Running && string.IsNullOrEmpty(ts.Error)) return "未开启";
-        if (ts.Running && ts.PublicUrl != null) return "已连接 · " + ts.PublicUrl;
-        if (ts.Running) return "启动中...";
-        return "异常";
     }
 
     private string GetTunnelError() => TunnelService.GetStatus().Error ?? "";
@@ -351,4 +409,6 @@
         if (bytes < 1024 * 1024) return (bytes / 1024.0).ToString("F1") + " KB";
         return (bytes / (1024.0 * 1024.0)).ToString("F1") + " MB";
     }
+
+    private sealed record ReadinessItem(string Key, string Title, string Tone, string Value);
 }

@@ -33,4 +33,22 @@ public class PasswordManager
 
     public static bool IsPasswordSet(Config.AppSettings settings)
         => !string.IsNullOrEmpty(settings.AdminPasswordHash);
+
+    public static bool HasOperatorRegistrationKey(Config.AppSettings settings)
+        => !string.IsNullOrEmpty(settings.OperatorRegistrationKeyHash);
+
+    public static void SetOperatorRegistrationKey(Config.AppSettings settings, string key)
+    {
+        settings.OperatorRegistrationKeyHash = HashPassword(key.Trim());
+        settings.OperatorRegistrationKey = "";
+        settings.Save();
+    }
+
+    public static bool VerifyOperatorRegistrationKey(Config.AppSettings settings, string key)
+    {
+        if (!HasOperatorRegistrationKey(settings))
+            return false;
+
+        return VerifyPassword(key.Trim(), settings.OperatorRegistrationKeyHash);
+    }
 }

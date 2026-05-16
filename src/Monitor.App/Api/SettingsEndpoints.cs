@@ -72,7 +72,7 @@ public static class SettingsEndpoints
         group.MapGet("/operator-registration-key", (HttpRequest request, WebAccessService auth, AppSettings cfg) =>
         {
             if (!TryGetToken(request, auth)) return Results.Json(new { detail = "unauthorized" }, statusCode: 401);
-            return Results.Ok(new { has_registration_key = !string.IsNullOrEmpty(cfg.OperatorRegistrationKey) });
+            return Results.Ok(new { has_registration_key = PasswordManager.HasOperatorRegistrationKey(cfg) });
         });
 
         group.MapPost("/operator-registration-key", async (HttpRequest request,
@@ -87,11 +87,10 @@ public static class SettingsEndpoints
             if (body == null || !body.TryGetValue("registration_key", out var key) || string.IsNullOrWhiteSpace(key))
                 return Results.BadRequest(new { detail = "registration_key is required" });
 
-            if (key.Trim().Length < 4)
-                return Results.BadRequest(new { detail = "登记码长度至少 4 个字符" });
+            if (key.Trim().Length < 8)
+                return Results.BadRequest(new { detail = "登记码至少 8 个字符" });
 
-            cfg.OperatorRegistrationKey = key.Trim();
-            cfg.Save();
+            PasswordManager.SetOperatorRegistrationKey(cfg, key);
             return Results.Ok(new { success = true });
         });
     }

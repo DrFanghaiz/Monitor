@@ -1,0 +1,201 @@
+Monitor 当前文件目录说明
+=========================
+
+这份文件用于说明当前仓库里每个主要目录和文件的用途，方便后续继续清理。
+
+
+一、当前正式使用的内容
+----------------------
+
+1. src/
+   - 当前正式主程序源码。
+   - 主项目在 src/Monitor.App/
+   - 这是现在真正要维护、构建、发布的版本。
+
+2. src/Monitor.App/
+   - 当前桌面程序主体。
+   - 技术结构大致分为：
+     - Api/           接口入口
+     - Components/    页面、布局、共享组件
+     - Infrastructure/ 配置、数据库、日志、安全、系统检测
+     - Models/        数据模型
+     - Repositories/  数据访问层
+     - Services/      核心业务服务
+     - wwwroot/       前端静态资源
+   - 里面还有：
+     - App.xaml / MainWindow.xaml
+     - Monitor.App.csproj
+     - PROJECT_SUMMARY.md
+
+3. installer/
+   - 安装包相关文件。
+   - 主要包含：
+     - Monitor.iss              Inno Setup 安装脚本
+     - build-installer.ps1      生成安装包脚本
+     - README.md                安装打包说明
+
+4. tools/
+   - 工具脚本目录。
+   - 当前可见的主要脚本：
+     - Capture-RemoteSignals.ps1
+   - 用于远程检测采样和辅助分析。
+
+5. artifacts/
+   - 构建和发布产物。
+   - 主要包含：
+     - artifacts/installer/     已生成的安装包
+     - artifacts/publish/       已发布的程序文件
+     - artifacts/ui-check/      UI 检查相关产物
+
+6. cloudflared.exe
+   - 公网发布依赖文件。
+   - 当前安装包和一键公网功能会用到它。
+
+7. PRODUCT.md
+   - 产品定义说明。
+
+8. DESIGN.md
+   - 设计说明。
+
+9. PROJECT_STRUCTURE.md
+   - 项目结构简表。
+
+10. README.md
+    - 仓库总说明。
+
+
+二、文档资料
+------------
+
+1. docs/
+   - 已整理后的文档总目录。
+
+2. docs/plans/
+   - 当前保留的计划和实现说明。
+   - 主要包含：
+     - RELEASE_FIX_PLAN.md
+     - IMPLEMENTATION_GUIDE_REMOTE_OCCUPANCY.md
+
+3. docs/design/
+   - 设计资料和界面截图。
+   - 主要包含：
+     - previews/
+       - full-app-redesign-v2.html
+       - review-shots/ 下的预览截图
+     - ui-light-pages/
+       - dashboard、history、reservation、settings、statistics、timer 等页面截图
+     - monitor-ui-final.png
+     - monitor-ui-light.png
+     - monitor-ui-refined.png
+     - monitor-motion-check.png
+     - status-desktop.png
+     - status-mobile.png
+
+4. docs/chat/
+   - 历史过程文档和对话留档。
+   - 当前为 docs/chat/Chat/
+   - 主要包含：
+     - codex_review.md
+     - current_decision.md
+     - deepseek_report.md
+     - next_instruction.md
+     - open_issues.md
+     - release_packaging_instruction.md
+
+
+三、旧版归档
+------------
+
+1. legacy/
+   - 旧版内容归档目录。
+
+2. legacy/python-monitor/
+   - 旧版 Python 项目。
+   - 当前已经从根目录搬到这里。
+   - 主要包含：
+     - app/ backend/ desktop/ web/   旧版代码目录
+     - main.py                       旧版启动入口
+     - database.py                   旧版数据库逻辑
+     - web_server.py                 旧版网页服务
+     - remote_monitor.py             旧版远程检测
+     - tunnel.py                     旧版公网逻辑
+     - monitor.db                    旧版数据库文件
+     - config.json                   旧版配置
+     - backups/                      旧版备份
+     - environment.yml               旧版环境定义
+     - *.spec                        旧版打包脚本
+   - 这是历史版本，不是当前正式程序。
+
+3. legacy/__init__.py
+   - 旧版归档目录的初始化文件。
+
+
+四、仍在仓库中的其他目录
+------------------------
+
+1. frontend/
+   - 前端工程目录。
+   - 当前可见内容包括：
+     - src/                 前端源码
+     - node_modules/        前端依赖
+     - 页面、布局、hooks、services、theme 等代码
+   - 这是历史 UI 迁移过程中留下的前端项目目录。
+   - 当前正式桌面程序主链路已经集中在 src/Monitor.App/。
+   - 这个目录后面建议单独判断：
+     - 如果已经不再参与正式构建，可以再清理
+     - 如果仍作为历史参考，可以继续保留
+
+2. diagnostics/
+   - 诊断相关目录。
+   - 当前未展开详细清理，建议后面单独复查用途。
+
+
+五、隐藏目录和开发工具目录
+--------------------------
+
+1. .git/
+   - Git 版本库目录。
+
+2. .idea/
+   - IDE 配置目录。
+
+3. .claude/
+   - 其他工具或代理相关目录。
+
+4. .edge-headless-profile/
+   - 浏览器无头运行留下的本地 profile 目录。
+   - 这类目录通常不是正式交付内容，后面可以再判断是否删除。
+
+
+六、当前整理后的基本结论
+------------------------
+
+1. 现役代码已经集中到：
+   - src/
+   - installer/
+   - tools/
+   - artifacts/
+
+2. 文档和设计资料已经集中到：
+   - docs/
+
+3. 旧版 Python 项目已经集中到：
+   - legacy/python-monitor/
+
+4. 当前还没有继续动的，后面还可以再判断的主要是：
+   - frontend/
+   - diagnostics/
+   - docs/chat/
+   - legacy/python-monitor/ 里更细的旧文件
+   - .edge-headless-profile/
+
+
+七、后续清理建议
+----------------
+
+如果下一步继续清理，建议按这个顺序：
+
+1. 先判断 frontend/ 现在还有没有保留必要。
+2. 再判断 docs/chat/ 是否还需要长期保存。
+3. 再压缩 legacy/python-monitor/，只保留最有参考价值的旧版文件。
+4. 最后再看 diagnostics/ 和 .edge-headless-profile/。

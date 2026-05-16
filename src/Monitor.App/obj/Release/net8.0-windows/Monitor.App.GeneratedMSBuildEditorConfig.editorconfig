@@ -1,0 +1,63 @@
+is_global = true
+build_property.TargetFramework = net8.0-windows
+build_property.TargetPlatformMinVersion = 7.0
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Monitor.App
+build_property.RootNamespace = Monitor.App
+build_property.ProjectDir = C:\Users\CodexSandboxOffline\.codex\.sandbox\cwd\aadef9c6a430edb9\src\Monitor.App\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\CodexSandboxOffline\.codex\.sandbox\cwd\aadef9c6a430edb9\src\Monitor.App
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/CodexSandboxOffline/.codex/.sandbox/cwd/aadef9c6a430edb9/src/Monitor.App/Components/App.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/CodexSandboxOffline/.codex/.sandbox/cwd/aadef9c6a430edb9/src/Monitor.App/Components/Layout/AppShell.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcQXBwU2hlbGwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/CodexSandboxOffline/.codex/.sandbox/cwd/aadef9c6a430edb9/src/Monitor.App/Components/Layout/Sidebar.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcU2lkZWJhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/CodexSandboxOffline/.codex/.sandbox/cwd/aadef9c6a430edb9/src/Monitor.App/Components/Pages/Dashboard.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEYXNoYm9hcmQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/CodexSandboxOffline/.codex/.sandbox/cwd/aadef9c6a430edb9/src/Monitor.App/Components/Pages/History.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIaXN0b3J5LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/CodexSandboxOffline/.codex/.sandbox/cwd/aadef9c6a430edb9/src/Monitor.App/Components/Pages/ReservationPage.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZXNlcnZhdGlvblBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/CodexSandboxOffline/.codex/.sandbox/cwd/aadef9c6a430edb9/src/Monitor.App/Components/Pages/Settings.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZXR0aW5ncy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/CodexSandboxOffline/.codex/.sandbox/cwd/aadef9c6a430edb9/src/Monitor.App/Components/Pages/Statistics.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTdGF0aXN0aWNzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/CodexSandboxOffline/.codex/.sandbox/cwd/aadef9c6a430edb9/src/Monitor.App/Components/Pages/Timer.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUaW1lci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/CodexSandboxOffline/.codex/.sandbox/cwd/aadef9c6a430edb9/src/Monitor.App/Components/Shared/Icon.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTaGFyZWRcSWNvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/CodexSandboxOffline/.codex/.sandbox/cwd/aadef9c6a430edb9/src/Monitor.App/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 

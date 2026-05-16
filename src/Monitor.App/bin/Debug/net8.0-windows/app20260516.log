@@ -1,0 +1,100 @@
+2026-05-16 00:01:31 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-16 00:01:31 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-16 00:01:31 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-16 00:01:31 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-16 00:01:31 | INFORMATION | Backup created: "E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\bin\Debug\net8.0-windows\./backups\auto_backup_20260516_000131.zip" (2917 bytes)
+2026-05-16 00:01:31 | INFORMATION | Cleaning up 1 stale active remote session(s) from previous run
+2026-05-16 00:01:31 | INFORMATION | RemoteMonitorService started
+2026-05-16 00:01:31 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-16 00:01:31 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process,loopback_connection"]
+2026-05-16 00:01:31 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-16 00:07:00 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-16 00:07:00 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-16 00:07:00 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-16 00:07:00 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-16 00:07:01 | INFORMATION | Cleaning up 1 stale active remote session(s) from previous run
+2026-05-16 00:07:01 | INFORMATION | RemoteMonitorService started
+2026-05-16 00:07:01 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-16 00:07:01 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process,loopback_connection"]
+2026-05-16 00:07:01 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-16 00:09:25 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-16 00:09:25 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-16 00:09:25 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-16 00:09:25 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-16 00:09:26 | INFORMATION | Cleaning up 1 stale active remote session(s) from previous run
+2026-05-16 00:09:26 | INFORMATION | RemoteMonitorService started
+2026-05-16 00:09:26 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-16 00:09:26 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process,loopback_connection"]
+2026-05-16 00:09:26 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-16 00:30:37 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-16 00:30:37 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-16 00:30:37 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-16 00:30:37 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-16 00:30:37 | INFORMATION | Cleaning up 1 stale active remote session(s) from previous run
+2026-05-16 00:30:37 | INFORMATION | RemoteMonitorService started
+2026-05-16 00:30:37 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-16 00:30:38 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process,loopback_connection"]
+2026-05-16 00:30:38 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-16 00:46:14 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-16 00:46:14 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-16 00:46:14 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-16 00:46:14 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-16 00:46:14 | INFORMATION | Cleaning up 1 stale active remote session(s) from previous run
+2026-05-16 00:46:14 | INFORMATION | RemoteMonitorService started
+2026-05-16 00:46:14 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-16 00:46:14 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process,loopback_connection"]
+2026-05-16 00:46:14 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-16 01:07:07 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-16 01:07:07 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-16 01:07:07 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-16 01:07:07 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-16 01:07:07 | INFORMATION | Cleaning up 1 stale active remote session(s) from previous run
+2026-05-16 01:07:07 | INFORMATION | RemoteMonitorService started
+2026-05-16 01:07:07 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-16 01:07:07 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process,loopback_connection"]
+2026-05-16 01:07:07 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-16 01:51:33 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-16 01:51:33 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-16 01:51:33 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-16 01:51:33 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-16 01:51:33 | INFORMATION | Cleaning up 1 stale active remote session(s) from previous run
+2026-05-16 01:51:33 | INFORMATION | RemoteMonitorService started
+2026-05-16 01:51:33 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-16 01:51:33 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process,loopback_connection"]
+2026-05-16 01:51:33 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-16 11:14:41 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-16 11:14:41 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-16 11:14:41 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-16 11:14:41 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-16 11:14:41 | INFORMATION | Cleaning up 1 stale active remote session(s) from previous run
+2026-05-16 11:14:41 | INFORMATION | RemoteMonitorService started
+2026-05-16 11:14:41 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-16 11:14:41 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process,loopback_connection"]
+2026-05-16 11:14:42 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-16 11:31:28 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-16 11:31:28 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-16 11:31:28 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-16 11:31:28 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-16 11:31:28 | INFORMATION | Cleaning up 1 stale active remote session(s) from previous run
+2026-05-16 11:31:28 | INFORMATION | RemoteMonitorService started
+2026-05-16 11:31:28 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-16 11:31:28 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process,loopback_connection"]
+2026-05-16 11:31:28 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-16 11:45:06 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-16 11:45:06 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-16 11:45:06 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-16 11:45:06 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-16 11:45:06 | INFORMATION | Cleaning up 1 stale active remote session(s) from previous run
+2026-05-16 11:45:06 | INFORMATION | RemoteMonitorService started
+2026-05-16 11:45:06 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-16 11:45:06 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process,loopback_connection"]
+2026-05-16 11:45:06 | INFORMATION | Web API listening on http://127.0.0.1:8080
+2026-05-16 13:10:09 | DEBUG | Column "operator_name" already exists in "remote_sessions", skipping
+2026-05-16 13:10:09 | DEBUG | Column "source" already exists in "remote_sessions", skipping
+2026-05-16 13:10:09 | DEBUG | Column "end_reason" already exists in "remote_sessions", skipping
+2026-05-16 13:10:09 | DEBUG | Column "last_seen_at" already exists in "remote_sessions", skipping
+2026-05-16 13:10:09 | INFORMATION | Cleaning up 1 stale active remote session(s) from previous run
+2026-05-16 13:10:09 | INFORMATION | RemoteMonitorService started
+2026-05-16 13:10:09 | INFORMATION | TunnelService starting with mode: "cloudflared"
+2026-05-16 13:10:09 | INFORMATION | Remote session started: "sunlogin" confidence="high" signals=["agent_process,background_process,loopback_connection"]
+2026-05-16 13:10:09 | INFORMATION | Web API listening on http://127.0.0.1:8080

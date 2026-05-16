@@ -19,6 +19,22 @@
         </div>
     </header>
 
+    @{
+        var setupAlerts = GetSetupAlerts().ToList();
+    }
+    @if (setupAlerts.Any())
+    {
+        <div class="setup-alert-stack">
+            @foreach (var alert in setupAlerts)
+            {
+                <div class="setup-alert @alert.Tone">
+                    <div class="setup-alert-title">@alert.Title</div>
+                    <div class="setup-alert-body">@alert.Body</div>
+                </div>
+            }
+        </div>
+    }
+
     <div class="settings-columns">
         <div class="settings-column">
         @if (_hasDefaultPassword)
@@ -69,6 +85,29 @@
                 <div class="message">@_webMsg</div>
             }
         </div>
+
+        <div class="card">
+            <h2 class="section-title"><Icon Name="key" Size="16" />操作人登记码</h2>
+            <div class="form-stack" style="max-width:380px;">
+                <label class="field">
+                    <span class="field-label">
+                        当前状态: @(string.IsNullOrEmpty(AppSettings.OperatorRegistrationKey) ? "未配置" : "已配置")
+                    </span>
+                </label>
+                <label class="field">
+                    <span class="field-label">新登记码（4 字符以上）</span>
+                    <input class="input" @bind="_regKey" @bind:event="oninput" placeholder="设置新登记码" autocomplete="off" />
+                </label>
+                <button class="btn btn-primary" @onclick="SetRegistrationKey" disabled="@(string.IsNullOrWhiteSpace(_regKey) || _regKey.Trim().Length < 4)">
+                    <Icon Name="key" Size="15" />
+                    保存
+                </button>
+            </div>
+            @if (!string.IsNullOrEmpty(_regMsg))
+            {
+                <div class="message">@_regMsg</div>
+            }
+        </div>
         </div>
 
         <div class="settings-column">
@@ -109,25 +148,33 @@
         </div>
 
         <div class="card">
-            <h2 class="section-title"><Icon Name="key" Size="16" />操作人登记码</h2>
-            <div class="form-stack" style="max-width:380px;">
+            <h2 class="section-title"><Icon Name="globe" Size="16" />公网发布向导</h2>
+            <div class="form-stack" style="max-width:420px;">
                 <label class="field">
-                    <span class="field-label">
-                        当前状态: @(string.IsNullOrEmpty(AppSettings.OperatorRegistrationKey) ? "未配置" : "已配置")
-                    </span>
+                    <span class="field-label">固定访问域名</span>
+                    <input class="input" @bind="_cloudflareHostname" @bind:event="oninput"
+                           placeholder="monitor.fanghaiz.top" autocomplete="off" />
+                    <span class="field-hint">请填写已经接入 Cloudflare 的完整子域名。</span>
                 </label>
-                <label class="field">
-                    <span class="field-label">新登记码（4 字符以上）</span>
-                    <input class="input" @bind="_regKey" @bind:event="oninput" placeholder="设置新登记码" autocomplete="off" />
-                </label>
-                <button class="btn btn-primary" @onclick="SetRegistrationKey" disabled="@(string.IsNullOrWhiteSpace(_regKey) || _regKey.Trim().Length < 4)">
-                    <Icon Name="key" Size="15" />
-                    保存
-                </button>
+                <div class="toolbar" style="justify-content:flex-start;gap:8px;">
+                    <button class="btn btn-ghost" @onclick="StartCloudflareLogin" disabled="@_cloudflareBusy">
+                        <Icon Name="external-link" Size="15" />
+                        打开 Cloudflare 授权
+                    </button>
+                    <button class="btn btn-primary" @onclick="ConfigureCloudflare" disabled="@(!CanConfigureCloudflare || _cloudflareBusy)">
+                        <Icon Name="globe" Size="15" />
+                        一键配置并启动
+                    </button>
+                </div>
             </div>
-            @if (!string.IsNullOrEmpty(_regMsg))
+            <div class="info-grid" style="margin-top:12px;">
+                <span class="info-label">当前域名</span><span>@(string.IsNullOrWhiteSpace(AppSettings.CloudflareHostname) ? "未配置" : AppSettings.CloudflareHostname)</span>
+                <span class="info-label">隧道名称</span><span>@AppSettings.CloudflareTunnelName</span>
+                <span class="info-label">访问地址</span><span>@(string.IsNullOrWhiteSpace(AppSettings.CloudflareHostname) ? "—" : "https://" + AppSettings.CloudflareHostname + "/status")</span>
+            </div>
+            @if (!string.IsNullOrEmpty(_cloudflareMsg))
             {
-                <div class="message">@_regMsg</div>
+                <div class="message">@_cloudflareMsg</div>
             }
         </div>
 
@@ -162,13 +209,20 @@
     private string _backupMsg = "";
     private string _regKey = "";
     private string _regMsg = "";
+    private string _cloudflareHostname = "";
+    private string _cloudflareMsg = "";
+    private bool _cloudflareBusy;
     private bool _hasDefaultPassword;
     private string _defaultPasswordReasons = "";
     private List<BackupEntry> _backups = new();
     private bool CanChangeAdminPassword => !string.IsNullOrWhiteSpace(_adminOldPwd) && !string.IsNullOrWhiteSpace(_adminNewPwd);
+    private bool CanConfigureCloudflare
+        => Uri.CheckHostName(_cloudflareHostname.Trim()) == UriHostNameType.Dns
+           && _cloudflareHostname.Trim().Contains('.');
 
     protected override void OnInitialized()
     {
+        _cloudflareHostname = AppSettings.CloudflareHostname;
         CheckDefaultPasswords();
         LoadBackups();
     }
@@ -219,6 +273,63 @@
         AppSettings.Save();
         _regMsg = "登记码已保存";
         _regKey = "";
+    }
+
+    private IEnumerable<(string Tone, string Title, string Body)> GetSetupAlerts()
+    {
+        if (!PasswordManager.IsPasswordSet(AppSettings))
+            yield return ("danger", "修改管理员密码", "当前仍是默认密码。");
+
+        if (AppSettings.WebServerPassword == "123456")
+            yield return ("warning", "修改 Web 密码", "当前仍是默认密码。");
+
+        if (!AppSettings.RemoteMonitorEnabled)
+            yield return ("danger", "打开远程检测", "关闭后无法判断远程占用。");
+
+        if (string.IsNullOrWhiteSpace(AppSettings.OperatorRegistrationKey))
+            yield return ("warning", "设置登记码", "用于网页登记操作人。");
+
+        if (string.IsNullOrWhiteSpace(AppSettings.CloudflareHostname))
+            yield return ("warning", "配置固定网址", "在公网发布向导中填写域名。");
+
+        var tunnel = TunnelService.GetStatus();
+        if (!string.IsNullOrWhiteSpace(AppSettings.CloudflareHostname) && !tunnel.Running)
+            yield return ("danger", "固定网址未连接", $"重新执行公网发布：{AppSettings.CloudflareHostname}");
+
+        if (!string.IsNullOrWhiteSpace(tunnel.Error))
+            yield return ("danger", "公网发布出错", tunnel.Error);
+    }
+
+    private async Task StartCloudflareLogin()
+    {
+        _cloudflareBusy = true;
+        _cloudflareMsg = "正在打开 Cloudflare 授权页面，请在浏览器中完成授权。";
+        try
+        {
+            var result = await TunnelService.StartCloudflareLoginAsync();
+            _cloudflareMsg = result.Message;
+        }
+        finally
+        {
+            _cloudflareBusy = false;
+        }
+    }
+
+    private async Task ConfigureCloudflare()
+    {
+        _cloudflareBusy = true;
+        _cloudflareMsg = "正在配置固定域名，请不要关闭软件。";
+        try
+        {
+            var result = await TunnelService.ConfigureCloudflareNamedTunnelAsync(_cloudflareHostname);
+            _cloudflareMsg = result.Success && !string.IsNullOrEmpty(result.PublicUrl)
+                ? result.Message + " 访问地址：" + result.PublicUrl + "/status"
+                : result.Message;
+        }
+        finally
+        {
+            _cloudflareBusy = false;
+        }
     }
 
     private string GetTunnelStatus()

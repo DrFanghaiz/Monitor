@@ -9,7 +9,6 @@ E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\obj\Debug\net8.0-
 E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\obj\Debug\net8.0-windows\Monitor.App.AssemblyInfo.cs
 E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\obj\Debug\net8.0-windows\Monitor.App.csproj.CoreCompileInputs.cache
 E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\obj\Debug\net8.0-windows\Monitor.App.sourcelink.json
-E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\bin\Debug\net8.0-windows\Monitor.App.exe
 E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\bin\Debug\net8.0-windows\Monitor.App.deps.json
 E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\bin\Debug\net8.0-windows\Monitor.App.runtimeconfig.json
 E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\bin\Debug\net8.0-windows\Monitor.App.dll
@@ -102,3 +101,13 @@ E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\__build_verify\Monitor.App\Monito
 E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\__build_verify\Monitor.App\Monitor.App.runtimeconfig.json
 E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\__build_verify\Monitor.App\Monitor.App.dll
 E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\__build_verify\Monitor.App\Monitor.App.pdb
+E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\__build_check\wwwroot\css\app.css
+E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\__build_check\wwwroot\index.html
+E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\__build_check\wwwroot\js\app.js
+E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\__build_check\wwwroot\js\echarts.min.js
+E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\__build_check\Monitor.App.staticwebassets.runtime.json
+E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\__build_check\Monitor.App.deps.json
+E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\__build_check\Monitor.App.runtimeconfig.json
+E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\__build_check\Monitor.App.dll
+E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\__build_check\Monitor.App.pdb
+E:\OneDrive\CTD\4 Working now\4 杂项\Monitor\src\Monitor.App\bin\Debug\net8.0-windows\Monitor.App.exe

@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Net.Http;
 using System.Text.RegularExpressions;
 using Monitor.App.Infrastructure.Config;
 using Serilog;
@@ -10,6 +11,8 @@ public class TunnelService : IDisposable
     private readonly AppSettings _settings;
     private Process? _process;
     private string? _publicUrl;
+    private string? _configuredUrl;
+    private bool _publicReady;
     private bool _running;
     private string? _error;
     private CancellationTokenSource? _cts;
@@ -34,6 +37,8 @@ public class TunnelService : IDisposable
     {
         Running = _running,
         PublicUrl = _publicUrl,
+        ConfiguredUrl = _configuredUrl,
+        PublicReady = _publicReady,
         Mode = _settings.TunnelMode,
         Error = _error
     };
@@ -122,6 +127,8 @@ public class TunnelService : IDisposable
         if (_process is { HasExited: false })
             _process.Kill(entireProcessTree: true);
         _running = false;
+        _publicReady = false;
+        _publicUrl = null;
         return Task.CompletedTask;
     }
 
@@ -158,29 +165,25 @@ public class TunnelService : IDisposable
         {
             _process = Process.Start(psi)!;
             _running = true;
-            if (hasFixedHostname)
-                _publicUrl = "https://" + _settings.CloudflareHostname;
+            _publicUrl = null;
+            _publicReady = false;
+            _configuredUrl = hasFixedHostname ? "https://" + _settings.CloudflareHostname : null;
 
-            var reader = _process.StandardOutput;
             var regex = new Regex(@"https://[a-zA-Z0-9\-]+\.trycloudflare\.com");
+            using var processCts = CancellationTokenSource.CreateLinkedTokenSource(ct);
+            var processToken = processCts.Token;
 
-            try
-            {
-                while (!ct.IsCancellationRequested)
-                {
-                    var line = await reader.ReadLineAsync(ct);
-                    if (line == null) break;
-                    var match = regex.Match(line);
-                    if (match.Success)
-                    {
-                        _publicUrl = match.Value;
-                        Log.Information("Tunnel URL: {Url}", _publicUrl);
-                    }
-                }
-            }
-            catch (OperationCanceledException) { }
+            var stdoutTask = ReadCloudflaredOutputAsync(_process.StandardOutput, regex, processToken);
+            var stderrTask = ReadCloudflaredOutputAsync(_process.StandardError, regex, processToken);
+            Task? healthTask = null;
+            if (hasFixedHostname && _configuredUrl != null)
+                healthTask = MonitorPublicHealthAsync(_configuredUrl, processToken);
 
             await _process.WaitForExitAsync(CancellationToken.None);
+            await processCts.CancelAsync();
+            try { await Task.WhenAll(stdoutTask, stderrTask); }
+            catch (OperationCanceledException) { }
+            if (healthTask != null) await healthTask.WaitAsync(TimeSpan.FromSeconds(1)).ContinueWith(_ => { });
         }
         catch (Exception ex)
         {
@@ -188,6 +191,73 @@ public class TunnelService : IDisposable
             _error = $"cloudflared 启动失败: {ex.Message}";
         }
         _running = false;
+        _publicReady = false;
+        _publicUrl = null;
+    }
+
+    private async Task ReadCloudflaredOutputAsync(StreamReader reader, Regex urlRegex, CancellationToken ct)
+    {
+        while (!ct.IsCancellationRequested)
+        {
+            var line = await reader.ReadLineAsync(ct);
+            if (line == null)
+                break;
+
+            var match = urlRegex.Match(line);
+            if (match.Success)
+            {
+                _publicUrl = match.Value;
+                _configuredUrl = match.Value;
+                _publicReady = true;
+                _error = null;
+                Log.Information("Tunnel URL: {Url}", _publicUrl);
+            }
+
+            if (line.Contains("ERR", StringComparison.OrdinalIgnoreCase)
+                || line.Contains("error=", StringComparison.OrdinalIgnoreCase)
+                || line.Contains("failed", StringComparison.OrdinalIgnoreCase))
+            {
+                _error = line.Length > 220 ? line[..220] : line;
+            }
+        }
+    }
+
+    private async Task MonitorPublicHealthAsync(string publicUrl, CancellationToken ct)
+    {
+        using var client = new HttpClient { Timeout = TimeSpan.FromSeconds(5) };
+        var target = publicUrl.TrimEnd('/') + "/status";
+
+        while (!ct.IsCancellationRequested)
+        {
+            try
+            {
+                using var response = await client.GetAsync(target, ct);
+                if (response.IsSuccessStatusCode)
+                {
+                    _publicReady = true;
+                    _publicUrl = publicUrl;
+                    _error = null;
+                }
+                else
+                {
+                    _publicReady = false;
+                    _publicUrl = null;
+                    _error = $"公网访问失败: HTTP {(int)response.StatusCode}";
+                }
+            }
+            catch (OperationCanceledException) when (ct.IsCancellationRequested)
+            {
+                return;
+            }
+            catch (Exception ex)
+            {
+                _publicReady = false;
+                _publicUrl = null;
+                _error = $"公网访问失败: {ex.Message}";
+            }
+
+            await Task.Delay(TimeSpan.FromSeconds(10), ct);
+        }
     }
 
     private async Task RunNgrok(CancellationToken ct)
@@ -221,7 +291,10 @@ public class TunnelService : IDisposable
         {
             _process = Process.Start(psi)!;
             _running = true;
+            _publicReady = false;
+            _publicUrl = null;
 
+            _ = _process.StandardError.ReadToEndAsync(ct);
             var reader = _process.StandardOutput;
             var regex = new Regex(@"""url"":""([^""]+)""");
 
@@ -237,6 +310,9 @@ public class TunnelService : IDisposable
                         if (match.Success)
                         {
                             _publicUrl = match.Groups[1].Value.Replace("tcp://", "");
+                            _configuredUrl = _publicUrl;
+                            _publicReady = true;
+                            _error = null;
                             Log.Information("Tunnel URL: {Url}", _publicUrl);
                         }
                     }
@@ -252,6 +328,8 @@ public class TunnelService : IDisposable
             _error = $"ngrok 启动失败: {ex.Message}";
         }
         _running = false;
+        _publicReady = false;
+        _publicUrl = null;
     }
 
     private string? ResolveCloudflaredPath()
@@ -318,9 +396,10 @@ public class TunnelService : IDisposable
 
     private void WriteCloudflaredConfig(string tunnelId, string hostname, string credentialsFile)
     {
+        var escapedCredentials = credentialsFile.Replace("'", "''");
         var config = $"""
 tunnel: {tunnelId}
-credentials-file: {credentialsFile}
+credentials-file: '{escapedCredentials}'
 
 ingress:
   - hostname: {hostname}
@@ -390,6 +469,8 @@ public class TunnelStatus
 {
     public bool Running { get; set; }
     public string? PublicUrl { get; set; }
+    public string? ConfiguredUrl { get; set; }
+    public bool PublicReady { get; set; }
     public string? Mode { get; set; }
     public string? Error { get; set; }
 }

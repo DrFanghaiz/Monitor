@@ -46,11 +46,19 @@ public class SchemaInitializer
                 is_active INTEGER DEFAULT 1,
                 created_at TEXT DEFAULT CURRENT_TIMESTAMP
             );
+
+            CREATE TABLE IF NOT EXISTS schema_meta (
+                key TEXT PRIMARY KEY,
+                value TEXT NOT NULL,
+                updated_at TEXT DEFAULT (datetime('now', 'localtime'))
+            );
         ";
         cmd.ExecuteNonQuery();
 
-        // Phase 2: add new columns to remote_sessions (safe migration)
         MigrateRemoteSessions(conn);
+        NormalizeActiveRemoteSessions(conn);
+        CreateIndexes(conn);
+        SetSchemaVersion(conn, "2");
     }
 
     private static void MigrateRemoteSessions(SqliteConnection conn)
@@ -61,6 +69,56 @@ public class SchemaInitializer
         AddColumnIfMissing(conn, "remote_sessions", "source", "TEXT DEFAULT 'process'", existing);
         AddColumnIfMissing(conn, "remote_sessions", "end_reason", "TEXT DEFAULT ''", existing);
         AddColumnIfMissing(conn, "remote_sessions", "last_seen_at", "TEXT DEFAULT ''", existing);
+    }
+
+    private static void NormalizeActiveRemoteSessions(SqliteConnection conn)
+    {
+        using var cmd = conn.CreateCommand();
+        cmd.CommandText = @"
+            UPDATE remote_sessions
+            SET
+                end_time = datetime('now', 'localtime'),
+                duration_seconds = CAST((julianday(datetime('now', 'localtime')) - julianday(start_time)) * 86400 AS INTEGER),
+                is_active = 0,
+                end_reason = 'deduplicated'
+            WHERE is_active = 1
+              AND id NOT IN (
+                  SELECT id
+                  FROM remote_sessions
+                  WHERE is_active = 1
+                  ORDER BY datetime(start_time) DESC, id DESC
+                  LIMIT 1
+              );
+        ";
+        cmd.ExecuteNonQuery();
+    }
+
+    private static void CreateIndexes(SqliteConnection conn)
+    {
+        using var cmd = conn.CreateCommand();
+        cmd.CommandText = @"
+            CREATE INDEX IF NOT EXISTS idx_usage_records_start_time ON usage_records(start_time);
+            CREATE INDEX IF NOT EXISTS idx_usage_records_user_name ON usage_records(user_name);
+            CREATE INDEX IF NOT EXISTS idx_reservations_date_status ON reservations(date, status);
+            CREATE INDEX IF NOT EXISTS idx_remote_sessions_start_time ON remote_sessions(start_time);
+            CREATE INDEX IF NOT EXISTS idx_remote_sessions_last_seen ON remote_sessions(last_seen_at);
+            CREATE UNIQUE INDEX IF NOT EXISTS idx_remote_sessions_one_active ON remote_sessions(is_active) WHERE is_active = 1;
+        ";
+        cmd.ExecuteNonQuery();
+    }
+
+    private static void SetSchemaVersion(SqliteConnection conn, string version)
+    {
+        using var cmd = conn.CreateCommand();
+        cmd.CommandText = @"
+            INSERT INTO schema_meta(key, value, updated_at)
+            VALUES('schema_version', @Version, datetime('now', 'localtime'))
+            ON CONFLICT(key) DO UPDATE SET
+                value = excluded.value,
+                updated_at = excluded.updated_at;
+        ";
+        cmd.Parameters.AddWithValue("@Version", version);
+        cmd.ExecuteNonQuery();
     }
 
     private static HashSet<string> GetExistingColumns(SqliteConnection conn, string table)

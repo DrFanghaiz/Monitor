@@ -6,19 +6,32 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Assets\monitor-icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BCrypt.Net-Next" Version="4.*" />
-    <PackageReference Include="Dapper" Version="2.1.*" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="8.0.*" />
-    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.*" />
-    <PackageReference Include="Serilog.AspNetCore" Version="8.*" />
-    <PackageReference Include="Serilog.Sinks.File" Version="5.*" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.2.0" />
+    <PackageReference Include="Dapper" Version="2.1.72" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="8.0.100" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.27" />
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.3" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Update="wwwroot\**" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\monitor-icon.ico" />
+    <Resource Include="Assets\monitor-icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup Condition="Exists('..\..\cloudflared.exe')">
+    <None Include="..\..\cloudflared.exe"
+          Link="cloudflared.exe"
+          CopyToOutputDirectory="PreserveNewest"
+          CopyToPublishDirectory="Always" />
   </ItemGroup>
 
 </Project>

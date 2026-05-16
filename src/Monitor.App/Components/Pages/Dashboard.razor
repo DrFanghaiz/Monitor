@@ -33,60 +33,75 @@
         var ts = _tunnelState;
 
         @* ===== PRIMARY STATUS ===== *@
-        <div class="card card-elevated primary-status @display.StatusClass">
-            <div class="primary-dot"></div>
-            <div class="primary-label" style="color:@display.LabelColor">@display.Label</div>
-            <div class="primary-tip">@display.Tip</div>
+        <div class="card card-elevated dashboard-status @display.StatusClass">
+            <div class="status-top">
+                <div class="status-hero">
+                    <div class="primary-dot"></div>
+                    <div>
+                        <div class="primary-label">@display.Label</div>
+                        <div class="primary-tip">@display.Tip</div>
+                    </div>
+                </div>
 
-            <div class="primary-info">
-                <div class="info-item"><div class="info-label">远程工具</div><div class="info-value">@(rc.RemoteType ?? "—")</div></div>
-                <div class="info-item"><div class="info-label">操作人</div><div class="info-value">@(isRemote ? (rc.OperatorName ?? "未登记") : "—")</div></div>
-                <div class="info-item"><div class="info-label">开始时间</div><div class="info-value">@(isRemote && rc.StartTime != null ? rc.StartTime : "—")</div></div>
-                <div class="info-item"><div class="info-label">已占用时长</div><div class="info-value">@(isRemote ? rc.ElapsedFormatted : "—")</div></div>
+                <div class="status-facts">
+                    <div class="info-item"><div class="info-label">远程工具</div><div class="info-value">@(rc.RemoteType ?? "—")</div></div>
+                    <div class="info-item"><div class="info-label">操作人</div><div class="info-value">@(isRemote ? (rc.OperatorName ?? "未登记") : "—")</div></div>
+                    <div class="info-item"><div class="info-label">开始时间</div><div class="info-value">@(isRemote && rc.StartTime != null ? rc.StartTime : "—")</div></div>
+                    <div class="info-item"><div class="info-label">已占用时长</div><div class="info-value">@(isRemote ? rc.ElapsedFormatted : "—")</div></div>
+                </div>
             </div>
 
-            @if (!string.IsNullOrEmpty(rc.Message))
-            {
-                <div class="primary-msg">@rc.Message</div>
-            }
-
-            <div class="primary-msg">
-                @if (!string.IsNullOrEmpty(ts.PublicUrl))
-                { <span>公网查看: @ts.PublicUrl</span> }
-                else if (!string.IsNullOrEmpty(ts.Error))
-                { <span style="color:var(--warning)">公网发布未成功: @ts.Error</span> }
-                else if (ts.Running)
-                { <span>隧道启动中...</span> }
-                else
-                { <span>公网发布未开启</span> }
-            </div>
-
-            <div class="primary-operate" style="margin-top:10px;">
-                @if (isRemote && string.IsNullOrEmpty(rc.OperatorName))
-                {
-                    <input class="input" @bind="_operatorInput" placeholder="登记操作人姓名" />
-                    <button class="btn btn-primary btn-sm" @onclick="RegisterOperator"
-                            disabled="@(string.IsNullOrWhiteSpace(_operatorInput))">登记</button>
-                }
-                else if (isRemote && !string.IsNullOrEmpty(rc.OperatorName))
-                {
-                    <span style="font-size:13px;">操作人: <strong>@rc.OperatorName</strong></span>
-                    @if (!_showOperatorModify)
+            <div class="status-bottom">
+                <div class="public-line">
+                    @if (!string.IsNullOrEmpty(ts.PublicUrl))
                     {
-                        <button class="btn btn-ghost btn-sm" @onclick="ShowModifyOperator">修改</button>
+                        <span class="public-status-label">公网</span>
+                        <a class="public-host" href="@($"{ts.PublicUrl}/status")">@GetHostText(ts.PublicUrl)</a>
+                    }
+                    else if (!string.IsNullOrEmpty(ts.Error))
+                    {
+                        <span class="public-status-label warning">公网</span>
+                        <span class="public-host muted">@ShortTunnelError(ts.Error)</span>
+                    }
+                    else if (ts.Running)
+                    {
+                        <span class="public-status-label">公网</span>
+                        <span class="public-host muted">连接中</span>
                     }
                     else
                     {
-                        <input class="input" @bind="_operatorInput" placeholder="新姓名" style="width:140px" />
-                        <button class="btn btn-primary btn-sm" @onclick="RegisterOperator"
-                                disabled="@(string.IsNullOrWhiteSpace(_operatorInput))">确认</button>
-                        <button class="btn btn-ghost btn-sm" @onclick="CancelModifyOperator">取消</button>
+                        <span class="public-status-label muted">公网</span>
+                        <span class="public-host muted">未启动</span>
                     }
-                }
-                @if (!string.IsNullOrEmpty(_operatorMsg))
-                {
-                    <span class="primary-msg" style="display:block;width:100%">@_operatorMsg</span>
-                }
+                </div>
+
+                <div class="operator-row">
+                    @if (isRemote && string.IsNullOrEmpty(rc.OperatorName))
+                    {
+                        <input class="input" @bind="_operatorInput" placeholder="登记操作人姓名" />
+                        <button class="btn btn-primary btn-sm" @onclick="RegisterOperator"
+                                disabled="@(string.IsNullOrWhiteSpace(_operatorInput))">登记</button>
+                    }
+                    else if (isRemote && !string.IsNullOrEmpty(rc.OperatorName))
+                    {
+                        <span class="operator-current">操作人：<strong>@rc.OperatorName</strong></span>
+                        @if (!_showOperatorModify)
+                        {
+                            <button class="btn btn-ghost btn-sm" @onclick="ShowModifyOperator">修改</button>
+                        }
+                        else
+                        {
+                            <input class="input" @bind="_operatorInput" placeholder="新姓名" />
+                            <button class="btn btn-primary btn-sm" @onclick="RegisterOperator"
+                                    disabled="@(string.IsNullOrWhiteSpace(_operatorInput))">确认</button>
+                            <button class="btn btn-ghost btn-sm" @onclick="CancelModifyOperator">取消</button>
+                        }
+                    }
+                    @if (!string.IsNullOrEmpty(_operatorMsg))
+                    {
+                        <span class="primary-msg">@_operatorMsg</span>
+                    }
+                </div>
             </div>
         </div>
 
@@ -240,6 +255,19 @@
         if (cs == "in_use")
             return ("accent", "var(--accent)", "本机使用中", "当前有本机使用记录，连接前请确认不会打断他人");
         return ("success", "var(--success)", "可连接", "当前未检测到远程占用");
+    }
+
+    private static string GetHostText(string url)
+    {
+        return Uri.TryCreate(url, UriKind.Absolute, out var uri) ? uri.Host : url;
+    }
+
+    private static string ShortTunnelError(string error)
+    {
+        if (string.IsNullOrWhiteSpace(error)) return "检查设置页";
+        return error.Contains("cloudflared", StringComparison.OrdinalIgnoreCase)
+            ? "检查 cloudflared"
+            : "检查设置页";
     }
 
     private void StartTimer()

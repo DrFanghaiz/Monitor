@@ -1,5 +1,7 @@
 @namespace Monitor.App.Components.Layout
 @inject StatusService StatusService
+@inject Services.TunnelService TunnelService
+@inject Infrastructure.Config.AppSettings AppSettings
 @implements IDisposable
 
 <aside class="sidebar">
@@ -9,24 +11,6 @@
             <div class="brand-title">Monitor</div>
             <div class="brand-subtitle">公用机管理</div>
         </div>
-    </div>
-
-    <div class="sidebar-status">
-        <div class="sidebar-status-label">系统状态</div>
-        <div class="status-line">
-            <span class="status-dot @_statusClass"></span>
-            <span class="row-title">@_statusText</span>
-        </div>
-        @if (!string.IsNullOrEmpty(_statusNote))
-        {
-            <div style="margin-top:10px;font-size:12px;color:var(--text-secondary);">@_statusNote</div>
-        }
-        @if (_isRemote)
-        {
-            <div style="margin-top:6px;">
-                <span class="badge badge-danger">远程: @_remoteType</span>
-            </div>
-        }
     </div>
 
     <nav class="sidebar-nav">
@@ -41,8 +25,24 @@
     </nav>
 
     <div class="sidebar-footer">
-        <span>v3.0.0</span>
-        <span>@_timeDisplay</span>
+        <div class="sidebar-health">
+            <div class="sidebar-health-main">
+                <span class="status-dot @_statusClass"></span>
+                <span>@_statusText</span>
+            </div>
+            <div class="sidebar-health-grid">
+                <span>&#20844;&#32593;</span><strong class="@_publicClass">@_publicText</strong>
+                <span>&#30331;&#35760;&#30721;</span><strong class="@_registerClass">@_registerText</strong>
+                @if (_isRemote && !string.IsNullOrWhiteSpace(_remoteType))
+                {
+                    <span>远程</span><strong class="danger">@_remoteType</strong>
+                }
+            </div>
+        </div>
+        <div class="sidebar-footer-meta">
+            <span>v3.0.0</span>
+            <span>@_timeDisplay</span>
+        </div>
     </div>
 </aside>
 
@@ -52,6 +52,10 @@
     private string? _statusNote;
     private bool _isRemote;
     private string? _remoteType;
+    private string _publicText = "\u672a\u8fde\u63a5";
+    private string _publicClass = "warning";
+    private string _registerText = "\u7f3a\u5931";
+    private string _registerClass = "warning";
     private string _timeDisplay = "";
     private Timer? _timer;
 
@@ -81,6 +85,7 @@
     private void RefreshStatus()
     {
         var status = StatusService.GetSidebarStatus();
+        var tunnel = TunnelService.GetStatus();
         _isRemote = status.IsRemote;
         _remoteType = status.RemoteType;
 
@@ -99,7 +104,7 @@
         else if (_isRemote)
         {
             _statusClass = "remote_controlled";
-            _statusText = "疑似远程占用";
+            _statusText = "远程占用";
         }
         else if (status.IsTiming)
         {
@@ -111,6 +116,33 @@
             _statusClass = "idle";
             _statusText = "空闲";
             _statusNote = null;
+        }
+
+        if (tunnel.Running && !string.IsNullOrWhiteSpace(tunnel.PublicUrl))
+        {
+            _publicText = "\u5df2\u8fde\u63a5";
+            _publicClass = "ok";
+        }
+        else if (!string.IsNullOrWhiteSpace(tunnel.Error))
+        {
+            _publicText = "\u5f02\u5e38";
+            _publicClass = "danger";
+        }
+        else
+        {
+            _publicText = "\u672a\u8fde\u63a5";
+            _publicClass = "warning";
+        }
+
+        if (string.IsNullOrWhiteSpace(AppSettings.OperatorRegistrationKey))
+        {
+            _registerText = "\u7f3a\u5931";
+            _registerClass = "warning";
+        }
+        else
+        {
+            _registerText = "\u6b63\u5e38";
+            _registerClass = "ok";
         }
 
         _timeDisplay = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");

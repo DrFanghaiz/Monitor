@@ -43,12 +43,38 @@
         </div>
     </section>
 
-    <section class="chart-stack">
+    <section class="stats-main">
         <div class="card">
             <h2 class="section-title"><Icon Name="chart" Size="16" />用户使用分布</h2>
             <div id="user-chart" class="chart-box"></div>
         </div>
 
+        <div class="card">
+            <h2 class="section-title">使用排行</h2>
+            @if (!_topUsers.Any())
+            {
+                <div class="empty-state">暂无数据</div>
+            }
+            else
+            {
+                <div class="rank-list">
+                    @foreach (var user in _topUsers)
+                    {
+                        <div class="rank-row">
+                            <span class="avatar">@GetInitial(user.UserName)</span>
+                            <div class="rank-main">
+                                <strong>@user.UserName</strong>
+                                <div class="rank-bar"><span style="width:@RankWidth(user.TotalSeconds)%"></span></div>
+                            </div>
+                            <strong class="rank-time">@Services.TimerService.FormatDuration((int)user.TotalSeconds)</strong>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </section>
+
+    <section class="chart-stack">
         <div class="card">
             <h2 class="section-title"><Icon Name="history" Size="16" />每日使用趋势</h2>
             <div id="daily-chart" class="chart-box"></div>
@@ -60,6 +86,8 @@
     private int _userCount;
     private double _totalHours;
     private int _todayCount;
+    private List<UserStat> _topUsers = new();
+    private double _maxUserSeconds = 1;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -73,6 +101,8 @@
         {
             _userCount = users.Count;
             _totalHours = Math.Round(users.Sum(u => u.TotalSeconds) / 3600.0, 1);
+            _topUsers = users.OrderByDescending(u => u.TotalSeconds).Take(6).ToList();
+            _maxUserSeconds = Math.Max(1, _topUsers.FirstOrDefault()?.TotalSeconds ?? 1);
         }
 
         _todayCount = (today ?? new()).Count;
@@ -151,4 +181,12 @@
                 System.Text.Json.JsonSerializer.Serialize(dailyOption));
         }
     }
+
+    private static string GetInitial(string? name)
+    {
+        if (string.IsNullOrWhiteSpace(name)) return "?";
+        return name.Trim()[0].ToString();
+    }
+
+    private int RankWidth(double seconds) => Math.Clamp((int)Math.Round(seconds / _maxUserSeconds * 100), 6, 100);
 }

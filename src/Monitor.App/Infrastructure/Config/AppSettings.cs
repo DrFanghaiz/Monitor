@@ -29,6 +29,9 @@ public class AppSettings
     public string TunnelNgrokAuthToken { get; set; } = "";
     public string TunnelNgrokPath { get; set; } = "ngrok.exe";
     public string TunnelCloudflaredPath { get; set; } = "cloudflared.exe";
+    public string CloudflareTunnelName { get; set; } = "monitor";
+    public string CloudflareTunnelId { get; set; } = "";
+    public string CloudflareHostname { get; set; } = "";
     public string OperatorRegistrationKey { get; set; } = "";
 
     private static readonly string _configPath = Path.Combine(
@@ -69,6 +72,7 @@ public class AppSettings
         if (string.IsNullOrEmpty(TunnelMode)) TunnelMode = defaults.TunnelMode;
         if (string.IsNullOrEmpty(TunnelCloudflaredPath)) TunnelCloudflaredPath = defaults.TunnelCloudflaredPath;
         if (string.IsNullOrEmpty(TunnelNgrokPath)) TunnelNgrokPath = defaults.TunnelNgrokPath;
+        if (string.IsNullOrEmpty(CloudflareTunnelName)) CloudflareTunnelName = defaults.CloudflareTunnelName;
     }
 
     public string Get(string key, string defaultValue = "")
@@ -80,6 +84,9 @@ public class AppSettings
             "web_server_enabled" => WebServerEnabled.ToString().ToLower(),
             "tunnel_enabled" => TunnelEnabled.ToString().ToLower(),
             "tunnel_mode" => TunnelMode,
+            "cloudflare_hostname" => CloudflareHostname,
+            "cloudflare_tunnel_name" => CloudflareTunnelName,
+            "cloudflare_tunnel_id" => CloudflareTunnelId,
             "auto_backup" => AutoBackup.ToString().ToLower(),
             "backup_retention_days" => BackupRetentionDays.ToString(),
             "remote_monitor_enabled" => RemoteMonitorEnabled.ToString().ToLower(),
@@ -100,6 +107,9 @@ public class AppSettings
             case "web_server_enabled": WebServerEnabled = bool.Parse(value); break;
             case "tunnel_enabled": TunnelEnabled = bool.Parse(value); break;
             case "tunnel_mode": TunnelMode = value; break;
+            case "cloudflare_hostname": CloudflareHostname = value; break;
+            case "cloudflare_tunnel_name": CloudflareTunnelName = value; break;
+            case "cloudflare_tunnel_id": CloudflareTunnelId = value; break;
             case "auto_backup": AutoBackup = bool.Parse(value); break;
             case "backup_retention_days": BackupRetentionDays = int.Parse(value); break;
             case "remote_monitor_enabled": RemoteMonitorEnabled = bool.Parse(value); break;

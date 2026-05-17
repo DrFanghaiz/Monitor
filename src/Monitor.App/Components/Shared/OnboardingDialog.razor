@@ -1,0 +1,513 @@
+@inject Monitor.App.Infrastructure.Config.AppSettings AppSettings
+@inject Monitor.App.Services.TunnelService TunnelService
+@using Monitor.App.Infrastructure.Security
+@implements IDisposable
+
+@if (_visible)
+{
+    <div class="onboarding-backdrop">
+        <section class="onboarding-dialog" role="dialog" aria-modal="true" aria-labelledby="onboarding-title">
+            <header class="onboarding-head">
+                <div>
+                    <h2 id="onboarding-title">@GetDialogTitle()</h2>
+                    <p>@GetDialogSubtitle()</p>
+                </div>
+                <button class="onboarding-close" type="button" @onclick="Dismiss" aria-label="关闭">×</button>
+            </header>
+
+            <div class="onboarding-steps">
+                @foreach (var step in _steps)
+                {
+                    var active = _currentStep == step.Key;
+                    <button type="button"
+                            class="onboarding-step @(active ? "active" : "") @(GetStepDone(step.Key) ? "done" : "")"
+                            @onclick="() => _currentStep = step.Key">
+                        <span class="onboarding-step-index">@GetStepIndexText(step.Key)</span>
+                        <span class="onboarding-step-name">@step.Title</span>
+                    </button>
+                }
+            </div>
+
+            <div class="onboarding-body">
+                @if (_currentStep == StepKey.Welcome)
+                {
+                    <div class="onboarding-label">欢迎使用</div>
+                    <h3>Monitor 公用机管理系统</h3>
+                    <p class="onboarding-copy">这台机器的占用状态、操作记录和公网查看，都从这里统一管理。</p>
+
+                    <div class="onboarding-welcome-card">
+                        <div class="onboarding-welcome-icon">M</div>
+                        <div class="onboarding-welcome-main">
+                            <strong>第一次使用，建议先完成下面几项。</strong>
+                            <span>设置管理员密码、访问密码、登记码，再决定是否开启公网查看。</span>
+                        </div>
+                    </div>
+
+                    <div class="onboarding-summary">
+                        <div class="onboarding-summary-item">
+                            <span>管理员密码</span>
+                            <strong class="@GetSummaryClass(GetAdminReady())">@GetSummaryText(GetAdminReady())</strong>
+                        </div>
+                        <div class="onboarding-summary-item">
+                            <span>Web 密码</span>
+                            <strong class="@GetSummaryClass(GetWebPasswordReady())">@GetSummaryText(GetWebPasswordReady(), true)</strong>
+                        </div>
+                        <div class="onboarding-summary-item">
+                            <span>登记码</span>
+                            <strong class="@GetSummaryClass(GetRegistrationReady())">@GetSummaryText(GetRegistrationReady(), true)</strong>
+                        </div>
+                        <div class="onboarding-summary-item">
+                            <span>公网发布</span>
+                            <strong class="@GetSummaryClass(GetPublicReady())">@GetSummaryText(GetPublicReady(), true)</strong>
+                        </div>
+                    </div>
+                }
+                else if (_currentStep == StepKey.Admin)
+                {
+                    <div class="onboarding-label">建议先设置</div>
+                    <h3>管理员密码</h3>
+                    <p class="onboarding-copy">用于进入设置页和维护数据。</p>
+
+                    <div class="onboarding-fields">
+                        <label class="field">
+                            <span class="field-label">新密码</span>
+                            <input class="input" type="password" @bind="_adminPassword" @bind:event="oninput" placeholder="至少 8 个字符" autocomplete="new-password" />
+                        </label>
+                        <label class="field">
+                            <span class="field-label">确认密码</span>
+                            <input class="input" type="password" @bind="_adminPasswordConfirm" @bind:event="oninput" placeholder="再输入一次" autocomplete="new-password" />
+                        </label>
+                    </div>
+
+                    <div class="onboarding-note">
+                        <strong>使用位置</strong>
+                        <span>修改设置、备份数据和配置公网时会用到。</span>
+                    </div>
+
+                    <div class="onboarding-inline-actions">
+                        <button class="btn btn-primary" @onclick="SaveAdminPassword" disabled="@(!CanSaveAdminPassword)">
+                            保存
+                        </button>
+                    </div>
+                }
+                else if (_currentStep == StepKey.WebPassword)
+                {
+                    <div class="onboarding-label">可稍后</div>
+                    <h3>Web 密码</h3>
+                    <p class="onboarding-copy">用于访问受保护接口。</p>
+
+                    <div class="onboarding-fields">
+                        <label class="field">
+                            <span class="field-label">新密码</span>
+                            <input class="input" type="password" @bind="_webPassword" @bind:event="oninput" placeholder="设置访问密码" autocomplete="new-password" />
+                        </label>
+                    </div>
+
+                    <div class="onboarding-note">
+                        <strong>使用位置</strong>
+                        <span>公开状态页仍可直接查看，密码只保护管理接口。</span>
+                    </div>
+
+                    <div class="onboarding-inline-actions">
+                        <button class="btn btn-primary" @onclick="SaveWebPassword" disabled="@string.IsNullOrWhiteSpace(_webPassword)">
+                            保存
+                        </button>
+                    </div>
+                }
+                else if (_currentStep == StepKey.Registration)
+                {
+                    <div class="onboarding-label">可稍后</div>
+                    <h3>操作人登记码</h3>
+                    <p class="onboarding-copy">远程使用者在网页登记姓名时使用。</p>
+
+                    <div class="onboarding-fields">
+                        <label class="field">
+                            <span class="field-label">登记码</span>
+                            <input class="input" @bind="_registrationKey" @bind:event="oninput" placeholder="至少 8 个字符" autocomplete="off" />
+                        </label>
+                    </div>
+
+                    <div class="onboarding-note">
+                        <strong>使用位置</strong>
+                        <span>如果不设置，远程记录里的操作人会显示未登记。</span>
+                    </div>
+
+                    <div class="onboarding-inline-actions">
+                        <button class="btn btn-primary" @onclick="SaveRegistrationKey" disabled="@(!CanSaveRegistrationKey)">
+                            保存
+                        </button>
+                    </div>
+                }
+                else
+                {
+                    <div class="onboarding-label">可稍后</div>
+                    <h3>公网发布</h3>
+                    <p class="onboarding-copy">让别人通过固定网址查看当前状态。</p>
+
+                    <div class="onboarding-fields">
+                        <label class="field">
+                            <span class="field-label">完整子域名</span>
+                            <input class="input" @bind="_cloudflareHostname" @bind:event="oninput" placeholder="monitor.example.com" autocomplete="off" />
+                        </label>
+                    </div>
+
+                    <div class="onboarding-note">
+                        <strong>使用位置</strong>
+                        <span>填写已经接入 Cloudflare 的完整子域名。</span>
+                    </div>
+
+                    <div class="onboarding-public-preview">
+                        <span class="onboarding-public-tag">@GetTunnelPreviewLabel()</span>
+                        <span class="onboarding-public-url">@GetTunnelPreviewUrl()</span>
+                    </div>
+
+                    <div class="onboarding-inline-actions">
+                        <button class="btn btn-ghost" @onclick="StartCloudflareLogin" disabled="@_tunnelBusy">
+                            授权
+                        </button>
+                        <button class="btn btn-primary" @onclick="ConfigureCloudflare" disabled="@(!CanConfigureCloudflare || _tunnelBusy)">
+                            @(_tunnelBusy ? "处理中" : "配置并启动")
+                        </button>
+                    </div>
+                }
+
+                @if (!string.IsNullOrWhiteSpace(_message))
+                {
+                    <div class="message">@_message</div>
+                }
+
+                @if (_currentStep != StepKey.Welcome)
+                {
+                    <div class="onboarding-summary">
+                        <div class="onboarding-summary-item">
+                            <span>管理员密码</span>
+                            <strong class="@GetSummaryClass(GetAdminReady())">@GetSummaryText(GetAdminReady())</strong>
+                        </div>
+                        <div class="onboarding-summary-item">
+                            <span>Web 密码</span>
+                            <strong class="@GetSummaryClass(GetWebPasswordReady())">@GetSummaryText(GetWebPasswordReady(), true)</strong>
+                        </div>
+                        <div class="onboarding-summary-item">
+                            <span>登记码</span>
+                            <strong class="@GetSummaryClass(GetRegistrationReady())">@GetSummaryText(GetRegistrationReady(), true)</strong>
+                        </div>
+                        <div class="onboarding-summary-item">
+                            <span>公网发布</span>
+                            <strong class="@GetSummaryClass(GetPublicReady())">@GetSummaryText(GetPublicReady(), true)</strong>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <footer class="onboarding-foot">
+                <span class="onboarding-foot-note">@GetFooterText()</span>
+                <div class="onboarding-foot-actions">
+                    <button class="btn btn-ghost" @onclick="Dismiss">稍后</button>
+                    <button class="btn btn-ghost" @onclick="PreviousStep" disabled="@(_currentIndex == 0)">上一步</button>
+                    <button class="btn btn-primary" @onclick="NextStep" disabled="@(!CanGoNext())">@(_currentIndex == _steps.Length - 1 ? "完成" : "下一步")</button>
+                </div>
+            </footer>
+        </section>
+    </div>
+}
+
+@code {
+    private enum StepKey
+    {
+        Welcome,
+        Admin,
+        WebPassword,
+        Registration,
+        Public
+    }
+
+    private readonly (StepKey Key, string Title)[] _steps =
+    [
+        (StepKey.Welcome, "欢迎"),
+        (StepKey.Admin, "管理员密码"),
+        (StepKey.WebPassword, "Web 密码"),
+        (StepKey.Registration, "登记码"),
+        (StepKey.Public, "公网发布")
+    ];
+
+    private StepKey _currentStep = StepKey.Welcome;
+    private string _adminPassword = "";
+    private string _adminPasswordConfirm = "";
+    private string _webPassword = "";
+    private string _registrationKey = "";
+    private string _cloudflareHostname = "";
+    private string _message = "";
+    private bool _visible;
+    private bool _tunnelBusy;
+    private Timer? _timer;
+
+    private int _currentIndex => Array.FindIndex(_steps, s => s.Key == _currentStep);
+    private bool CanSaveAdminPassword
+        => !GetAdminReady()
+           && !string.IsNullOrWhiteSpace(_adminPassword)
+           && _adminPassword.Trim().Length >= 8
+           && _adminPassword == _adminPasswordConfirm;
+    private bool CanSaveRegistrationKey
+        => !string.IsNullOrWhiteSpace(_registrationKey)
+           && _registrationKey.Trim().Length >= 8;
+    private bool CanConfigureCloudflare
+        => Uri.CheckHostName(_cloudflareHostname.Trim()) == UriHostNameType.Dns
+           && _cloudflareHostname.Trim().Contains('.');
+
+    protected override void OnInitialized()
+    {
+        _cloudflareHostname = AppSettings.CloudflareHostname;
+        _visible = !AppSettings.OnboardingDismissed && !AllStepsReady();
+        _currentStep = StepKey.Welcome;
+
+        _timer = new Timer(_ =>
+        {
+            if (!_visible)
+                return;
+
+            InvokeAsync(StateHasChanged);
+        }, null, 1500, 1500);
+    }
+
+    private bool AllStepsReady()
+        => GetAdminReady()
+           && GetWebPasswordReady()
+           && GetRegistrationReady()
+           && GetPublicReady();
+
+    private void SelectFirstPendingStep()
+    {
+        if (!GetAdminReady())
+        {
+            _currentStep = StepKey.Admin;
+            return;
+        }
+
+        if (!GetWebPasswordReady())
+        {
+            _currentStep = StepKey.WebPassword;
+            return;
+        }
+
+        if (!GetRegistrationReady())
+        {
+            _currentStep = StepKey.Registration;
+            return;
+        }
+
+        _currentStep = StepKey.Public;
+    }
+
+    private string GetDialogTitle()
+        => _currentStep == StepKey.Welcome ? "欢迎使用" : "初次配置";
+
+    private string GetDialogSubtitle()
+        => _currentStep == StepKey.Welcome
+            ? "先看一眼这套系统是做什么的。"
+            : "先把常用设置补齐，后面就可以直接使用。";
+
+    private bool GetAdminReady() => PasswordManager.IsPasswordSet(AppSettings);
+    private bool GetWebPasswordReady() => AppSettings.WebServerPassword != "123456";
+    private bool GetRegistrationReady() => PasswordManager.HasOperatorRegistrationKey(AppSettings);
+
+    private bool GetPublicReady()
+    {
+        var status = TunnelService.GetStatus();
+        return status.PublicReady || !string.IsNullOrWhiteSpace(AppSettings.CloudflareHostname);
+    }
+
+    private bool GetStepDone(StepKey key) => key switch
+    {
+        StepKey.Admin => GetAdminReady(),
+        StepKey.WebPassword => GetWebPasswordReady(),
+        StepKey.Registration => GetRegistrationReady(),
+        StepKey.Public => GetPublicReady(),
+        _ => false
+    };
+
+    private string GetStepIndexText(StepKey key)
+    {
+        if (GetStepDone(key))
+            return "✓";
+
+        return (Array.FindIndex(_steps, s => s.Key == key) + 1).ToString();
+    }
+
+    private async Task StartCloudflareLogin()
+    {
+        _tunnelBusy = true;
+        _message = "请在浏览器完成授权。";
+
+        try
+        {
+            var result = await TunnelService.StartCloudflareLoginAsync();
+            _message = result.Message;
+        }
+        finally
+        {
+            _tunnelBusy = false;
+        }
+    }
+
+    private async Task ConfigureCloudflare()
+    {
+        _tunnelBusy = true;
+        _message = "正在配置公网发布。";
+
+        try
+        {
+            var result = await TunnelService.ConfigureCloudflareNamedTunnelAsync(_cloudflareHostname.Trim());
+            _cloudflareHostname = AppSettings.CloudflareHostname;
+            _message = result.Success && !string.IsNullOrWhiteSpace(result.PublicUrl)
+                ? $"已连接 {result.PublicUrl}/status"
+                : result.Message;
+        }
+        finally
+        {
+            _tunnelBusy = false;
+        }
+    }
+
+    private void SaveAdminPassword()
+    {
+        if (_adminPassword.Trim().Length < 8)
+        {
+            _message = "密码至少 8 个字符。";
+            return;
+        }
+
+        if (_adminPassword != _adminPasswordConfirm)
+        {
+            _message = "两次输入不一致。";
+            return;
+        }
+
+        PasswordManager.SetAdminPassword(AppSettings, _adminPassword.Trim());
+        _adminPassword = "";
+        _adminPasswordConfirm = "";
+        _message = "管理员密码已保存。";
+        AutoAdvance();
+    }
+
+    private void SaveWebPassword()
+    {
+        var password = _webPassword.Trim();
+        if (string.IsNullOrWhiteSpace(password))
+        {
+            _message = "请输入 Web 密码。";
+            return;
+        }
+
+        AppSettings.WebServerPassword = password;
+        AppSettings.Save();
+        _webPassword = "";
+        _message = "Web 密码已保存。";
+        AutoAdvance();
+    }
+
+    private void SaveRegistrationKey()
+    {
+        var key = _registrationKey.Trim();
+        if (key.Length < 8)
+        {
+            _message = "登记码至少 8 个字符。";
+            return;
+        }
+
+        PasswordManager.SetOperatorRegistrationKey(AppSettings, key);
+        _registrationKey = "";
+        _message = "登记码已保存。";
+        AutoAdvance();
+    }
+
+    private void AutoAdvance()
+    {
+        if (_currentIndex < _steps.Length - 1)
+            _currentStep = _steps[_currentIndex + 1].Key;
+    }
+
+    private bool CanGoNext()
+    {
+        if (_currentStep == StepKey.Welcome)
+            return true;
+
+        if (_currentStep == StepKey.Admin)
+            return GetAdminReady();
+
+        return true;
+    }
+
+    private void PreviousStep()
+    {
+        _message = "";
+        if (_currentIndex > 0)
+            _currentStep = _steps[_currentIndex - 1].Key;
+    }
+
+    private void NextStep()
+    {
+        _message = "";
+
+        if (_currentIndex == _steps.Length - 1)
+        {
+            Dismiss();
+            return;
+        }
+
+        _currentStep = _steps[_currentIndex + 1].Key;
+    }
+
+    private void Dismiss()
+    {
+        AppSettings.OnboardingDismissed = true;
+        AppSettings.Save();
+        _visible = false;
+    }
+
+    private string GetTunnelPreviewLabel()
+    {
+        var status = TunnelService.GetStatus();
+        if (status.PublicReady)
+            return "已连接";
+        if (_tunnelBusy || status.Running)
+            return "处理中";
+        if (!string.IsNullOrWhiteSpace(status.Error))
+            return "需要处理";
+        return "预览地址";
+    }
+
+    private string GetTunnelPreviewUrl()
+    {
+        var status = TunnelService.GetStatus();
+        if (!string.IsNullOrWhiteSpace(status.PublicUrl))
+            return status.PublicUrl.TrimEnd('/') + "/status";
+
+        if (!string.IsNullOrWhiteSpace(AppSettings.CloudflareHostname))
+            return "https://" + AppSettings.CloudflareHostname + "/status";
+
+        var hostname = _cloudflareHostname.Trim();
+        return string.IsNullOrWhiteSpace(hostname)
+            ? "https://monitor.example.com/status"
+            : "https://" + hostname + "/status";
+    }
+
+    private static string GetSummaryText(bool ready, bool optional = false)
+        => ready ? "已设置" : (optional ? "可稍后" : "待处理");
+
+    private static string GetSummaryClass(bool ready) => ready ? "done" : "later";
+
+    private string GetFooterText()
+    {
+        if (_currentIndex == _steps.Length - 1)
+            return "之后也可以在设置页修改。";
+
+        if (_currentStep == StepKey.Welcome)
+            return "先看一遍，再按顺序完成设置。";
+
+        return _currentStep == StepKey.Admin
+            ? "建议先设置管理员密码。"
+            : "可以继续完成，也可以稍后再配。";
+    }
+
+    public void Dispose() => _timer?.Dispose();
+}

@@ -21,6 +21,7 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("components/pages/statistics.razor")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("components/pages/timer.razor")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("components/shared/icon.razor")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("components/shared/onboardingdialog.razor")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("_imports.razor")]
 
 

@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Monitor 初次配置预览</title>
+  <style>
+    :root{
+      --bg-root:#f3f6fb;
+      --bg-surface:#edf2f8;
+      --bg-card:#fbfcff;
+      --text-primary:#1d2938;
+      --text-secondary:#506176;
+      --text-muted:#8b99aa;
+      --border:#dbe1e9;
+      --accent:#3b82f6;
+      --accent-soft:#eaf2ff;
+      --success:#15996b;
+      --success-soft:#e6f7f1;
+      --danger:#e0556a;
+      --danger-soft:#fff0f3;
+      --warning:#b7791f;
+      --warning-soft:#fff7e8;
+      --shadow:0 18px 50px rgba(30,41,59,.18);
+      --soft-shadow:0 4px 14px rgba(15,23,42,.08);
+      font-family:"Segoe UI","Microsoft YaHei","PingFang SC",system-ui,sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg-root);color:var(--text-primary)}
+
+    .app{
+      min-height:100vh;
+      display:grid;
+      grid-template-columns:220px minmax(0,1fr);
+      overflow:hidden;
+    }
+
+    .sidebar{
+      background:linear-gradient(180deg,#eef3fb 0%,#e8eef8 100%);
+      border-right:1px solid var(--border);
+      padding:24px 16px 18px;
+      display:flex;
+      flex-direction:column;
+      gap:22px;
+    }
+
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand-icon{
+      width:46px;height:46px;border-radius:12px;background:var(--accent);
+      display:grid;place-items:center;color:white;font-weight:800;font-size:20px;
+      box-shadow:0 8px 20px rgba(59,130,246,.25);
+    }
+    .brand-title{font-size:21px;font-weight:750;line-height:1}
+    .brand-sub{margin-top:6px;color:var(--text-muted);font-size:13px}
+
+    .nav{display:grid;gap:8px}
+    .nav-item{
+      display:flex;align-items:center;gap:12px;
+      padding:12px 14px;border-radius:10px;color:var(--text-secondary);
+      font-size:17px;font-weight:600;
+    }
+    .nav-item.active{background:#eaf2ff;color:var(--accent)}
+    .nav-icon{width:22px;text-align:center;color:currentColor}
+
+    .side-status{
+      margin-top:auto;
+      border-top:1px solid var(--border);
+      padding-top:16px;
+      font-size:13px;
+      color:var(--text-secondary);
+    }
+    .side-status-title{display:flex;align-items:center;gap:8px;font-weight:750;color:var(--text-primary);font-size:15px;margin-bottom:10px}
+    .dot{width:10px;height:10px;border-radius:99px;background:var(--danger);box-shadow:0 0 0 6px rgba(224,85,106,.14)}
+    .side-row{display:flex;justify-content:space-between;gap:10px;margin:7px 0}
+    .ok{color:var(--success);font-weight:700}
+    .bad{color:var(--warning);font-weight:700}
+
+    .main{
+      padding:42px 46px;
+      overflow:auto;
+      background:radial-gradient(circle at 70% 5%,rgba(59,130,246,.08),transparent 28%),var(--bg-root);
+    }
+    .page-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:24px}
+    .title{font-size:30px;font-weight:800;letter-spacing:0}
+    .subtitle{margin-top:6px;color:var(--text-muted);font-size:16px}
+    .status-pill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 16px;border-radius:999px;background:var(--danger-soft);
+      color:var(--danger);font-weight:750;border:1px solid #ffd0d8;
+    }
+
+    .hero-card{
+      min-height:280px;border:1px solid var(--border);border-radius:14px;background:rgba(251,252,255,.78);
+      box-shadow:var(--soft-shadow);padding:36px 44px;margin-bottom:22px;
+      display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,.9fr);gap:34px;align-items:center;
+    }
+    .hero-left{display:flex;align-items:center;gap:18px}
+    .hero-dot{width:34px;height:34px;border-radius:50%;background:var(--danger);box-shadow:0 0 0 14px rgba(224,85,106,.14)}
+    .hero-state{font-size:34px;font-weight:850;color:var(--danger)}
+    .hero-note{margin-top:6px;font-size:17px;color:var(--text-secondary)}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 26px;border-left:1px solid var(--border);padding-left:34px}
+    .label{font-size:13px;color:var(--text-muted);margin-bottom:6px}
+    .value{font-size:18px;color:var(--text-primary);font-weight:650}
+
+    .small-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .small-card{
+      min-height:150px;border:1px solid var(--border);border-radius:14px;background:rgba(251,252,255,.82);
+      padding:24px;box-shadow:0 3px 10px rgba(15,23,42,.05);
+    }
+    .small-title{font-weight:800;font-size:18px;margin-bottom:18px}
+    .empty{display:grid;place-items:center;color:var(--text-muted);height:74px;text-align:center}
+
+    .shade{
+      position:fixed;inset:0;background:rgba(29,41,56,.22);
+      backdrop-filter:blur(2px);
+      display:grid;place-items:center;padding:22px;
+    }
+
+    .dialog{
+      width:min(610px,calc(100vw - 36px));
+      max-height:min(760px,calc(100vh - 44px));
+      overflow:hidden;
+      background:var(--bg-card);
+      border:1px solid rgba(219,225,233,.95);
+      border-radius:18px;
+      box-shadow:var(--shadow);
+      display:grid;
+      grid-template-rows:auto auto minmax(0,1fr) auto;
+      animation:rise .22s ease-out;
+    }
+
+    @keyframes rise{
+      from{opacity:.4;transform:translateY(10px) scale(.985)}
+      to{opacity:1;transform:translateY(0) scale(1)}
+    }
+
+    .dialog-head{padding:26px 28px 18px;display:flex;justify-content:space-between;gap:16px}
+    .dialog-title{font-size:24px;font-weight:850}
+    .dialog-sub{margin-top:6px;color:var(--text-muted);font-size:14px}
+    .close{
+      border:0;background:#eef3fb;color:var(--text-secondary);
+      width:34px;height:34px;border-radius:10px;font-size:20px;line-height:1;cursor:pointer;
+    }
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:8px;
+      padding:0 28px 20px;
+    }
+    .step{
+      border:1px solid var(--border);
+      background:#f7f9fd;
+      color:var(--text-secondary);
+      border-radius:12px;
+      padding:10px 9px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      min-width:0;
+      cursor:pointer;
+    }
+    .step-num{
+      width:22px;height:22px;border-radius:8px;
+      display:grid;place-items:center;
+      background:#e7edf7;
+      color:var(--text-secondary);
+      font-size:12px;font-weight:800;
+      flex:0 0 auto;
+    }
+    .step-name{font-size:13px;font-weight:750;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .step.active{background:var(--accent-soft);border-color:#c8dcff;color:var(--accent)}
+    .step.active .step-num{background:var(--accent);color:white}
+    .step.done{background:var(--success-soft);border-color:#c8eadc;color:var(--success)}
+    .step.done .step-num{background:var(--success);color:white}
+
+    .body{
+      border-top:1px solid var(--border);
+      border-bottom:1px solid var(--border);
+      padding:24px 28px;
+      overflow:auto;
+    }
+    .section-label{font-size:13px;font-weight:800;color:var(--accent);margin-bottom:8px}
+    .section-title{font-size:22px;font-weight:850;margin-bottom:8px}
+    .section-copy{color:var(--text-secondary);font-size:15px;line-height:1.65;margin-bottom:20px}
+    .required{
+      display:inline-flex;align-items:center;gap:6px;
+      border-radius:999px;padding:5px 10px;background:var(--danger-soft);
+      color:var(--danger);font-size:12px;font-weight:800;margin-left:8px;
+    }
+    .optional{
+      display:inline-flex;align-items:center;gap:6px;
+      border-radius:999px;padding:5px 10px;background:var(--warning-soft);
+      color:var(--warning);font-size:12px;font-weight:800;margin-left:8px;
+    }
+
+    .field-grid{display:grid;gap:14px}
+    .field label{display:block;font-size:13px;font-weight:700;color:var(--text-secondary);margin-bottom:7px}
+    .input{
+      width:100%;height:44px;border:1px solid var(--border);border-radius:10px;background:#fff;
+      color:var(--text-primary);font:inherit;font-size:15px;padding:0 14px;outline:none;
+    }
+    .input:focus{border-color:#a8c6ff;box-shadow:0 0 0 4px rgba(59,130,246,.12)}
+
+    .hint-box{
+      margin-top:18px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:#f8fafc;
+      padding:14px 16px;
+      color:var(--text-secondary);
+      font-size:14px;
+      line-height:1.55;
+    }
+    .hint-title{font-weight:850;color:var(--text-primary);margin-bottom:4px}
+
+    .domain-preview{
+      margin-top:18px;border-radius:14px;border:1px solid #cfe0ff;
+      background:linear-gradient(180deg,#f7fbff,#eef5ff);
+      padding:16px;
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+    }
+    .domain-url{font-weight:850;color:var(--text-primary);overflow:hidden;text-overflow:ellipsis}
+    .tag{padding:6px 10px;border-radius:999px;background:#e7f7ef;color:var(--success);font-size:12px;font-weight:800;white-space:nowrap}
+
+    .summary{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:18px;
+    }
+    .summary-item{
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:12px;
+      padding:11px 12px;
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      font-size:13px;color:var(--text-secondary);
+    }
+    .summary-state{font-weight:850}
+    .summary-state.done{color:var(--success)}
+    .summary-state.todo{color:var(--danger)}
+    .summary-state.later{color:var(--warning)}
+
+    .foot{
+      padding:18px 28px;
+      display:flex;justify-content:space-between;align-items:center;gap:12px;
+      background:#fbfcff;
+    }
+    .foot-left{color:var(--text-muted);font-size:13px}
+    .actions{display:flex;gap:10px}
+    .btn{
+      border:1px solid var(--border);
+      background:#fff;
+      color:var(--text-secondary);
+      border-radius:10px;
+      height:40px;
+      padding:0 16px;
+      font:inherit;
+      font-weight:750;
+      cursor:pointer;
+    }
+    .btn.primary{border-color:var(--accent);background:var(--accent);color:white;box-shadow:0 8px 18px rgba(59,130,246,.22)}
+    .btn.ghost{background:transparent}
+    .btn:active{transform:scale(.98)}
+
+    @media (max-width:760px){
+      .app{grid-template-columns:74px minmax(0,1fr)}
+      .brand-title,.brand-sub,.nav span,.side-row,.side-status-title span{display:none}
+      .sidebar{padding:18px 10px;align-items:center}
+      .nav-item{justify-content:center}
+      .main{padding:28px 18px}
+      .hero-card{grid-template-columns:1fr}
+      .hero-grid{border-left:0;border-top:1px solid var(--border);padding-left:0;padding-top:20px}
+      .small-grid{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr 1fr}
+      .summary{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <main class="app" aria-hidden="true">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">M</div>
+        <div>
+          <div class="brand-title">Monitor</div>
+          <div class="brand-sub">公用机管理</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <div class="nav-item active"><span class="nav-icon">▦</span><span>控制台</span></div>
+        <div class="nav-item"><span class="nav-icon">◷</span><span>计时</span></div>
+        <div class="nav-item"><span class="nav-icon">↺</span><span>历史</span></div>
+        <div class="nav-item"><span class="nav-icon">▥</span><span>统计</span></div>
+        <div class="nav-item"><span class="nav-icon">□</span><span>预约</span></div>
+        <div class="nav-item"><span class="nav-icon">≡</span><span>设置</span></div>
+      </nav>
+
+      <div class="side-status">
+        <div class="side-status-title"><i class="dot"></i><span>远程占用</span></div>
+        <div class="side-row"><span>公网</span><strong class="ok">已连接</strong></div>
+        <div class="side-row"><span>登记码</span><strong class="bad">缺失</strong></div>
+        <div class="side-row"><span>远程</span><strong style="color:var(--danger)">sunlogin</strong></div>
+      </div>
+    </aside>
+
+    <section class="main">
+      <div class="page-head">
+        <div>
+          <div class="title">控制台</div>
+          <div class="subtitle">2026-05-17 10:24:18</div>
+        </div>
+        <div class="status-pill"><i class="dot"></i>疑似远程占用</div>
+      </div>
+
+      <section class="hero-card">
+        <div class="hero-left">
+          <div class="hero-dot"></div>
+          <div>
+            <div class="hero-state">疑似远程占用</div>
+            <div class="hero-note">请勿重复连接，避免控制冲突</div>
+          </div>
+        </div>
+        <div class="hero-grid">
+          <div><div class="label">远程工具</div><div class="value">sunlogin</div></div>
+          <div><div class="label">操作人</div><div class="value">未登记</div></div>
+          <div><div class="label">开始时间</div><div class="value">2026-05-17 10:20:12</div></div>
+          <div><div class="label">已占用时长</div><div class="value">00:04:06</div></div>
+        </div>
+      </section>
+
+      <div class="small-grid">
+        <section class="small-card"><div class="small-title">本机计时</div><div class="empty">输入姓名后开始</div></section>
+        <section class="small-card"><div class="small-title">今日活动</div><div class="empty">暂无使用记录</div></section>
+        <section class="small-card"><div class="small-title">今日预约</div><div class="empty">暂无预约</div></section>
+      </div>
+    </section>
+  </main>
+
+  <div class="shade">
+    <section class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialogTitle">
+      <header class="dialog-head">
+        <div>
+          <div class="dialog-title" id="dialogTitle">初次配置</div>
+          <div class="dialog-sub">完成必要设置后即可使用。</div>
+        </div>
+        <button class="close" type="button" aria-label="关闭">×</button>
+      </header>
+
+      <div class="steps" id="steps"></div>
+
+      <div class="body">
+        <div class="section-label" id="stepLabel"></div>
+        <div class="section-title" id="stepTitle"></div>
+        <div class="section-copy" id="stepCopy"></div>
+        <div id="fields"></div>
+        <div class="summary" id="summary"></div>
+      </div>
+
+      <footer class="foot">
+        <div class="foot-left" id="footText">设置只保存在本机。</div>
+        <div class="actions">
+          <button class="btn ghost" type="button" id="skipBtn">稍后</button>
+          <button class="btn" type="button" id="backBtn">上一步</button>
+          <button class="btn primary" type="button" id="nextBtn">下一步</button>
+        </div>
+      </footer>
+    </section>
+  </div>
+
+  <script>
+    const steps = [
+      {
+        name:'管理员密码',
+        label:'必需',
+        title:'设置管理员密码',
+        copy:'用于进入设置页和维护数据。建议先设置一个自己的密码。',
+        required:true,
+        fields:[
+          ['新管理员密码','password','至少 8 个字符'],
+          ['确认密码','password','再次输入']
+        ],
+        hintTitle:'使用位置',
+        hint:'修改设置、备份数据和配置公网时会用到。'
+      },
+      {
+        name:'Web 密码',
+        label:'建议',
+        title:'设置 Web 访问密码',
+        copy:'用于访问受保护接口。公开状态页仍可直接查看。',
+        required:false,
+        fields:[
+          ['Web 访问密码','password','设置新密码']
+        ],
+        hintTitle:'使用位置',
+        hint:'用于受保护的管理接口，公开状态页仍可直接查看。'
+      },
+      {
+        name:'登记码',
+        label:'建议',
+        title:'设置操作人登记码',
+        copy:'远程使用者登记姓名时使用。缺失时历史会显示“未登记”。',
+        required:false,
+        fields:[
+          ['操作人登记码','text','至少 4 个字符']
+        ],
+        hintTitle:'使用位置',
+        hint:'远程使用者在网页登记姓名时输入。'
+      },
+      {
+        name:'公网发布',
+        label:'可稍后',
+        title:'配置公网状态页',
+        copy:'填写已经接入 Cloudflare 的完整子域名。',
+        required:false,
+        fields:[
+          ['固定访问域名','text','monitor.example.com']
+        ],
+        domain:true,
+        hintTitle:'完成后',
+        hint:'别人可以通过固定网址查看机器是否被占用。'
+      }
+    ];
+
+    let current = 0;
+    const done = new Set();
+
+    function $(id){ return document.getElementById(id); }
+
+    function renderSteps(){
+      $('steps').innerHTML = '';
+      steps.forEach((step,index)=>{
+        const item = document.createElement('button');
+        item.type = 'button';
+        item.className = 'step' + (index === current ? ' active' : '') + (done.has(index) ? ' done' : '');
+        item.onclick = () => { current = index; render(); };
+        const num = document.createElement('span');
+        num.className = 'step-num';
+        num.textContent = done.has(index) ? '✓' : String(index + 1);
+        const name = document.createElement('span');
+        name.className = 'step-name';
+        name.textContent = step.name;
+        item.append(num,name);
+        $('steps').appendChild(item);
+      });
+    }
+
+    function renderFields(step){
+      const wrap = document.createElement('div');
+      wrap.className = 'field-grid';
+      step.fields.forEach(field=>{
+        const box = document.createElement('div');
+        box.className = 'field';
+        const label = document.createElement('label');
+        label.textContent = field[0];
+        const input = document.createElement('input');
+        input.className = 'input';
+        input.type = field[1];
+        input.placeholder = field[2];
+        box.append(label,input);
+        wrap.appendChild(box);
+      });
+
+      const hint = document.createElement('div');
+      hint.className = 'hint-box';
+      hint.innerHTML = '<div class="hint-title"></div><div></div>';
+      hint.children[0].textContent = step.hintTitle;
+      hint.children[1].textContent = step.hint;
+      wrap.appendChild(hint);
+
+      if(step.domain){
+        const domain = document.createElement('div');
+        domain.className = 'domain-preview';
+        domain.innerHTML = '<span class="tag">预览地址</span><span class="domain-url">https://monitor.example.com/status</span>';
+        wrap.appendChild(domain);
+      }
+
+      $('fields').replaceChildren(wrap);
+    }
+
+    function renderSummary(){
+      const states = [
+        ['管理员密码', done.has(0) ? '已设置' : '未设置', done.has(0) ? 'done' : 'todo'],
+        ['Web 密码', done.has(1) ? '已设置' : '可稍后', done.has(1) ? 'done' : 'later'],
+        ['登记码', done.has(2) ? '已设置' : '可稍后', done.has(2) ? 'done' : 'later'],
+        ['公网发布', done.has(3) ? '已配置' : '可稍后', done.has(3) ? 'done' : 'later']
+      ];
+      $('summary').innerHTML = '';
+      states.forEach(s=>{
+        const item = document.createElement('div');
+        item.className = 'summary-item';
+        const name = document.createElement('span');
+        name.textContent = s[0];
+        const state = document.createElement('span');
+        state.className = 'summary-state ' + s[2];
+        state.textContent = s[1];
+        item.append(name,state);
+        $('summary').appendChild(item);
+      });
+    }
+
+    function render(){
+      const step = steps[current];
+      renderSteps();
+      $('stepLabel').textContent = step.label;
+      $('stepTitle').innerHTML = '';
+      const title = document.createTextNode(step.title);
+      $('stepTitle').appendChild(title);
+      const badge = document.createElement('span');
+      badge.className = step.required ? 'required' : 'optional';
+      badge.textContent = step.required ? '建议先设置' : '可稍后';
+      $('stepTitle').appendChild(badge);
+      $('stepCopy').textContent = step.copy;
+      renderFields(step);
+      renderSummary();
+      $('backBtn').disabled = current === 0;
+      $('backBtn').style.opacity = current === 0 ? '.45' : '1';
+      $('nextBtn').textContent = current === steps.length - 1 ? '完成' : '下一步';
+      $('skipBtn').style.visibility = step.required ? 'hidden' : 'visible';
+      $('footText').textContent = current === 0 ? '设置后再进入完整功能。' : '之后可在设置页修改。';
+    }
+
+    $('nextBtn').onclick = () => {
+      done.add(current);
+      if(current < steps.length - 1){ current += 1; }
+      render();
+    };
+    $('backBtn').onclick = () => {
+      if(current > 0){ current -= 1; render(); }
+    };
+    $('skipBtn').onclick = () => {
+      if(current < steps.length - 1){ current += 1; render(); }
+    };
+
+    render();
+  </script>
+</body>
+</html>

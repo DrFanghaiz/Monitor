@@ -34,6 +34,7 @@ public class AppSettings
     public string CloudflareHostname { get; set; } = "";
     public string OperatorRegistrationKey { get; set; } = "";
     public string OperatorRegistrationKeyHash { get; set; } = "";
+    public bool OnboardingDismissed { get; set; } = false;
 
     private static readonly string _configPath = AppPaths.ConfigPath;
 
@@ -110,6 +111,7 @@ public class AppSettings
             "cloudflare_tunnel_name" => CloudflareTunnelName,
             "cloudflare_tunnel_id" => CloudflareTunnelId,
             "operator_registration_key_hash" => OperatorRegistrationKeyHash,
+            "onboarding_dismissed" => OnboardingDismissed.ToString().ToLower(),
             "auto_backup" => AutoBackup.ToString().ToLower(),
             "backup_retention_days" => BackupRetentionDays.ToString(),
             "remote_monitor_enabled" => RemoteMonitorEnabled.ToString().ToLower(),
@@ -134,6 +136,7 @@ public class AppSettings
             case "cloudflare_tunnel_name": CloudflareTunnelName = value; break;
             case "cloudflare_tunnel_id": CloudflareTunnelId = value; break;
             case "operator_registration_key_hash": OperatorRegistrationKeyHash = value; OperatorRegistrationKey = ""; break;
+            case "onboarding_dismissed": OnboardingDismissed = bool.Parse(value); break;
             case "auto_backup": AutoBackup = bool.Parse(value); break;
             case "backup_retention_days": BackupRetentionDays = int.Parse(value); break;
             case "remote_monitor_enabled": RemoteMonitorEnabled = bool.Parse(value); break;

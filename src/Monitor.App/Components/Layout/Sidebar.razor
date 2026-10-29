@@ -2,47 +2,69 @@
 @inject StatusService StatusService
 @inject Services.TunnelService TunnelService
 @inject Infrastructure.Config.AppSettings AppSettings
+@inject IJSRuntime JS
 @using Monitor.App.Infrastructure.Security
 @implements IDisposable
 
 <aside class="sidebar">
-    <div class="sidebar-brand">
-        <div class="brand-mark"><Icon Name="monitor" Size="20" /></div>
+    <div class="brand">
+        <div class="brand-mark"><Icon Name="monitor" Size="18" /></div>
         <div>
-            <div class="brand-title">Monitor</div>
-            <div class="brand-subtitle">公用机管理</div>
+            <div class="brand-name">Monitor</div>
+            <div class="brand-sub">公用机占用控制台</div>
         </div>
     </div>
 
-    <nav class="sidebar-nav">
-        @foreach (var item in _navItems)
+    <div class="nav-group">
+        <div class="nav-label">监控</div>
+        @foreach (var item in _monitorNav)
         {
-            <NavLink href="@item.Href" class="sidebar-item" ActiveClass="active"
+            <NavLink href="@item.Href" class="nav-item" ActiveClass="active"
                      Match="@item.Match" title="@item.Label" aria-label="@item.Label">
-                <span class="sidebar-icon"><Icon Name="@item.Icon" Size="18" /></span>
-                <span class="nav-label">@item.Label</span>
+                <span class="nav-ico"><Icon Name="@item.Icon" Size="18" /></span>
+                <span class="nav-text">@item.Label</span>
             </NavLink>
         }
-    </nav>
+    </div>
 
-    <div class="sidebar-footer">
-        <div class="sidebar-health">
-            <div class="sidebar-health-main">
-                <span class="status-dot @_statusClass"></span>
-                <span>@_statusText</span>
-            </div>
-            <div class="sidebar-health-grid">
-                <span>&#20844;&#32593;</span><strong class="@_publicClass">@_publicText</strong>
-                <span>&#30331;&#35760;&#30721;</span><strong class="@_registerClass">@_registerText</strong>
-                @if (_isRemote && !string.IsNullOrWhiteSpace(_remoteType))
-                {
-                    <span>远程</span><strong class="danger">@_remoteType</strong>
-                }
-            </div>
+    <div class="nav-group">
+        <div class="nav-label">管理</div>
+        @foreach (var item in _adminNav)
+        {
+            <NavLink href="@item.Href" class="nav-item" ActiveClass="active"
+                     Match="@item.Match" title="@item.Label" aria-label="@item.Label">
+                <span class="nav-ico"><Icon Name="@item.Icon" Size="18" /></span>
+                <span class="nav-text">@item.Label</span>
+            </NavLink>
+        }
+    </div>
+
+    <div class="side-spacer"></div>
+
+    <div class="side-status">
+        <div class="ss-top">
+            <span class="status-dot @_statusClass"></span>
+            <span>@_statusText</span>
         </div>
-        <div class="sidebar-footer-meta">
-            <span>v3.0.0</span>
-            <span>@_timeDisplay</span>
+        <div class="ss-grid">
+            <span>公网</span><b class="@_publicClass">@_publicText</b>
+            <span>计算</span><b class="@(_computeBusy ? "warning" : "ok")">@(_computeBusy ? "运行中" : "空闲")</b>
+            <span>登记码</span><b class="@_registerClass">@_registerText</b>
+            @if (_isRemote && !string.IsNullOrWhiteSpace(_remoteType))
+            {
+                <span>远程</span><b class="danger">@_remoteType</b>
+            }
+        </div>
+    </div>
+
+    <div class="side-tools">
+        <div class="seg seg-theme">
+            <button type="button" data-t="light" @onclick='() => SetTheme("light")'>浅色</button>
+            <button type="button" data-t="dark" @onclick='() => SetTheme("dark")'>深色</button>
+        </div>
+        <div class="seg seg-density">
+            <button type="button" data-d="comfortable" @onclick='() => SetDensity("comfortable")'>标准</button>
+            <button type="button" data-d="compact" @onclick='() => SetDensity("compact")'>紧凑</button>
         </div>
     </div>
 </aside>
@@ -53,20 +75,25 @@
     private string? _statusNote;
     private bool _isRemote;
     private string? _remoteType;
+    private bool _computeBusy;
+    private string? _computeSummary;
     private string _publicText = "\u672a\u8fde\u63a5";
     private string _publicClass = "warning";
     private string _registerText = "\u7f3a\u5931";
     private string _registerClass = "warning";
-    private string _timeDisplay = "";
     private Timer? _timer;
 
-    private readonly (string Href, string Label, string Icon, NavLinkMatch Match)[] _navItems =
+    private readonly (string Href, string Label, string Icon, NavLinkMatch Match)[] _monitorNav =
     {
         ("/", "控制台", "dashboard", NavLinkMatch.All),
         ("/timer", "计时", "timer", NavLinkMatch.Prefix),
-        ("/history", "历史", "history", NavLinkMatch.Prefix),
-        ("/statistics", "统计", "chart", NavLinkMatch.Prefix),
         ("/reservation", "预约", "calendar", NavLinkMatch.Prefix),
+        ("/statistics", "统计", "chart", NavLinkMatch.Prefix),
+    };
+
+    private readonly (string Href, string Label, string Icon, NavLinkMatch Match)[] _adminNav =
+    {
+        ("/history", "历史记录", "history", NavLinkMatch.Prefix),
         ("/settings", "设置", "settings", NavLinkMatch.Prefix),
     };
 
@@ -83,12 +110,17 @@
         }, null, 3000, 3000);
     }
 
+    private async Task SetTheme(string theme) => await JS.InvokeVoidAsync("monitorSetTheme", theme);
+    private async Task SetDensity(string density) => await JS.InvokeVoidAsync("monitorSetDensity", density);
+
     private void RefreshStatus()
     {
         var status = StatusService.GetSidebarStatus();
         var tunnel = TunnelService.GetStatus();
         _isRemote = status.IsRemote;
         _remoteType = status.RemoteType;
+        _computeBusy = status.ComputeBusy;
+        _computeSummary = status.ComputeSummary;
 
         if (status.Status == "error")
         {
@@ -96,16 +128,28 @@
             _statusText = "检测异常";
             _statusNote = status.ErrorMessage;
         }
-        else if (status.Status == "unknown")
+        else if (status.ComputeBusy)
+        {
+            _statusClass = "computing";
+            _statusText = "正在计算";
+            _statusNote = status.ComputeSummary;
+        }
+        else if (status.Status == "disabled")
         {
             _statusClass = "unknown";
-            _statusText = "状态未知";
+            _statusText = "检测已关闭";
             _statusNote = "远程检测未开启";
+        }
+        else if (status.Status is "initializing" or "unknown")
+        {
+            _statusClass = "remote_controlled";
+            _statusText = "疑似占用";
+            _statusNote = "检测状态未知，按占用处理";
         }
         else if (_isRemote)
         {
             _statusClass = "remote_controlled";
-            _statusText = "远程占用";
+            _statusText = status.Conflict ? "控制冲突" : "远程占用";
         }
         else if (status.IsTiming)
         {
@@ -145,8 +189,6 @@
             _registerText = "\u6b63\u5e38";
             _registerClass = "ok";
         }
-
-        _timeDisplay = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
     }
 
     public void Dispose() => _timer?.Dispose();

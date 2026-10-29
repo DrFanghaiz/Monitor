@@ -1,0 +1,2173 @@
+﻿2026-10-29 05:50:19.623   Log opened. (Time zone: UTC-04:00)
+2026-10-29 05:50:19.623   Setup version: Inno Setup version 6.7.1
+2026-10-29 05:50:19.623   Original Setup EXE: E:\Projects\Monitor\artifacts\installer\Monitor-Setup.exe
+2026-10-29 05:50:19.623   Setup command line: /SL5="$5BF1076,70456750,867840,E:\Projects\Monitor\artifacts\installer\Monitor-Setup.exe" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP- /TASKS=desktopicon /LOG=E:\Projects\Monitor\docs\install-test\install1.log
+2026-10-29 05:50:19.623   Compatibility mode: Yes (Installer)
+2026-10-29 05:50:19.623   Windows version: 10.0.26300
+2026-10-29 05:50:19.623   Windows architecture: x64 (64-bit)
+2026-10-29 05:50:19.623   Machine types supported by system: x86 x64
+2026-10-29 05:50:19.623   User privileges: Administrative
+2026-10-29 05:50:19.627   Administrative install mode: Yes
+2026-10-29 05:50:19.627   Install mode root key: HKEY_LOCAL_MACHINE
+2026-10-29 05:50:19.627   64-bit install mode: Yes
+2026-10-29 05:50:19.627   RedirectionGuard status for current process: Enabled in enforcing mode
+2026-10-29 05:50:19.630   Created protected temporary directory: C:\Users\happx\AppData\Local\Temp\is-CUUPE84VEA.tmp
+2026-10-29 05:50:19.790   Found 418 files to register with RestartManager.
+2026-10-29 05:50:19.790   Calling RestartManager's RmGetList.
+2026-10-29 05:50:19.832   RmGetList finished successfully.
+2026-10-29 05:50:19.832   RestartManager found no applications using one of our files.
+2026-10-29 05:50:19.839   Starting the installation process.
+2026-10-29 05:50:19.841   Creating directory: C:\Program Files\Monitor
+2026-10-29 05:50:19.842   Setting permissions on directory: C:\ProgramData\Monitor
+2026-10-29 05:50:19.844   Setting permissions on directory: C:\ProgramData\Monitor\backups
+2026-10-29 05:50:19.845   Setting permissions on directory: C:\ProgramData\Monitor\logs
+2026-10-29 05:50:19.845   Directory for uninstall files: C:\Program Files\Monitor
+2026-10-29 05:50:19.846   Creating new uninstall log: C:\Program Files\Monitor\unins000.dat
+2026-10-29 05:50:19.849   -- File entry --
+2026-10-29 05:50:19.849   Dest filename: C:\Program Files\Monitor\unins000.exe
+2026-10-29 05:50:19.849   Non-default bitness: 32-bit
+2026-10-29 05:50:19.856   Time stamp of our file: 2026-10-29 05:50:17.511
+2026-10-29 05:50:19.856   Installing the file.
+2026-10-29 05:50:21.678   Successfully installed the file.
+2026-10-29 05:50:21.678   -- File entry --
+2026-10-29 05:50:21.678   Dest filename: C:\Program Files\Monitor\Accessibility.dll
+2026-10-29 05:50:21.679   Time stamp of our file: 2026-10-05 03:31:08.000
+2026-10-29 05:50:21.679   Installing the file.
+2026-10-29 05:50:21.684   Successfully installed the file.
+2026-10-29 05:50:21.684   -- File entry --
+2026-10-29 05:50:21.684   Dest filename: C:\Program Files\Monitor\aspnetcorev2_inprocess.dll
+2026-10-29 05:50:21.685   Time stamp of our file: 2026-10-05 05:43:38.000
+2026-10-29 05:50:21.685   Installing the file.
+2026-10-29 05:50:21.702   Successfully installed the file.
+2026-10-29 05:50:21.702   -- File entry --
+2026-10-29 05:50:21.702   Dest filename: C:\Program Files\Monitor\BCrypt-Net-Next.dll
+2026-10-29 05:50:21.702   Time stamp of our file: 2026-05-11 07:04:00.000
+2026-10-29 05:50:21.702   Installing the file.
+2026-10-29 05:50:21.706   Successfully installed the file.
+2026-10-29 05:50:21.706   -- File entry --
+2026-10-29 05:50:21.706   Dest filename: C:\Program Files\Monitor\cloudflared.exe
+2026-10-29 05:50:21.706   Time stamp of our file: 2026-05-15 11:22:14.000
+2026-10-29 05:50:21.706   Installing the file.
+2026-10-29 05:50:22.975   Successfully installed the file.
+2026-10-29 05:50:22.975   -- File entry --
+2026-10-29 05:50:22.975   Dest filename: C:\Program Files\Monitor\clretwrc.dll
+2026-10-29 05:50:22.975   Time stamp of our file: 2026-10-04 16:58:28.000
+2026-10-29 05:50:22.975   Installing the file.
+2026-10-29 05:50:22.985   Successfully installed the file.
+2026-10-29 05:50:22.985   -- File entry --
+2026-10-29 05:50:22.985   Dest filename: C:\Program Files\Monitor\clrgc.dll
+2026-10-29 05:50:22.986   Time stamp of our file: 2026-10-04 16:56:14.000
+2026-10-29 05:50:22.986   Installing the file.
+2026-10-29 05:50:23.012   Successfully installed the file.
+2026-10-29 05:50:23.012   -- File entry --
+2026-10-29 05:50:23.012   Dest filename: C:\Program Files\Monitor\clrjit.dll
+2026-10-29 05:50:23.013   Time stamp of our file: 2026-10-04 16:55:34.000
+2026-10-29 05:50:23.013   Installing the file.
+2026-10-29 05:50:23.077   Successfully installed the file.
+2026-10-29 05:50:23.077   -- File entry --
+2026-10-29 05:50:23.077   Dest filename: C:\Program Files\Monitor\coreclr.dll
+2026-10-29 05:50:23.078   Time stamp of our file: 2026-10-04 16:52:54.000
+2026-10-29 05:50:23.078   Installing the file.
+2026-10-29 05:50:23.246   Successfully installed the file.
+2026-10-29 05:50:23.246   -- File entry --
+2026-10-29 05:50:23.246   Dest filename: C:\Program Files\Monitor\createdump.exe
+2026-10-29 05:50:23.247   Time stamp of our file: 2026-10-04 16:58:28.000
+2026-10-29 05:50:23.247   Installing the file.
+2026-10-29 05:50:23.251   Successfully installed the file.
+2026-10-29 05:50:23.251   -- File entry --
+2026-10-29 05:50:23.251   Dest filename: C:\Program Files\Monitor\D3DCompiler_47_cor3.dll
+2026-10-29 05:50:23.251   Time stamp of our file: 2026-01-27 02:18:40.000
+2026-10-29 05:50:23.251   Installing the file.
+2026-10-29 05:50:23.406   Successfully installed the file.
+2026-10-29 05:50:23.406   -- File entry --
+2026-10-29 05:50:23.406   Dest filename: C:\Program Files\Monitor\Dapper.dll
+2026-10-29 05:50:23.406   Time stamp of our file: 2026-03-06 03:11:08.000
+2026-10-29 05:50:23.406   Installing the file.
+2026-10-29 05:50:23.421   Successfully installed the file.
+2026-10-29 05:50:23.421   -- File entry --
+2026-10-29 05:50:23.421   Dest filename: C:\Program Files\Monitor\DirectWriteForwarder.dll
+2026-10-29 05:50:23.421   Time stamp of our file: 2026-10-05 08:52:04.000
+2026-10-29 05:50:23.421   Installing the file.
+2026-10-29 05:50:23.444   Successfully installed the file.
+2026-10-29 05:50:23.444   -- File entry --
+2026-10-29 05:50:23.444   Dest filename: C:\Program Files\Monitor\e_sqlite3.dll
+2026-10-29 05:50:23.445   Time stamp of our file: 2023-08-23 14:33:44.000
+2026-10-29 05:50:23.445   Installing the file.
+2026-10-29 05:50:23.514   Successfully installed the file.
+2026-10-29 05:50:23.514   -- File entry --
+2026-10-29 05:50:23.514   Dest filename: C:\Program Files\Monitor\hostfxr.dll
+2026-10-29 05:50:23.514   Time stamp of our file: 2026-10-04 17:09:48.000
+2026-10-29 05:50:23.514   Installing the file.
+2026-10-29 05:50:23.528   Successfully installed the file.
+2026-10-29 05:50:23.530   -- File entry --
+2026-10-29 05:50:23.530   Dest filename: C:\Program Files\Monitor\hostpolicy.dll
+2026-10-29 05:50:23.530   Time stamp of our file: 2026-10-04 17:09:50.000
+2026-10-29 05:50:23.530   Installing the file.
+2026-10-29 05:50:23.544   Successfully installed the file.
+2026-10-29 05:50:23.544   -- File entry --
+2026-10-29 05:50:23.544   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Antiforgery.dll
+2026-10-29 05:50:23.544   Time stamp of our file: 2026-10-05 05:58:46.000
+2026-10-29 05:50:23.544   Installing the file.
+2026-10-29 05:50:23.552   Successfully installed the file.
+2026-10-29 05:50:23.552   -- File entry --
+2026-10-29 05:50:23.552   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Authentication.Abstractions.dll
+2026-10-29 05:50:23.552   Time stamp of our file: 2026-10-05 05:58:46.000
+2026-10-29 05:50:23.552   Installing the file.
+2026-10-29 05:50:23.557   Successfully installed the file.
+2026-10-29 05:50:23.557   -- File entry --
+2026-10-29 05:50:23.557   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Authentication.BearerToken.dll
+2026-10-29 05:50:23.557   Time stamp of our file: 2026-10-05 05:58:46.000
+2026-10-29 05:50:23.557   Installing the file.
+2026-10-29 05:50:23.563   Successfully installed the file.
+2026-10-29 05:50:23.563   -- File entry --
+2026-10-29 05:50:23.563   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Authentication.Cookies.dll
+2026-10-29 05:50:23.564   Time stamp of our file: 2026-10-05 05:58:46.000
+2026-10-29 05:50:23.564   Installing the file.
+2026-10-29 05:50:23.573   Successfully installed the file.
+2026-10-29 05:50:23.573   -- File entry --
+2026-10-29 05:50:23.573   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Authentication.Core.dll
+2026-10-29 05:50:23.573   Time stamp of our file: 2026-10-05 05:58:46.000
+2026-10-29 05:50:23.574   Installing the file.
+2026-10-29 05:50:23.580   Successfully installed the file.
+2026-10-29 05:50:23.580   -- File entry --
+2026-10-29 05:50:23.580   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Authentication.dll
+2026-10-29 05:50:23.580   Time stamp of our file: 2026-10-05 05:58:48.000
+2026-10-29 05:50:23.580   Installing the file.
+2026-10-29 05:50:23.588   Successfully installed the file.
+2026-10-29 05:50:23.588   -- File entry --
+2026-10-29 05:50:23.588   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Authentication.OAuth.dll
+2026-10-29 05:50:23.588   Time stamp of our file: 2026-10-05 05:58:48.000
+2026-10-29 05:50:23.589   Installing the file.
+2026-10-29 05:50:23.594   Successfully installed the file.
+2026-10-29 05:50:23.594   -- File entry --
+2026-10-29 05:50:23.594   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Authorization.dll
+2026-10-29 05:50:23.595   Time stamp of our file: 2026-10-05 05:58:48.000
+2026-10-29 05:50:23.595   Installing the file.
+2026-10-29 05:50:23.602   Successfully installed the file.
+2026-10-29 05:50:23.602   -- File entry --
+2026-10-29 05:50:23.602   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Authorization.Policy.dll
+2026-10-29 05:50:23.602   Time stamp of our file: 2026-10-05 05:58:48.000
+2026-10-29 05:50:23.602   Installing the file.
+2026-10-29 05:50:23.608   Successfully installed the file.
+2026-10-29 05:50:23.608   -- File entry --
+2026-10-29 05:50:23.608   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Components.Authorization.dll
+2026-10-29 05:50:23.608   Time stamp of our file: 2026-10-05 05:58:48.000
+2026-10-29 05:50:23.608   Installing the file.
+2026-10-29 05:50:23.614   Successfully installed the file.
+2026-10-29 05:50:23.614   -- File entry --
+2026-10-29 05:50:23.614   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Components.dll
+2026-10-29 05:50:23.614   Time stamp of our file: 2026-10-05 05:58:48.000
+2026-10-29 05:50:23.614   Installing the file.
+2026-10-29 05:50:23.645   Successfully installed the file.
+2026-10-29 05:50:23.645   -- File entry --
+2026-10-29 05:50:23.645   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Components.Endpoints.dll
+2026-10-29 05:50:23.645   Time stamp of our file: 2026-10-05 05:58:50.000
+2026-10-29 05:50:23.645   Installing the file.
+2026-10-29 05:50:23.671   Successfully installed the file.
+2026-10-29 05:50:23.671   -- File entry --
+2026-10-29 05:50:23.671   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Components.Forms.dll
+2026-10-29 05:50:23.672   Time stamp of our file: 2026-10-05 05:58:50.000
+2026-10-29 05:50:23.672   Installing the file.
+2026-10-29 05:50:23.678   Successfully installed the file.
+2026-10-29 05:50:23.678   -- File entry --
+2026-10-29 05:50:23.678   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Components.Server.dll
+2026-10-29 05:50:23.678   Time stamp of our file: 2026-10-05 05:58:50.000
+2026-10-29 05:50:23.678   Installing the file.
+2026-10-29 05:50:23.713   Successfully installed the file.
+2026-10-29 05:50:23.714   -- File entry --
+2026-10-29 05:50:23.714   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Components.Web.dll
+2026-10-29 05:50:23.714   Time stamp of our file: 2026-10-05 05:58:50.000
+2026-10-29 05:50:23.714   Installing the file.
+2026-10-29 05:50:23.728   Successfully installed the file.
+2026-10-29 05:50:23.728   -- File entry --
+2026-10-29 05:50:23.728   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Components.WebView.dll
+2026-10-29 05:50:23.729   Time stamp of our file: 2024-09-18 14:40:36.000
+2026-10-29 05:50:23.729   Installing the file.
+2026-10-29 05:50:23.737   Successfully installed the file.
+2026-10-29 05:50:23.737   -- File entry --
+2026-10-29 05:50:23.737   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Components.WebView.Wpf.dll
+2026-10-29 05:50:23.737   Time stamp of our file: 2024-11-07 13:33:18.000
+2026-10-29 05:50:23.737   Installing the file.
+2026-10-29 05:50:23.742   Successfully installed the file.
+2026-10-29 05:50:23.742   -- File entry --
+2026-10-29 05:50:23.742   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Connections.Abstractions.dll
+2026-10-29 05:50:23.742   Time stamp of our file: 2026-10-05 05:58:50.000
+2026-10-29 05:50:23.743   Installing the file.
+2026-10-29 05:50:23.747   Successfully installed the file.
+2026-10-29 05:50:23.747   -- File entry --
+2026-10-29 05:50:23.747   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.CookiePolicy.dll
+2026-10-29 05:50:23.747   Time stamp of our file: 2026-10-05 05:58:50.000
+2026-10-29 05:50:23.747   Installing the file.
+2026-10-29 05:50:23.752   Successfully installed the file.
+2026-10-29 05:50:23.752   -- File entry --
+2026-10-29 05:50:23.752   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Cors.dll
+2026-10-29 05:50:23.752   Time stamp of our file: 2026-10-05 05:58:50.000
+2026-10-29 05:50:23.752   Installing the file.
+2026-10-29 05:50:23.758   Successfully installed the file.
+2026-10-29 05:50:23.759   -- File entry --
+2026-10-29 05:50:23.759   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Cryptography.Internal.dll
+2026-10-29 05:50:23.759   Time stamp of our file: 2026-10-05 05:58:50.000
+2026-10-29 05:50:23.759   Installing the file.
+2026-10-29 05:50:23.764   Successfully installed the file.
+2026-10-29 05:50:23.764   -- File entry --
+2026-10-29 05:50:23.764   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+2026-10-29 05:50:23.766   Time stamp of our file: 2026-10-05 05:58:52.000
+2026-10-29 05:50:23.766   Installing the file.
+2026-10-29 05:50:23.770   Successfully installed the file.
+2026-10-29 05:50:23.770   -- File entry --
+2026-10-29 05:50:23.770   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+2026-10-29 05:50:23.771   Time stamp of our file: 2026-10-05 05:58:52.000
+2026-10-29 05:50:23.771   Installing the file.
+2026-10-29 05:50:23.774   Successfully installed the file.
+2026-10-29 05:50:23.774   -- File entry --
+2026-10-29 05:50:23.774   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.DataProtection.dll
+2026-10-29 05:50:23.775   Time stamp of our file: 2026-10-05 05:58:52.000
+2026-10-29 05:50:23.775   Installing the file.
+2026-10-29 05:50:23.795   Successfully installed the file.
+2026-10-29 05:50:23.795   -- File entry --
+2026-10-29 05:50:23.795   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.DataProtection.Extensions.dll
+2026-10-29 05:50:23.795   Time stamp of our file: 2026-10-05 05:58:52.000
+2026-10-29 05:50:23.795   Installing the file.
+2026-10-29 05:50:23.800   Successfully installed the file.
+2026-10-29 05:50:23.800   -- File entry --
+2026-10-29 05:50:23.800   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+2026-10-29 05:50:23.801   Time stamp of our file: 2026-10-05 05:58:52.000
+2026-10-29 05:50:23.801   Installing the file.
+2026-10-29 05:50:23.804   Successfully installed the file.
+2026-10-29 05:50:23.804   -- File entry --
+2026-10-29 05:50:23.805   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Diagnostics.dll
+2026-10-29 05:50:23.805   Time stamp of our file: 2026-10-05 05:58:52.000
+2026-10-29 05:50:23.805   Installing the file.
+2026-10-29 05:50:23.823   Successfully installed the file.
+2026-10-29 05:50:23.823   -- File entry --
+2026-10-29 05:50:23.823   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Diagnostics.HealthChecks.dll
+2026-10-29 05:50:23.823   Time stamp of our file: 2026-10-05 05:58:52.000
+2026-10-29 05:50:23.823   Installing the file.
+2026-10-29 05:50:23.826   Successfully installed the file.
+2026-10-29 05:50:23.826   -- File entry --
+2026-10-29 05:50:23.827   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.dll
+2026-10-29 05:50:23.827   Time stamp of our file: 2026-10-05 05:58:52.000
+2026-10-29 05:50:23.827   Installing the file.
+2026-10-29 05:50:23.832   Successfully installed the file.
+2026-10-29 05:50:23.832   -- File entry --
+2026-10-29 05:50:23.832   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.HostFiltering.dll
+2026-10-29 05:50:23.832   Time stamp of our file: 2026-10-05 05:58:54.000
+2026-10-29 05:50:23.832   Installing the file.
+2026-10-29 05:50:23.837   Successfully installed the file.
+2026-10-29 05:50:23.837   -- File entry --
+2026-10-29 05:50:23.837   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Hosting.Abstractions.dll
+2026-10-29 05:50:23.837   Time stamp of our file: 2026-10-05 05:58:54.000
+2026-10-29 05:50:23.837   Installing the file.
+2026-10-29 05:50:23.840   Successfully installed the file.
+2026-10-29 05:50:23.840   -- File entry --
+2026-10-29 05:50:23.840   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Hosting.dll
+2026-10-29 05:50:23.841   Time stamp of our file: 2026-10-05 05:58:54.000
+2026-10-29 05:50:23.841   Installing the file.
+2026-10-29 05:50:23.857   Successfully installed the file.
+2026-10-29 05:50:23.857   -- File entry --
+2026-10-29 05:50:23.857   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+2026-10-29 05:50:23.857   Time stamp of our file: 2026-10-05 05:58:54.000
+2026-10-29 05:50:23.857   Installing the file.
+2026-10-29 05:50:23.861   Successfully installed the file.
+2026-10-29 05:50:23.861   -- File entry --
+2026-10-29 05:50:23.861   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Html.Abstractions.dll
+2026-10-29 05:50:23.861   Time stamp of our file: 2026-10-05 05:58:54.000
+2026-10-29 05:50:23.861   Installing the file.
+2026-10-29 05:50:23.865   Successfully installed the file.
+2026-10-29 05:50:23.865   -- File entry --
+2026-10-29 05:50:23.865   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Http.Abstractions.dll
+2026-10-29 05:50:23.866   Time stamp of our file: 2026-10-05 05:58:54.000
+2026-10-29 05:50:23.866   Installing the file.
+2026-10-29 05:50:23.882   Successfully installed the file.
+2026-10-29 05:50:23.882   -- File entry --
+2026-10-29 05:50:23.882   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Http.Connections.Common.dll
+2026-10-29 05:50:23.882   Time stamp of our file: 2026-10-05 05:58:54.000
+2026-10-29 05:50:23.882   Installing the file.
+2026-10-29 05:50:23.886   Successfully installed the file.
+2026-10-29 05:50:23.886   -- File entry --
+2026-10-29 05:50:23.886   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Http.Connections.dll
+2026-10-29 05:50:23.886   Time stamp of our file: 2026-10-05 05:58:54.000
+2026-10-29 05:50:23.886   Installing the file.
+2026-10-29 05:50:23.899   Successfully installed the file.
+2026-10-29 05:50:23.899   -- File entry --
+2026-10-29 05:50:23.899   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Http.dll
+2026-10-29 05:50:23.899   Time stamp of our file: 2026-10-05 05:58:56.000
+2026-10-29 05:50:23.899   Installing the file.
+2026-10-29 05:50:23.912   Successfully installed the file.
+2026-10-29 05:50:23.912   -- File entry --
+2026-10-29 05:50:23.912   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Http.Extensions.dll
+2026-10-29 05:50:23.912   Time stamp of our file: 2026-10-05 05:58:56.000
+2026-10-29 05:50:23.912   Installing the file.
+2026-10-29 05:50:23.938   Successfully installed the file.
+2026-10-29 05:50:23.938   -- File entry --
+2026-10-29 05:50:23.938   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Http.Features.dll
+2026-10-29 05:50:23.938   Time stamp of our file: 2026-10-05 05:58:56.000
+2026-10-29 05:50:23.938   Installing the file.
+2026-10-29 05:50:23.943   Successfully installed the file.
+2026-10-29 05:50:23.943   -- File entry --
+2026-10-29 05:50:23.943   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Http.Results.dll
+2026-10-29 05:50:23.943   Time stamp of our file: 2026-10-05 05:58:56.000
+2026-10-29 05:50:23.943   Installing the file.
+2026-10-29 05:50:23.954   Successfully installed the file.
+2026-10-29 05:50:23.954   -- File entry --
+2026-10-29 05:50:23.954   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.HttpLogging.dll
+2026-10-29 05:50:23.954   Time stamp of our file: 2026-10-05 05:58:56.000
+2026-10-29 05:50:23.954   Installing the file.
+2026-10-29 05:50:23.963   Successfully installed the file.
+2026-10-29 05:50:23.963   -- File entry --
+2026-10-29 05:50:23.963   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.HttpOverrides.dll
+2026-10-29 05:50:23.963   Time stamp of our file: 2026-10-05 05:58:56.000
+2026-10-29 05:50:23.963   Installing the file.
+2026-10-29 05:50:23.969   Successfully installed the file.
+2026-10-29 05:50:23.969   -- File entry --
+2026-10-29 05:50:23.969   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.HttpsPolicy.dll
+2026-10-29 05:50:23.969   Time stamp of our file: 2026-10-05 05:58:56.000
+2026-10-29 05:50:23.969   Installing the file.
+2026-10-29 05:50:23.973   Successfully installed the file.
+2026-10-29 05:50:23.973   -- File entry --
+2026-10-29 05:50:23.973   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Identity.dll
+2026-10-29 05:50:23.973   Time stamp of our file: 2026-10-05 05:58:58.000
+2026-10-29 05:50:23.973   Installing the file.
+2026-10-29 05:50:23.993   Successfully installed the file.
+2026-10-29 05:50:23.993   -- File entry --
+2026-10-29 05:50:23.993   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Localization.dll
+2026-10-29 05:50:23.993   Time stamp of our file: 2026-10-05 05:58:58.000
+2026-10-29 05:50:23.993   Installing the file.
+2026-10-29 05:50:23.997   Successfully installed the file.
+2026-10-29 05:50:23.997   -- File entry --
+2026-10-29 05:50:23.997   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Localization.Routing.dll
+2026-10-29 05:50:23.997   Time stamp of our file: 2026-10-05 05:58:58.000
+2026-10-29 05:50:23.997   Installing the file.
+2026-10-29 05:50:24.000   Successfully installed the file.
+2026-10-29 05:50:24.000   -- File entry --
+2026-10-29 05:50:24.000   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Metadata.dll
+2026-10-29 05:50:24.000   Time stamp of our file: 2026-10-05 05:58:58.000
+2026-10-29 05:50:24.001   Installing the file.
+2026-10-29 05:50:24.003   Successfully installed the file.
+2026-10-29 05:50:24.003   -- File entry --
+2026-10-29 05:50:24.003   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Mvc.Abstractions.dll
+2026-10-29 05:50:24.004   Time stamp of our file: 2026-10-05 05:58:58.000
+2026-10-29 05:50:24.004   Installing the file.
+2026-10-29 05:50:24.013   Successfully installed the file.
+2026-10-29 05:50:24.014   -- File entry --
+2026-10-29 05:50:24.014   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Mvc.ApiExplorer.dll
+2026-10-29 05:50:24.014   Time stamp of our file: 2026-10-05 05:58:58.000
+2026-10-29 05:50:24.014   Installing the file.
+2026-10-29 05:50:24.020   Successfully installed the file.
+2026-10-29 05:50:24.020   -- File entry --
+2026-10-29 05:50:24.020   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Mvc.Core.dll
+2026-10-29 05:50:24.020   Time stamp of our file: 2026-10-05 05:59:00.000
+2026-10-29 05:50:24.020   Installing the file.
+2026-10-29 05:50:24.083   Successfully installed the file.
+2026-10-29 05:50:24.083   -- File entry --
+2026-10-29 05:50:24.083   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Mvc.Cors.dll
+2026-10-29 05:50:24.083   Time stamp of our file: 2026-10-05 05:59:00.000
+2026-10-29 05:50:24.083   Installing the file.
+2026-10-29 05:50:24.087   Successfully installed the file.
+2026-10-29 05:50:24.087   -- File entry --
+2026-10-29 05:50:24.087   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+2026-10-29 05:50:24.088   Time stamp of our file: 2026-10-05 05:59:00.000
+2026-10-29 05:50:24.088   Installing the file.
+2026-10-29 05:50:24.092   Successfully installed the file.
+2026-10-29 05:50:24.093   -- File entry --
+2026-10-29 05:50:24.093   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Mvc.dll
+2026-10-29 05:50:24.093   Time stamp of our file: 2026-10-05 05:59:00.000
+2026-10-29 05:50:24.093   Installing the file.
+2026-10-29 05:50:24.096   Successfully installed the file.
+2026-10-29 05:50:24.096   -- File entry --
+2026-10-29 05:50:24.096   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+2026-10-29 05:50:24.096   Time stamp of our file: 2026-10-05 05:59:00.000
+2026-10-29 05:50:24.096   Installing the file.
+2026-10-29 05:50:24.098   Successfully installed the file.
+2026-10-29 05:50:24.098   -- File entry --
+2026-10-29 05:50:24.098   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Mvc.Formatters.Xml.dll
+2026-10-29 05:50:24.098   Time stamp of our file: 2026-10-05 05:59:00.000
+2026-10-29 05:50:24.098   Installing the file.
+2026-10-29 05:50:24.105   Successfully installed the file.
+2026-10-29 05:50:24.105   -- File entry --
+2026-10-29 05:50:24.105   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Mvc.Localization.dll
+2026-10-29 05:50:24.105   Time stamp of our file: 2026-10-05 05:59:00.000
+2026-10-29 05:50:24.105   Installing the file.
+2026-10-29 05:50:24.109   Successfully installed the file.
+2026-10-29 05:50:24.109   -- File entry --
+2026-10-29 05:50:24.109   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Mvc.Razor.dll
+2026-10-29 05:50:24.110   Time stamp of our file: 2026-10-05 05:59:00.000
+2026-10-29 05:50:24.110   Installing the file.
+2026-10-29 05:50:24.119   Successfully installed the file.
+2026-10-29 05:50:24.119   -- File entry --
+2026-10-29 05:50:24.119   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Mvc.RazorPages.dll
+2026-10-29 05:50:24.121   Time stamp of our file: 2026-10-05 05:59:00.000
+2026-10-29 05:50:24.121   Installing the file.
+2026-10-29 05:50:24.136   Successfully installed the file.
+2026-10-29 05:50:24.136   -- File entry --
+2026-10-29 05:50:24.137   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Mvc.TagHelpers.dll
+2026-10-29 05:50:24.137   Time stamp of our file: 2026-10-05 05:59:02.000
+2026-10-29 05:50:24.137   Installing the file.
+2026-10-29 05:50:24.148   Successfully installed the file.
+2026-10-29 05:50:24.148   -- File entry --
+2026-10-29 05:50:24.148   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+2026-10-29 05:50:24.148   Time stamp of our file: 2026-10-05 05:59:02.000
+2026-10-29 05:50:24.148   Installing the file.
+2026-10-29 05:50:24.175   Successfully installed the file.
+2026-10-29 05:50:24.175   -- File entry --
+2026-10-29 05:50:24.175   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.OutputCaching.dll
+2026-10-29 05:50:24.175   Time stamp of our file: 2026-10-05 05:59:02.000
+2026-10-29 05:50:24.175   Installing the file.
+2026-10-29 05:50:24.188   Successfully installed the file.
+2026-10-29 05:50:24.188   -- File entry --
+2026-10-29 05:50:24.188   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.RateLimiting.dll
+2026-10-29 05:50:24.189   Time stamp of our file: 2026-10-05 05:59:02.000
+2026-10-29 05:50:24.189   Installing the file.
+2026-10-29 05:50:24.196   Successfully installed the file.
+2026-10-29 05:50:24.196   -- File entry --
+2026-10-29 05:50:24.196   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Razor.dll
+2026-10-29 05:50:24.197   Time stamp of our file: 2026-10-05 05:59:02.000
+2026-10-29 05:50:24.197   Installing the file.
+2026-10-29 05:50:24.200   Successfully installed the file.
+2026-10-29 05:50:24.200   -- File entry --
+2026-10-29 05:50:24.200   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Razor.Runtime.dll
+2026-10-29 05:50:24.200   Time stamp of our file: 2026-10-05 05:59:02.000
+2026-10-29 05:50:24.200   Installing the file.
+2026-10-29 05:50:24.205   Successfully installed the file.
+2026-10-29 05:50:24.205   -- File entry --
+2026-10-29 05:50:24.205   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.RequestDecompression.dll
+2026-10-29 05:50:24.205   Time stamp of our file: 2026-10-05 05:59:02.000
+2026-10-29 05:50:24.205   Installing the file.
+2026-10-29 05:50:24.209   Successfully installed the file.
+2026-10-29 05:50:24.209   -- File entry --
+2026-10-29 05:50:24.209   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+2026-10-29 05:50:24.209   Time stamp of our file: 2026-10-05 05:59:04.000
+2026-10-29 05:50:24.209   Installing the file.
+2026-10-29 05:50:24.212   Successfully installed the file.
+2026-10-29 05:50:24.212   -- File entry --
+2026-10-29 05:50:24.212   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.ResponseCaching.dll
+2026-10-29 05:50:24.212   Time stamp of our file: 2026-10-05 05:59:04.000
+2026-10-29 05:50:24.212   Installing the file.
+2026-10-29 05:50:24.220   Successfully installed the file.
+2026-10-29 05:50:24.220   -- File entry --
+2026-10-29 05:50:24.220   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.ResponseCompression.dll
+2026-10-29 05:50:24.220   Time stamp of our file: 2026-10-05 05:59:04.000
+2026-10-29 05:50:24.220   Installing the file.
+2026-10-29 05:50:24.225   Successfully installed the file.
+2026-10-29 05:50:24.225   -- File entry --
+2026-10-29 05:50:24.225   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Rewrite.dll
+2026-10-29 05:50:24.225   Time stamp of our file: 2026-10-05 05:59:04.000
+2026-10-29 05:50:24.225   Installing the file.
+2026-10-29 05:50:24.235   Successfully installed the file.
+2026-10-29 05:50:24.235   -- File entry --
+2026-10-29 05:50:24.235   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Routing.Abstractions.dll
+2026-10-29 05:50:24.236   Time stamp of our file: 2026-10-05 05:59:04.000
+2026-10-29 05:50:24.236   Installing the file.
+2026-10-29 05:50:24.240   Successfully installed the file.
+2026-10-29 05:50:24.240   -- File entry --
+2026-10-29 05:50:24.240   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Routing.dll
+2026-10-29 05:50:24.240   Time stamp of our file: 2026-10-05 05:59:04.000
+2026-10-29 05:50:24.240   Installing the file.
+2026-10-29 05:50:24.272   Successfully installed the file.
+2026-10-29 05:50:24.272   -- File entry --
+2026-10-29 05:50:24.272   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Server.HttpSys.dll
+2026-10-29 05:50:24.272   Time stamp of our file: 2026-10-05 05:59:04.000
+2026-10-29 05:50:24.272   Installing the file.
+2026-10-29 05:50:24.300   Successfully installed the file.
+2026-10-29 05:50:24.300   -- File entry --
+2026-10-29 05:50:24.300   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Server.IIS.dll
+2026-10-29 05:50:24.300   Time stamp of our file: 2026-10-05 05:59:06.000
+2026-10-29 05:50:24.300   Installing the file.
+2026-10-29 05:50:24.323   Successfully installed the file.
+2026-10-29 05:50:24.323   -- File entry --
+2026-10-29 05:50:24.323   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Server.IISIntegration.dll
+2026-10-29 05:50:24.324   Time stamp of our file: 2026-10-05 05:59:06.000
+2026-10-29 05:50:24.324   Installing the file.
+2026-10-29 05:50:24.327   Successfully installed the file.
+2026-10-29 05:50:24.327   -- File entry --
+2026-10-29 05:50:24.327   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Server.Kestrel.Core.dll
+2026-10-29 05:50:24.327   Time stamp of our file: 2026-10-05 05:59:06.000
+2026-10-29 05:50:24.327   Installing the file.
+2026-10-29 05:50:24.406   Successfully installed the file.
+2026-10-29 05:50:24.406   -- File entry --
+2026-10-29 05:50:24.406   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Server.Kestrel.dll
+2026-10-29 05:50:24.406   Time stamp of our file: 2026-10-05 05:59:06.000
+2026-10-29 05:50:24.406   Installing the file.
+2026-10-29 05:50:24.410   Successfully installed the file.
+2026-10-29 05:50:24.410   -- File entry --
+2026-10-29 05:50:24.410   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Server.Kestrel.Transport.NamedPipes.dll
+2026-10-29 05:50:24.410   Time stamp of our file: 2026-10-05 05:59:06.000
+2026-10-29 05:50:24.410   Installing the file.
+2026-10-29 05:50:24.417   Successfully installed the file.
+2026-10-29 05:50:24.417   -- File entry --
+2026-10-29 05:50:24.417   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Server.Kestrel.Transport.Quic.dll
+2026-10-29 05:50:24.417   Time stamp of our file: 2026-10-05 05:59:08.000
+2026-10-29 05:50:24.417   Installing the file.
+2026-10-29 05:50:24.428   Successfully installed the file.
+2026-10-29 05:50:24.428   -- File entry --
+2026-10-29 05:50:24.428   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll
+2026-10-29 05:50:24.428   Time stamp of our file: 2026-10-05 05:59:08.000
+2026-10-29 05:50:24.428   Installing the file.
+2026-10-29 05:50:24.436   Successfully installed the file.
+2026-10-29 05:50:24.436   -- File entry --
+2026-10-29 05:50:24.436   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.Session.dll
+2026-10-29 05:50:24.436   Time stamp of our file: 2026-10-05 05:59:08.000
+2026-10-29 05:50:24.436   Installing the file.
+2026-10-29 05:50:24.442   Successfully installed the file.
+2026-10-29 05:50:24.442   -- File entry --
+2026-10-29 05:50:24.442   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.SignalR.Common.dll
+2026-10-29 05:50:24.442   Time stamp of our file: 2026-10-05 05:59:08.000
+2026-10-29 05:50:24.442   Installing the file.
+2026-10-29 05:50:24.448   Successfully installed the file.
+2026-10-29 05:50:24.448   -- File entry --
+2026-10-29 05:50:24.448   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.SignalR.Core.dll
+2026-10-29 05:50:24.448   Time stamp of our file: 2026-10-05 05:59:08.000
+2026-10-29 05:50:24.448   Installing the file.
+2026-10-29 05:50:24.468   Successfully installed the file.
+2026-10-29 05:50:24.468   -- File entry --
+2026-10-29 05:50:24.468   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.SignalR.dll
+2026-10-29 05:50:24.468   Time stamp of our file: 2026-10-05 05:59:08.000
+2026-10-29 05:50:24.468   Installing the file.
+2026-10-29 05:50:24.471   Successfully installed the file.
+2026-10-29 05:50:24.471   -- File entry --
+2026-10-29 05:50:24.471   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+2026-10-29 05:50:24.472   Time stamp of our file: 2026-10-05 05:59:08.000
+2026-10-29 05:50:24.472   Installing the file.
+2026-10-29 05:50:24.476   Successfully installed the file.
+2026-10-29 05:50:24.476   -- File entry --
+2026-10-29 05:50:24.476   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.StaticFiles.dll
+2026-10-29 05:50:24.476   Time stamp of our file: 2026-10-05 05:59:08.000
+2026-10-29 05:50:24.476   Installing the file.
+2026-10-29 05:50:24.484   Successfully installed the file.
+2026-10-29 05:50:24.484   -- File entry --
+2026-10-29 05:50:24.484   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.WebSockets.dll
+2026-10-29 05:50:24.484   Time stamp of our file: 2026-10-05 05:59:10.000
+2026-10-29 05:50:24.484   Installing the file.
+2026-10-29 05:50:24.490   Successfully installed the file.
+2026-10-29 05:50:24.490   -- File entry --
+2026-10-29 05:50:24.490   Dest filename: C:\Program Files\Monitor\Microsoft.AspNetCore.WebUtilities.dll
+2026-10-29 05:50:24.490   Time stamp of our file: 2026-10-05 05:59:10.000
+2026-10-29 05:50:24.490   Installing the file.
+2026-10-29 05:50:24.500   Successfully installed the file.
+2026-10-29 05:50:24.500   -- File entry --
+2026-10-29 05:50:24.500   Dest filename: C:\Program Files\Monitor\Microsoft.CSharp.dll
+2026-10-29 05:50:24.501   Time stamp of our file: 2026-10-04 17:20:26.000
+2026-10-29 05:50:24.501   Installing the file.
+2026-10-29 05:50:24.544   Successfully installed the file.
+2026-10-29 05:50:24.544   -- File entry --
+2026-10-29 05:50:24.544   Dest filename: C:\Program Files\Monitor\Microsoft.Data.Sqlite.dll
+2026-10-29 05:50:24.545   Time stamp of our file: 2026-04-30 03:23:08.000
+2026-10-29 05:50:24.545   Installing the file.
+2026-10-29 05:50:24.555   Successfully installed the file.
+2026-10-29 05:50:24.555   -- File entry --
+2026-10-29 05:50:24.555   Dest filename: C:\Program Files\Monitor\Microsoft.DiaSymReader.Native.amd64.dll
+2026-10-29 05:50:24.555   Time stamp of our file: 2026-08-05 10:09:02.000
+2026-10-29 05:50:24.555   Installing the file.
+2026-10-29 05:50:24.638   Successfully installed the file.
+2026-10-29 05:50:24.640   -- File entry --
+2026-10-29 05:50:24.640   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Caching.Abstractions.dll
+2026-10-29 05:50:24.640   Time stamp of our file: 2026-10-05 05:58:36.000
+2026-10-29 05:50:24.640   Installing the file.
+2026-10-29 05:50:24.643   Successfully installed the file.
+2026-10-29 05:50:24.643   -- File entry --
+2026-10-29 05:50:24.643   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Caching.Memory.dll
+2026-10-29 05:50:24.643   Time stamp of our file: 2026-10-05 05:58:36.000
+2026-10-29 05:50:24.643   Installing the file.
+2026-10-29 05:50:24.649   Successfully installed the file.
+2026-10-29 05:50:24.649   -- File entry --
+2026-10-29 05:50:24.649   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Configuration.Abstractions.dll
+2026-10-29 05:50:24.649   Time stamp of our file: 2026-10-05 05:58:38.000
+2026-10-29 05:50:24.649   Installing the file.
+2026-10-29 05:50:24.653   Successfully installed the file.
+2026-10-29 05:50:24.653   -- File entry --
+2026-10-29 05:50:24.653   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Configuration.Binder.dll
+2026-10-29 05:50:24.653   Time stamp of our file: 2026-10-05 05:58:38.000
+2026-10-29 05:50:24.653   Installing the file.
+2026-10-29 05:50:24.658   Successfully installed the file.
+2026-10-29 05:50:24.658   -- File entry --
+2026-10-29 05:50:24.658   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Configuration.CommandLine.dll
+2026-10-29 05:50:24.658   Time stamp of our file: 2026-10-05 05:58:38.000
+2026-10-29 05:50:24.658   Installing the file.
+2026-10-29 05:50:24.663   Successfully installed the file.
+2026-10-29 05:50:24.663   -- File entry --
+2026-10-29 05:50:24.663   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Configuration.dll
+2026-10-29 05:50:24.663   Time stamp of our file: 2026-10-05 05:58:36.000
+2026-10-29 05:50:24.663   Installing the file.
+2026-10-29 05:50:24.668   Successfully installed the file.
+2026-10-29 05:50:24.668   -- File entry --
+2026-10-29 05:50:24.668   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+2026-10-29 05:50:24.668   Time stamp of our file: 2026-10-05 05:58:38.000
+2026-10-29 05:50:24.668   Installing the file.
+2026-10-29 05:50:24.671   Successfully installed the file.
+2026-10-29 05:50:24.671   -- File entry --
+2026-10-29 05:50:24.671   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Configuration.FileExtensions.dll
+2026-10-29 05:50:24.671   Time stamp of our file: 2026-10-05 05:58:38.000
+2026-10-29 05:50:24.671   Installing the file.
+2026-10-29 05:50:24.675   Successfully installed the file.
+2026-10-29 05:50:24.675   -- File entry --
+2026-10-29 05:50:24.675   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Configuration.Ini.dll
+2026-10-29 05:50:24.675   Time stamp of our file: 2026-10-05 05:58:38.000
+2026-10-29 05:50:24.675   Installing the file.
+2026-10-29 05:50:24.680   Successfully installed the file.
+2026-10-29 05:50:24.680   -- File entry --
+2026-10-29 05:50:24.680   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Configuration.Json.dll
+2026-10-29 05:50:24.680   Time stamp of our file: 2026-10-05 05:58:38.000
+2026-10-29 05:50:24.680   Installing the file.
+2026-10-29 05:50:24.684   Successfully installed the file.
+2026-10-29 05:50:24.684   -- File entry --
+2026-10-29 05:50:24.684   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Configuration.KeyPerFile.dll
+2026-10-29 05:50:24.684   Time stamp of our file: 2026-10-05 05:59:10.000
+2026-10-29 05:50:24.684   Installing the file.
+2026-10-29 05:50:24.688   Successfully installed the file.
+2026-10-29 05:50:24.688   -- File entry --
+2026-10-29 05:50:24.688   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Configuration.UserSecrets.dll
+2026-10-29 05:50:24.688   Time stamp of our file: 2026-10-05 05:58:38.000
+2026-10-29 05:50:24.688   Installing the file.
+2026-10-29 05:50:24.692   Successfully installed the file.
+2026-10-29 05:50:24.692   -- File entry --
+2026-10-29 05:50:24.692   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Configuration.Xml.dll
+2026-10-29 05:50:24.693   Time stamp of our file: 2026-10-05 05:58:38.000
+2026-10-29 05:50:24.693   Installing the file.
+2026-10-29 05:50:24.698   Successfully installed the file.
+2026-10-29 05:50:24.698   -- File entry --
+2026-10-29 05:50:24.698   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+2026-10-29 05:50:24.699   Time stamp of our file: 2026-10-05 05:58:40.000
+2026-10-29 05:50:24.699   Installing the file.
+2026-10-29 05:50:24.707   Successfully installed the file.
+2026-10-29 05:50:24.707   -- File entry --
+2026-10-29 05:50:24.707   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.DependencyInjection.dll
+2026-10-29 05:50:24.707   Time stamp of our file: 2026-10-05 05:58:40.000
+2026-10-29 05:50:24.707   Installing the file.
+2026-10-29 05:50:24.717   Successfully installed the file.
+2026-10-29 05:50:24.717   -- File entry --
+2026-10-29 05:50:24.717   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.DependencyModel.dll
+2026-10-29 05:50:24.717   Time stamp of our file: 2024-09-16 19:09:50.000
+2026-10-29 05:50:24.717   Installing the file.
+2026-10-29 05:50:24.723   Successfully installed the file.
+2026-10-29 05:50:24.723   -- File entry --
+2026-10-29 05:50:24.723   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Diagnostics.Abstractions.dll
+2026-10-29 05:50:24.723   Time stamp of our file: 2026-10-05 05:58:40.000
+2026-10-29 05:50:24.723   Installing the file.
+2026-10-29 05:50:24.728   Successfully installed the file.
+2026-10-29 05:50:24.728   -- File entry --
+2026-10-29 05:50:24.728   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Diagnostics.dll
+2026-10-29 05:50:24.729   Time stamp of our file: 2026-10-05 05:58:40.000
+2026-10-29 05:50:24.729   Installing the file.
+2026-10-29 05:50:24.732   Successfully installed the file.
+2026-10-29 05:50:24.732   -- File entry --
+2026-10-29 05:50:24.732   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
+2026-10-29 05:50:24.732   Time stamp of our file: 2026-10-05 05:59:10.000
+2026-10-29 05:50:24.732   Installing the file.
+2026-10-29 05:50:24.736   Successfully installed the file.
+2026-10-29 05:50:24.736   -- File entry --
+2026-10-29 05:50:24.736   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Diagnostics.HealthChecks.dll
+2026-10-29 05:50:24.736   Time stamp of our file: 2026-10-05 05:59:10.000
+2026-10-29 05:50:24.736   Installing the file.
+2026-10-29 05:50:24.742   Successfully installed the file.
+2026-10-29 05:50:24.742   -- File entry --
+2026-10-29 05:50:24.742   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Features.dll
+2026-10-29 05:50:24.742   Time stamp of our file: 2026-10-05 05:59:10.000
+2026-10-29 05:50:24.742   Installing the file.
+2026-10-29 05:50:24.746   Successfully installed the file.
+2026-10-29 05:50:24.746   -- File entry --
+2026-10-29 05:50:24.746   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.FileProviders.Abstractions.dll
+2026-10-29 05:50:24.746   Time stamp of our file: 2026-10-05 05:58:40.000
+2026-10-29 05:50:24.746   Installing the file.
+2026-10-29 05:50:24.750   Successfully installed the file.
+2026-10-29 05:50:24.750   -- File entry --
+2026-10-29 05:50:24.750   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.FileProviders.Composite.dll
+2026-10-29 05:50:24.750   Time stamp of our file: 2026-10-05 05:58:40.000
+2026-10-29 05:50:24.750   Installing the file.
+2026-10-29 05:50:24.753   Successfully installed the file.
+2026-10-29 05:50:24.753   -- File entry --
+2026-10-29 05:50:24.753   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.FileProviders.Embedded.dll
+2026-10-29 05:50:24.753   Time stamp of our file: 2026-10-05 05:59:10.000
+2026-10-29 05:50:24.753   Installing the file.
+2026-10-29 05:50:24.758   Successfully installed the file.
+2026-10-29 05:50:24.759   -- File entry --
+2026-10-29 05:50:24.759   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.FileProviders.Physical.dll
+2026-10-29 05:50:24.759   Time stamp of our file: 2026-10-05 05:58:40.000
+2026-10-29 05:50:24.759   Installing the file.
+2026-10-29 05:50:24.764   Successfully installed the file.
+2026-10-29 05:50:24.764   -- File entry --
+2026-10-29 05:50:24.764   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.FileSystemGlobbing.dll
+2026-10-29 05:50:24.764   Time stamp of our file: 2026-10-05 05:58:40.000
+2026-10-29 05:50:24.764   Installing the file.
+2026-10-29 05:50:24.770   Successfully installed the file.
+2026-10-29 05:50:24.770   -- File entry --
+2026-10-29 05:50:24.770   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Hosting.Abstractions.dll
+2026-10-29 05:50:24.770   Time stamp of our file: 2026-10-05 05:58:42.000
+2026-10-29 05:50:24.770   Installing the file.
+2026-10-29 05:50:24.775   Successfully installed the file.
+2026-10-29 05:50:24.775   -- File entry --
+2026-10-29 05:50:24.775   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Hosting.dll
+2026-10-29 05:50:24.775   Time stamp of our file: 2026-10-05 05:58:42.000
+2026-10-29 05:50:24.775   Installing the file.
+2026-10-29 05:50:24.782   Successfully installed the file.
+2026-10-29 05:50:24.783   -- File entry --
+2026-10-29 05:50:24.783   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Http.dll
+2026-10-29 05:50:24.783   Time stamp of our file: 2026-10-05 05:58:42.000
+2026-10-29 05:50:24.783   Installing the file.
+2026-10-29 05:50:24.791   Successfully installed the file.
+2026-10-29 05:50:24.791   -- File entry --
+2026-10-29 05:50:24.791   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Identity.Core.dll
+2026-10-29 05:50:24.791   Time stamp of our file: 2026-10-05 05:59:10.000
+2026-10-29 05:50:24.791   Installing the file.
+2026-10-29 05:50:24.808   Successfully installed the file.
+2026-10-29 05:50:24.808   -- File entry --
+2026-10-29 05:50:24.808   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Identity.Stores.dll
+2026-10-29 05:50:24.810   Time stamp of our file: 2026-10-05 05:59:12.000
+2026-10-29 05:50:24.810   Installing the file.
+2026-10-29 05:50:24.815   Successfully installed the file.
+2026-10-29 05:50:24.815   -- File entry --
+2026-10-29 05:50:24.815   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Localization.Abstractions.dll
+2026-10-29 05:50:24.816   Time stamp of our file: 2026-10-05 05:59:12.000
+2026-10-29 05:50:24.816   Installing the file.
+2026-10-29 05:50:24.818   Successfully installed the file.
+2026-10-29 05:50:24.819   -- File entry --
+2026-10-29 05:50:24.819   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Localization.dll
+2026-10-29 05:50:24.819   Time stamp of our file: 2026-10-05 05:59:12.000
+2026-10-29 05:50:24.819   Installing the file.
+2026-10-29 05:50:24.823   Successfully installed the file.
+2026-10-29 05:50:24.823   -- File entry --
+2026-10-29 05:50:24.823   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Logging.Abstractions.dll
+2026-10-29 05:50:24.824   Time stamp of our file: 2026-10-05 05:58:42.000
+2026-10-29 05:50:24.824   Installing the file.
+2026-10-29 05:50:24.830   Successfully installed the file.
+2026-10-29 05:50:24.830   -- File entry --
+2026-10-29 05:50:24.830   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Logging.Configuration.dll
+2026-10-29 05:50:24.830   Time stamp of our file: 2026-10-05 05:58:42.000
+2026-10-29 05:50:24.830   Installing the file.
+2026-10-29 05:50:24.834   Successfully installed the file.
+2026-10-29 05:50:24.834   -- File entry --
+2026-10-29 05:50:24.834   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Logging.Console.dll
+2026-10-29 05:50:24.834   Time stamp of our file: 2026-10-05 05:58:42.000
+2026-10-29 05:50:24.834   Installing the file.
+2026-10-29 05:50:24.841   Successfully installed the file.
+2026-10-29 05:50:24.841   -- File entry --
+2026-10-29 05:50:24.841   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Logging.Debug.dll
+2026-10-29 05:50:24.841   Time stamp of our file: 2026-10-05 05:58:42.000
+2026-10-29 05:50:24.841   Installing the file.
+2026-10-29 05:50:24.845   Successfully installed the file.
+2026-10-29 05:50:24.845   -- File entry --
+2026-10-29 05:50:24.845   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Logging.dll
+2026-10-29 05:50:24.845   Time stamp of our file: 2026-10-05 05:58:42.000
+2026-10-29 05:50:24.845   Installing the file.
+2026-10-29 05:50:24.850   Successfully installed the file.
+2026-10-29 05:50:24.851   -- File entry --
+2026-10-29 05:50:24.851   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Logging.EventLog.dll
+2026-10-29 05:50:24.851   Time stamp of our file: 2026-10-05 05:58:42.000
+2026-10-29 05:50:24.851   Installing the file.
+2026-10-29 05:50:24.854   Successfully installed the file.
+2026-10-29 05:50:24.854   -- File entry --
+2026-10-29 05:50:24.854   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Logging.EventSource.dll
+2026-10-29 05:50:24.854   Time stamp of our file: 2026-10-05 05:58:44.000
+2026-10-29 05:50:24.854   Installing the file.
+2026-10-29 05:50:24.857   Successfully installed the file.
+2026-10-29 05:50:24.857   -- File entry --
+2026-10-29 05:50:24.857   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Logging.TraceSource.dll
+2026-10-29 05:50:24.857   Time stamp of our file: 2026-10-05 05:58:44.000
+2026-10-29 05:50:24.857   Installing the file.
+2026-10-29 05:50:24.862   Successfully installed the file.
+2026-10-29 05:50:24.862   -- File entry --
+2026-10-29 05:50:24.862   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.ObjectPool.dll
+2026-10-29 05:50:24.862   Time stamp of our file: 2026-10-05 05:59:12.000
+2026-10-29 05:50:24.862   Installing the file.
+2026-10-29 05:50:24.865   Successfully installed the file.
+2026-10-29 05:50:24.865   -- File entry --
+2026-10-29 05:50:24.865   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+2026-10-29 05:50:24.865   Time stamp of our file: 2026-10-05 05:58:44.000
+2026-10-29 05:50:24.865   Installing the file.
+2026-10-29 05:50:24.868   Successfully installed the file.
+2026-10-29 05:50:24.868   -- File entry --
+2026-10-29 05:50:24.868   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Options.DataAnnotations.dll
+2026-10-29 05:50:24.868   Time stamp of our file: 2026-10-05 05:58:44.000
+2026-10-29 05:50:24.868   Installing the file.
+2026-10-29 05:50:24.872   Successfully installed the file.
+2026-10-29 05:50:24.872   -- File entry --
+2026-10-29 05:50:24.872   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Options.dll
+2026-10-29 05:50:24.873   Time stamp of our file: 2026-10-05 05:58:44.000
+2026-10-29 05:50:24.873   Installing the file.
+2026-10-29 05:50:24.880   Successfully installed the file.
+2026-10-29 05:50:24.880   -- File entry --
+2026-10-29 05:50:24.880   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.Primitives.dll
+2026-10-29 05:50:24.880   Time stamp of our file: 2026-10-05 05:58:44.000
+2026-10-29 05:50:24.880   Installing the file.
+2026-10-29 05:50:24.885   Successfully installed the file.
+2026-10-29 05:50:24.885   -- File entry --
+2026-10-29 05:50:24.885   Dest filename: C:\Program Files\Monitor\Microsoft.Extensions.WebEncoders.dll
+2026-10-29 05:50:24.885   Time stamp of our file: 2026-10-05 05:59:12.000
+2026-10-29 05:50:24.885   Installing the file.
+2026-10-29 05:50:24.889   Successfully installed the file.
+2026-10-29 05:50:24.889   -- File entry --
+2026-10-29 05:50:24.889   Dest filename: C:\Program Files\Monitor\Microsoft.JSInterop.dll
+2026-10-29 05:50:24.890   Time stamp of our file: 2026-10-05 05:59:12.000
+2026-10-29 05:50:24.890   Installing the file.
+2026-10-29 05:50:24.897   Successfully installed the file.
+2026-10-29 05:50:24.897   -- File entry --
+2026-10-29 05:50:24.897   Dest filename: C:\Program Files\Monitor\Microsoft.Net.Http.Headers.dll
+2026-10-29 05:50:24.897   Time stamp of our file: 2026-10-05 05:59:12.000
+2026-10-29 05:50:24.897   Installing the file.
+2026-10-29 05:50:24.908   Successfully installed the file.
+2026-10-29 05:50:24.908   -- File entry --
+2026-10-29 05:50:24.908   Dest filename: C:\Program Files\Monitor\Microsoft.VisualBasic.Core.dll
+2026-10-29 05:50:24.908   Time stamp of our file: 2026-10-04 17:20:28.000
+2026-10-29 05:50:24.908   Installing the file.
+2026-10-29 05:50:24.955   Successfully installed the file.
+2026-10-29 05:50:24.955   -- File entry --
+2026-10-29 05:50:24.955   Dest filename: C:\Program Files\Monitor\Microsoft.VisualBasic.dll
+2026-10-29 05:50:24.955   Time stamp of our file: 2026-10-05 03:32:52.000
+2026-10-29 05:50:24.955   Installing the file.
+2026-10-29 05:50:24.958   Successfully installed the file.
+2026-10-29 05:50:24.959   -- File entry --
+2026-10-29 05:50:24.959   Dest filename: C:\Program Files\Monitor\Microsoft.VisualBasic.Forms.dll
+2026-10-29 05:50:24.959   Time stamp of our file: 2026-10-05 08:51:58.000
+2026-10-29 05:50:24.959   Installing the file.
+2026-10-29 05:50:24.970   Successfully installed the file.
+2026-10-29 05:50:24.970   -- File entry --
+2026-10-29 05:50:24.971   Dest filename: C:\Program Files\Monitor\Microsoft.Web.WebView2.Core.dll
+2026-10-29 05:50:24.971   Time stamp of our file: 2024-06-11 05:23:06.000
+2026-10-29 05:50:24.971   Installing the file.
+2026-10-29 05:50:24.986   Successfully installed the file.
+2026-10-29 05:50:24.986   -- File entry --
+2026-10-29 05:50:24.986   Dest filename: C:\Program Files\Monitor\Microsoft.Web.WebView2.WinForms.dll
+2026-10-29 05:50:24.986   Time stamp of our file: 2024-06-11 05:22:54.000
+2026-10-29 05:50:24.986   Installing the file.
+2026-10-29 05:50:24.991   Successfully installed the file.
+2026-10-29 05:50:24.991   -- File entry --
+2026-10-29 05:50:24.991   Dest filename: C:\Program Files\Monitor\Microsoft.Web.WebView2.Wpf.dll
+2026-10-29 05:50:24.991   Time stamp of our file: 2024-06-11 05:22:54.000
+2026-10-29 05:50:24.991   Installing the file.
+2026-10-29 05:50:24.995   Successfully installed the file.
+2026-10-29 05:50:24.995   -- File entry --
+2026-10-29 05:50:24.995   Dest filename: C:\Program Files\Monitor\Microsoft.Win32.Primitives.dll
+2026-10-29 05:50:24.995   Time stamp of our file: 2026-10-04 17:13:16.000
+2026-10-29 05:50:24.995   Installing the file.
+2026-10-29 05:50:24.998   Successfully installed the file.
+2026-10-29 05:50:24.998   -- File entry --
+2026-10-29 05:50:24.998   Dest filename: C:\Program Files\Monitor\Microsoft.Win32.Registry.AccessControl.dll
+2026-10-29 05:50:24.998   Time stamp of our file: 2026-10-05 08:51:54.000
+2026-10-29 05:50:24.998   Installing the file.
+2026-10-29 05:50:25.001   Successfully installed the file.
+2026-10-29 05:50:25.001   -- File entry --
+2026-10-29 05:50:25.001   Dest filename: C:\Program Files\Monitor\Microsoft.Win32.Registry.dll
+2026-10-29 05:50:25.002   Time stamp of our file: 2026-10-04 17:20:32.000
+2026-10-29 05:50:25.002   Installing the file.
+2026-10-29 05:50:25.008   Successfully installed the file.
+2026-10-29 05:50:25.008   -- File entry --
+2026-10-29 05:50:25.008   Dest filename: C:\Program Files\Monitor\Microsoft.Win32.SystemEvents.dll
+2026-10-29 05:50:25.008   Time stamp of our file: 2026-10-05 08:51:54.000
+2026-10-29 05:50:25.008   Installing the file.
+2026-10-29 05:50:25.014   Successfully installed the file.
+2026-10-29 05:50:25.014   -- File entry --
+2026-10-29 05:50:25.014   Dest filename: C:\Program Files\Monitor\Monitor.App.deps.json
+2026-10-29 05:50:25.014   Time stamp of our file: 2026-10-29 05:42:36.000
+2026-10-29 05:50:25.014   Installing the file.
+2026-10-29 05:50:25.016   Successfully installed the file.
+2026-10-29 05:50:25.016   -- File entry --
+2026-10-29 05:50:25.016   Dest filename: C:\Program Files\Monitor\Monitor.App.dll
+2026-10-29 05:50:25.016   Time stamp of our file: 2026-10-29 05:42:36.000
+2026-10-29 05:50:25.016   Installing the file.
+2026-10-29 05:50:25.032   Successfully installed the file.
+2026-10-29 05:50:25.032   -- File entry --
+2026-10-29 05:50:25.032   Dest filename: C:\Program Files\Monitor\Monitor.App.exe
+2026-10-29 05:50:25.033   Time stamp of our file: 2026-10-29 05:42:36.000
+2026-10-29 05:50:25.033   Installing the file.
+2026-10-29 05:50:25.041   Successfully installed the file.
+2026-10-29 05:50:25.041   -- File entry --
+2026-10-29 05:50:25.042   Dest filename: C:\Program Files\Monitor\Monitor.App.runtimeconfig.json
+2026-10-29 05:50:25.042   Time stamp of our file: 2026-10-29 05:42:36.000
+2026-10-29 05:50:25.042   Installing the file.
+2026-10-29 05:50:25.043   Successfully installed the file.
+2026-10-29 05:50:25.043   -- File entry --
+2026-10-29 05:50:25.043   Dest filename: C:\Program Files\Monitor\mscordaccore.dll
+2026-10-29 05:50:25.043   Time stamp of our file: 2026-10-04 17:02:06.000
+2026-10-29 05:50:25.043   Installing the file.
+2026-10-29 05:50:25.087   Successfully installed the file.
+2026-10-29 05:50:25.087   -- File entry --
+2026-10-29 05:50:25.087   Dest filename: C:\Program Files\Monitor\mscordaccore_amd64_amd64_8.0.3226.50405.dll
+2026-10-29 05:50:25.088   Time stamp of our file: 2026-10-04 17:02:06.000
+2026-10-29 05:50:25.088   Installing the file.
+2026-10-29 05:50:25.110   Successfully installed the file.
+2026-10-29 05:50:25.111   -- File entry --
+2026-10-29 05:50:25.111   Dest filename: C:\Program Files\Monitor\mscordbi.dll
+2026-10-29 05:50:25.111   Time stamp of our file: 2026-10-04 17:01:26.000
+2026-10-29 05:50:25.111   Installing the file.
+2026-10-29 05:50:25.150   Successfully installed the file.
+2026-10-29 05:50:25.150   -- File entry --
+2026-10-29 05:50:25.150   Dest filename: C:\Program Files\Monitor\mscorlib.dll
+2026-10-29 05:50:25.151   Time stamp of our file: 2026-10-04 17:15:04.000
+2026-10-29 05:50:25.151   Installing the file.
+2026-10-29 05:50:25.155   Successfully installed the file.
+2026-10-29 05:50:25.155   -- File entry --
+2026-10-29 05:50:25.155   Dest filename: C:\Program Files\Monitor\mscorrc.dll
+2026-10-29 05:50:25.155   Time stamp of our file: 2026-10-04 16:58:36.000
+2026-10-29 05:50:25.155   Installing the file.
+2026-10-29 05:50:25.161   Successfully installed the file.
+2026-10-29 05:50:25.161   -- File entry --
+2026-10-29 05:50:25.161   Dest filename: C:\Program Files\Monitor\msquic.dll
+2026-10-29 05:50:25.161   Time stamp of our file: 2026-10-04 02:26:54.000
+2026-10-29 05:50:25.161   Installing the file.
+2026-10-29 05:50:25.181   Successfully installed the file.
+2026-10-29 05:50:25.182   -- File entry --
+2026-10-29 05:50:25.182   Dest filename: C:\Program Files\Monitor\netstandard.dll
+2026-10-29 05:50:25.182   Time stamp of our file: 2026-10-04 17:15:04.000
+2026-10-29 05:50:25.182   Installing the file.
+2026-10-29 05:50:25.187   Successfully installed the file.
+2026-10-29 05:50:25.187   -- File entry --
+2026-10-29 05:50:25.187   Dest filename: C:\Program Files\Monitor\PenImc_cor3.dll
+2026-10-29 05:50:25.187   Time stamp of our file: 2026-10-05 05:14:20.000
+2026-10-29 05:50:25.187   Installing the file.
+2026-10-29 05:50:25.195   Successfully installed the file.
+2026-10-29 05:50:25.195   -- File entry --
+2026-10-29 05:50:25.195   Dest filename: C:\Program Files\Monitor\PresentationCore.dll
+2026-10-29 05:50:25.195   Time stamp of our file: 2026-10-05 08:52:06.000
+2026-10-29 05:50:25.195   Installing the file.
+2026-10-29 05:50:25.436   Successfully installed the file.
+2026-10-29 05:50:25.436   -- File entry --
+2026-10-29 05:50:25.436   Dest filename: C:\Program Files\Monitor\PresentationFramework-SystemCore.dll
+2026-10-29 05:50:25.437   Time stamp of our file: 2026-10-05 08:52:06.000
+2026-10-29 05:50:25.437   Installing the file.
+2026-10-29 05:50:25.441   Successfully installed the file.
+2026-10-29 05:50:25.441   -- File entry --
+2026-10-29 05:50:25.441   Dest filename: C:\Program Files\Monitor\PresentationFramework-SystemData.dll
+2026-10-29 05:50:25.441   Time stamp of our file: 2026-10-05 08:52:06.000
+2026-10-29 05:50:25.441   Installing the file.
+2026-10-29 05:50:25.444   Successfully installed the file.
+2026-10-29 05:50:25.444   -- File entry --
+2026-10-29 05:50:25.444   Dest filename: C:\Program Files\Monitor\PresentationFramework-SystemDrawing.dll
+2026-10-29 05:50:25.444   Time stamp of our file: 2026-10-05 08:52:06.000
+2026-10-29 05:50:25.444   Installing the file.
+2026-10-29 05:50:25.448   Successfully installed the file.
+2026-10-29 05:50:25.448   -- File entry --
+2026-10-29 05:50:25.448   Dest filename: C:\Program Files\Monitor\PresentationFramework-SystemXml.dll
+2026-10-29 05:50:25.448   Time stamp of our file: 2026-10-05 08:52:06.000
+2026-10-29 05:50:25.448   Installing the file.
+2026-10-29 05:50:25.451   Successfully installed the file.
+2026-10-29 05:50:25.451   -- File entry --
+2026-10-29 05:50:25.451   Dest filename: C:\Program Files\Monitor\PresentationFramework-SystemXmlLinq.dll
+2026-10-29 05:50:25.451   Time stamp of our file: 2026-10-05 08:52:06.000
+2026-10-29 05:50:25.451   Installing the file.
+2026-10-29 05:50:25.455   Successfully installed the file.
+2026-10-29 05:50:25.455   -- File entry --
+2026-10-29 05:50:25.455   Dest filename: C:\Program Files\Monitor\PresentationFramework.Aero.dll
+2026-10-29 05:50:25.455   Time stamp of our file: 2026-10-05 08:52:08.000
+2026-10-29 05:50:25.455   Installing the file.
+2026-10-29 05:50:25.472   Successfully installed the file.
+2026-10-29 05:50:25.472   -- File entry --
+2026-10-29 05:50:25.472   Dest filename: C:\Program Files\Monitor\PresentationFramework.Aero2.dll
+2026-10-29 05:50:25.472   Time stamp of our file: 2026-10-05 08:52:08.000
+2026-10-29 05:50:25.472   Installing the file.
+2026-10-29 05:50:25.484   Successfully installed the file.
+2026-10-29 05:50:25.484   -- File entry --
+2026-10-29 05:50:25.484   Dest filename: C:\Program Files\Monitor\PresentationFramework.AeroLite.dll
+2026-10-29 05:50:25.485   Time stamp of our file: 2026-10-05 08:52:08.000
+2026-10-29 05:50:25.485   Installing the file.
+2026-10-29 05:50:25.493   Successfully installed the file.
+2026-10-29 05:50:25.493   -- File entry --
+2026-10-29 05:50:25.493   Dest filename: C:\Program Files\Monitor\PresentationFramework.Classic.dll
+2026-10-29 05:50:25.493   Time stamp of our file: 2026-10-05 08:52:08.000
+2026-10-29 05:50:25.493   Installing the file.
+2026-10-29 05:50:25.502   Successfully installed the file.
+2026-10-29 05:50:25.502   -- File entry --
+2026-10-29 05:50:25.502   Dest filename: C:\Program Files\Monitor\PresentationFramework.dll
+2026-10-29 05:50:25.502   Time stamp of our file: 2026-10-05 08:52:14.000
+2026-10-29 05:50:25.502   Installing the file.
+2026-10-29 05:50:25.975   Successfully installed the file.
+2026-10-29 05:50:25.975   -- File entry --
+2026-10-29 05:50:25.975   Dest filename: C:\Program Files\Monitor\PresentationFramework.Luna.dll
+2026-10-29 05:50:25.975   Time stamp of our file: 2026-10-05 08:52:08.000
+2026-10-29 05:50:25.975   Installing the file.
+2026-10-29 05:50:25.997   Successfully installed the file.
+2026-10-29 05:50:25.997   -- File entry --
+2026-10-29 05:50:25.997   Dest filename: C:\Program Files\Monitor\PresentationFramework.Royale.dll
+2026-10-29 05:50:25.997   Time stamp of our file: 2026-10-05 08:52:08.000
+2026-10-29 05:50:25.997   Installing the file.
+2026-10-29 05:50:26.006   Successfully installed the file.
+2026-10-29 05:50:26.006   -- File entry --
+2026-10-29 05:50:26.006   Dest filename: C:\Program Files\Monitor\PresentationNative_cor3.dll
+2026-10-29 05:50:26.007   Time stamp of our file: 2026-09-02 09:32:42.000
+2026-10-29 05:50:26.007   Installing the file.
+2026-10-29 05:50:26.054   Successfully installed the file.
+2026-10-29 05:50:26.054   -- File entry --
+2026-10-29 05:50:26.054   Dest filename: C:\Program Files\Monitor\PresentationUI.dll
+2026-10-29 05:50:26.055   Time stamp of our file: 2026-10-05 08:52:14.000
+2026-10-29 05:50:26.055   Installing the file.
+2026-10-29 05:50:26.099   Successfully installed the file.
+2026-10-29 05:50:26.099   -- File entry --
+2026-10-29 05:50:26.099   Dest filename: C:\Program Files\Monitor\ReachFramework.dll
+2026-10-29 05:50:26.099   Time stamp of our file: 2026-10-05 08:52:16.000
+2026-10-29 05:50:26.099   Installing the file.
+2026-10-29 05:50:26.154   Successfully installed the file.
+2026-10-29 05:50:26.154   -- File entry --
+2026-10-29 05:50:26.154   Dest filename: C:\Program Files\Monitor\Serilog.AspNetCore.dll
+2026-10-29 05:50:26.154   Time stamp of our file: 2024-10-11 01:58:26.000
+2026-10-29 05:50:26.154   Installing the file.
+2026-10-29 05:50:26.157   Successfully installed the file.
+2026-10-29 05:50:26.157   -- File entry --
+2026-10-29 05:50:26.157   Dest filename: C:\Program Files\Monitor\Serilog.dll
+2026-10-29 05:50:26.157   Time stamp of our file: 2023-11-10 08:41:54.000
+2026-10-29 05:50:26.157   Installing the file.
+2026-10-29 05:50:26.165   Successfully installed the file.
+2026-10-29 05:50:26.165   -- File entry --
+2026-10-29 05:50:26.165   Dest filename: C:\Program Files\Monitor\Serilog.Extensions.Hosting.dll
+2026-10-29 05:50:26.165   Time stamp of our file: 2023-11-14 22:04:28.000
+2026-10-29 05:50:26.165   Installing the file.
+2026-10-29 05:50:26.168   Successfully installed the file.
+2026-10-29 05:50:26.168   -- File entry --
+2026-10-29 05:50:26.168   Dest filename: C:\Program Files\Monitor\Serilog.Extensions.Logging.dll
+2026-10-29 05:50:26.168   Time stamp of our file: 2023-11-14 18:47:46.000
+2026-10-29 05:50:26.168   Installing the file.
+2026-10-29 05:50:26.173   Successfully installed the file.
+2026-10-29 05:50:26.173   -- File entry --
+2026-10-29 05:50:26.173   Dest filename: C:\Program Files\Monitor\Serilog.Formatting.Compact.dll
+2026-10-29 05:50:26.174   Time stamp of our file: 2023-11-09 02:54:56.000
+2026-10-29 05:50:26.174   Installing the file.
+2026-10-29 05:50:26.176   Successfully installed the file.
+2026-10-29 05:50:26.176   -- File entry --
+2026-10-29 05:50:26.176   Dest filename: C:\Program Files\Monitor\Serilog.Settings.Configuration.dll
+2026-10-29 05:50:26.176   Time stamp of our file: 2024-10-09 20:05:30.000
+2026-10-29 05:50:26.176   Installing the file.
+2026-10-29 05:50:26.182   Successfully installed the file.
+2026-10-29 05:50:26.182   -- File entry --
+2026-10-29 05:50:26.182   Dest filename: C:\Program Files\Monitor\Serilog.Sinks.Console.dll
+2026-10-29 05:50:26.182   Time stamp of our file: 2023-11-09 02:50:30.000
+2026-10-29 05:50:26.182   Installing the file.
+2026-10-29 05:50:26.185   Successfully installed the file.
+2026-10-29 05:50:26.185   -- File entry --
+2026-10-29 05:50:26.185   Dest filename: C:\Program Files\Monitor\Serilog.Sinks.Debug.dll
+2026-10-29 05:50:26.186   Time stamp of our file: 2021-02-14 03:47:26.000
+2026-10-29 05:50:26.186   Installing the file.
+2026-10-29 05:50:26.188   Successfully installed the file.
+2026-10-29 05:50:26.188   -- File entry --
+2026-10-29 05:50:26.190   Dest filename: C:\Program Files\Monitor\Serilog.Sinks.File.dll
+2026-10-29 05:50:26.190   Time stamp of our file: 2021-06-25 04:00:48.000
+2026-10-29 05:50:26.190   Installing the file.
+2026-10-29 05:50:26.193   Successfully installed the file.
+2026-10-29 05:50:26.193   -- File entry --
+2026-10-29 05:50:26.193   Dest filename: C:\Program Files\Monitor\SQLitePCLRaw.batteries_v2.dll
+2026-10-29 05:50:26.193   Time stamp of our file: 2023-08-23 14:41:24.000
+2026-10-29 05:50:26.193   Installing the file.
+2026-10-29 05:50:26.196   Successfully installed the file.
+2026-10-29 05:50:26.196   -- File entry --
+2026-10-29 05:50:26.196   Dest filename: C:\Program Files\Monitor\SQLitePCLRaw.core.dll
+2026-10-29 05:50:26.196   Time stamp of our file: 2023-08-23 14:38:38.000
+2026-10-29 05:50:26.196   Installing the file.
+2026-10-29 05:50:26.200   Successfully installed the file.
+2026-10-29 05:50:26.200   -- File entry --
+2026-10-29 05:50:26.200   Dest filename: C:\Program Files\Monitor\SQLitePCLRaw.provider.e_sqlite3.dll
+2026-10-29 05:50:26.200   Time stamp of our file: 2023-08-23 14:38:52.000
+2026-10-29 05:50:26.200   Installing the file.
+2026-10-29 05:50:26.203   Successfully installed the file.
+2026-10-29 05:50:26.204   -- File entry --
+2026-10-29 05:50:26.204   Dest filename: C:\Program Files\Monitor\System.AppContext.dll
+2026-10-29 05:50:26.204   Time stamp of our file: 2026-10-04 17:14:14.000
+2026-10-29 05:50:26.204   Installing the file.
+2026-10-29 05:50:26.206   Successfully installed the file.
+2026-10-29 05:50:26.206   -- File entry --
+2026-10-29 05:50:26.206   Dest filename: C:\Program Files\Monitor\System.Buffers.dll
+2026-10-29 05:50:26.207   Time stamp of our file: 2026-10-04 17:14:20.000
+2026-10-29 05:50:26.207   Installing the file.
+2026-10-29 05:50:26.208   Successfully installed the file.
+2026-10-29 05:50:26.208   -- File entry --
+2026-10-29 05:50:26.208   Dest filename: C:\Program Files\Monitor\System.CodeDom.dll
+2026-10-29 05:50:26.210   Time stamp of our file: 2026-10-05 08:51:54.000
+2026-10-29 05:50:26.210   Installing the file.
+2026-10-29 05:50:26.230   Successfully installed the file.
+2026-10-29 05:50:26.230   -- File entry --
+2026-10-29 05:50:26.230   Dest filename: C:\Program Files\Monitor\System.Collections.Concurrent.dll
+2026-10-29 05:50:26.230   Time stamp of our file: 2026-10-04 17:20:34.000
+2026-10-29 05:50:26.230   Installing the file.
+2026-10-29 05:50:26.243   Successfully installed the file.
+2026-10-29 05:50:26.243   -- File entry --
+2026-10-29 05:50:26.243   Dest filename: C:\Program Files\Monitor\System.Collections.dll
+2026-10-29 05:50:26.243   Time stamp of our file: 2026-10-04 17:20:38.000
+2026-10-29 05:50:26.244   Installing the file.
+2026-10-29 05:50:26.255   Successfully installed the file.
+2026-10-29 05:50:26.256   -- File entry --
+2026-10-29 05:50:26.256   Dest filename: C:\Program Files\Monitor\System.Collections.Immutable.dll
+2026-10-29 05:50:26.256   Time stamp of our file: 2026-10-04 17:20:42.000
+2026-10-29 05:50:26.256   Installing the file.
+2026-10-29 05:50:26.291   Successfully installed the file.
+2026-10-29 05:50:26.291   -- File entry --
+2026-10-29 05:50:26.291   Dest filename: C:\Program Files\Monitor\System.Collections.NonGeneric.dll
+2026-10-29 05:50:26.292   Time stamp of our file: 2026-10-04 17:20:44.000
+2026-10-29 05:50:26.292   Installing the file.
+2026-10-29 05:50:26.298   Successfully installed the file.
+2026-10-29 05:50:26.298   -- File entry --
+2026-10-29 05:50:26.298   Dest filename: C:\Program Files\Monitor\System.Collections.Specialized.dll
+2026-10-29 05:50:26.299   Time stamp of our file: 2026-10-04 17:20:48.000
+2026-10-29 05:50:26.299   Installing the file.
+2026-10-29 05:50:26.304   Successfully installed the file.
+2026-10-29 05:50:26.304   -- File entry --
+2026-10-29 05:50:26.304   Dest filename: C:\Program Files\Monitor\System.ComponentModel.Annotations.dll
+2026-10-29 05:50:26.304   Time stamp of our file: 2026-10-04 17:20:50.000
+2026-10-29 05:50:26.304   Installing the file.
+2026-10-29 05:50:26.315   Successfully installed the file.
+2026-10-29 05:50:26.315   -- File entry --
+2026-10-29 05:50:26.315   Dest filename: C:\Program Files\Monitor\System.ComponentModel.DataAnnotations.dll
+2026-10-29 05:50:26.315   Time stamp of our file: 2026-10-04 17:14:14.000
+2026-10-29 05:50:26.315   Installing the file.
+2026-10-29 05:50:26.318   Successfully installed the file.
+2026-10-29 05:50:26.318   -- File entry --
+2026-10-29 05:50:26.318   Dest filename: C:\Program Files\Monitor\System.ComponentModel.dll
+2026-10-29 05:50:26.318   Time stamp of our file: 2026-10-04 17:20:52.000
+2026-10-29 05:50:26.318   Installing the file.
+2026-10-29 05:50:26.322   Successfully installed the file.
+2026-10-29 05:50:26.322   -- File entry --
+2026-10-29 05:50:26.322   Dest filename: C:\Program Files\Monitor\System.ComponentModel.EventBasedAsync.dll
+2026-10-29 05:50:26.322   Time stamp of our file: 2026-10-04 17:20:56.000
+2026-10-29 05:50:26.322   Installing the file.
+2026-10-29 05:50:26.326   Successfully installed the file.
+2026-10-29 05:50:26.326   -- File entry --
+2026-10-29 05:50:26.326   Dest filename: C:\Program Files\Monitor\System.ComponentModel.Primitives.dll
+2026-10-29 05:50:26.326   Time stamp of our file: 2026-10-04 17:20:58.000
+2026-10-29 05:50:26.326   Installing the file.
+2026-10-29 05:50:26.332   Successfully installed the file.
+2026-10-29 05:50:26.332   -- File entry --
+2026-10-29 05:50:26.332   Dest filename: C:\Program Files\Monitor\System.ComponentModel.TypeConverter.dll
+2026-10-29 05:50:26.332   Time stamp of our file: 2026-10-04 17:21:02.000
+2026-10-29 05:50:26.332   Installing the file.
+2026-10-29 05:50:26.362   Successfully installed the file.
+2026-10-29 05:50:26.362   -- File entry --
+2026-10-29 05:50:26.362   Dest filename: C:\Program Files\Monitor\System.Configuration.ConfigurationManager.dll
+2026-10-29 05:50:26.363   Time stamp of our file: 2026-10-05 08:51:54.000
+2026-10-29 05:50:26.363   Installing the file.
+2026-10-29 05:50:26.404   Successfully installed the file.
+2026-10-29 05:50:26.404   -- File entry --
+2026-10-29 05:50:26.404   Dest filename: C:\Program Files\Monitor\System.Configuration.dll
+2026-10-29 05:50:26.404   Time stamp of our file: 2026-10-04 17:14:16.000
+2026-10-29 05:50:26.404   Installing the file.
+2026-10-29 05:50:26.408   Successfully installed the file.
+2026-10-29 05:50:26.408   -- File entry --
+2026-10-29 05:50:26.408   Dest filename: C:\Program Files\Monitor\System.Console.dll
+2026-10-29 05:50:26.408   Time stamp of our file: 2026-10-04 17:21:04.000
+2026-10-29 05:50:26.408   Installing the file.
+2026-10-29 05:50:26.416   Successfully installed the file.
+2026-10-29 05:50:26.416   -- File entry --
+2026-10-29 05:50:26.416   Dest filename: C:\Program Files\Monitor\System.Core.dll
+2026-10-29 05:50:26.416   Time stamp of our file: 2026-10-04 17:14:48.000
+2026-10-29 05:50:26.416   Installing the file.
+2026-10-29 05:50:26.420   Successfully installed the file.
+2026-10-29 05:50:26.420   -- File entry --
+2026-10-29 05:50:26.420   Dest filename: C:\Program Files\Monitor\System.Data.Common.dll
+2026-10-29 05:50:26.420   Time stamp of our file: 2026-10-04 17:21:08.000
+2026-10-29 05:50:26.420   Installing the file.
+2026-10-29 05:50:26.523   Successfully installed the file.
+2026-10-29 05:50:26.523   -- File entry --
+2026-10-29 05:50:26.523   Dest filename: C:\Program Files\Monitor\System.Data.DataSetExtensions.dll
+2026-10-29 05:50:26.523   Time stamp of our file: 2026-10-04 17:14:46.000
+2026-10-29 05:50:26.523   Installing the file.
+2026-10-29 05:50:26.525   Successfully installed the file.
+2026-10-29 05:50:26.525   -- File entry --
+2026-10-29 05:50:26.525   Dest filename: C:\Program Files\Monitor\System.Data.dll
+2026-10-29 05:50:26.526   Time stamp of our file: 2026-10-04 17:14:54.000
+2026-10-29 05:50:26.526   Installing the file.
+2026-10-29 05:50:26.529   Successfully installed the file.
+2026-10-29 05:50:26.529   -- File entry --
+2026-10-29 05:50:26.529   Dest filename: C:\Program Files\Monitor\System.Design.dll
+2026-10-29 05:50:26.529   Time stamp of our file: 2026-10-05 03:32:52.000
+2026-10-29 05:50:26.529   Installing the file.
+2026-10-29 05:50:26.532   Successfully installed the file.
+2026-10-29 05:50:26.532   -- File entry --
+2026-10-29 05:50:26.532   Dest filename: C:\Program Files\Monitor\System.Diagnostics.Contracts.dll
+2026-10-29 05:50:26.532   Time stamp of our file: 2026-10-04 17:13:22.000
+2026-10-29 05:50:26.532   Installing the file.
+2026-10-29 05:50:26.534   Successfully installed the file.
+2026-10-29 05:50:26.534   -- File entry --
+2026-10-29 05:50:26.534   Dest filename: C:\Program Files\Monitor\System.Diagnostics.Debug.dll
+2026-10-29 05:50:26.534   Time stamp of our file: 2026-10-04 17:14:14.000
+2026-10-29 05:50:26.534   Installing the file.
+2026-10-29 05:50:26.537   Successfully installed the file.
+2026-10-29 05:50:26.537   -- File entry --
+2026-10-29 05:50:26.538   Dest filename: C:\Program Files\Monitor\System.Diagnostics.DiagnosticSource.dll
+2026-10-29 05:50:26.538   Time stamp of our file: 2026-10-04 17:21:12.000
+2026-10-29 05:50:26.538   Installing the file.
+2026-10-29 05:50:26.556   Successfully installed the file.
+2026-10-29 05:50:26.556   -- File entry --
+2026-10-29 05:50:26.556   Dest filename: C:\Program Files\Monitor\System.Diagnostics.EventLog.dll
+2026-10-29 05:50:26.556   Time stamp of our file: 2026-10-05 08:51:56.000
+2026-10-29 05:50:26.556   Installing the file.
+2026-10-29 05:50:26.573   Successfully installed the file.
+2026-10-29 05:50:26.573   -- File entry --
+2026-10-29 05:50:26.573   Dest filename: C:\Program Files\Monitor\System.Diagnostics.EventLog.Messages.dll
+2026-10-29 05:50:26.573   Time stamp of our file: 2026-10-04 16:58:14.000
+2026-10-29 05:50:26.573   Installing the file.
+2026-10-29 05:50:26.588   Successfully installed the file.
+2026-10-29 05:50:26.588   -- File entry --
+2026-10-29 05:50:26.588   Dest filename: C:\Program Files\Monitor\System.Diagnostics.FileVersionInfo.dll
+2026-10-29 05:50:26.588   Time stamp of our file: 2026-10-04 17:21:14.000
+2026-10-29 05:50:26.588   Installing the file.
+2026-10-29 05:50:26.592   Successfully installed the file.
+2026-10-29 05:50:26.592   -- File entry --
+2026-10-29 05:50:26.592   Dest filename: C:\Program Files\Monitor\System.Diagnostics.PerformanceCounter.dll
+2026-10-29 05:50:26.592   Time stamp of our file: 2026-10-05 08:51:56.000
+2026-10-29 05:50:26.592   Installing the file.
+2026-10-29 05:50:26.605   Successfully installed the file.
+2026-10-29 05:50:26.605   -- File entry --
+2026-10-29 05:50:26.605   Dest filename: C:\Program Files\Monitor\System.Diagnostics.Process.dll
+2026-10-29 05:50:26.605   Time stamp of our file: 2026-10-04 17:21:18.000
+2026-10-29 05:50:26.605   Installing the file.
+2026-10-29 05:50:26.619   Successfully installed the file.
+2026-10-29 05:50:26.619   -- File entry --
+2026-10-29 05:50:26.619   Dest filename: C:\Program Files\Monitor\System.Diagnostics.StackTrace.dll
+2026-10-29 05:50:26.619   Time stamp of our file: 2026-10-04 17:21:20.000
+2026-10-29 05:50:26.619   Installing the file.
+2026-10-29 05:50:26.623   Successfully installed the file.
+2026-10-29 05:50:26.623   -- File entry --
+2026-10-29 05:50:26.623   Dest filename: C:\Program Files\Monitor\System.Diagnostics.TextWriterTraceListener.dll
+2026-10-29 05:50:26.623   Time stamp of our file: 2026-10-04 17:21:24.000
+2026-10-29 05:50:26.623   Installing the file.
+2026-10-29 05:50:26.628   Successfully installed the file.
+2026-10-29 05:50:26.629   -- File entry --
+2026-10-29 05:50:26.629   Dest filename: C:\Program Files\Monitor\System.Diagnostics.Tools.dll
+2026-10-29 05:50:26.629   Time stamp of our file: 2026-10-04 17:14:12.000
+2026-10-29 05:50:26.629   Installing the file.
+2026-10-29 05:50:26.632   Successfully installed the file.
+2026-10-29 05:50:26.632   -- File entry --
+2026-10-29 05:50:26.632   Dest filename: C:\Program Files\Monitor\System.Diagnostics.TraceSource.dll
+2026-10-29 05:50:26.632   Time stamp of our file: 2026-10-04 17:21:26.000
+2026-10-29 05:50:26.632   Installing the file.
+2026-10-29 05:50:26.640   Successfully installed the file.
+2026-10-29 05:50:26.640   -- File entry --
+2026-10-29 05:50:26.640   Dest filename: C:\Program Files\Monitor\System.Diagnostics.Tracing.dll
+2026-10-29 05:50:26.640   Time stamp of our file: 2026-10-04 17:13:28.000
+2026-10-29 05:50:26.640   Installing the file.
+2026-10-29 05:50:26.643   Successfully installed the file.
+2026-10-29 05:50:26.643   -- File entry --
+2026-10-29 05:50:26.643   Dest filename: C:\Program Files\Monitor\System.DirectoryServices.dll
+2026-10-29 05:50:26.643   Time stamp of our file: 2026-10-05 08:51:56.000
+2026-10-29 05:50:26.643   Installing the file.
+2026-10-29 05:50:26.679   Successfully installed the file.
+2026-10-29 05:50:26.679   -- File entry --
+2026-10-29 05:50:26.679   Dest filename: C:\Program Files\Monitor\System.dll
+2026-10-29 05:50:26.680   Time stamp of our file: 2026-10-04 17:15:04.000
+2026-10-29 05:50:26.680   Installing the file.
+2026-10-29 05:50:26.683   Successfully installed the file.
+2026-10-29 05:50:26.683   -- File entry --
+2026-10-29 05:50:26.684   Dest filename: C:\Program Files\Monitor\System.Drawing.Common.dll
+2026-10-29 05:50:26.684   Time stamp of our file: 2026-10-05 08:51:58.000
+2026-10-29 05:50:26.684   Installing the file.
+2026-10-29 05:50:26.732   Successfully installed the file.
+2026-10-29 05:50:26.732   -- File entry --
+2026-10-29 05:50:26.733   Dest filename: C:\Program Files\Monitor\System.Drawing.Design.dll
+2026-10-29 05:50:26.733   Time stamp of our file: 2026-10-05 03:32:52.000
+2026-10-29 05:50:26.733   Installing the file.
+2026-10-29 05:50:26.735   Successfully installed the file.
+2026-10-29 05:50:26.735   -- File entry --
+2026-10-29 05:50:26.735   Dest filename: C:\Program Files\Monitor\System.Drawing.dll
+2026-10-29 05:50:26.735   Time stamp of our file: 2026-10-05 03:32:52.000
+2026-10-29 05:50:26.735   Installing the file.
+2026-10-29 05:50:26.739   Successfully installed the file.
+2026-10-29 05:50:26.739   -- File entry --
+2026-10-29 05:50:26.740   Dest filename: C:\Program Files\Monitor\System.Drawing.Primitives.dll
+2026-10-29 05:50:26.740   Time stamp of our file: 2026-10-04 17:21:30.000
+2026-10-29 05:50:26.740   Installing the file.
+2026-10-29 05:50:26.745   Successfully installed the file.
+2026-10-29 05:50:26.746   -- File entry --
+2026-10-29 05:50:26.746   Dest filename: C:\Program Files\Monitor\System.Dynamic.Runtime.dll
+2026-10-29 05:50:26.746   Time stamp of our file: 2026-10-04 17:14:14.000
+2026-10-29 05:50:26.746   Installing the file.
+2026-10-29 05:50:26.748   Successfully installed the file.
+2026-10-29 05:50:26.748   -- File entry --
+2026-10-29 05:50:26.748   Dest filename: C:\Program Files\Monitor\System.Formats.Asn1.dll
+2026-10-29 05:50:26.748   Time stamp of our file: 2026-10-04 17:21:32.000
+2026-10-29 05:50:26.748   Installing the file.
+2026-10-29 05:50:26.760   Successfully installed the file.
+2026-10-29 05:50:26.760   -- File entry --
+2026-10-29 05:50:26.760   Dest filename: C:\Program Files\Monitor\System.Formats.Tar.dll
+2026-10-29 05:50:26.760   Time stamp of our file: 2026-10-04 17:21:36.000
+2026-10-29 05:50:26.760   Installing the file.
+2026-10-29 05:50:26.772   Successfully installed the file.
+2026-10-29 05:50:26.773   -- File entry --
+2026-10-29 05:50:26.773   Dest filename: C:\Program Files\Monitor\System.Globalization.Calendars.dll
+2026-10-29 05:50:26.773   Time stamp of our file: 2026-10-04 17:14:14.000
+2026-10-29 05:50:26.773   Installing the file.
+2026-10-29 05:50:26.775   Successfully installed the file.
+2026-10-29 05:50:26.775   -- File entry --
+2026-10-29 05:50:26.775   Dest filename: C:\Program Files\Monitor\System.Globalization.dll
+2026-10-29 05:50:26.775   Time stamp of our file: 2026-10-04 17:14:16.000
+2026-10-29 05:50:26.775   Installing the file.
+2026-10-29 05:50:26.779   Successfully installed the file.
+2026-10-29 05:50:26.779   -- File entry --
+2026-10-29 05:50:26.780   Dest filename: C:\Program Files\Monitor\System.Globalization.Extensions.dll
+2026-10-29 05:50:26.780   Time stamp of our file: 2026-10-04 17:14:20.000
+2026-10-29 05:50:26.780   Installing the file.
+2026-10-29 05:50:26.783   Successfully installed the file.
+2026-10-29 05:50:26.783   -- File entry --
+2026-10-29 05:50:26.783   Dest filename: C:\Program Files\Monitor\System.IO.Compression.Brotli.dll
+2026-10-29 05:50:26.783   Time stamp of our file: 2026-10-04 17:21:38.000
+2026-10-29 05:50:26.783   Installing the file.
+2026-10-29 05:50:26.788   Successfully installed the file.
+2026-10-29 05:50:26.788   -- File entry --
+2026-10-29 05:50:26.788   Dest filename: C:\Program Files\Monitor\System.IO.Compression.dll
+2026-10-29 05:50:26.788   Time stamp of our file: 2026-10-04 17:21:42.000
+2026-10-29 05:50:26.788   Installing the file.
+2026-10-29 05:50:26.801   Successfully installed the file.
+2026-10-29 05:50:26.801   -- File entry --
+2026-10-29 05:50:26.801   Dest filename: C:\Program Files\Monitor\System.IO.Compression.FileSystem.dll
+2026-10-29 05:50:26.801   Time stamp of our file: 2026-10-04 17:14:14.000
+2026-10-29 05:50:26.801   Installing the file.
+2026-10-29 05:50:26.804   Successfully installed the file.
+2026-10-29 05:50:26.804   -- File entry --
+2026-10-29 05:50:26.804   Dest filename: C:\Program Files\Monitor\System.IO.Compression.Native.dll
+2026-10-29 05:50:26.804   Time stamp of our file: 2026-10-04 17:10:26.000
+2026-10-29 05:50:26.804   Installing the file.
+2026-10-29 05:50:26.834   Successfully installed the file.
+2026-10-29 05:50:26.834   -- File entry --
+2026-10-29 05:50:26.834   Dest filename: C:\Program Files\Monitor\System.IO.Compression.ZipFile.dll
+2026-10-29 05:50:26.835   Time stamp of our file: 2026-10-04 17:21:44.000
+2026-10-29 05:50:26.835   Installing the file.
+2026-10-29 05:50:26.838   Successfully installed the file.
+2026-10-29 05:50:26.838   -- File entry --
+2026-10-29 05:50:26.838   Dest filename: C:\Program Files\Monitor\System.IO.dll
+2026-10-29 05:50:26.838   Time stamp of our file: 2026-10-04 17:14:16.000
+2026-10-29 05:50:26.838   Installing the file.
+2026-10-29 05:50:26.842   Successfully installed the file.
+2026-10-29 05:50:26.842   -- File entry --
+2026-10-29 05:50:26.842   Dest filename: C:\Program Files\Monitor\System.IO.FileSystem.AccessControl.dll
+2026-10-29 05:50:26.842   Time stamp of our file: 2026-10-04 17:21:46.000
+2026-10-29 05:50:26.842   Installing the file.
+2026-10-29 05:50:26.848   Successfully installed the file.
+2026-10-29 05:50:26.849   -- File entry --
+2026-10-29 05:50:26.849   Dest filename: C:\Program Files\Monitor\System.IO.FileSystem.dll
+2026-10-29 05:50:26.849   Time stamp of our file: 2026-10-04 17:14:14.000
+2026-10-29 05:50:26.849   Installing the file.
+2026-10-29 05:50:26.851   Successfully installed the file.
+2026-10-29 05:50:26.851   -- File entry --
+2026-10-29 05:50:26.851   Dest filename: C:\Program Files\Monitor\System.IO.FileSystem.DriveInfo.dll
+2026-10-29 05:50:26.851   Time stamp of our file: 2026-10-04 17:21:50.000
+2026-10-29 05:50:26.851   Installing the file.
+2026-10-29 05:50:26.855   Successfully installed the file.
+2026-10-29 05:50:26.855   -- File entry --
+2026-10-29 05:50:26.855   Dest filename: C:\Program Files\Monitor\System.IO.FileSystem.Primitives.dll
+2026-10-29 05:50:26.855   Time stamp of our file: 2026-10-04 17:14:10.000
+2026-10-29 05:50:26.855   Installing the file.
+2026-10-29 05:50:26.858   Successfully installed the file.
+2026-10-29 05:50:26.858   -- File entry --
+2026-10-29 05:50:26.858   Dest filename: C:\Program Files\Monitor\System.IO.FileSystem.Watcher.dll
+2026-10-29 05:50:26.858   Time stamp of our file: 2026-10-04 17:21:52.000
+2026-10-29 05:50:26.858   Installing the file.
+2026-10-29 05:50:26.863   Successfully installed the file.
+2026-10-29 05:50:26.864   -- File entry --
+2026-10-29 05:50:26.864   Dest filename: C:\Program Files\Monitor\System.IO.IsolatedStorage.dll
+2026-10-29 05:50:26.864   Time stamp of our file: 2026-10-04 17:21:56.000
+2026-10-29 05:50:26.864   Installing the file.
+2026-10-29 05:50:26.868   Successfully installed the file.
+2026-10-29 05:50:26.868   -- File entry --
+2026-10-29 05:50:26.868   Dest filename: C:\Program Files\Monitor\System.IO.MemoryMappedFiles.dll
+2026-10-29 05:50:26.868   Time stamp of our file: 2026-10-04 17:21:58.000
+2026-10-29 05:50:26.868   Installing the file.
+2026-10-29 05:50:26.874   Successfully installed the file.
+2026-10-29 05:50:26.874   -- File entry --
+2026-10-29 05:50:26.874   Dest filename: C:\Program Files\Monitor\System.IO.Packaging.dll
+2026-10-29 05:50:26.875   Time stamp of our file: 2026-10-05 08:51:56.000
+2026-10-29 05:50:26.875   Installing the file.
+2026-10-29 05:50:26.886   Successfully installed the file.
+2026-10-29 05:50:26.886   -- File entry --
+2026-10-29 05:50:26.886   Dest filename: C:\Program Files\Monitor\System.IO.Pipelines.dll
+2026-10-29 05:50:26.886   Time stamp of our file: 2026-10-05 05:58:44.000
+2026-10-29 05:50:26.886   Installing the file.
+2026-10-29 05:50:26.897   Successfully installed the file.
+2026-10-29 05:50:26.897   -- File entry --
+2026-10-29 05:50:26.897   Dest filename: C:\Program Files\Monitor\System.IO.Pipes.AccessControl.dll
+2026-10-29 05:50:26.897   Time stamp of our file: 2026-10-04 17:11:32.000
+2026-10-29 05:50:26.897   Installing the file.
+2026-10-29 05:50:26.900   Successfully installed the file.
+2026-10-29 05:50:26.900   -- File entry --
+2026-10-29 05:50:26.900   Dest filename: C:\Program Files\Monitor\System.IO.Pipes.dll
+2026-10-29 05:50:26.900   Time stamp of our file: 2026-10-04 17:22:02.000
+2026-10-29 05:50:26.900   Installing the file.
+2026-10-29 05:50:26.907   Successfully installed the file.
+2026-10-29 05:50:26.909   -- File entry --
+2026-10-29 05:50:26.909   Dest filename: C:\Program Files\Monitor\System.IO.UnmanagedMemoryStream.dll
+2026-10-29 05:50:26.909   Time stamp of our file: 2026-10-04 17:14:34.000
+2026-10-29 05:50:26.909   Installing the file.
+2026-10-29 05:50:26.911   Successfully installed the file.
+2026-10-29 05:50:26.911   -- File entry --
+2026-10-29 05:50:26.911   Dest filename: C:\Program Files\Monitor\System.Linq.dll
+2026-10-29 05:50:26.912   Time stamp of our file: 2026-10-04 17:22:04.000
+2026-10-29 05:50:26.912   Installing the file.
+2026-10-29 05:50:26.933   Successfully installed the file.
+2026-10-29 05:50:26.933   -- File entry --
+2026-10-29 05:50:26.933   Dest filename: C:\Program Files\Monitor\System.Linq.Expressions.dll
+2026-10-29 05:50:26.934   Time stamp of our file: 2026-10-04 17:22:10.000
+2026-10-29 05:50:26.934   Installing the file.
+2026-10-29 05:50:27.034   Successfully installed the file.
+2026-10-29 05:50:27.034   -- File entry --
+2026-10-29 05:50:27.034   Dest filename: C:\Program Files\Monitor\System.Linq.Parallel.dll
+2026-10-29 05:50:27.034   Time stamp of our file: 2026-10-04 17:22:14.000
+2026-10-29 05:50:27.034   Installing the file.
+2026-10-29 05:50:27.064   Successfully installed the file.
+2026-10-29 05:50:27.064   -- File entry --
+2026-10-29 05:50:27.065   Dest filename: C:\Program Files\Monitor\System.Linq.Queryable.dll
+2026-10-29 05:50:27.065   Time stamp of our file: 2026-10-04 17:22:16.000
+2026-10-29 05:50:27.065   Installing the file.
+2026-10-29 05:50:27.073   Successfully installed the file.
+2026-10-29 05:50:27.073   -- File entry --
+2026-10-29 05:50:27.073   Dest filename: C:\Program Files\Monitor\System.Memory.dll
+2026-10-29 05:50:27.073   Time stamp of our file: 2026-10-04 17:22:20.000
+2026-10-29 05:50:27.073   Installing the file.
+2026-10-29 05:50:27.081   Successfully installed the file.
+2026-10-29 05:50:27.082   -- File entry --
+2026-10-29 05:50:27.082   Dest filename: C:\Program Files\Monitor\System.Net.dll
+2026-10-29 05:50:27.082   Time stamp of our file: 2026-10-04 17:14:24.000
+2026-10-29 05:50:27.082   Installing the file.
+2026-10-29 05:50:27.084   Successfully installed the file.
+2026-10-29 05:50:27.084   -- File entry --
+2026-10-29 05:50:27.084   Dest filename: C:\Program Files\Monitor\System.Net.Http.dll
+2026-10-29 05:50:27.085   Time stamp of our file: 2026-10-04 17:22:24.000
+2026-10-29 05:50:27.085   Installing the file.
+2026-10-29 05:50:27.148   Successfully installed the file.
+2026-10-29 05:50:27.148   -- File entry --
+2026-10-29 05:50:27.148   Dest filename: C:\Program Files\Monitor\System.Net.Http.Json.dll
+2026-10-29 05:50:27.148   Time stamp of our file: 2026-10-04 17:22:26.000
+2026-10-29 05:50:27.148   Installing the file.
+2026-10-29 05:50:27.156   Successfully installed the file.
+2026-10-29 05:50:27.156   -- File entry --
+2026-10-29 05:50:27.156   Dest filename: C:\Program Files\Monitor\System.Net.HttpListener.dll
+2026-10-29 05:50:27.156   Time stamp of our file: 2026-10-04 17:22:30.000
+2026-10-29 05:50:27.156   Installing the file.
+2026-10-29 05:50:27.177   Successfully installed the file.
+2026-10-29 05:50:27.177   -- File entry --
+2026-10-29 05:50:27.177   Dest filename: C:\Program Files\Monitor\System.Net.Mail.dll
+2026-10-29 05:50:27.177   Time stamp of our file: 2026-10-04 17:22:34.000
+2026-10-29 05:50:27.177   Installing the file.
+2026-10-29 05:50:27.195   Successfully installed the file.
+2026-10-29 05:50:27.195   -- File entry --
+2026-10-29 05:50:27.195   Dest filename: C:\Program Files\Monitor\System.Net.NameResolution.dll
+2026-10-29 05:50:27.195   Time stamp of our file: 2026-10-04 17:22:36.000
+2026-10-29 05:50:27.195   Installing the file.
+2026-10-29 05:50:27.201   Successfully installed the file.
+2026-10-29 05:50:27.201   -- File entry --
+2026-10-29 05:50:27.201   Dest filename: C:\Program Files\Monitor\System.Net.NetworkInformation.dll
+2026-10-29 05:50:27.201   Time stamp of our file: 2026-10-04 17:22:40.000
+2026-10-29 05:50:27.201   Installing the file.
+2026-10-29 05:50:27.208   Successfully installed the file.
+2026-10-29 05:50:27.208   -- File entry --
+2026-10-29 05:50:27.208   Dest filename: C:\Program Files\Monitor\System.Net.Ping.dll
+2026-10-29 05:50:27.208   Time stamp of our file: 2026-10-04 17:22:42.000
+2026-10-29 05:50:27.208   Installing the file.
+2026-10-29 05:50:27.213   Successfully installed the file.
+2026-10-29 05:50:27.213   -- File entry --
+2026-10-29 05:50:27.213   Dest filename: C:\Program Files\Monitor\System.Net.Primitives.dll
+2026-10-29 05:50:27.214   Time stamp of our file: 2026-10-04 17:22:46.000
+2026-10-29 05:50:27.214   Installing the file.
+2026-10-29 05:50:27.224   Successfully installed the file.
+2026-10-29 05:50:27.224   -- File entry --
+2026-10-29 05:50:27.224   Dest filename: C:\Program Files\Monitor\System.Net.Quic.dll
+2026-10-29 05:50:27.224   Time stamp of our file: 2026-10-04 17:22:48.000
+2026-10-29 05:50:27.224   Installing the file.
+2026-10-29 05:50:27.235   Successfully installed the file.
+2026-10-29 05:50:27.235   -- File entry --
+2026-10-29 05:50:27.235   Dest filename: C:\Program Files\Monitor\System.Net.Requests.dll
+2026-10-29 05:50:27.236   Time stamp of our file: 2026-10-04 17:22:50.000
+2026-10-29 05:50:27.236   Installing the file.
+2026-10-29 05:50:27.250   Successfully installed the file.
+2026-10-29 05:50:27.250   -- File entry --
+2026-10-29 05:50:27.250   Dest filename: C:\Program Files\Monitor\System.Net.Security.dll
+2026-10-29 05:50:27.251   Time stamp of our file: 2026-10-04 17:22:54.000
+2026-10-29 05:50:27.251   Installing the file.
+2026-10-29 05:50:27.276   Successfully installed the file.
+2026-10-29 05:50:27.276   -- File entry --
+2026-10-29 05:50:27.276   Dest filename: C:\Program Files\Monitor\System.Net.ServicePoint.dll
+2026-10-29 05:50:27.276   Time stamp of our file: 2026-10-04 17:22:58.000
+2026-10-29 05:50:27.276   Installing the file.
+2026-10-29 05:50:27.280   Successfully installed the file.
+2026-10-29 05:50:27.280   -- File entry --
+2026-10-29 05:50:27.280   Dest filename: C:\Program Files\Monitor\System.Net.Sockets.dll
+2026-10-29 05:50:27.280   Time stamp of our file: 2026-10-04 17:23:00.000
+2026-10-29 05:50:27.280   Installing the file.
+2026-10-29 05:50:27.301   Successfully installed the file.
+2026-10-29 05:50:27.301   -- File entry --
+2026-10-29 05:50:27.301   Dest filename: C:\Program Files\Monitor\System.Net.WebClient.dll
+2026-10-29 05:50:27.301   Time stamp of our file: 2026-10-04 17:23:04.000
+2026-10-29 05:50:27.301   Installing the file.
+2026-10-29 05:50:27.309   Successfully installed the file.
+2026-10-29 05:50:27.309   -- File entry --
+2026-10-29 05:50:27.309   Dest filename: C:\Program Files\Monitor\System.Net.WebHeaderCollection.dll
+2026-10-29 05:50:27.309   Time stamp of our file: 2026-10-04 17:23:06.000
+2026-10-29 05:50:27.309   Installing the file.
+2026-10-29 05:50:27.314   Successfully installed the file.
+2026-10-29 05:50:27.314   -- File entry --
+2026-10-29 05:50:27.315   Dest filename: C:\Program Files\Monitor\System.Net.WebProxy.dll
+2026-10-29 05:50:27.315   Time stamp of our file: 2026-10-04 17:23:08.000
+2026-10-29 05:50:27.315   Installing the file.
+2026-10-29 05:50:27.317   Successfully installed the file.
+2026-10-29 05:50:27.317   -- File entry --
+2026-10-29 05:50:27.317   Dest filename: C:\Program Files\Monitor\System.Net.WebSockets.Client.dll
+2026-10-29 05:50:27.317   Time stamp of our file: 2026-10-04 17:23:12.000
+2026-10-29 05:50:27.317   Installing the file.
+2026-10-29 05:50:27.323   Successfully installed the file.
+2026-10-29 05:50:27.323   -- File entry --
+2026-10-29 05:50:27.323   Dest filename: C:\Program Files\Monitor\System.Net.WebSockets.dll
+2026-10-29 05:50:27.323   Time stamp of our file: 2026-10-04 17:23:14.000
+2026-10-29 05:50:27.323   Installing the file.
+2026-10-29 05:50:27.332   Successfully installed the file.
+2026-10-29 05:50:27.332   -- File entry --
+2026-10-29 05:50:27.332   Dest filename: C:\Program Files\Monitor\System.Numerics.dll
+2026-10-29 05:50:27.332   Time stamp of our file: 2026-10-04 17:14:14.000
+2026-10-29 05:50:27.332   Installing the file.
+2026-10-29 05:50:27.334   Successfully installed the file.
+2026-10-29 05:50:27.334   -- File entry --
+2026-10-29 05:50:27.334   Dest filename: C:\Program Files\Monitor\System.Numerics.Vectors.dll
+2026-10-29 05:50:27.335   Time stamp of our file: 2026-10-04 17:13:56.000
+2026-10-29 05:50:27.335   Installing the file.
+2026-10-29 05:50:27.337   Successfully installed the file.
+2026-10-29 05:50:27.338   -- File entry --
+2026-10-29 05:50:27.338   Dest filename: C:\Program Files\Monitor\System.ObjectModel.dll
+2026-10-29 05:50:27.338   Time stamp of our file: 2026-10-04 17:23:18.000
+2026-10-29 05:50:27.338   Installing the file.
+2026-10-29 05:50:27.342   Successfully installed the file.
+2026-10-29 05:50:27.342   -- File entry --
+2026-10-29 05:50:27.342   Dest filename: C:\Program Files\Monitor\System.Printing.dll
+2026-10-29 05:50:27.342   Time stamp of our file: 2026-10-05 08:52:16.000
+2026-10-29 05:50:27.342   Installing the file.
+2026-10-29 05:50:27.374   Successfully installed the file.
+2026-10-29 05:50:27.374   -- File entry --
+2026-10-29 05:50:27.374   Dest filename: C:\Program Files\Monitor\System.Private.CoreLib.dll
+2026-10-29 05:50:27.374   Time stamp of our file: 2026-10-04 17:06:58.000
+2026-10-29 05:50:27.374   Installing the file.
+2026-10-29 05:50:27.715   Successfully installed the file.
+2026-10-29 05:50:27.716   -- File entry --
+2026-10-29 05:50:27.716   Dest filename: C:\Program Files\Monitor\System.Private.DataContractSerialization.dll
+2026-10-29 05:50:27.716   Time stamp of our file: 2026-10-04 17:23:22.000
+2026-10-29 05:50:27.716   Installing the file.
+2026-10-29 05:50:27.782   Successfully installed the file.
+2026-10-29 05:50:27.782   -- File entry --
+2026-10-29 05:50:27.782   Dest filename: C:\Program Files\Monitor\System.Private.Uri.dll
+2026-10-29 05:50:27.782   Time stamp of our file: 2026-10-04 17:23:24.000
+2026-10-29 05:50:27.782   Installing the file.
+2026-10-29 05:50:27.794   Successfully installed the file.
+2026-10-29 05:50:27.795   -- File entry --
+2026-10-29 05:50:27.795   Dest filename: C:\Program Files\Monitor\System.Private.Xml.dll
+2026-10-29 05:50:27.795   Time stamp of our file: 2026-10-04 17:23:30.000
+2026-10-29 05:50:27.795   Installing the file.
+2026-10-29 05:50:28.028   Successfully installed the file.
+2026-10-29 05:50:28.028   -- File entry --
+2026-10-29 05:50:28.030   Dest filename: C:\Program Files\Monitor\System.Private.Xml.Linq.dll
+2026-10-29 05:50:28.030   Time stamp of our file: 2026-10-04 17:23:32.000
+2026-10-29 05:50:28.030   Installing the file.
+2026-10-29 05:50:28.045   Successfully installed the file.
+2026-10-29 05:50:28.045   -- File entry --
+2026-10-29 05:50:28.046   Dest filename: C:\Program Files\Monitor\System.Reflection.DispatchProxy.dll
+2026-10-29 05:50:28.046   Time stamp of our file: 2026-10-04 17:23:36.000
+2026-10-29 05:50:28.046   Installing the file.
+2026-10-29 05:50:28.051   Successfully installed the file.
+2026-10-29 05:50:28.051   -- File entry --
+2026-10-29 05:50:28.051   Dest filename: C:\Program Files\Monitor\System.Reflection.dll
+2026-10-29 05:50:28.051   Time stamp of our file: 2026-10-04 17:14:12.000
+2026-10-29 05:50:28.051   Installing the file.
+2026-10-29 05:50:28.053   Successfully installed the file.
+2026-10-29 05:50:28.053   -- File entry --
+2026-10-29 05:50:28.054   Dest filename: C:\Program Files\Monitor\System.Reflection.Emit.dll
+2026-10-29 05:50:28.054   Time stamp of our file: 2026-10-04 17:23:38.000
+2026-10-29 05:50:28.054   Installing the file.
+2026-10-29 05:50:28.061   Successfully installed the file.
+2026-10-29 05:50:28.061   -- File entry --
+2026-10-29 05:50:28.061   Dest filename: C:\Program Files\Monitor\System.Reflection.Emit.ILGeneration.dll
+2026-10-29 05:50:28.061   Time stamp of our file: 2026-10-04 17:13:20.000
+2026-10-29 05:50:28.061   Installing the file.
+2026-10-29 05:50:28.063   Successfully installed the file.
+2026-10-29 05:50:28.063   -- File entry --
+2026-10-29 05:50:28.064   Dest filename: C:\Program Files\Monitor\System.Reflection.Emit.Lightweight.dll
+2026-10-29 05:50:28.064   Time stamp of our file: 2026-10-04 17:13:16.000
+2026-10-29 05:50:28.064   Installing the file.
+2026-10-29 05:50:28.066   Successfully installed the file.
+2026-10-29 05:50:28.066   -- File entry --
+2026-10-29 05:50:28.066   Dest filename: C:\Program Files\Monitor\System.Reflection.Extensions.dll
+2026-10-29 05:50:28.067   Time stamp of our file: 2026-10-04 17:14:16.000
+2026-10-29 05:50:28.067   Installing the file.
+2026-10-29 05:50:28.068   Successfully installed the file.
+2026-10-29 05:50:28.068   -- File entry --
+2026-10-29 05:50:28.068   Dest filename: C:\Program Files\Monitor\System.Reflection.Metadata.dll
+2026-10-29 05:50:28.070   Time stamp of our file: 2026-10-04 17:23:42.000
+2026-10-29 05:50:28.070   Installing the file.
+2026-10-29 05:50:28.109   Successfully installed the file.
+2026-10-29 05:50:28.110   -- File entry --
+2026-10-29 05:50:28.110   Dest filename: C:\Program Files\Monitor\System.Reflection.Primitives.dll
+2026-10-29 05:50:28.110   Time stamp of our file: 2026-10-04 17:13:20.000
+2026-10-29 05:50:28.110   Installing the file.
+2026-10-29 05:50:28.113   Successfully installed the file.
+2026-10-29 05:50:28.113   -- File entry --
+2026-10-29 05:50:28.114   Dest filename: C:\Program Files\Monitor\System.Reflection.TypeExtensions.dll
+2026-10-29 05:50:28.114   Time stamp of our file: 2026-10-04 17:23:44.000
+2026-10-29 05:50:28.114   Installing the file.
+2026-10-29 05:50:28.117   Successfully installed the file.
+2026-10-29 05:50:28.117   -- File entry --
+2026-10-29 05:50:28.117   Dest filename: C:\Program Files\Monitor\System.Resources.Extensions.dll
+2026-10-29 05:50:28.118   Time stamp of our file: 2026-10-05 08:51:56.000
+2026-10-29 05:50:28.118   Installing the file.
+2026-10-29 05:50:28.124   Successfully installed the file.
+2026-10-29 05:50:28.124   -- File entry --
+2026-10-29 05:50:28.124   Dest filename: C:\Program Files\Monitor\System.Resources.Reader.dll
+2026-10-29 05:50:28.124   Time stamp of our file: 2026-10-04 17:14:18.000
+2026-10-29 05:50:28.124   Installing the file.
+2026-10-29 05:50:28.128   Successfully installed the file.
+2026-10-29 05:50:28.129   -- File entry --
+2026-10-29 05:50:28.129   Dest filename: C:\Program Files\Monitor\System.Resources.ResourceManager.dll
+2026-10-29 05:50:28.129   Time stamp of our file: 2026-10-04 17:14:18.000
+2026-10-29 05:50:28.129   Installing the file.
+2026-10-29 05:50:28.132   Successfully installed the file.
+2026-10-29 05:50:28.132   -- File entry --
+2026-10-29 05:50:28.132   Dest filename: C:\Program Files\Monitor\System.Resources.Writer.dll
+2026-10-29 05:50:28.132   Time stamp of our file: 2026-10-04 17:23:48.000
+2026-10-29 05:50:28.132   Installing the file.
+2026-10-29 05:50:28.136   Successfully installed the file.
+2026-10-29 05:50:28.136   -- File entry --
+2026-10-29 05:50:28.136   Dest filename: C:\Program Files\Monitor\System.Runtime.CompilerServices.Unsafe.dll
+2026-10-29 05:50:28.136   Time stamp of our file: 2026-10-04 17:14:10.000
+2026-10-29 05:50:28.136   Installing the file.
+2026-10-29 05:50:28.140   Successfully installed the file.
+2026-10-29 05:50:28.140   -- File entry --
+2026-10-29 05:50:28.140   Dest filename: C:\Program Files\Monitor\System.Runtime.CompilerServices.VisualC.dll
+2026-10-29 05:50:28.140   Time stamp of our file: 2026-10-04 17:23:50.000
+2026-10-29 05:50:28.140   Installing the file.
+2026-10-29 05:50:28.142   Successfully installed the file.
+2026-10-29 05:50:28.142   -- File entry --
+2026-10-29 05:50:28.142   Dest filename: C:\Program Files\Monitor\System.Runtime.dll
+2026-10-29 05:50:28.142   Time stamp of our file: 2026-10-04 17:13:58.000
+2026-10-29 05:50:28.142   Installing the file.
+2026-10-29 05:50:28.146   Successfully installed the file.
+2026-10-29 05:50:28.146   -- File entry --
+2026-10-29 05:50:28.146   Dest filename: C:\Program Files\Monitor\System.Runtime.Extensions.dll
+2026-10-29 05:50:28.146   Time stamp of our file: 2026-10-04 17:14:12.000
+2026-10-29 05:50:28.146   Installing the file.
+2026-10-29 05:50:28.148   Successfully installed the file.
+2026-10-29 05:50:28.148   -- File entry --
+2026-10-29 05:50:28.148   Dest filename: C:\Program Files\Monitor\System.Runtime.Handles.dll
+2026-10-29 05:50:28.149   Time stamp of our file: 2026-10-04 17:14:16.000
+2026-10-29 05:50:28.149   Installing the file.
+2026-10-29 05:50:28.150   Successfully installed the file.
+2026-10-29 05:50:28.150   -- File entry --
+2026-10-29 05:50:28.150   Dest filename: C:\Program Files\Monitor\System.Runtime.InteropServices.dll
+2026-10-29 05:50:28.150   Time stamp of our file: 2026-10-04 17:23:54.000
+2026-10-29 05:50:28.150   Installing the file.
+2026-10-29 05:50:28.157   Successfully installed the file.
+2026-10-29 05:50:28.157   -- File entry --
+2026-10-29 05:50:28.157   Dest filename: C:\Program Files\Monitor\System.Runtime.InteropServices.JavaScript.dll
+2026-10-29 05:50:28.157   Time stamp of our file: 2026-10-04 17:23:56.000
+2026-10-29 05:50:28.157   Installing the file.
+2026-10-29 05:50:28.161   Successfully installed the file.
+2026-10-29 05:50:28.161   -- File entry --
+2026-10-29 05:50:28.161   Dest filename: C:\Program Files\Monitor\System.Runtime.InteropServices.RuntimeInformation.dll
+2026-10-29 05:50:28.161   Time stamp of our file: 2026-10-04 17:14:18.000
+2026-10-29 05:50:28.161   Installing the file.
+2026-10-29 05:50:28.163   Successfully installed the file.
+2026-10-29 05:50:28.163   -- File entry --
+2026-10-29 05:50:28.163   Dest filename: C:\Program Files\Monitor\System.Runtime.Intrinsics.dll
+2026-10-29 05:50:28.163   Time stamp of our file: 2026-10-04 17:14:08.000
+2026-10-29 05:50:28.163   Installing the file.
+2026-10-29 05:50:28.165   Successfully installed the file.
+2026-10-29 05:50:28.166   -- File entry --
+2026-10-29 05:50:28.166   Dest filename: C:\Program Files\Monitor\System.Runtime.Loader.dll
+2026-10-29 05:50:28.166   Time stamp of our file: 2026-10-04 17:13:08.000
+2026-10-29 05:50:28.166   Installing the file.
+2026-10-29 05:50:28.168   Successfully installed the file.
+2026-10-29 05:50:28.168   -- File entry --
+2026-10-29 05:50:28.168   Dest filename: C:\Program Files\Monitor\System.Runtime.Numerics.dll
+2026-10-29 05:50:28.168   Time stamp of our file: 2026-10-04 17:23:58.000
+2026-10-29 05:50:28.168   Installing the file.
+2026-10-29 05:50:28.182   Successfully installed the file.
+2026-10-29 05:50:28.182   -- File entry --
+2026-10-29 05:50:28.182   Dest filename: C:\Program Files\Monitor\System.Runtime.Serialization.dll
+2026-10-29 05:50:28.182   Time stamp of our file: 2026-10-04 17:14:24.000
+2026-10-29 05:50:28.182   Installing the file.
+2026-10-29 05:50:28.184   Successfully installed the file.
+2026-10-29 05:50:28.184   -- File entry --
+2026-10-29 05:50:28.184   Dest filename: C:\Program Files\Monitor\System.Runtime.Serialization.Formatters.dll
+2026-10-29 05:50:28.185   Time stamp of our file: 2026-10-04 17:24:02.000
+2026-10-29 05:50:28.185   Installing the file.
+2026-10-29 05:50:28.198   Successfully installed the file.
+2026-10-29 05:50:28.198   -- File entry --
+2026-10-29 05:50:28.198   Dest filename: C:\Program Files\Monitor\System.Runtime.Serialization.Json.dll
+2026-10-29 05:50:28.198   Time stamp of our file: 2026-10-04 17:13:18.000
+2026-10-29 05:50:28.198   Installing the file.
+2026-10-29 05:50:28.201   Successfully installed the file.
+2026-10-29 05:50:28.201   -- File entry --
+2026-10-29 05:50:28.201   Dest filename: C:\Program Files\Monitor\System.Runtime.Serialization.Primitives.dll
+2026-10-29 05:50:28.201   Time stamp of our file: 2026-10-04 17:24:04.000
+2026-10-29 05:50:28.201   Installing the file.
+2026-10-29 05:50:28.204   Successfully installed the file.
+2026-10-29 05:50:28.204   -- File entry --
+2026-10-29 05:50:28.204   Dest filename: C:\Program Files\Monitor\System.Runtime.Serialization.Xml.dll
+2026-10-29 05:50:28.204   Time stamp of our file: 2026-10-04 17:13:26.000
+2026-10-29 05:50:28.204   Installing the file.
+2026-10-29 05:50:28.206   Successfully installed the file.
+2026-10-29 05:50:28.206   -- File entry --
+2026-10-29 05:50:28.206   Dest filename: C:\Program Files\Monitor\System.Security.AccessControl.dll
+2026-10-29 05:50:28.206   Time stamp of our file: 2026-10-04 17:24:08.000
+2026-10-29 05:50:28.206   Installing the file.
+2026-10-29 05:50:28.216   Successfully installed the file.
+2026-10-29 05:50:28.216   -- File entry --
+2026-10-29 05:50:28.216   Dest filename: C:\Program Files\Monitor\System.Security.Claims.dll
+2026-10-29 05:50:28.216   Time stamp of our file: 2026-10-04 17:24:10.000
+2026-10-29 05:50:28.216   Installing the file.
+2026-10-29 05:50:28.222   Successfully installed the file.
+2026-10-29 05:50:28.222   -- File entry --
+2026-10-29 05:50:28.222   Dest filename: C:\Program Files\Monitor\System.Security.Cryptography.Algorithms.dll
+2026-10-29 05:50:28.222   Time stamp of our file: 2026-10-04 17:14:22.000
+2026-10-29 05:50:28.222   Installing the file.
+2026-10-29 05:50:28.224   Successfully installed the file.
+2026-10-29 05:50:28.224   -- File entry --
+2026-10-29 05:50:28.224   Dest filename: C:\Program Files\Monitor\System.Security.Cryptography.Cng.dll
+2026-10-29 05:50:28.224   Time stamp of our file: 2026-10-04 17:14:22.000
+2026-10-29 05:50:28.224   Installing the file.
+2026-10-29 05:50:28.226   Successfully installed the file.
+2026-10-29 05:50:28.226   -- File entry --
+2026-10-29 05:50:28.226   Dest filename: C:\Program Files\Monitor\System.Security.Cryptography.Csp.dll
+2026-10-29 05:50:28.226   Time stamp of our file: 2026-10-04 17:14:22.000
+2026-10-29 05:50:28.226   Installing the file.
+2026-10-29 05:50:28.230   Successfully installed the file.
+2026-10-29 05:50:28.230   -- File entry --
+2026-10-29 05:50:28.230   Dest filename: C:\Program Files\Monitor\System.Security.Cryptography.dll
+2026-10-29 05:50:28.230   Time stamp of our file: 2026-10-04 17:24:14.000
+2026-10-29 05:50:28.230   Installing the file.
+2026-10-29 05:50:28.292   Successfully installed the file.
+2026-10-29 05:50:28.292   -- File entry --
+2026-10-29 05:50:28.292   Dest filename: C:\Program Files\Monitor\System.Security.Cryptography.Encoding.dll
+2026-10-29 05:50:28.293   Time stamp of our file: 2026-10-04 17:14:22.000
+2026-10-29 05:50:28.293   Installing the file.
+2026-10-29 05:50:28.295   Successfully installed the file.
+2026-10-29 05:50:28.295   -- File entry --
+2026-10-29 05:50:28.295   Dest filename: C:\Program Files\Monitor\System.Security.Cryptography.OpenSsl.dll
+2026-10-29 05:50:28.295   Time stamp of our file: 2026-10-04 17:14:22.000
+2026-10-29 05:50:28.295   Installing the file.
+2026-10-29 05:50:28.298   Successfully installed the file.
+2026-10-29 05:50:28.298   -- File entry --
+2026-10-29 05:50:28.298   Dest filename: C:\Program Files\Monitor\System.Security.Cryptography.Pkcs.dll
+2026-10-29 05:50:28.298   Time stamp of our file: 2026-10-05 08:51:56.000
+2026-10-29 05:50:28.298   Installing the file.
+2026-10-29 05:50:28.322   Successfully installed the file.
+2026-10-29 05:50:28.323   -- File entry --
+2026-10-29 05:50:28.323   Dest filename: C:\Program Files\Monitor\System.Security.Cryptography.Primitives.dll
+2026-10-29 05:50:28.323   Time stamp of our file: 2026-10-04 17:14:22.000
+2026-10-29 05:50:28.323   Installing the file.
+2026-10-29 05:50:28.324   Successfully installed the file.
+2026-10-29 05:50:28.325   -- File entry --
+2026-10-29 05:50:28.325   Dest filename: C:\Program Files\Monitor\System.Security.Cryptography.ProtectedData.dll
+2026-10-29 05:50:28.325   Time stamp of our file: 2026-10-05 08:51:56.000
+2026-10-29 05:50:28.325   Installing the file.
+2026-10-29 05:50:28.328   Successfully installed the file.
+2026-10-29 05:50:28.328   -- File entry --
+2026-10-29 05:50:28.328   Dest filename: C:\Program Files\Monitor\System.Security.Cryptography.X509Certificates.dll
+2026-10-29 05:50:28.328   Time stamp of our file: 2026-10-04 17:14:22.000
+2026-10-29 05:50:28.328   Installing the file.
+2026-10-29 05:50:28.331   Successfully installed the file.
+2026-10-29 05:50:28.331   -- File entry --
+2026-10-29 05:50:28.331   Dest filename: C:\Program Files\Monitor\System.Security.Cryptography.Xml.dll
+2026-10-29 05:50:28.331   Time stamp of our file: 2026-10-05 08:51:58.000
+2026-10-29 05:50:28.331   Installing the file.
+2026-10-29 05:50:28.349   Successfully installed the file.
+2026-10-29 05:50:28.349   -- File entry --
+2026-10-29 05:50:28.349   Dest filename: C:\Program Files\Monitor\System.Security.dll
+2026-10-29 05:50:28.349   Time stamp of our file: 2026-10-04 17:14:24.000
+2026-10-29 05:50:28.349   Installing the file.
+2026-10-29 05:50:28.351   Successfully installed the file.
+2026-10-29 05:50:28.351   -- File entry --
+2026-10-29 05:50:28.351   Dest filename: C:\Program Files\Monitor\System.Security.Permissions.dll
+2026-10-29 05:50:28.351   Time stamp of our file: 2026-10-05 08:51:58.000
+2026-10-29 05:50:28.351   Installing the file.
+2026-10-29 05:50:28.359   Successfully installed the file.
+2026-10-29 05:50:28.359   -- File entry --
+2026-10-29 05:50:28.359   Dest filename: C:\Program Files\Monitor\System.Security.Principal.dll
+2026-10-29 05:50:28.359   Time stamp of our file: 2026-10-04 17:14:12.000
+2026-10-29 05:50:28.359   Installing the file.
+2026-10-29 05:50:28.361   Successfully installed the file.
+2026-10-29 05:50:28.361   -- File entry --
+2026-10-29 05:50:28.361   Dest filename: C:\Program Files\Monitor\System.Security.Principal.Windows.dll
+2026-10-29 05:50:28.362   Time stamp of our file: 2026-10-04 17:24:16.000
+2026-10-29 05:50:28.362   Installing the file.
+2026-10-29 05:50:28.370   Successfully installed the file.
+2026-10-29 05:50:28.371   -- File entry --
+2026-10-29 05:50:28.371   Dest filename: C:\Program Files\Monitor\System.Security.SecureString.dll
+2026-10-29 05:50:28.371   Time stamp of our file: 2026-10-04 17:14:34.000
+2026-10-29 05:50:28.371   Installing the file.
+2026-10-29 05:50:28.372   Successfully installed the file.
+2026-10-29 05:50:28.372   -- File entry --
+2026-10-29 05:50:28.374   Dest filename: C:\Program Files\Monitor\System.ServiceModel.Web.dll
+2026-10-29 05:50:28.374   Time stamp of our file: 2026-10-04 17:14:24.000
+2026-10-29 05:50:28.374   Installing the file.
+2026-10-29 05:50:28.376   Successfully installed the file.
+2026-10-29 05:50:28.376   -- File entry --
+2026-10-29 05:50:28.376   Dest filename: C:\Program Files\Monitor\System.ServiceProcess.dll
+2026-10-29 05:50:28.376   Time stamp of our file: 2026-10-04 17:14:16.000
+2026-10-29 05:50:28.376   Installing the file.
+2026-10-29 05:50:28.379   Successfully installed the file.
+2026-10-29 05:50:28.379   -- File entry --
+2026-10-29 05:50:28.379   Dest filename: C:\Program Files\Monitor\System.Text.Encoding.CodePages.dll
+2026-10-29 05:50:28.379   Time stamp of our file: 2026-10-04 17:24:20.000
+2026-10-29 05:50:28.379   Installing the file.
+2026-10-29 05:50:28.405   Successfully installed the file.
+2026-10-29 05:50:28.405   -- File entry --
+2026-10-29 05:50:28.405   Dest filename: C:\Program Files\Monitor\System.Text.Encoding.dll
+2026-10-29 05:50:28.406   Time stamp of our file: 2026-10-04 17:14:16.000
+2026-10-29 05:50:28.406   Installing the file.
+2026-10-29 05:50:28.408   Successfully installed the file.
+2026-10-29 05:50:28.408   -- File entry --
+2026-10-29 05:50:28.408   Dest filename: C:\Program Files\Monitor\System.Text.Encoding.Extensions.dll
+2026-10-29 05:50:28.409   Time stamp of our file: 2026-10-04 17:13:56.000
+2026-10-29 05:50:28.409   Installing the file.
+2026-10-29 05:50:28.411   Successfully installed the file.
+2026-10-29 05:50:28.412   -- File entry --
+2026-10-29 05:50:28.412   Dest filename: C:\Program Files\Monitor\System.Text.Encodings.Web.dll
+2026-10-29 05:50:28.412   Time stamp of our file: 2026-10-04 17:24:22.000
+2026-10-29 05:50:28.412   Installing the file.
+2026-10-29 05:50:28.418   Successfully installed the file.
+2026-10-29 05:50:28.419   -- File entry --
+2026-10-29 05:50:28.419   Dest filename: C:\Program Files\Monitor\System.Text.Json.dll
+2026-10-29 05:50:28.419   Time stamp of our file: 2026-10-04 17:24:26.000
+2026-10-29 05:50:28.419   Installing the file.
+2026-10-29 05:50:28.479   Successfully installed the file.
+2026-10-29 05:50:28.479   -- File entry --
+2026-10-29 05:50:28.479   Dest filename: C:\Program Files\Monitor\System.Text.RegularExpressions.dll
+2026-10-29 05:50:28.480   Time stamp of our file: 2026-10-04 17:24:30.000
+2026-10-29 05:50:28.480   Installing the file.
+2026-10-29 05:50:28.521   Successfully installed the file.
+2026-10-29 05:50:28.522   -- File entry --
+2026-10-29 05:50:28.522   Dest filename: C:\Program Files\Monitor\System.Threading.AccessControl.dll
+2026-10-29 05:50:28.522   Time stamp of our file: 2026-10-05 08:51:58.000
+2026-10-29 05:50:28.522   Installing the file.
+2026-10-29 05:50:28.527   Successfully installed the file.
+2026-10-29 05:50:28.527   -- File entry --
+2026-10-29 05:50:28.527   Dest filename: C:\Program Files\Monitor\System.Threading.Channels.dll
+2026-10-29 05:50:28.527   Time stamp of our file: 2026-10-04 17:24:32.000
+2026-10-29 05:50:28.527   Installing the file.
+2026-10-29 05:50:28.534   Successfully installed the file.
+2026-10-29 05:50:28.534   -- File entry --
+2026-10-29 05:50:28.534   Dest filename: C:\Program Files\Monitor\System.Threading.dll
+2026-10-29 05:50:28.534   Time stamp of our file: 2026-10-04 17:24:34.000
+2026-10-29 05:50:28.534   Installing the file.
+2026-10-29 05:50:28.540   Successfully installed the file.
+2026-10-29 05:50:28.540   -- File entry --
+2026-10-29 05:50:28.540   Dest filename: C:\Program Files\Monitor\System.Threading.Overlapped.dll
+2026-10-29 05:50:28.540   Time stamp of our file: 2026-10-04 17:13:16.000
+2026-10-29 05:50:28.540   Installing the file.
+2026-10-29 05:50:28.543   Successfully installed the file.
+2026-10-29 05:50:28.543   -- File entry --
+2026-10-29 05:50:28.543   Dest filename: C:\Program Files\Monitor\System.Threading.RateLimiting.dll
+2026-10-29 05:50:28.543   Time stamp of our file: 2026-10-05 05:58:46.000
+2026-10-29 05:50:28.543   Installing the file.
+2026-10-29 05:50:28.551   Successfully installed the file.
+2026-10-29 05:50:28.551   -- File entry --
+2026-10-29 05:50:28.551   Dest filename: C:\Program Files\Monitor\System.Threading.Tasks.Dataflow.dll
+2026-10-29 05:50:28.551   Time stamp of our file: 2026-10-04 17:24:38.000
+2026-10-29 05:50:28.551   Installing the file.
+2026-10-29 05:50:28.570   Successfully installed the file.
+2026-10-29 05:50:28.570   -- File entry --
+2026-10-29 05:50:28.570   Dest filename: C:\Program Files\Monitor\System.Threading.Tasks.dll
+2026-10-29 05:50:28.571   Time stamp of our file: 2026-10-04 17:14:20.000
+2026-10-29 05:50:28.571   Installing the file.
+2026-10-29 05:50:28.573   Successfully installed the file.
+2026-10-29 05:50:28.573   -- File entry --
+2026-10-29 05:50:28.573   Dest filename: C:\Program Files\Monitor\System.Threading.Tasks.Extensions.dll
+2026-10-29 05:50:28.573   Time stamp of our file: 2026-10-04 17:14:18.000
+2026-10-29 05:50:28.573   Installing the file.
+2026-10-29 05:50:28.576   Successfully installed the file.
+2026-10-29 05:50:28.576   -- File entry --
+2026-10-29 05:50:28.576   Dest filename: C:\Program Files\Monitor\System.Threading.Tasks.Parallel.dll
+2026-10-29 05:50:28.576   Time stamp of our file: 2026-10-04 17:24:40.000
+2026-10-29 05:50:28.576   Installing the file.
+2026-10-29 05:50:28.584   Successfully installed the file.
+2026-10-29 05:50:28.584   -- File entry --
+2026-10-29 05:50:28.585   Dest filename: C:\Program Files\Monitor\System.Threading.Thread.dll
+2026-10-29 05:50:28.585   Time stamp of our file: 2026-10-04 17:13:28.000
+2026-10-29 05:50:28.585   Installing the file.
+2026-10-29 05:50:28.588   Successfully installed the file.
+2026-10-29 05:50:28.588   -- File entry --
+2026-10-29 05:50:28.588   Dest filename: C:\Program Files\Monitor\System.Threading.ThreadPool.dll
+2026-10-29 05:50:28.588   Time stamp of our file: 2026-10-04 17:13:30.000
+2026-10-29 05:50:28.588   Installing the file.
+2026-10-29 05:50:28.591   Successfully installed the file.
+2026-10-29 05:50:28.591   -- File entry --
+2026-10-29 05:50:28.591   Dest filename: C:\Program Files\Monitor\System.Threading.Timer.dll
+2026-10-29 05:50:28.591   Time stamp of our file: 2026-10-04 17:14:20.000
+2026-10-29 05:50:28.591   Installing the file.
+2026-10-29 05:50:28.594   Successfully installed the file.
+2026-10-29 05:50:28.594   -- File entry --
+2026-10-29 05:50:28.594   Dest filename: C:\Program Files\Monitor\System.Transactions.dll
+2026-10-29 05:50:28.594   Time stamp of our file: 2026-10-04 17:14:16.000
+2026-10-29 05:50:28.594   Installing the file.
+2026-10-29 05:50:28.597   Successfully installed the file.
+2026-10-29 05:50:28.597   -- File entry --
+2026-10-29 05:50:28.597   Dest filename: C:\Program Files\Monitor\System.Transactions.Local.dll
+2026-10-29 05:50:28.597   Time stamp of our file: 2026-10-04 17:24:44.000
+2026-10-29 05:50:28.597   Installing the file.
+2026-10-29 05:50:28.620   Successfully installed the file.
+2026-10-29 05:50:28.620   -- File entry --
+2026-10-29 05:50:28.620   Dest filename: C:\Program Files\Monitor\System.ValueTuple.dll
+2026-10-29 05:50:28.620   Time stamp of our file: 2026-10-04 17:14:20.000
+2026-10-29 05:50:28.620   Installing the file.
+2026-10-29 05:50:28.623   Successfully installed the file.
+2026-10-29 05:50:28.623   -- File entry --
+2026-10-29 05:50:28.623   Dest filename: C:\Program Files\Monitor\System.Web.dll
+2026-10-29 05:50:28.624   Time stamp of our file: 2026-10-04 17:14:14.000
+2026-10-29 05:50:28.624   Installing the file.
+2026-10-29 05:50:28.626   Successfully installed the file.
+2026-10-29 05:50:28.626   -- File entry --
+2026-10-29 05:50:28.626   Dest filename: C:\Program Files\Monitor\System.Web.HttpUtility.dll
+2026-10-29 05:50:28.626   Time stamp of our file: 2026-10-04 17:24:48.000
+2026-10-29 05:50:28.626   Installing the file.
+2026-10-29 05:50:28.631   Successfully installed the file.
+2026-10-29 05:50:28.631   -- File entry --
+2026-10-29 05:50:28.631   Dest filename: C:\Program Files\Monitor\System.Windows.Controls.Ribbon.dll
+2026-10-29 05:50:28.631   Time stamp of our file: 2026-10-05 08:52:16.000
+2026-10-29 05:50:28.631   Installing the file.
+2026-10-29 05:50:28.676   Successfully installed the file.
+2026-10-29 05:50:28.676   -- File entry --
+2026-10-29 05:50:28.676   Dest filename: C:\Program Files\Monitor\System.Windows.dll
+2026-10-29 05:50:28.677   Time stamp of our file: 2026-10-04 17:14:16.000
+2026-10-29 05:50:28.677   Installing the file.
+2026-10-29 05:50:28.679   Successfully installed the file.
+2026-10-29 05:50:28.679   -- File entry --
+2026-10-29 05:50:28.679   Dest filename: C:\Program Files\Monitor\System.Windows.Extensions.dll
+2026-10-29 05:50:28.679   Time stamp of our file: 2026-10-05 08:51:58.000
+2026-10-29 05:50:28.679   Installing the file.
+2026-10-29 05:50:28.686   Successfully installed the file.
+2026-10-29 05:50:28.686   -- File entry --
+2026-10-29 05:50:28.686   Dest filename: C:\Program Files\Monitor\System.Windows.Forms.Design.dll
+2026-10-29 05:50:28.686   Time stamp of our file: 2026-10-05 08:52:00.000
+2026-10-29 05:50:28.686   Installing the file.
+2026-10-29 05:50:28.840   Successfully installed the file.
+2026-10-29 05:50:28.840   -- File entry --
+2026-10-29 05:50:28.840   Dest filename: C:\Program Files\Monitor\System.Windows.Forms.Design.Editors.dll
+2026-10-29 05:50:28.841   Time stamp of our file: 2026-10-05 03:32:52.000
+2026-10-29 05:50:28.841   Installing the file.
+2026-10-29 05:50:28.844   Successfully installed the file.
+2026-10-29 05:50:28.844   -- File entry --
+2026-10-29 05:50:28.844   Dest filename: C:\Program Files\Monitor\System.Windows.Forms.dll
+2026-10-29 05:50:28.844   Time stamp of our file: 2026-10-05 08:52:04.000
+2026-10-29 05:50:28.844   Installing the file.
+2026-10-29 05:50:29.178   Successfully installed the file.
+2026-10-29 05:50:29.178   -- File entry --
+2026-10-29 05:50:29.178   Dest filename: C:\Program Files\Monitor\System.Windows.Forms.Primitives.dll
+2026-10-29 05:50:29.178   Time stamp of our file: 2026-10-05 08:52:00.000
+2026-10-29 05:50:29.178   Installing the file.
+2026-10-29 05:50:29.257   Successfully installed the file.
+2026-10-29 05:50:29.257   -- File entry --
+2026-10-29 05:50:29.257   Dest filename: C:\Program Files\Monitor\System.Windows.Input.Manipulations.dll
+2026-10-29 05:50:29.257   Time stamp of our file: 2026-10-05 08:52:18.000
+2026-10-29 05:50:29.257   Installing the file.
+2026-10-29 05:50:29.265   Successfully installed the file.
+2026-10-29 05:50:29.265   -- File entry --
+2026-10-29 05:50:29.265   Dest filename: C:\Program Files\Monitor\System.Windows.Presentation.dll
+2026-10-29 05:50:29.265   Time stamp of our file: 2026-10-05 08:52:18.000
+2026-10-29 05:50:29.265   Installing the file.
+2026-10-29 05:50:29.268   Successfully installed the file.
+2026-10-29 05:50:29.268   -- File entry --
+2026-10-29 05:50:29.268   Dest filename: C:\Program Files\Monitor\System.Xaml.dll
+2026-10-29 05:50:29.268   Time stamp of our file: 2026-10-05 08:52:18.000
+2026-10-29 05:50:29.268   Installing the file.
+2026-10-29 05:50:29.318   Successfully installed the file.
+2026-10-29 05:50:29.318   -- File entry --
+2026-10-29 05:50:29.318   Dest filename: C:\Program Files\Monitor\System.Xml.dll
+2026-10-29 05:50:29.318   Time stamp of our file: 2026-10-04 17:14:10.000
+2026-10-29 05:50:29.318   Installing the file.
+2026-10-29 05:50:29.323   Successfully installed the file.
+2026-10-29 05:50:29.323   -- File entry --
+2026-10-29 05:50:29.323   Dest filename: C:\Program Files\Monitor\System.Xml.Linq.dll
+2026-10-29 05:50:29.323   Time stamp of our file: 2026-10-04 17:14:24.000
+2026-10-29 05:50:29.323   Installing the file.
+2026-10-29 05:50:29.325   Successfully installed the file.
+2026-10-29 05:50:29.325   -- File entry --
+2026-10-29 05:50:29.325   Dest filename: C:\Program Files\Monitor\System.Xml.ReaderWriter.dll
+2026-10-29 05:50:29.326   Time stamp of our file: 2026-10-04 17:14:06.000
+2026-10-29 05:50:29.326   Installing the file.
+2026-10-29 05:50:29.330   Successfully installed the file.
+2026-10-29 05:50:29.330   -- File entry --
+2026-10-29 05:50:29.330   Dest filename: C:\Program Files\Monitor\System.Xml.Serialization.dll
+2026-10-29 05:50:29.330   Time stamp of our file: 2026-10-04 17:14:10.000
+2026-10-29 05:50:29.330   Installing the file.
+2026-10-29 05:50:29.332   Successfully installed the file.
+2026-10-29 05:50:29.332   -- File entry --
+2026-10-29 05:50:29.333   Dest filename: C:\Program Files\Monitor\System.Xml.XDocument.dll
+2026-10-29 05:50:29.333   Time stamp of our file: 2026-10-04 17:14:00.000
+2026-10-29 05:50:29.333   Installing the file.
+2026-10-29 05:50:29.335   Successfully installed the file.
+2026-10-29 05:50:29.336   -- File entry --
+2026-10-29 05:50:29.336   Dest filename: C:\Program Files\Monitor\System.Xml.XmlDocument.dll
+2026-10-29 05:50:29.337   Time stamp of our file: 2026-10-04 17:14:20.000
+2026-10-29 05:50:29.337   Installing the file.
+2026-10-29 05:50:29.339   Successfully installed the file.
+2026-10-29 05:50:29.339   -- File entry --
+2026-10-29 05:50:29.339   Dest filename: C:\Program Files\Monitor\System.Xml.XmlSerializer.dll
+2026-10-29 05:50:29.340   Time stamp of our file: 2026-10-04 17:14:04.000
+2026-10-29 05:50:29.340   Installing the file.
+2026-10-29 05:50:29.341   Successfully installed the file.
+2026-10-29 05:50:29.341   -- File entry --
+2026-10-29 05:50:29.341   Dest filename: C:\Program Files\Monitor\System.Xml.XPath.dll
+2026-10-29 05:50:29.342   Time stamp of our file: 2026-10-04 17:13:58.000
+2026-10-29 05:50:29.342   Installing the file.
+2026-10-29 05:50:29.344   Successfully installed the file.
+2026-10-29 05:50:29.344   -- File entry --
+2026-10-29 05:50:29.345   Dest filename: C:\Program Files\Monitor\System.Xml.XPath.XDocument.dll
+2026-10-29 05:50:29.345   Time stamp of our file: 2026-10-04 17:24:50.000
+2026-10-29 05:50:29.345   Installing the file.
+2026-10-29 05:50:29.348   Successfully installed the file.
+2026-10-29 05:50:29.348   -- File entry --
+2026-10-29 05:50:29.348   Dest filename: C:\Program Files\Monitor\UIAutomationClient.dll
+2026-10-29 05:50:29.348   Time stamp of our file: 2026-10-05 08:52:18.000
+2026-10-29 05:50:29.348   Installing the file.
+2026-10-29 05:50:29.365   Successfully installed the file.
+2026-10-29 05:50:29.365   -- File entry --
+2026-10-29 05:50:29.365   Dest filename: C:\Program Files\Monitor\UIAutomationClientSideProviders.dll
+2026-10-29 05:50:29.365   Time stamp of our file: 2026-10-05 08:52:18.000
+2026-10-29 05:50:29.365   Installing the file.
+2026-10-29 05:50:29.399   Successfully installed the file.
+2026-10-29 05:50:29.399   -- File entry --
+2026-10-29 05:50:29.399   Dest filename: C:\Program Files\Monitor\UIAutomationProvider.dll
+2026-10-29 05:50:29.399   Time stamp of our file: 2026-10-05 08:52:18.000
+2026-10-29 05:50:29.399   Installing the file.
+2026-10-29 05:50:29.402   Successfully installed the file.
+2026-10-29 05:50:29.402   -- File entry --
+2026-10-29 05:50:29.403   Dest filename: C:\Program Files\Monitor\UIAutomationTypes.dll
+2026-10-29 05:50:29.403   Time stamp of our file: 2026-10-05 08:52:18.000
+2026-10-29 05:50:29.403   Installing the file.
+2026-10-29 05:50:29.413   Successfully installed the file.
+2026-10-29 05:50:29.413   -- File entry --
+2026-10-29 05:50:29.413   Dest filename: C:\Program Files\Monitor\vcruntime140_cor3.dll
+2026-10-29 05:50:29.415   Time stamp of our file: 2026-09-10 03:09:38.000
+2026-10-29 05:50:29.415   Installing the file.
+2026-10-29 05:50:29.425   Successfully installed the file.
+2026-10-29 05:50:29.425   -- File entry --
+2026-10-29 05:50:29.425   Dest filename: C:\Program Files\Monitor\WebView2Loader.dll
+2026-10-29 05:50:29.426   Time stamp of our file: 2024-06-11 05:22:54.000
+2026-10-29 05:50:29.426   Installing the file.
+2026-10-29 05:50:29.433   Successfully installed the file.
+2026-10-29 05:50:29.433   -- File entry --
+2026-10-29 05:50:29.433   Dest filename: C:\Program Files\Monitor\WindowsBase.dll
+2026-10-29 05:50:29.433   Time stamp of our file: 2026-10-05 08:52:20.000
+2026-10-29 05:50:29.433   Installing the file.
+2026-10-29 05:50:29.502   Successfully installed the file.
+2026-10-29 05:50:29.502   -- File entry --
+2026-10-29 05:50:29.502   Dest filename: C:\Program Files\Monitor\WindowsFormsIntegration.dll
+2026-10-29 05:50:29.503   Time stamp of our file: 2026-10-05 08:52:20.000
+2026-10-29 05:50:29.503   Installing the file.
+2026-10-29 05:50:29.513   Successfully installed the file.
+2026-10-29 05:50:29.513   -- File entry --
+2026-10-29 05:50:29.513   Dest filename: C:\Program Files\Monitor\wpfgfx_cor3.dll
+2026-10-29 05:50:29.513   Time stamp of our file: 2026-10-05 05:15:00.000
+2026-10-29 05:50:29.513   Installing the file.
+2026-10-29 05:50:29.575   Successfully installed the file.
+2026-10-29 05:50:29.575   -- File entry --
+2026-10-29 05:50:29.575   Dest filename: C:\Program Files\Monitor\wwwroot\index.html
+2026-10-29 05:50:29.576   Time stamp of our file: 2026-10-29 05:36:02.000
+2026-10-29 05:50:29.576   Installing the file.
+2026-10-29 05:50:29.576   Creating directory: C:\Program Files\Monitor\wwwroot
+2026-10-29 05:50:29.577   Successfully installed the file.
+2026-10-29 05:50:29.577   -- File entry --
+2026-10-29 05:50:29.577   Dest filename: C:\Program Files\Monitor\wwwroot\css\app.css
+2026-10-29 05:50:29.577   Time stamp of our file: 2026-10-29 05:37:20.000
+2026-10-29 05:50:29.577   Installing the file.
+2026-10-29 05:50:29.578   Creating directory: C:\Program Files\Monitor\wwwroot\css
+2026-10-29 05:50:29.580   Successfully installed the file.
+2026-10-29 05:50:29.580   -- File entry --
+2026-10-29 05:50:29.580   Dest filename: C:\Program Files\Monitor\wwwroot\js\app.js
+2026-10-29 05:50:29.581   Time stamp of our file: 2026-10-29 05:35:56.000
+2026-10-29 05:50:29.581   Installing the file.
+2026-10-29 05:50:29.581   Creating directory: C:\Program Files\Monitor\wwwroot\js
+2026-10-29 05:50:29.582   Successfully installed the file.
+2026-10-29 05:50:29.582   -- File entry --
+2026-10-29 05:50:29.582   Dest filename: C:\Program Files\Monitor\wwwroot\js\echarts.min.js
+2026-10-29 05:50:29.582   Time stamp of our file: 2026-05-13 09:10:48.000
+2026-10-29 05:50:29.582   Installing the file.
+2026-10-29 05:50:29.607   Successfully installed the file.
+2026-10-29 05:50:29.607   -- File entry --
+2026-10-29 05:50:29.607   Dest filename: C:\Program Files\Monitor\zh-Hans\Microsoft.VisualBasic.Forms.resources.dll
+2026-10-29 05:50:29.607   Time stamp of our file: 2026-10-05 03:32:40.000
+2026-10-29 05:50:29.607   Installing the file.
+2026-10-29 05:50:29.607   Creating directory: C:\Program Files\Monitor\zh-Hans
+2026-10-29 05:50:29.611   Successfully installed the file.
+2026-10-29 05:50:29.611   -- File entry --
+2026-10-29 05:50:29.611   Dest filename: C:\Program Files\Monitor\zh-Hans\PresentationCore.resources.dll
+2026-10-29 05:50:29.612   Time stamp of our file: 2026-10-05 05:14:56.000
+2026-10-29 05:50:29.612   Installing the file.
+2026-10-29 05:50:29.617   Successfully installed the file.
+2026-10-29 05:50:29.617   -- File entry --
+2026-10-29 05:50:29.617   Dest filename: C:\Program Files\Monitor\zh-Hans\PresentationFramework.resources.dll
+2026-10-29 05:50:29.617   Time stamp of our file: 2026-10-05 05:15:20.000
+2026-10-29 05:50:29.617   Installing the file.
+2026-10-29 05:50:29.624   Successfully installed the file.
+2026-10-29 05:50:29.624   -- File entry --
+2026-10-29 05:50:29.624   Dest filename: C:\Program Files\Monitor\zh-Hans\PresentationUI.resources.dll
+2026-10-29 05:50:29.624   Time stamp of our file: 2026-10-05 05:15:44.000
+2026-10-29 05:50:29.624   Installing the file.
+2026-10-29 05:50:29.628   Successfully installed the file.
+2026-10-29 05:50:29.628   -- File entry --
+2026-10-29 05:50:29.628   Dest filename: C:\Program Files\Monitor\zh-Hans\ReachFramework.resources.dll
+2026-10-29 05:50:29.628   Time stamp of our file: 2026-10-05 05:15:06.000
+2026-10-29 05:50:29.628   Installing the file.
+2026-10-29 05:50:29.631   Successfully installed the file.
+2026-10-29 05:50:29.631   -- File entry --
+2026-10-29 05:50:29.631   Dest filename: C:\Program Files\Monitor\zh-Hans\System.Windows.Controls.Ribbon.resources.dll
+2026-10-29 05:50:29.631   Time stamp of our file: 2026-10-05 05:16:02.000
+2026-10-29 05:50:29.631   Installing the file.
+2026-10-29 05:50:29.634   Successfully installed the file.
+2026-10-29 05:50:29.634   -- File entry --
+2026-10-29 05:50:29.634   Dest filename: C:\Program Files\Monitor\zh-Hans\System.Windows.Forms.Design.resources.dll
+2026-10-29 05:50:29.635   Time stamp of our file: 2026-10-05 03:32:46.000
+2026-10-29 05:50:29.635   Installing the file.
+2026-10-29 05:50:29.641   Successfully installed the file.
+2026-10-29 05:50:29.642   -- File entry --
+2026-10-29 05:50:29.642   Dest filename: C:\Program Files\Monitor\zh-Hans\System.Windows.Forms.Primitives.resources.dll
+2026-10-29 05:50:29.642   Time stamp of our file: 2026-10-05 03:31:54.000
+2026-10-29 05:50:29.642   Installing the file.
+2026-10-29 05:50:29.644   Successfully installed the file.
+2026-10-29 05:50:29.644   -- File entry --
+2026-10-29 05:50:29.644   Dest filename: C:\Program Files\Monitor\zh-Hans\System.Windows.Forms.resources.dll
+2026-10-29 05:50:29.644   Time stamp of our file: 2026-10-05 03:32:34.000
+2026-10-29 05:50:29.644   Installing the file.
+2026-10-29 05:50:29.655   Successfully installed the file.
+2026-10-29 05:50:29.656   -- File entry --
+2026-10-29 05:50:29.656   Dest filename: C:\Program Files\Monitor\zh-Hans\System.Windows.Input.Manipulations.resources.dll
+2026-10-29 05:50:29.656   Time stamp of our file: 2026-10-05 05:14:10.000
+2026-10-29 05:50:29.656   Installing the file.
+2026-10-29 05:50:29.658   Successfully installed the file.
+2026-10-29 05:50:29.658   -- File entry --
+2026-10-29 05:50:29.658   Dest filename: C:\Program Files\Monitor\zh-Hans\System.Xaml.resources.dll
+2026-10-29 05:50:29.658   Time stamp of our file: 2026-10-05 05:14:20.000
+2026-10-29 05:50:29.658   Installing the file.
+2026-10-29 05:50:29.663   Successfully installed the file.
+2026-10-29 05:50:29.663   -- File entry --
+2026-10-29 05:50:29.663   Dest filename: C:\Program Files\Monitor\zh-Hans\UIAutomationClient.resources.dll
+2026-10-29 05:50:29.663   Time stamp of our file: 2026-10-05 05:15:02.000
+2026-10-29 05:50:29.663   Installing the file.
+2026-10-29 05:50:29.666   Successfully installed the file.
+2026-10-29 05:50:29.666   -- File entry --
+2026-10-29 05:50:29.666   Dest filename: C:\Program Files\Monitor\zh-Hans\UIAutomationClientSideProviders.resources.dll
+2026-10-29 05:50:29.666   Time stamp of our file: 2026-10-05 05:15:02.000
+2026-10-29 05:50:29.666   Installing the file.
+2026-10-29 05:50:29.668   Successfully installed the file.
+2026-10-29 05:50:29.668   -- File entry --
+2026-10-29 05:50:29.668   Dest filename: C:\Program Files\Monitor\zh-Hans\UIAutomationProvider.resources.dll
+2026-10-29 05:50:29.668   Time stamp of our file: 2026-10-05 05:14:38.000
+2026-10-29 05:50:29.668   Installing the file.
+2026-10-29 05:50:29.671   Successfully installed the file.
+2026-10-29 05:50:29.671   -- File entry --
+2026-10-29 05:50:29.671   Dest filename: C:\Program Files\Monitor\zh-Hans\UIAutomationTypes.resources.dll
+2026-10-29 05:50:29.671   Time stamp of our file: 2026-10-05 05:14:38.000
+2026-10-29 05:50:29.671   Installing the file.
+2026-10-29 05:50:29.674   Successfully installed the file.
+2026-10-29 05:50:29.674   -- File entry --
+2026-10-29 05:50:29.674   Dest filename: C:\Program Files\Monitor\zh-Hans\WindowsBase.resources.dll
+2026-10-29 05:50:29.674   Time stamp of our file: 2026-10-05 05:14:34.000
+2026-10-29 05:50:29.674   Installing the file.
+2026-10-29 05:50:29.677   Successfully installed the file.
+2026-10-29 05:50:29.677   -- File entry --
+2026-10-29 05:50:29.677   Dest filename: C:\Program Files\Monitor\zh-Hans\WindowsFormsIntegration.resources.dll
+2026-10-29 05:50:29.678   Time stamp of our file: 2026-10-05 05:15:24.000
+2026-10-29 05:50:29.678   Installing the file.
+2026-10-29 05:50:29.681   Successfully installed the file.
+2026-10-29 05:50:29.681   -- Icon entry --
+2026-10-29 05:50:29.681   Dest filename: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Monitor\Monitor.lnk
+2026-10-29 05:50:29.682   Creating directory: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Monitor
+2026-10-29 05:50:29.694   Creating the icon.
+2026-10-29 05:50:29.744   Successfully created the icon.
+2026-10-29 05:50:29.752   -- Icon entry --
+2026-10-29 05:50:29.752   Dest filename: C:\Users\Public\Desktop\Monitor.lnk
+2026-10-29 05:50:29.753   Creating the icon.
+2026-10-29 05:50:29.759   Successfully created the icon.
+2026-10-29 05:50:29.772   Saving uninstall information.
+2026-10-29 05:50:29.772   Creating new uninstall key: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\{6D493EE4-3168-4F2A-8C0B-A761D171B91D}}_is1
+2026-10-29 05:50:29.772   Writing uninstall key values.
+2026-10-29 05:50:29.775   Detected previous non administrative install? No
+2026-10-29 05:50:29.775   Detected previous administrative 32-bit install? No
+2026-10-29 05:50:29.781   Installation process succeeded.
+2026-10-29 05:50:29.784   Need to restart Windows? No
+2026-10-29 05:50:29.790   Deinitializing Setup.
+2026-10-29 05:50:29.798   Log closed.

@@ -34,6 +34,24 @@ public class PasswordManager
     public static bool IsPasswordSet(Config.AppSettings settings)
         => !string.IsNullOrEmpty(settings.AdminPasswordHash);
 
+    public static bool CheckWebPassword(Config.AppSettings settings, string password)
+    {
+        if (!string.IsNullOrWhiteSpace(settings.WebServerPasswordHash))
+            return VerifyPassword(password, settings.WebServerPasswordHash);
+
+        return password == settings.WebServerPassword;
+    }
+
+    public static bool IsWebPasswordSet(Config.AppSettings settings)
+        => !string.IsNullOrWhiteSpace(settings.WebServerPasswordHash);
+
+    public static void SetWebPassword(Config.AppSettings settings, string newPassword)
+    {
+        settings.WebServerPasswordHash = HashPassword(newPassword.Trim());
+        settings.WebServerPassword = "";
+        settings.Save();
+    }
+
     public static bool HasOperatorRegistrationKey(Config.AppSettings settings)
         => !string.IsNullOrEmpty(settings.OperatorRegistrationKeyHash);
 

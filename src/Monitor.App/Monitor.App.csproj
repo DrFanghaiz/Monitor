@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -7,6 +7,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Assets\monitor-icon.ico</ApplicationIcon>
+    <Version>4.2.0</Version>
+    <FileVersion>4.2.0</FileVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>

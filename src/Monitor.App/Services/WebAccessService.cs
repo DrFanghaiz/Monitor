@@ -23,7 +23,7 @@ public class WebAccessService
         if (IsLocked(_loginFailures, ip))
             return null;
 
-        if (password == _settings.WebServerPassword)
+        if (Infrastructure.Security.PasswordManager.CheckWebPassword(_settings, password))
         {
             _loginFailures.TryRemove(ip, out _);
             var token = Guid.NewGuid().ToString();

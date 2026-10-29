@@ -1,8 +1,10 @@
 using System.Windows;
+using System.Diagnostics;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Data.Sqlite;
 using Monitor.App.Api;
 using Monitor.App.Infrastructure.Config;
 using Monitor.App.Infrastructure.Database;
@@ -16,6 +18,17 @@ public partial class App : Application
 {
     private ServiceProvider? _services;
     private CancellationTokenSource? _webCts;
+    private RemoteMonitorService? _remoteMonitorService;
+    private ComputeMonitorService? _computeMonitorService;
+    private TunnelService? _tunnelService;
+    private AppControlService? _appControlService;
+    private bool _resetInProgress;
+
+    /// <summary>供 MainWindow（关机保护）访问的当前计算监控服务。</summary>
+    public static ComputeMonitorService? ComputeMonitorService { get; private set; }
+
+    /// <summary>是否启用关机/注销保护（来自配置）。</summary>
+    public static bool ShutdownGuardEnabled { get; private set; } = true;
 
     private void Application_Startup(object sender, StartupEventArgs e)
     {
@@ -25,6 +38,7 @@ public partial class App : Application
 
         // ---- Config ----
         var settings = AppSettings.Load();
+        ShutdownGuardEnabled = settings.ShutdownGuardEnabled;
 
         // ---- Logging ----
         Log.Logger = new LoggerConfiguration()
@@ -52,11 +66,13 @@ public partial class App : Application
         var reservationService = new ReservationService(reservationRepo, auditRepo);
         var statisticsService = new StatisticsService(usageRepo);
         var remoteMonitorService = new RemoteMonitorService(settings, remoteSessionRepo);
+        var computeMonitorService = new ComputeMonitorService(settings);
         var tunnelService = new TunnelService(settings);
-        var statusService = new StatusService(timerService, remoteMonitorService, usageRepo, reservationRepo);
+        var statusService = new StatusService(timerService, remoteMonitorService, computeMonitorService, usageRepo, reservationRepo);
         var webAccessService = new WebAccessService(settings);
         var backupService = new BackupService(settings, dbPath, configPath);
         var webServerInfo = new WebServerInfo();
+        var appControlService = new AppControlService();
 
         // ---- DI Container ----
         var sc = new ServiceCollection();
@@ -80,16 +96,25 @@ public partial class App : Application
         sc.AddSingleton(webAccessService);
         sc.AddSingleton(backupService);
         sc.AddSingleton(remoteMonitorService);
+        sc.AddSingleton(computeMonitorService);
         sc.AddSingleton(tunnelService);
         sc.AddSingleton(webServerInfo);
+        sc.AddSingleton(appControlService);
 
         _services = sc.BuildServiceProvider();
         Resources.Add("services", _services);
+        _remoteMonitorService = remoteMonitorService;
+        _computeMonitorService = computeMonitorService;
+        ComputeMonitorService = computeMonitorService;
+        _tunnelService = tunnelService;
+        _appControlService = appControlService;
+        _appControlService.FactoryResetHandler = ResetToFactoryAsync;
 
         // ---- Background tasks ----
         try { backupService.AutoBackupIfNeeded(); }
         catch (Exception ex) { Log.Warning(ex, "Auto backup skipped"); }
         _ = remoteMonitorService.StartAsync(CancellationToken.None);
+        computeMonitorService.StartAsync(CancellationToken.None);
         _ = tunnelService.StartAsync(CancellationToken.None);
 
         // ---- Web API ----
@@ -110,12 +135,71 @@ public partial class App : Application
         {
             _webCts?.Cancel();
             remoteMonitorService.Dispose();
+            computeMonitorService.Dispose();
             tunnelService.Dispose();
             _services?.Dispose();
             Log.CloseAndFlush();
             Shutdown();
         };
         window.Show();
+    }
+
+    private async Task ResetToFactoryAsync()
+    {
+        if (_resetInProgress)
+            return;
+
+        _resetInProgress = true;
+        Log.Information("Factory reset requested");
+
+        try
+        {
+            _webCts?.Cancel();
+
+            if (_remoteMonitorService != null)
+                await _remoteMonitorService.StopAsync(CancellationToken.None);
+
+            _tunnelService?.Dispose();
+            SqliteConnection.ClearAllPools();
+
+            TryDeleteFile(AppPaths.ConfigPath);
+            TryDeleteFile(AppPaths.DatabasePath);
+            TryDeleteDirectory(AppPaths.BackupDirectory);
+
+            Directory.CreateDirectory(AppPaths.DataDirectory);
+            Directory.CreateDirectory(AppPaths.BackupDirectory);
+            Directory.CreateDirectory(AppPaths.LogDirectory);
+
+            var exePath = Environment.ProcessPath ?? Process.GetCurrentProcess().MainModule?.FileName;
+            if (!string.IsNullOrWhiteSpace(exePath))
+            {
+                Process.Start(new ProcessStartInfo(exePath)
+                {
+                    UseShellExecute = true,
+                    WorkingDirectory = Path.GetDirectoryName(exePath)!
+                });
+            }
+
+            Shutdown();
+        }
+        catch (Exception ex)
+        {
+            _resetInProgress = false;
+            Log.Error(ex, "Factory reset failed");
+            throw;
+        }
+    }
+
+    private static void TryDeleteFile(string path)
+    {
+        if (File.Exists(path))
+            File.Delete(path);
+    }
+
+    private static void TryDeleteDirectory(string path)
+    {
+        if (Directory.Exists(path))
+            Directory.Delete(path, recursive: true);
     }
 
     private void StartWebHost(AppSettings settings, ServiceCollection sc, WebServerInfo webServerInfo)

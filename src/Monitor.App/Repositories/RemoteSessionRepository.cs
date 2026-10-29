@@ -53,6 +53,14 @@ public class RemoteSessionRepository : IRemoteSessionRepository
             new { Id = id, Name = operatorName });
     }
 
+    public void UpdateRemoteType(int id, string remoteType)
+    {
+        using var conn = _factory.CreateConnection();
+        conn.Execute(
+            "UPDATE remote_sessions SET remote_type = @Type WHERE id = @Id",
+            new { Id = id, Type = remoteType });
+    }
+
     public RemoteSession? GetActiveRemoteSession()
     {
         var sessions = GetActiveRemoteSessions();

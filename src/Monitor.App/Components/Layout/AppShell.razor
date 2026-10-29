@@ -1,10 +1,81 @@
 @namespace Monitor.App.Components.Layout
 @inherits LayoutComponentBase
+@inject NavigationManager Nav
+@inject StatusService StatusService
+@inject IJSRuntime JS
+@implements IDisposable
 
 <div class="app-shell">
     <Sidebar />
     <main class="main-content">
+        <header class="topbar">
+            <div class="crumb">Monitor / <b>@_title</b></div>
+            <div class="top-right">
+                <span class="clock">@_clock</span>
+                <span class="chip"><span class="status-dot @_statusClass"></span>@_statusText</span>
+                <button type="button" class="icon-btn" title="切换深浅色" @onclick="ToggleTheme">◐</button>
+                <button type="button" class="icon-btn" title="切换密度" @onclick="ToggleDensity">☰</button>
+            </div>
+        </header>
         @Body
     </main>
     <OnboardingDialog />
 </div>
+
+@code {
+    private string _title = "控制台";
+    private string _clock = "";
+    private string _statusClass = "idle";
+    private string _statusText = "空闲";
+    private Timer? _timer;
+
+    protected override void OnInitialized()
+    {
+        Nav.LocationChanged += OnLocationChanged;
+        UpdateTitle();
+        Refresh();
+        _timer = new Timer(_ => InvokeAsync(() => { Refresh(); StateHasChanged(); }), null, 1000, 1000);
+    }
+
+    private void OnLocationChanged(object? sender, Microsoft.AspNetCore.Components.Routing.LocationChangedEventArgs e)
+    {
+        UpdateTitle();
+        InvokeAsync(StateHasChanged);
+    }
+
+    private void UpdateTitle()
+    {
+        var path = "/" + Nav.ToBaseRelativePath(Nav.Uri).Split('?')[0].Trim('/');
+        _title = path switch
+        {
+            "/timer" => "计时",
+            "/history" => "历史记录",
+            "/statistics" => "统计",
+            "/reservation" => "预约",
+            "/settings" => "设置",
+            _ => "控制台"
+        };
+    }
+
+    private async Task ToggleTheme() => await JS.InvokeVoidAsync("monitorToggleTheme");
+    private async Task ToggleDensity() => await JS.InvokeVoidAsync("monitorToggleDensity");
+
+    private void Refresh()
+    {
+        _clock = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        var st = StatusService.GetSidebarStatus();
+        if (st.Status == "error") { _statusClass = "error"; _statusText = "检测异常"; }
+        else if (st.ComputeBusy) { _statusClass = "computing"; _statusText = "正在计算"; }
+        else if (st.Status == "disabled") { _statusClass = "unknown"; _statusText = "检测已关闭"; }
+        else if (st.Status is "initializing" or "unknown") { _statusClass = "remote_controlled"; _statusText = "疑似占用"; }
+        else if (st.IsRemote) { _statusClass = "remote_controlled"; _statusText = st.Conflict ? "控制冲突" : "远程占用"; }
+        else if (st.IsTiming) { _statusClass = "in_use"; _statusText = "使用中"; }
+        else { _statusClass = "idle"; _statusText = "空闲"; }
+    }
+
+    public void Dispose()
+    {
+        Nav.LocationChanged -= OnLocationChanged;
+        _timer?.Dispose();
+    }
+}

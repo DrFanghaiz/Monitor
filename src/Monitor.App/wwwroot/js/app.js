@@ -1,3 +1,33 @@
+// ---- Theme / density (persisted) ----
+(function () {
+    try {
+        var t = localStorage.getItem('monitor.theme') || 'light';
+        var d = localStorage.getItem('monitor.density') || 'comfortable';
+        document.documentElement.setAttribute('data-theme', t);
+        document.documentElement.setAttribute('data-density', d);
+    } catch (e) { }
+})();
+
+window.monitorSetTheme = function (t) {
+    document.documentElement.setAttribute('data-theme', t);
+    try { localStorage.setItem('monitor.theme', t); } catch (e) { }
+    window.dispatchEvent(new Event('monitor-theme'));
+};
+window.monitorToggleTheme = function () {
+    var cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    window.monitorSetTheme(cur);
+    return cur;
+};
+window.monitorSetDensity = function (d) {
+    document.documentElement.setAttribute('data-density', d);
+    try { localStorage.setItem('monitor.density', d); } catch (e) { }
+};
+window.monitorToggleDensity = function () {
+    var cur = document.documentElement.getAttribute('data-density') === 'compact' ? 'comfortable' : 'compact';
+    window.monitorSetDensity(cur);
+    return cur;
+};
+
 // ECharts interop
 window.renderChart = (elementId, optionJson) => {
     const el = document.getElementById(elementId);

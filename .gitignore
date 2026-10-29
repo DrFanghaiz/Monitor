@@ -1,0 +1,44 @@
+# ===== build outputs =====
+[Bb]in/
+[Oo]bj/
+**/[Bb]in/
+**/[Oo]bj/
+artifacts/
+
+# ===== dependencies / front-end =====
+node_modules/
+frontend/
+.vite/
+
+# ===== legacy / experiments (kept locally, not in git) =====
+new_mn/
+legacy/
+diagnostics/
+design-previews/
+
+# ===== IDE / tooling =====
+.vs/
+.idea/
+.edge-headless-profile/
+.claude/
+.codex/
+.agents/
+*.user
+*.suo
+
+# ===== large binaries =====
+cloudflared.exe
+
+# ===== python =====
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# ===== misc =====
+CURRENT_DIRECTORY_CONTENTS.txt
+docs/chat/
+*.log
+!docs/install-test/*.log
+.DS_Store
+Thumbs.db

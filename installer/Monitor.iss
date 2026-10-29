@@ -1,5 +1,5 @@
 #define MyAppName "Monitor"
-#define MyAppVersion "3.0.0"
+#define MyAppVersion "4.2.0"
 #define MyAppExeName "Monitor.App.exe"
 #define MyAppPublisher "Monitor"
 #define MyAppId "{{6D493EE4-3168-4F2A-8C0B-A761D171B91D}}"

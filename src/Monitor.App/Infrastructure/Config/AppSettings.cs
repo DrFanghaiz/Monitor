@@ -17,6 +17,7 @@ public class AppSettings
     public bool WebServerEnabled { get; set; } = true;
     public int WebServerPort { get; set; } = 8080;
     public string WebServerPassword { get; set; } = "123456";
+    public string WebServerPasswordHash { get; set; } = "";
     public bool RemoteMonitorEnabled { get; set; } = true;
     public int RemoteMonitorInterval { get; set; } = 3;
     public List<string> RemoteTools { get; set; } = new()
@@ -35,6 +36,20 @@ public class AppSettings
     public string OperatorRegistrationKey { get; set; } = "";
     public string OperatorRegistrationKeyHash { get; set; } = "";
     public bool OnboardingDismissed { get; set; } = false;
+
+    // ---- 计算任务监控 ----
+    public bool ComputeMonitorEnabled { get; set; } = true;
+    public int ComputeMonitorInterval { get; set; } = 2;
+    /// <summary>重任务进程名白名单（不含 .exe，忽略大小写）。</summary>
+    public List<string> ComputeJobProcesses { get; set; } = new()
+    {
+        "gurobi_cl", "gurobi", "python", "pythonw", "matlab", "cplex", "julia",
+        "java", "Rscript", "R", "cbc", "highs", "scip", "ipopt", "ampl", "gams"
+    };
+    /// <summary>整机 CPU 使用率超过此值即视为"正在计算"（即使白名单无匹配），0 表示不启用该兜底。</summary>
+    public double ComputeCpuThresholdPercent { get; set; } = 70;
+    /// <summary>关机/注销保护：有计算任务时劝阻关机。</summary>
+    public bool ShutdownGuardEnabled { get; set; } = true;
 
     private static readonly string _configPath = AppPaths.ConfigPath;
 
@@ -57,6 +72,7 @@ public class AppSettings
             }
 
             settings.MergeDefaults();
+            settings.MigratePlainWebPassword();
             settings.MigratePlainRegistrationKey();
             return settings;
         }
@@ -67,6 +83,8 @@ public class AppSettings
 
     public void Save()
     {
+        if (!string.IsNullOrEmpty(WebServerPasswordHash))
+            WebServerPassword = "";
         if (!string.IsNullOrEmpty(OperatorRegistrationKeyHash))
             OperatorRegistrationKey = "";
 
@@ -78,8 +96,11 @@ public class AppSettings
     private void MergeDefaults()
     {
         var defaults = new AppSettings();
-        if (string.IsNullOrEmpty(WebServerPassword)) WebServerPassword = defaults.WebServerPassword;
+        if (string.IsNullOrEmpty(WebServerPassword) && string.IsNullOrEmpty(WebServerPasswordHash))
+            WebServerPassword = defaults.WebServerPassword;
         if (RemoteTools == null || RemoteTools.Count == 0) RemoteTools = defaults.RemoteTools;
+        if (ComputeJobProcesses == null || ComputeJobProcesses.Count == 0) ComputeJobProcesses = defaults.ComputeJobProcesses;
+        if (ComputeMonitorInterval <= 0) ComputeMonitorInterval = defaults.ComputeMonitorInterval;
         if (string.IsNullOrEmpty(TunnelMode)) TunnelMode = defaults.TunnelMode;
         if (string.IsNullOrEmpty(TunnelCloudflaredPath)) TunnelCloudflaredPath = defaults.TunnelCloudflaredPath;
         if (string.IsNullOrEmpty(TunnelNgrokPath)) TunnelNgrokPath = defaults.TunnelNgrokPath;
@@ -98,11 +119,28 @@ public class AppSettings
         Save();
     }
 
+    private void MigratePlainWebPassword()
+    {
+        if (!string.IsNullOrWhiteSpace(WebServerPasswordHash))
+        {
+            WebServerPassword = "";
+            return;
+        }
+
+        if (string.IsNullOrWhiteSpace(WebServerPassword) || WebServerPassword == "123456")
+            return;
+
+        WebServerPasswordHash = BCrypt.Net.BCrypt.HashPassword(WebServerPassword.Trim());
+        WebServerPassword = "";
+        Save();
+    }
+
     public string Get(string key, string defaultValue = "")
     {
         return key switch
         {
             "web_server_password" => WebServerPassword,
+            "web_server_password_hash" => WebServerPasswordHash,
             "web_server_port" => WebServerPort.ToString(),
             "web_server_enabled" => WebServerEnabled.ToString().ToLower(),
             "tunnel_enabled" => TunnelEnabled.ToString().ToLower(),
@@ -128,6 +166,7 @@ public class AppSettings
         switch (key)
         {
             case "web_server_password": WebServerPassword = value; break;
+            case "web_server_password_hash": WebServerPasswordHash = value; WebServerPassword = ""; break;
             case "web_server_port": WebServerPort = int.Parse(value); break;
             case "web_server_enabled": WebServerEnabled = bool.Parse(value); break;
             case "tunnel_enabled": TunnelEnabled = bool.Parse(value); break;

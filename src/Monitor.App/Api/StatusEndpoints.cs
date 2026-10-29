@@ -37,7 +37,24 @@ public static class StatusEndpoints
                     s.RemoteControl.LastSeenAt,
                     s.RemoteControl.ErrorMessage,
                     s.RemoteControl.MatchedSignals,
-                    s.RemoteControl.Message
+                    s.RemoteControl.Message,
+                    s.RemoteControl.RunningTools,
+                    s.RemoteControl.ActiveToolCount,
+                    s.RemoteControl.Conflict
+                },
+                compute = new
+                {
+                    s.Compute.Status,
+                    s.Compute.IsBusy,
+                    s.Compute.CpuUsagePercent,
+                    s.Compute.MemoryUsagePercent,
+                    s.Compute.TotalMemoryUsedMb,
+                    s.Compute.TotalMemoryMb,
+                    s.Compute.ProcessCount,
+                    s.Compute.Processes,
+                    s.Compute.Message,
+                    s.Compute.CheckedAt,
+                    s.Compute.ErrorMessage
                 },
                 today_records = s.TodayRecords,
                 today_reservations = s.TodayReservations,

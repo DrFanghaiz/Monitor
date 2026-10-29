@@ -307,13 +307,13 @@
             : "先把常用设置补齐，后面就可以直接使用。";
 
     private bool GetAdminReady() => PasswordManager.IsPasswordSet(AppSettings);
-    private bool GetWebPasswordReady() => AppSettings.WebServerPassword != "123456";
+    private bool GetWebPasswordReady() => PasswordManager.IsWebPasswordSet(AppSettings);
     private bool GetRegistrationReady() => PasswordManager.HasOperatorRegistrationKey(AppSettings);
 
     private bool GetPublicReady()
     {
         var status = TunnelService.GetStatus();
-        return status.PublicReady || !string.IsNullOrWhiteSpace(AppSettings.CloudflareHostname);
+        return status.PublicReady;
     }
 
     private bool GetStepDone(StepKey key) => key switch
@@ -398,8 +398,13 @@
             return;
         }
 
-        AppSettings.WebServerPassword = password;
-        AppSettings.Save();
+        if (password.Length < 6)
+        {
+            _message = "Web 密码至少 6 个字符。";
+            return;
+        }
+
+        PasswordManager.SetWebPassword(AppSettings, password);
         _webPassword = "";
         _message = "Web 密码已保存。";
         AutoAdvance();

@@ -4,6 +4,7 @@
 @inject Services.BackupService BackupService
 @inject Services.TunnelService TunnelService
 @inject Services.WebServerInfo WebServerInfo
+@inject Services.AppControlService AppControlService
 @using Monitor.App.Infrastructure.Security
 @using Monitor.App.Infrastructure.Config
 
@@ -70,7 +71,7 @@
                         <span class="field-label">新密码</span>
                         <input class="input" type="password" @bind="_adminNewPwd" @bind:event="oninput" placeholder="输入新密码" autocomplete="new-password" />
                     </label>
-                    <button class="btn btn-primary" @onclick="ChangeAdminPassword" disabled="@(!CanChangeAdminPassword)">
+                    <button class="btn btn-primary" @onclick="ChangeAdminPassword" disabled="@(!CanChangeAdminPassword || _adminNewPwd.Trim().Length < 8)">
                         <Icon Name="key" Size="15" />
                         保存
                     </button>
@@ -87,8 +88,8 @@
                         <h3>Web 访问密码</h3>
                         <p>用于访问受保护接口。</p>
                     </div>
-                    <span class="badge @(AppSettings.WebServerPassword == "123456" ? "badge-warning" : "badge-success")">
-                        @(AppSettings.WebServerPassword == "123456" ? "默认" : "已设置")
+                    <span class="badge @(PasswordManager.IsWebPasswordSet(AppSettings) ? "badge-success" : "badge-warning")">
+                        @(PasswordManager.IsWebPasswordSet(AppSettings) ? "已设置" : "默认")
                     </span>
                 </div>
                 <div class="settings-action-row">
@@ -96,7 +97,7 @@
                         <span class="field-label">新密码</span>
                         <input class="input" type="password" @bind="_webPwd" @bind:event="oninput" placeholder="输入 Web 访问密码" autocomplete="new-password" />
                     </label>
-                    <button class="btn btn-primary" @onclick="ChangeWebPassword" disabled="@string.IsNullOrWhiteSpace(_webPwd)">
+                    <button class="btn btn-primary" @onclick="ChangeWebPassword" disabled="@(_webPwd.Trim().Length < 6)">
                         <Icon Name="key" Size="15" />
                         保存
                     </button>
@@ -178,10 +179,10 @@
             </section>
 
             <section class="card settings-data-card">
-                <div class="settings-card-head">
-                    <div>
-                        <h2><Icon Name="database" Size="16" />数据与系统</h2>
-                        <p>备份和本机路径。</p>
+                    <div class="settings-card-head">
+                        <div>
+                            <h2><Icon Name="database" Size="16" />数据与系统</h2>
+                            <p>备份和本机路径。</p>
                     </div>
                     <button class="btn btn-ghost" @onclick="CreateBackup" disabled="@_backupBusy">
                         <Icon Name="database" Size="15" />
@@ -225,6 +226,34 @@
                     <span>远程检测</span><strong>@(AppSettings.RemoteMonitorEnabled ? "启用" : "停用")</strong>
                     <span>Web 端口</span><strong>@AppSettings.WebServerPort</strong>
                 </div>
+
+                <div class="settings-section settings-danger-section">
+                    <div class="settings-section-head">
+                        <div>
+                            <h3>恢复出厂设置</h3>
+                            <p>清空本机数据并重新打开程序。</p>
+                        </div>
+                        <span class="badge badge-danger">危险操作</span>
+                    </div>
+                    <div class="settings-action-row settings-action-row-three">
+                        <label class="field">
+                            <span class="field-label">当前管理员密码</span>
+                            <input class="input" type="password" @bind="_factoryResetPassword" @bind:event="oninput" placeholder="输入当前密码" autocomplete="current-password" />
+                        </label>
+                        <div class="field">
+                            <span class="field-label">将会清空</span>
+                            <div class="field-hint">配置、记录、预约、远程会话、备份</div>
+                        </div>
+                        <button class="btn btn-danger" @onclick="FactoryReset" disabled="@(!CanFactoryReset)">
+                            <Icon Name="alert-triangle" Size="15" />
+                            @(_factoryResetConfirming ? "再次确认" : "恢复出厂")
+                        </button>
+                    </div>
+                    @if (!string.IsNullOrEmpty(_factoryResetMsg))
+                    {
+                        <div class="message critical-action">@_factoryResetMsg</div>
+                    }
+                </div>
             </section>
         </div>
     </div>
@@ -241,10 +270,15 @@
     private string _regMsg = "";
     private string _cloudflareHostname = "";
     private string _cloudflareMsg = "";
+    private string _factoryResetPassword = "";
+    private string _factoryResetMsg = "";
     private bool _cloudflareBusy;
     private bool _backupBusy;
+    private bool _factoryResetBusy;
+    private bool _factoryResetConfirming;
     private List<BackupEntry> _backups = new();
     private bool CanChangeAdminPassword => !string.IsNullOrWhiteSpace(_adminOldPwd) && !string.IsNullOrWhiteSpace(_adminNewPwd);
+    private bool CanFactoryReset => !_factoryResetBusy && !string.IsNullOrWhiteSpace(_factoryResetPassword);
     private bool CanConfigureCloudflare
         => Uri.CheckHostName(_cloudflareHostname.Trim()) == UriHostNameType.Dns
            && _cloudflareHostname.Trim().Contains('.');
@@ -257,6 +291,12 @@
 
     private void ChangeAdminPassword()
     {
+        if (_adminNewPwd.Trim().Length < 8)
+        {
+            _adminMsg = "至少 8 个字符。";
+            return;
+        }
+
         _adminMsg = PasswordManager.ChangeAdminPassword(AppSettings, _adminOldPwd, _adminNewPwd)
             ? "已保存。"
             : "当前密码不正确。";
@@ -266,8 +306,13 @@
 
     private void ChangeWebPassword()
     {
-        AppSettings.WebServerPassword = _webPwd;
-        AppSettings.Save();
+        if (_webPwd.Trim().Length < 6)
+        {
+            _webMsg = "至少 6 个字符。";
+            return;
+        }
+
+        PasswordManager.SetWebPassword(AppSettings, _webPwd);
         _webMsg = "已保存。";
         _webPwd = "";
     }
@@ -302,6 +347,37 @@
         _regKey = "";
     }
 
+    private async Task FactoryReset()
+    {
+        if (!PasswordManager.CheckAdminPassword(AppSettings, _factoryResetPassword))
+        {
+            _factoryResetMsg = "管理员密码不正确。";
+            _factoryResetConfirming = false;
+            return;
+        }
+
+        if (!_factoryResetConfirming)
+        {
+            _factoryResetConfirming = true;
+            _factoryResetMsg = "再点一次，立即清空本机数据。";
+            return;
+        }
+
+        _factoryResetBusy = true;
+        _factoryResetMsg = "正在清空并重新打开程序。";
+
+        try
+        {
+            await AppControlService.FactoryResetAsync();
+        }
+        catch
+        {
+            _factoryResetBusy = false;
+            _factoryResetConfirming = false;
+            _factoryResetMsg = "恢复失败，请关闭程序后重试。";
+        }
+    }
+
     private IReadOnlyList<ReadinessItem> GetReadinessItems()
     {
         var tunnel = TunnelService.GetStatus();
@@ -317,7 +393,7 @@
         return new List<ReadinessItem>
         {
             new("admin", "管理员密码", PasswordManager.IsPasswordSet(AppSettings) ? "ok" : "danger", PasswordManager.IsPasswordSet(AppSettings) ? "已设置" : "默认"),
-            new("web", "Web 密码", AppSettings.WebServerPassword == "123456" ? "warning" : "ok", AppSettings.WebServerPassword == "123456" ? "默认" : "已设置"),
+            new("web", "Web 密码", PasswordManager.IsWebPasswordSet(AppSettings) ? "ok" : "warning", PasswordManager.IsWebPasswordSet(AppSettings) ? "已设置" : "默认"),
             new("remote", "远程检测", AppSettings.RemoteMonitorEnabled ? "ok" : "danger", AppSettings.RemoteMonitorEnabled ? "启用" : "关闭"),
             new("register", "登记码", PasswordManager.HasOperatorRegistrationKey(AppSettings) ? "ok" : "warning", PasswordManager.HasOperatorRegistrationKey(AppSettings) ? "已设置" : "未设置"),
             new("public", "公网发布", publicTone, publicValue)

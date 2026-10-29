@@ -180,6 +180,14 @@ public class RemoteMonitorService : IDisposable
                 }
                 else
                 {
+                    // 工具集合发生变化（例如又接入第二种远控），更新会话记录中的类型
+                    if (!string.Equals(_remoteType, result.RemoteType, StringComparison.Ordinal))
+                    {
+                        _remoteType = result.RemoteType;
+                        if (_activeSessionId.HasValue && !string.IsNullOrEmpty(result.RemoteType))
+                            _repo.UpdateRemoteType(_activeSessionId.Value, result.RemoteType);
+                    }
+
                     // Same tool still detected — refresh last_seen_at
                     if (_activeSessionId.HasValue)
                         _repo.TouchRemoteSession(_activeSessionId.Value);
@@ -229,16 +237,17 @@ public class RemoteMonitorService : IDisposable
         {
             return new RemoteControlStatus
             {
-                IsRemote = false, Status = "unknown",
+                IsRemote = false, Status = "disabled",
                 ErrorMessage = "远程检测已关闭"
             };
         }
 
         if (!_hasSuccessfulDetection)
         {
+            // 失败即安全：尚未完成首次扫描时由上层按"占用"保守处理
             return new RemoteControlStatus
             {
-                IsRemote = false, Status = "unknown",
+                IsRemote = false, Status = "initializing",
                 ErrorMessage = "远程检测尚未完成首次扫描"
             };
         }
@@ -254,7 +263,8 @@ public class RemoteMonitorService : IDisposable
                     LastSeenAt = _lastDetection?.CheckedAt,
                     Confidence = _lastDetection?.Confidence ?? "",
                     Message = _lastDetection?.Message,
-                    MatchedSignals = _lastDetection?.MatchedSignals ?? new()
+                    MatchedSignals = _lastDetection?.MatchedSignals ?? new(),
+                    RunningTools = _lastDetection?.RunningToolNames ?? new()
                 };
             }
 
@@ -280,7 +290,10 @@ public class RemoteMonitorService : IDisposable
                     : (positive?.Message ?? _lastDetection?.Message),
                 MatchedSignals = positive?.MatchedSignals
                     ?? _lastDetection?.MatchedSignals
-                    ?? new()
+                    ?? new(),
+                ActiveToolCount = Math.Max(1,
+                    positive?.ActiveToolIds?.Count ?? _lastDetection?.ActiveToolIds?.Count ?? 1),
+                Conflict = (positive?.ActiveToolIds?.Count ?? _lastDetection?.ActiveToolIds?.Count ?? 1) >= 2
             };
         }
     }
@@ -339,4 +352,12 @@ public class RemoteControlStatus
     // Phase 3
     public List<string> MatchedSignals { get; set; } = new();
     public string? Message { get; set; }
+
+    /// <summary>仅后台运行、未确认会话的工具显示名列表。</summary>
+    public List<string> RunningTools { get; set; } = new();
+
+    /// <summary>当前同时处于"会话"状态的远控工具数量。</summary>
+    public int ActiveToolCount { get; set; }
+    /// <summary>是否检测到多个远控工具同时在线（可能多人同时控制）。</summary>
+    public bool Conflict { get; set; }
 }

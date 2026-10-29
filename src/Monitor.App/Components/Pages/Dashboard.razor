@@ -10,207 +10,274 @@
 <PageTitle>控制台 · Monitor</PageTitle>
 
 <div class="page">
-    <header class="page-header">
-        <div>
-            <h1 class="page-title">控制台</h1>
-            <p class="page-subtitle">@(_status?.Timestamp ?? DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))</p>
-        </div>
-        @if (_status != null)
-        {
-            <span class="status-badge @GetStatusClass(_status.ComputerStatus)">
-                <span class="status-dot @GetStatusClass(_status.ComputerStatus)"></span>
-                @GetStatusText(_status.ComputerStatus)
-            </span>
-        }
-    </header>
-
     @if (_status != null)
     {
         var rc = _status.RemoteControl;
         var isRemote = rc.IsRemote;
         var cs = _status.ComputerStatus;
-        var display = GetRemoteDisplay(cs, rc);
+        var comp = _status.Compute;
+        var display = GetRemoteDisplay(cs, rc, comp);
+        var heroState = GetHeroState(cs, rc, comp);
         var ts = _tunnelState;
+        var occ = GetOccupied(rc, comp);
+        var cpuClass = comp.CpuUsagePercent >= 80 ? "crit" : (comp.CpuUsagePercent >= 60 ? "warn" : "");
+        var memClass = comp.MemoryUsagePercent >= 85 ? "crit" : (comp.MemoryUsagePercent >= 70 ? "warn" : "");
 
-        @* ===== PRIMARY STATUS ===== *@
-        <div class="card card-elevated dashboard-status @display.StatusClass">
-            <div class="status-top">
-                <div class="status-hero">
-                    <div class="primary-dot"></div>
+        <div class="stack">
+            @* ===== HERO STATUS ===== *@
+            <section class="hero @heroState">
+                <div class="hero-grid">
                     <div>
-                        <div class="primary-label">@display.Label</div>
-                        <div class="primary-tip">@display.Tip</div>
+                        <div class="hero-eyebrow">当前状态</div>
+                        <div class="hero-line"><span class="hero-dot"></span><span class="hero-label">@display.Label</span></div>
+                        <p class="hero-tip">@display.Tip</p>
+                    </div>
+                    <div class="hero-facts">
+                        <div class="fact"><div class="k">远程工具</div><div class="v">@ToolText(rc)</div></div>
+                        <div class="fact"><div class="k">操作人</div><div class="v">@(isRemote ? (rc.OperatorName ?? "未登记") : "—")</div></div>
+                        <div class="fact"><div class="k">开始时间</div><div class="v mono">@(isRemote && rc.StartTime != null ? rc.StartTime : "—")</div></div>
+                        <div class="fact"><div class="k">已占用时长</div><div class="v mono">@(isRemote ? rc.ElapsedFormatted : "—")</div></div>
                     </div>
                 </div>
 
-                <div class="status-facts">
-                    <div class="info-item"><div class="info-label">远程工具</div><div class="info-value">@(rc.RemoteType ?? "—")</div></div>
-                    <div class="info-item"><div class="info-label">操作人</div><div class="info-value">@(isRemote ? (rc.OperatorName ?? "未登记") : "—")</div></div>
-                    <div class="info-item"><div class="info-label">开始时间</div><div class="info-value">@(isRemote && rc.StartTime != null ? rc.StartTime : "—")</div></div>
-                    <div class="info-item"><div class="info-label">已占用时长</div><div class="info-value">@(isRemote ? rc.ElapsedFormatted : "—")</div></div>
-                </div>
-            </div>
+                @if (isRemote && rc.Conflict)
+                {
+                    <div class="banner danger">&#9888; 检测到 @rc.ActiveToolCount 个远程工具同时在线，可能多人同时控制，请先确认协调后再连接。</div>
+                }
+                else if (isRemote && string.IsNullOrEmpty(rc.OperatorName))
+                {
+                    <div class="banner warning">&#9888; 有人正在远程使用但尚未登记操作人，请督促其登记。</div>
+                }
 
-            <div class="status-bottom">
-                <div class="public-line">
-                    @if (!string.IsNullOrEmpty(ts.PublicUrl))
-                    {
-                        <span class="public-status-label">公网</span>
-                        <a class="public-host" href="@($"{ts.PublicUrl}/status")">@GetHostText(ts.PublicUrl)</a>
-                    }
-                    else if (!string.IsNullOrEmpty(ts.Error))
-                    {
-                        <span class="public-status-label warning">公网</span>
-                        <span class="public-host muted">@ShortTunnelError(ts.Error)</span>
-                    }
-                    else if (ts.Running)
-                    {
-                        <span class="public-status-label">公网</span>
-                        <span class="public-host muted">连接中</span>
-                    }
-                    else
-                    {
-                        <span class="public-status-label muted">公网</span>
-                        <span class="public-host muted">未启动</span>
-                    }
-                </div>
-
-                <div class="operator-row">
-                    @if (isRemote && string.IsNullOrEmpty(rc.OperatorName))
-                    {
-                        <input class="input" @bind="_operatorInput" placeholder="登记操作人姓名" />
-                        <button class="btn btn-primary btn-sm" @onclick="RegisterOperator"
-                                disabled="@(string.IsNullOrWhiteSpace(_operatorInput))">登记</button>
-                    }
-                    else if (isRemote && !string.IsNullOrEmpty(rc.OperatorName))
-                    {
-                        <span class="operator-current">操作人：<strong>@rc.OperatorName</strong></span>
-                        @if (!_showOperatorModify)
+                <div class="hero-foot">
+                    <div class="pub">
+                        @if (!string.IsNullOrEmpty(ts.PublicUrl))
                         {
-                            <button class="btn btn-ghost btn-sm" @onclick="ShowModifyOperator">修改</button>
+                            <span class="tag">公网</span>
+                            <a href="@($"{ts.PublicUrl}/status")">@GetHostText(ts.PublicUrl)</a>
+                        }
+                        else if (!string.IsNullOrEmpty(ts.Error))
+                        {
+                            <span class="tag">公网</span><span class="muted">@ShortTunnelError(ts.Error)</span>
+                        }
+                        else if (ts.Running)
+                        {
+                            <span class="tag">公网</span><span class="muted">连接中</span>
                         }
                         else
                         {
-                            <input class="input" @bind="_operatorInput" placeholder="新姓名" />
+                            <span class="tag">公网</span><span class="muted">未启动</span>
+                        }
+                    </div>
+                    <div class="op">
+                        @if (isRemote && string.IsNullOrEmpty(rc.OperatorName))
+                        {
+                            <input class="input" @bind="_operatorInput" placeholder="登记操作人姓名" />
                             <button class="btn btn-primary btn-sm" @onclick="RegisterOperator"
-                                    disabled="@(string.IsNullOrWhiteSpace(_operatorInput))">确认</button>
-                            <button class="btn btn-ghost btn-sm" @onclick="CancelModifyOperator">取消</button>
+                                    disabled="@(string.IsNullOrWhiteSpace(_operatorInput))">登记</button>
                         }
-                    }
-                    @if (!string.IsNullOrEmpty(_operatorMsg))
-                    {
-                        <span class="primary-msg">@_operatorMsg</span>
-                    }
+                        else if (isRemote && !string.IsNullOrEmpty(rc.OperatorName))
+                        {
+                            <span class="operator-current">操作人：<strong>@rc.OperatorName</strong></span>
+                            @if (!_showOperatorModify)
+                            {
+                                <button class="btn btn-ghost btn-sm" @onclick="ShowModifyOperator">修改</button>
+                            }
+                            else
+                            {
+                                <input class="input" @bind="_operatorInput" placeholder="新姓名" />
+                                <button class="btn btn-primary btn-sm" @onclick="RegisterOperator"
+                                        disabled="@(string.IsNullOrWhiteSpace(_operatorInput))">确认</button>
+                                <button class="btn btn-ghost btn-sm" @onclick="CancelModifyOperator">取消</button>
+                            }
+                        }
+                        @if (!string.IsNullOrEmpty(_operatorMsg))
+                        {
+                            <span class="primary-msg">@_operatorMsg</span>
+                        }
+                    </div>
                 </div>
-            </div>
-        </div>
+            </section>
 
-        @* ===== 三列辅助区 ===== *@
-        <div class="dashboard-bottom">
-            <div class="card">
-                <h2 class="section-title">本机计时</h2>
-                @if (!TimerService.IsRunning)
-                {
-                    <div class="quick-timer-row">
-                        <input class="input quick-timer-input" @bind="_startName" @bind:event="oninput"
-                               @onkeydown="HandleStartKeyDown" placeholder="输入姓名快速开始" />
-                        <button class="btn btn-primary btn-sm quick-timer-button" @onclick="StartTimer"
-                                disabled="@string.IsNullOrWhiteSpace(_startName)">开始</button>
-                    </div>
-                }
-                else
-                {
-                    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-                        <span class="timer-display" style="font-size:28px">@_status.LocalUse.ElapsedFormatted</span>
-                        <span style="font-size:13px;color:var(--text-secondary);margin-right:auto">@(_status.LocalUse.CurrentUser ?? "")</span>
-                        <button class="btn btn-danger btn-sm" @onclick="StopTimer">停止</button>
-                    </div>
-                }
-                @if (_startMsg != null)
-                { <div class="message">@_startMsg</div> }
-            </div>
+            @* ===== KPI ===== *@
+            <section class="kpi">
+                <div class="card">
+                    <div class="k">CPU 使用率</div>
+                    <div class="v">@($"{comp.CpuUsagePercent:F0}%")</div>
+                    <div class="bar @cpuClass"><i style="@($"width:{Math.Clamp(comp.CpuUsagePercent, 0, 100):F0}%")"></i></div>
+                    <div class="note">整机实时 · @Environment.ProcessorCount 核</div>
+                </div>
+                <div class="card">
+                    <div class="k">内存</div>
+                    <div class="v">@($"{comp.MemoryUsagePercent:F0}%")</div>
+                    <div class="bar @memClass"><i style="@($"width:{Math.Clamp(comp.MemoryUsagePercent, 0, 100):F0}%")"></i></div>
+                    <div class="note">已用 @($"{comp.TotalMemoryUsedMb / 1024.0:F1}") / @($"{comp.TotalMemoryMb / 1024.0:F1}") GB</div>
+                </div>
+                <div class="card">
+                    <div class="k">计算任务</div>
+                    <div class="v">@comp.ProcessCount</div>
+                    <div class="bar"><i style="@(comp.ProcessCount > 0 ? "width:100%" : "width:0%")"></i></div>
+                    <div class="note">白名单进程</div>
+                </div>
+                <div class="card">
+                    <div class="k">已占用</div>
+                    <div class="v" style="font-size:22px">@occ.Value</div>
+                    <div class="bar @occ.BarClass"><i style="@($"width:{occ.Pct:F0}%")"></i></div>
+                    <div class="note">@occ.Note</div>
+                </div>
+            </section>
 
-            <div class="card">
-                <h2 class="section-title">今日活动</h2>
-                @if (!_status.TodayRecords.Any())
-                { <div class="empty-state">今日暂无使用记录</div> }
-                else
-                {
-                    <div class="data-list">
-                        @foreach (var r in _status.TodayRecords.Take(5))
-                        {
-                            <div class="data-row">
-                                <div class="row-main">
-                                    <div class="avatar">@GetInitial(r.UserName)</div>
-                                    <div>
-                                        <div class="row-title">@r.UserName</div>
-                                        <div class="row-subtitle">@GetTimeRange(r.StartTime, r.EndTime)</div>
-                                    </div>
-                                </div>
-                                <div class="row-meta">@Services.TimerService.FormatDuration(r.DurationSeconds)</div>
-                            </div>
-                        }
-                    </div>
-                }
-            </div>
-
-            <div class="card">
-                <h2 class="section-title">今日预约</h2>
-                @if (!_status.TodayReservations.Any())
-                {
-                    <div class="empty-state" style="min-height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px">
-                        <span style="font-size:24px;opacity:.4">◫</span>
-                        <span>今日暂无预约</span>
-                        <span style="font-size:11px;color:var(--text-muted)">可在预约页面创建使用时段</span>
-                    </div>
-                }
-                else
-                {
-                    <div class="data-list">
-                        @foreach (var r in _status.TodayReservations.Take(5))
-                        {
-                            <div class="data-row">
-                                <div class="row-main">
-                                    <div class="avatar">@GetInitial(r.UserName)</div>
-                                    <span class="row-title">@r.UserName</span>
-                                </div>
-                                <span class="badge badge-warning">@($"{r.StartHour:D2}:00 - {r.EndHour:D2}:00")</span>
-                            </div>
-                        }
-                    </div>
-                }
-            </div>
-        </div>
-
-        @* ===== 最近远程会话 ===== *@
-        <div class="card" style="margin-bottom:16px">
-            <h2 class="section-title">最近远程会话</h2>
-            @if (!_remoteSessions.Any())
-            { <div class="empty-state">暂无远程会话记录</div> }
-            else
-            {
-                <div class="data-list">
-                    @foreach (var s in _remoteSessions.Take(8))
-                    {
-                        <div class="data-row">
-                            <div class="row-main">
-                                <div>
-                                    <div class="row-title">
-                                        @s.RemoteType
-                                        @if (IsActiveSession(s))
-                                        { <span class="badge badge-danger" style="margin-left:6px">活跃</span> }
-                                    </div>
-                                    <div class="row-subtitle">
-                                        操作人: @(s.OperatorName ?? "未登记") · @s.StartTime
-                                        @if (s.EndTime != null) { <span> → @s.EndTime</span> }
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row-meta">@Services.TimerService.FormatDuration(RemoteSessionDuration(s))</div>
+            @* ===== MAIN GRID ===== *@
+            <section class="grid-2">
+                <div class="stack">
+                    <div class="card">
+                        <div class="card-head">
+                            <h2 class="section-title">计算任务</h2>
+                            <span class="card-sub">@(comp.IsBusy ? $"{comp.ProcessCount} 个运行中" : "实时监控")</span>
                         </div>
-                    }
+                        @if (comp.Processes.Any())
+                        {
+                            <div class="data-list">
+                                @foreach (var p in comp.Processes.Take(6))
+                                {
+                                    <div class="data-row">
+                                        <div class="row-main" style="display:block;width:100%">
+                                            <div class="row-title">
+                                                <span style="font-family:var(--font-mono)">@p.Name</span>
+                                                <span class="row-subtitle" style="display:inline">PID @p.Pid</span>
+                                            </div>
+                                            <div class="pbar"><i style="@($"width:{Math.Clamp(p.CpuPercent, 0, 100):F0}%")"></i></div>
+                                            <div class="row-subtitle">CPU @($"{p.CpuPercent:F1}%") · 内存 @($"{p.WorkingSetMb:F0} MB") · 已运行 @p.ElapsedFormatted</div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="empty-state">@(comp.Message ?? "未检测到计算任务")</div>
+                        }
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head">
+                            <h2 class="section-title">最近远程会话</h2>
+                            <span class="card-sub">最近 8 条</span>
+                        </div>
+                        @if (!_remoteSessions.Any())
+                        {
+                            <div class="empty-state">暂无远程会话记录</div>
+                        }
+                        else
+                        {
+                            <div class="data-list">
+                                @foreach (var s in _remoteSessions.Take(8))
+                                {
+                                    <div class="data-row">
+                                        <div class="row-main">
+                                            <div class="avatar">@GetInitial(s.OperatorName ?? "?")</div>
+                                            <div>
+                                                <div class="row-title">
+                                                    @s.RemoteType
+                                                    @if (IsActiveSession(s))
+                                                    { <span class="badge badge-danger" style="margin-left:6px">活跃</span> }
+                                                </div>
+                                                <div class="row-subtitle">
+                                                    操作人: @(s.OperatorName ?? "未登记") · @s.StartTime
+                                                    @if (s.EndTime != null) { <span> → @s.EndTime</span> }
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row-meta">@Services.TimerService.FormatDuration(RemoteSessionDuration(s))</div>
+                                    </div>
+                                }
+                            </div>
+                        }
+                    </div>
                 </div>
-            }
+
+                <div class="stack">
+                    <div class="card">
+                        <div class="section-title">本机计时</div>
+                        @if (!TimerService.IsRunning)
+                        {
+                            <div class="timer-big">00:00:00</div>
+                            <div class="quick-timer-row">
+                                <input class="input quick-timer-input" @bind="_startName" @bind:event="oninput"
+                                       @onkeydown="HandleStartKeyDown" placeholder="输入姓名快速开始" />
+                                <button class="btn btn-primary btn-sm quick-timer-button" @onclick="StartTimer"
+                                        disabled="@string.IsNullOrWhiteSpace(_startName)">开始</button>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="timer-big">@_status.LocalUse.ElapsedFormatted</div>
+                            <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+                                <span style="font-size:13px;color:var(--text-secondary);margin-right:auto">@(_status.LocalUse.CurrentUser ?? "")</span>
+                                <button class="btn btn-danger btn-sm" @onclick="StopTimer">停止</button>
+                            </div>
+                        }
+                        @if (_startMsg != null)
+                        { <div class="message">@_startMsg</div> }
+                        <div class="note" style="font-size:11px;color:var(--text-muted);margin-top:8px">本机使用记录独立于远程占用</div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head">
+                            <h2 class="section-title">今日活动</h2>
+                            <span class="card-sub">@_status.TodayRecords.Count 条</span>
+                        </div>
+                        @if (!_status.TodayRecords.Any())
+                        { <div class="empty-state">今日暂无使用记录</div> }
+                        else
+                        {
+                            <div class="data-list">
+                                @foreach (var r in _status.TodayRecords.Take(5))
+                                {
+                                    <div class="data-row">
+                                        <div class="row-main">
+                                            <div class="avatar">@GetInitial(r.UserName)</div>
+                                            <div>
+                                                <div class="row-title">@r.UserName</div>
+                                                <div class="row-subtitle">@GetTimeRange(r.StartTime, r.EndTime)</div>
+                                            </div>
+                                        </div>
+                                        <div class="row-meta">@Services.TimerService.FormatDuration(r.DurationSeconds)</div>
+                                    </div>
+                                }
+                            </div>
+                        }
+                    </div>
+
+                    <div class="card">
+                        <div class="card-head">
+                            <h2 class="section-title">今日预约</h2>
+                        </div>
+                        @if (!_status.TodayReservations.Any())
+                        {
+                            <div class="empty-state" style="min-height:90px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px">
+                                <span style="font-size:22px;opacity:.4">&#9635;</span>
+                                <span>今日暂无预约</span>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="data-list">
+                                @foreach (var r in _status.TodayReservations.Take(5))
+                                {
+                                    <div class="data-row">
+                                        <div class="row-main">
+                                            <div class="avatar">@GetInitial(r.UserName)</div>
+                                            <span class="row-title">@r.UserName</span>
+                                        </div>
+                                        <span class="badge badge-warning">@($"{r.StartHour:D2}:00 - {r.EndHour:D2}:00")</span>
+                                    </div>
+                                }
+                            </div>
+                        }
+                    </div>
+                </div>
+            </section>
         </div>
     }
 </div>
@@ -243,24 +310,55 @@
         }, null, 1000, 1000);
     }
 
-    private static (string StatusClass, string LabelColor, string Label, string Tip) GetRemoteDisplay(
-        string cs, RemoteControlInfo rc)
+    private static (string Label, string Tip) GetRemoteDisplay(string cs, RemoteControlInfo rc, ComputeInfo comp)
     {
         if (rc.Status == "error")
-            return ("danger", "var(--danger)", "检测异常", rc.ErrorMessage ?? "检测服务异常，请联系管理员");
-        if (rc.Status == "unknown")
-            return ("warning", "var(--warning)", "状态未知", rc.ErrorMessage ?? "检测尚未完成或未开启");
+            return ("检测异常", rc.ErrorMessage ?? "检测服务异常，请联系管理员");
+        if (comp.IsBusy)
+            return ("正在计算", "有计算任务在运行，请勿关机或关闭程序");
+        if (rc.Status == "disabled")
+            return ("检测已关闭", "远程检测已在设置中关闭，无法判断占用");
+        if (rc.Status is "initializing" or "unknown")
+            return ("疑似占用 · 检测中", "远程检测尚未就绪，暂按占用处理，请先确认");
         if (rc.IsRemote)
-            return ("danger", "var(--danger)", "疑似远程占用", "请勿重复连接，避免控制冲突");
+        {
+            var tip = rc.Conflict
+                ? $"检测到 {rc.ActiveToolCount} 个远程工具同时在线，可能多人同时控制，请先协调再连接"
+                : (string.IsNullOrEmpty(rc.OperatorName) ? "有人正在远程使用且未登记操作人，请先确认" : "请勿重复连接，避免控制冲突");
+            return ("疑似远程占用", tip);
+        }
         if (cs == "in_use")
-            return ("accent", "var(--accent)", "本机使用中", "当前有本机使用记录，连接前请确认不会打断他人");
-        return ("success", "var(--success)", "可连接", "当前未检测到远程占用");
+            return ("本机使用中", "当前有本机使用记录，连接前请确认不会打断他人");
+        return ("可连接", "当前未检测到远程占用，也没有正在运行的计算任务");
     }
 
-    private static string GetHostText(string url)
+    private static string GetHeroState(string cs, RemoteControlInfo rc, ComputeInfo comp)
     {
-        return Uri.TryCreate(url, UriKind.Absolute, out var uri) ? uri.Host : url;
+        if (rc.Status == "error") return "state-remote";
+        if (comp.IsBusy) return "state-computing";
+        if (rc.Status == "disabled") return "state-unknown";
+        if (rc.Status is "initializing" or "unknown") return "state-remote";
+        if (rc.IsRemote) return "state-remote";
+        if (cs == "in_use") return "state-inuse";
+        return "state-idle";
     }
+
+    private static (string Value, string Note, string BarClass, double Pct) GetOccupied(RemoteControlInfo rc, ComputeInfo comp)
+    {
+        if (rc.IsRemote)
+            return (rc.Conflict ? "冲突" : "远程", rc.RemoteType ?? "远程占用", "crit", 100);
+        if (comp.IsBusy)
+            return ("计算中", $"{comp.ProcessCount} 个任务运行", "warn", Math.Clamp(comp.CpuUsagePercent, 0, 100));
+        return ("空闲", "当前无人占用", "", 0);
+    }
+
+    private static string ToolText(RemoteControlInfo rc)
+        => rc.IsRemote
+            ? (rc.RemoteType ?? "—")
+            : (rc.RunningTools is { Count: > 0 } ? string.Join("、", rc.RunningTools) + "（后台）" : "—");
+
+    private static string GetHostText(string url)
+        => Uri.TryCreate(url, UriKind.Absolute, out var uri) ? uri.Host : url;
 
     private static string ShortTunnelError(string error)
     {
@@ -291,10 +389,6 @@
     { _showOperatorModify = true; _operatorInput = _status?.RemoteControl.OperatorName ?? ""; }
     private void CancelModifyOperator()
     { _showOperatorModify = false; _operatorInput = ""; _operatorMsg = ""; }
-    private string GetStatusClass(string status) => status switch
-    { "error" => "error", "unknown" => "unknown", "remote_controlled" => "remote_controlled", "in_use" => "in_use", _ => "idle" };
-    private string GetStatusText(string status) => status switch
-    { "error" => "检测异常", "unknown" => "状态未知", "remote_controlled" => "疑似远程占用", "in_use" => "使用中", _ => "空闲" };
     private static bool IsActiveSession(Monitor.App.Models.RemoteSession s) => s.IsActive || string.IsNullOrEmpty(s.EndTime);
     private static int RemoteSessionDuration(Monitor.App.Models.RemoteSession s)
     { if (IsActiveSession(s) && DateTime.TryParse(s.StartTime, out var start)) return (int)(DateTime.Now - start).TotalSeconds; return s.DurationSeconds; }

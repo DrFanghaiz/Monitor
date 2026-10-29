@@ -8,6 +8,7 @@ public interface IRemoteSessionRepository
     void EndRemoteSession(int id, string endReason = "normal");
     void TouchRemoteSession(int id);
     void UpdateOperatorName(int id, string operatorName);
+    void UpdateRemoteType(int id, string remoteType);
     RemoteSession? GetActiveRemoteSession();
     List<RemoteSession> GetActiveRemoteSessions();
     void EndAllActiveRemoteSessions(string endReason);

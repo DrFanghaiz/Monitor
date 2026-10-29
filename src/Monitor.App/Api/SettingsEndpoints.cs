@@ -33,6 +33,8 @@ public static class SettingsEndpoints
             AdminPasswordRequest req, AppSettings cfg) =>
         {
             if (!TryGetToken(request, auth)) return Results.Json(new { detail = "unauthorized" }, statusCode: 401);
+            if (string.IsNullOrWhiteSpace(req.NewPassword) || req.NewPassword.Trim().Length < 8)
+                return Results.BadRequest(new { detail = "管理员密码至少 8 个字符" });
             var ok = PasswordManager.ChangeAdminPassword(cfg, req.OldPassword, req.NewPassword);
             return ok
                 ? Results.Ok(new { success = true })
@@ -43,8 +45,9 @@ public static class SettingsEndpoints
             WebPasswordRequest req, AppSettings cfg) =>
         {
             if (!TryGetToken(request, auth)) return Results.Json(new { detail = "unauthorized" }, statusCode: 401);
-            cfg.WebServerPassword = req.NewPassword;
-            cfg.Save();
+            if (string.IsNullOrWhiteSpace(req.NewPassword) || req.NewPassword.Trim().Length < 6)
+                return Results.BadRequest(new { detail = "Web 密码至少 6 个字符" });
+            PasswordManager.SetWebPassword(cfg, req.NewPassword);
             return Results.Ok(new { success = true });
         });
 
